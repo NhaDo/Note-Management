@@ -79,6 +79,12 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewComponents\AccountRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\AccountRegister.Designer.cs">
+      <DependentUpon>AccountRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewComponents\LoginPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,9 +103,6 @@
     <Compile Include="ViewComponents\NavigationOption.Designer.cs">
       <DependentUpon>NavigationOption.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

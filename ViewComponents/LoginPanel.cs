@@ -13,15 +13,15 @@ namespace NoteMakingApp.ViewComponents
 {
     public partial class LoginPanel : UserControl
     {
-        
+
         public LoginPanel()
         {
             InitializeComponent();
         }
-        
+
         private void bLogin_Click(object sender, EventArgs e)
         {
-            
+
             if (checkInputs() >= 0)
             {
                 Account acc = new Account()
@@ -31,6 +31,7 @@ namespace NoteMakingApp.ViewComponents
                 };
                 if (checkData(acc))
                 {
+                    Console.WriteLine("login step");
                     Form1.getInstance().setLoggedIn(true);
                 }
             }
@@ -42,7 +43,8 @@ namespace NoteMakingApp.ViewComponents
             {
                 return true;
             }
-            else { 
+            else
+            {
                 return false;
             }
         }
@@ -62,6 +64,11 @@ namespace NoteMakingApp.ViewComponents
                 ePassword.Text = "Your password is inappropriate";
             }
             return isGood;
+        }
+
+        private void bRegister_Click(object sender, EventArgs e)
+        {
+            Form1.getInstance().setWindow("Register");
         }
     }
 }

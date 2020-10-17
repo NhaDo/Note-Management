@@ -2,7 +2,7 @@
 
 namespace NoteMakingApp.ViewComponents
 {
-    public partial class LoginPanel:UserControl
+    public partial class LoginPanel : UserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,6 +38,7 @@ namespace NoteMakingApp.ViewComponents
             this.eUsername = new System.Windows.Forms.Label();
             this.ePassword = new System.Windows.Forms.Label();
             this.bLogin = new System.Windows.Forms.Button();
+            this.bRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login
@@ -84,28 +85,28 @@ namespace NoteMakingApp.ViewComponents
             // eUsername
             // 
             this.eUsername.AutoSize = true;
+            this.eUsername.ForeColor = System.Drawing.Color.Red;
             this.eUsername.Location = new System.Drawing.Point(153, 70);
             this.eUsername.Name = "eUsername";
-            this.eUsername.ForeColor = System.Drawing.Color.Red;
-            this.eUsername.Visible = false;
             this.eUsername.Size = new System.Drawing.Size(61, 13);
             this.eUsername.TabIndex = 5;
             this.eUsername.Text = "eUsername";
+            this.eUsername.Visible = false;
             // 
             // ePassword
             // 
             this.ePassword.AutoSize = true;
+            this.ePassword.ForeColor = System.Drawing.Color.Red;
             this.ePassword.Location = new System.Drawing.Point(153, 117);
             this.ePassword.Name = "ePassword";
-            this.ePassword.ForeColor = System.Drawing.Color.Red;
-            this.ePassword.Visible = false;
             this.ePassword.Size = new System.Drawing.Size(59, 13);
             this.ePassword.TabIndex = 6;
             this.ePassword.Text = "ePassword";
+            this.ePassword.Visible = false;
             // 
             // bLogin
             // 
-            this.bLogin.Location = new System.Drawing.Point(156, 156);
+            this.bLogin.Location = new System.Drawing.Point(97, 157);
             this.bLogin.Name = "bLogin";
             this.bLogin.Size = new System.Drawing.Size(75, 23);
             this.bLogin.TabIndex = 7;
@@ -113,10 +114,21 @@ namespace NoteMakingApp.ViewComponents
             this.bLogin.UseVisualStyleBackColor = true;
             this.bLogin.Click += new System.EventHandler(this.bLogin_Click);
             // 
-            // UserControl1
+            // bRegister
+            // 
+            this.bRegister.Location = new System.Drawing.Point(207, 157);
+            this.bRegister.Name = "bRegister";
+            this.bRegister.Size = new System.Drawing.Size(75, 23);
+            this.bRegister.TabIndex = 8;
+            this.bRegister.Text = "Register";
+            this.bRegister.UseVisualStyleBackColor = true;
+            this.bRegister.Click += new System.EventHandler(this.bRegister_Click);
+            // 
+            // LoginPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.bRegister);
             this.Controls.Add(this.bLogin);
             this.Controls.Add(this.ePassword);
             this.Controls.Add(this.eUsername);
@@ -125,9 +137,8 @@ namespace NoteMakingApp.ViewComponents
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Username);
             this.Controls.Add(this.Login);
-            this.Name = "UserControl1";
+            this.Name = "LoginPanel";
             this.Size = new System.Drawing.Size(428, 204);
-            this.Visible = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +154,6 @@ namespace NoteMakingApp.ViewComponents
         private System.Windows.Forms.Label eUsername;
         private System.Windows.Forms.Label ePassword;
         private System.Windows.Forms.Button bLogin;
+        private Button bRegister;
     }
 }

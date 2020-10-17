@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,7 +33,7 @@ namespace NoteMakingApp.Models
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
-            
+
         }
         private void populateDataFromTable(string tableName)
         {
@@ -69,7 +70,7 @@ namespace NoteMakingApp.Models
         {
             if (instance == null)
             {
-            
+
                 instance = new DataHandle();
 
             }
@@ -83,8 +84,10 @@ namespace NoteMakingApp.Models
         {
             foreach (Account a in accounts)
             {
-                if (a.password.Equals(acc.password) && a.username.Equals(acc.username))
+                if (passwordEncoder(acc.password).Contains(a.password) && a.username.Equals(acc.username))
                 {
+                    Console.WriteLine(passwordEncoder(acc.password));
+
                     getUserWithAccount(a);
                     recentAccount = a;
                     return true;
@@ -94,7 +97,7 @@ namespace NoteMakingApp.Models
         }
         public void getUserWithAccount(Account acc)
         {
-            foreach(User u in users)
+            foreach (User u in users)
             {
                 if (u.account.Equals(acc))
                 {
@@ -106,6 +109,41 @@ namespace NoteMakingApp.Models
         {
             recentUser = null;
             recentAccount = null;
+        }
+        public void saveAccount(Account acc)
+        {
+            string queryFrame = "INSERT into Accounts (Id,username,password,created,creator) VALUES (@Id,@username,@password,@created,@creator)";
+
+            using (SqlCommand insert = new SqlCommand(queryFrame))
+            {
+                insert.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                Console.WriteLine(accounts.Count());
+                insert.Parameters.Add("@Id", SqlDbType.Int).Value = accounts.Count() + 10;
+                insert.Parameters.Add("@username", SqlDbType.NChar).Value = acc.username;
+                insert.Parameters.Add("@password", SqlDbType.NChar).Value = passwordEncoder(acc.password).Substring(0, 10);
+                insert.Parameters.Add("@created", SqlDbType.DateTime).Value = DateTime.Now;/**/
+                insert.Parameters.Add("@creator", SqlDbType.Int).Value = acc.creator;
+
+                insert.ExecuteNonQuery();
+            }
+            populateDataFromTable("Accounts");
+        }
+        private string passwordEncoder(string pass)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // ComputeHash - returns byte array  
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(pass));
+
+                // Convert byte array to a string   
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
     }
 }
