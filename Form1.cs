@@ -43,6 +43,7 @@ namespace NoteMakingApp
                     case "Login":
                         this.loginPanel1.Hide();
                         this.navigationBar.Show();
+                        this.commandBar1.Show();
                         break;
 
                 }

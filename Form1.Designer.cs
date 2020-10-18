@@ -36,10 +36,20 @@ namespace NoteMakingApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.commandBar1 = new NoteMakingApp.ViewComponents.CommandBar();
             this.registerPanel = new NoteMakingApp.ViewComponents.AccountRegister();
             this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
             this.navigationBar = new NoteMakingApp.ViewComponents.NavigationBar();
             this.SuspendLayout();
+            // 
+            // commandBar1
+            // 
+            this.commandBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.commandBar1.Location = new System.Drawing.Point(413, 38);
+            this.commandBar1.Name = "commandBar1";
+            this.commandBar1.Size = new System.Drawing.Size(800, 69);
+            this.commandBar1.TabIndex = 3;
+            this.commandBar1.Visible = false;
             // 
             // registerPanel
             // 
@@ -62,12 +72,11 @@ namespace NoteMakingApp
             // navigationBar
             // 
             this.navigationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.navigationBar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.navigationBar.Location = new System.Drawing.Point(1, 2);
-            this.navigationBar.Margin = new System.Windows.Forms.Padding(5);
+            this.navigationBar.Margin = new System.Windows.Forms.Padding(4);
             this.navigationBar.Name = "navigationBar";
-            this.navigationBar.Size = new System.Drawing.Size(252, 522);
-            this.navigationBar.TabIndex = 1;
+            this.navigationBar.Size = new System.Drawing.Size(228, 479);
+            this.navigationBar.TabIndex = 4;
             this.navigationBar.Visible = false;
             // 
             // Form1
@@ -76,8 +85,9 @@ namespace NoteMakingApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1216, 534);
-            this.Controls.Add(this.registerPanel);
             this.Controls.Add(this.navigationBar);
+            this.Controls.Add(this.commandBar1);
+            this.Controls.Add(this.registerPanel);
             this.Controls.Add(this.loginPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
@@ -90,6 +100,7 @@ namespace NoteMakingApp
 
         private LoginPanel loginPanel1;
         private AccountRegister registerPanel;
+        private CommandBar commandBar1;
         private NavigationBar navigationBar;
     }
 }

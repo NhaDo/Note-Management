@@ -42,3 +42,21 @@ G:\programming projects\Do An LTTQ\Note-Management\obj\Debug\NoteMakingApp.exe
 G:\programming projects\Do An LTTQ\Note-Management\obj\Debug\NoteMakingApp.pdb
 G:\programming projects\Do An LTTQ\Note-Management\obj\Debug\NoteMakingApp.Form1.resources
 G:\programming projects\Do An LTTQ\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountRegister.resources
+G:\programming projects\LTTQ\Note-Management\bin\Debug\Data\Database.mdf
+G:\programming projects\LTTQ\Note-Management\bin\Debug\Data\Database_log.ldf
+G:\programming projects\LTTQ\Note-Management\bin\Debug\NoteMakingApp.exe.config
+G:\programming projects\LTTQ\Note-Management\bin\Debug\NoteMakingApp.exe
+G:\programming projects\LTTQ\Note-Management\bin\Debug\NoteMakingApp.pdb
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.csprojAssemblyReference.cache
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.Form1.resources
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.Properties.Resources.resources
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountRegister.resources
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.LoginPanel.resources
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.NavigationBar.resources
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.NavigationOption.resources
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.csproj.GenerateResource.cache
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.csproj.CoreCompileInputs.cache
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.exe
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.pdb
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.CommandBar.resources
+G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.MainDomain.resources
