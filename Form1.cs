@@ -42,6 +42,7 @@ namespace NoteMakingApp
                 {
                     case "Login":
                         this.loginPanel1.Hide();
+                        this.navigationBar.username.Text = IDname;
                         this.navigationBar.Show();
                         this.commandBar1.Show();
                         break;
@@ -69,5 +70,6 @@ namespace NoteMakingApp
             loggedIn = lg;
             setWindow("Login");
         }
+        public static string IDname;
     } 
 }

@@ -27,12 +27,13 @@ namespace NoteMakingApp.ViewComponents
                 Account acc = new Account()
                 {
                     username = iUsername.Text,
-                    password = iPassword.Text
+                    password = iPassword.Text                    
                 };
                 if (checkData(acc))
                 {
                     Console.WriteLine("login step");
                     Form1.getInstance().setLoggedIn(true);
+                    Form1.IDname =  acc.username; // here
                 }
             }
 
