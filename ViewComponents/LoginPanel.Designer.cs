@@ -49,6 +49,7 @@ namespace NoteMakingApp.ViewComponents
             this.Login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(41, 16);
+
             this.Login.TabIndex = 0;
             this.Login.Text = "Login";
             // 
@@ -60,6 +61,7 @@ namespace NoteMakingApp.ViewComponents
             this.Username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(71, 16);
+
             this.Username.TabIndex = 1;
             this.Username.Text = "Username";
             // 
@@ -71,6 +73,7 @@ namespace NoteMakingApp.ViewComponents
             this.Password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(68, 16);
+
             this.Password.TabIndex = 2;
             this.Password.Text = "Password";
             // 
@@ -90,6 +93,7 @@ namespace NoteMakingApp.ViewComponents
             this.iPassword.PasswordChar = '*';
             this.iPassword.Size = new System.Drawing.Size(132, 22);
             this.iPassword.TabIndex = 4;
+            this.iPassword.UseSystemPasswordChar = true;
             // 
             // eUsername
             // 
@@ -99,6 +103,7 @@ namespace NoteMakingApp.ViewComponents
             this.eUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.eUsername.Name = "eUsername";
             this.eUsername.Size = new System.Drawing.Size(79, 16);
+
             this.eUsername.TabIndex = 5;
             this.eUsername.Text = "eUsername";
             this.eUsername.Visible = false;
@@ -111,6 +116,7 @@ namespace NoteMakingApp.ViewComponents
             this.ePassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ePassword.Name = "ePassword";
             this.ePassword.Size = new System.Drawing.Size(76, 16);
+
             this.ePassword.TabIndex = 6;
             this.ePassword.Text = "ePassword";
             this.ePassword.Visible = false;
@@ -119,6 +125,7 @@ namespace NoteMakingApp.ViewComponents
             // 
             this.bLogin.ForeColor = System.Drawing.Color.Black;
             this.bLogin.Location = new System.Drawing.Point(129, 193);
+
             this.bLogin.Margin = new System.Windows.Forms.Padding(4);
             this.bLogin.Name = "bLogin";
             this.bLogin.Size = new System.Drawing.Size(100, 28);
@@ -139,6 +146,7 @@ namespace NoteMakingApp.ViewComponents
             this.bRegister.UseVisualStyleBackColor = true;
             this.bRegister.Click += new System.EventHandler(this.bRegister_Click);
             // 
+
             // LoginPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

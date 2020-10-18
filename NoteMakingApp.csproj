@@ -86,12 +86,29 @@
     </Compile>
     <Compile Include="ViewComponents\AccountRegister.Designer.cs">
       <DependentUpon>AccountRegister.cs</DependentUpon>
+    <Compile Include="Resources\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\Note.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\CommandBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\CommandBar.Designer.cs">
+      <DependentUpon>CommandBar.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\LoginPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ViewComponents\LoginPanel.Designer.cs">
       <DependentUpon>LoginPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\MainDomain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\MainDomain.Designer.cs">
+      <DependentUpon>MainDomain.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\NavigationBar.cs">
       <SubType>UserControl</SubType>
@@ -116,12 +133,18 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ViewComponents\AccountRegister.resx">
       <DependentUpon>AccountRegister.cs</DependentUpon>
+    <EmbeddedResource Include="ViewComponents\CommandBar.resx">
+      <DependentUpon>CommandBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\LoginPanel.resx">
       <DependentUpon>LoginPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\MainDomain.resx">
+      <DependentUpon>MainDomain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\NavigationBar.resx">
       <DependentUpon>NavigationBar.cs</DependentUpon>
@@ -173,6 +196,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Note.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

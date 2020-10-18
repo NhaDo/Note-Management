@@ -39,6 +39,8 @@ namespace NoteMakingApp
             this.registerPanel = new NoteMakingApp.ViewComponents.AccountRegister();
             this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
             this.navigationBar = new NoteMakingApp.ViewComponents.NavigationBar();
+            this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
+            this.commandBar1 = new NoteMakingApp.ViewComponents.CommandBar();
             this.SuspendLayout();
             // 
             // registerPanel
@@ -69,6 +71,13 @@ namespace NoteMakingApp
             this.navigationBar.Size = new System.Drawing.Size(252, 522);
             this.navigationBar.TabIndex = 1;
             this.navigationBar.Visible = false;
+            //
+            // commandBar1
+            // 
+            this.commandBar1.Location = new System.Drawing.Point(345, 12);
+            this.commandBar1.Name = "commandBar1";
+            this.commandBar1.Size = new System.Drawing.Size(627, 99);
+            this.commandBar1.TabIndex = 2;
             // 
             // Form1
             // 
@@ -77,11 +86,13 @@ namespace NoteMakingApp
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1216, 534);
             this.Controls.Add(this.registerPanel);
+            this.Controls.Add(this.commandBar1);
             this.Controls.Add(this.navigationBar);
             this.Controls.Add(this.loginPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Note Management App";
             this.ResumeLayout(false);
 
         }
@@ -91,6 +102,7 @@ namespace NoteMakingApp
         private LoginPanel loginPanel1;
         private AccountRegister registerPanel;
         private NavigationBar navigationBar;
+        private CommandBar commandBar1;
     }
 }
 

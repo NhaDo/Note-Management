@@ -13,6 +13,7 @@ C:\Users\ngoho\source\repos\NoteMakingApp\obj\Debug\NoteMakingApp.pdb
 C:\Users\ngoho\source\repos\NoteMakingApp\obj\Debug\NoteMakingApp.csprojAssemblyReference.cache
 C:\Users\ngoho\source\repos\NoteMakingApp\bin\Debug\Data\Database.mdf
 C:\Users\ngoho\source\repos\NoteMakingApp\bin\Debug\Data\Database_log.ldf
+<<<<<<< HEAD
 C:\Users\ngoho\Desktop\NoteMakingApp\bin\Debug\Data\Database.mdf
 C:\Users\ngoho\Desktop\NoteMakingApp\bin\Debug\Data\Database_log.ldf
 C:\Users\ngoho\Desktop\NoteMakingApp\bin\Debug\NoteMakingApp.exe.config
@@ -42,3 +43,22 @@ G:\programming projects\Do An LTTQ\Note-Management\obj\Debug\NoteMakingApp.exe
 G:\programming projects\Do An LTTQ\Note-Management\obj\Debug\NoteMakingApp.pdb
 G:\programming projects\Do An LTTQ\Note-Management\obj\Debug\NoteMakingApp.Form1.resources
 G:\programming projects\Do An LTTQ\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountRegister.resources
+=======
+C:\Users\Seledy\Documents\GitHub\Note-Management\bin\Debug\Data\Database.mdf
+C:\Users\Seledy\Documents\GitHub\Note-Management\bin\Debug\Data\Database_log.ldf
+C:\Users\Seledy\Documents\GitHub\Note-Management\bin\Debug\NoteMakingApp.exe.config
+C:\Users\Seledy\Documents\GitHub\Note-Management\bin\Debug\NoteMakingApp.exe
+C:\Users\Seledy\Documents\GitHub\Note-Management\bin\Debug\NoteMakingApp.pdb
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.csprojAssemblyReference.cache
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.Form1.resources
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.Properties.Resources.resources
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.LoginPanel.resources
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.NavigationBar.resources
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.NavigationOption.resources
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.csproj.GenerateResource.cache
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.csproj.CoreCompileInputs.cache
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.exe
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.pdb
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.MainDomain.resources
+C:\Users\Seledy\Documents\GitHub\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.CommandBar.resources
+>>>>>>> nghia
