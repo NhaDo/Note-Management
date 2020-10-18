@@ -34,10 +34,12 @@ namespace NoteMakingApp.ViewComponents
             // 
             // NavigationBar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NavigationBar";
-            this.Size = new System.Drawing.Size(150, 422);
+            this.Size = new System.Drawing.Size(228, 479);
             this.ResumeLayout(false);
 
         }

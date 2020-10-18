@@ -29,7 +29,7 @@ namespace NoteMakingApp.Models
         }
         private void establishDbConnection()
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\ngoho\source\repos\NoteMakingApp\Data\Database.mdf; Integrated Security = True";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = G:\programming projects\Do An LTTQ\Note-Management\Data\Database.mdf; Integrated Security = True";
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
