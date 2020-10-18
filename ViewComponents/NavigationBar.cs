@@ -46,18 +46,35 @@ namespace NoteMakingApp.ViewComponents
         private void addNavOption(string tt, string img)
         {
             NavigationOption option = new NavigationOption(tt, img);
-            option.Size = new System.Drawing.Size(163, 90);
-            option.Location = new System.Drawing.Point(0, option.Size.Height * navOptions.Count());
+            //option.Size = new System.Drawing.Size(163, 90);
+            option.Location = new System.Drawing.Point(0, (option.Size.Height+18) * navOptions.Count()+250);
             option.Click += new System.EventHandler(this.option_click);
+            option.initOption();
             navOptions.Add(option);
             this.Controls.Add(navOptions[navOptions.Count - 1]);
             this.PerformLayout();
         }
         private void option_click(object sender, EventArgs e)
         {
-            NavigationOption option = sender as NavigationOption;
-            recentOption = option.opTitle.Text;
-            Form1.getInstance().setWindow(recentOption);
+            if (OneIsClicked == false)
+            {
+                NavigationOption option = sender as NavigationOption;
+                recent_selected = option; // here
+                recentOption = option.opTitle.Text;
+                Form1.getInstance().setWindow(recentOption);
+                OneIsClicked = true;
+            }
+            else
+            {
+                NavigationOption option = sender as NavigationOption;
+                recent_selected.defautsettings(); // here
+                recent_selected = option; // here
+                recentOption = option.opTitle.Text;
+                Form1.getInstance().setWindow(recentOption);
+                OneIsClicked = true;
+            }
         }
+        public bool OneIsClicked = false;
+        public NavigationOption recent_selected; // here
     }
 }

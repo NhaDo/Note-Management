@@ -35,6 +35,7 @@
             // 
             // opIcon
             // 
+            this.opIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.opIcon.Location = new System.Drawing.Point(0, 0);
             this.opIcon.Margin = new System.Windows.Forms.Padding(4);
             this.opIcon.Name = "opIcon";
@@ -46,11 +47,12 @@
             // opTitle
             // 
             this.opTitle.AutoSize = true;
-            this.opTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.opTitle.Location = new System.Drawing.Point(58, 15);
+            this.opTitle.Font = new System.Drawing.Font("Palatino Linotype", 12.89552F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
+            this.opTitle.Location = new System.Drawing.Point(58, 6);
             this.opTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.opTitle.Name = "opTitle";
-            this.opTitle.Size = new System.Drawing.Size(89, 29);
+            this.opTitle.Size = new System.Drawing.Size(88, 32);
             this.opTitle.TabIndex = 1;
             this.opTitle.Text = "opTitle";
             this.opTitle.Click += new System.EventHandler(this.opTitle_Click);
@@ -59,7 +61,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.Controls.Add(this.opTitle);
             this.Controls.Add(this.opIcon);
             this.Margin = new System.Windows.Forms.Padding(4);

@@ -27,8 +27,8 @@ namespace NoteMakingApp
         public Form1()
         {
             InitializeComponent();
-            List<string> titles = new List<string> { "Notes", "Account", "Settings" };
-            List<string> images = new List<string> { "Notes", "Account", "Settings" };
+            List<string> titles = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
+            List<string> images = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
             this.navigationBar.addNavOptions(titles, images);
             instance = this;
             setWindow();
@@ -53,7 +53,7 @@ namespace NoteMakingApp
                 {
                     case "Login":
                         this.registerPanel.Hide();
-                        this.loginPanel1.Show();
+                        this.loginPanel1.Show();                        
                         break;
                     case "Register":
                         this.loginPanel1.Hide();
@@ -68,5 +68,5 @@ namespace NoteMakingApp
             loggedIn = lg;
             setWindow("Login");
         }
-    }
+    } 
 }
