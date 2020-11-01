@@ -42,7 +42,7 @@
             this.opIcon.Size = new System.Drawing.Size(50, 44);
             this.opIcon.TabIndex = 0;
             this.opIcon.TabStop = false;
-            this.opIcon.Click += new System.EventHandler(this.opIcon_Click);
+            //this.opIcon.Click += new System.EventHandler(this.opIcon_Click);
             // 
             // opTitle
             // 
@@ -55,7 +55,7 @@
             this.opTitle.Size = new System.Drawing.Size(88, 32);
             this.opTitle.TabIndex = 1;
             this.opTitle.Text = "opTitle";
-            this.opTitle.Click += new System.EventHandler(this.opTitle_Click);
+            //this.opTitle.Click += new System.EventHandler(this.opTitle_Click);
             // 
             // NavigationOption
             // 

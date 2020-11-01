@@ -32,8 +32,9 @@ namespace NoteMakingApp.ViewComponents
                 if (checkData(acc))
                 {
                     Console.WriteLine("login step");
+                    Form1.IDname = acc.username; // here
                     Form1.getInstance().setLoggedIn(true);
-                    Form1.IDname =  acc.username; // here
+                    
                 }
             }
 

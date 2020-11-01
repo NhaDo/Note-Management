@@ -39,9 +39,9 @@ namespace NoteMakingApp.ViewComponents
             this.MouseLeave += new System.EventHandler(this.NavigationOption_MouseLeave);
             this.opTitle.MouseLeave += new System.EventHandler(this.Optitle_MouseLeave);
             this.opIcon.MouseLeave += new System.EventHandler(this.OpIcon_MouseLeave);
-            this.Click += new System.EventHandler(this.NavigationOption_Click);
-            this.opTitle.Click += new System.EventHandler(this.opTitle_Click);
-            this.opIcon.Click += new System.EventHandler(this.opIcon_Click);
+            //this.Click += new System.EventHandler(this.NavigationOption_Click);
+            //this.opTitle.Click += new System.EventHandler(this.opTitle_Click);
+            //this.opIcon.Click += new System.EventHandler(this.opIcon_Click);
         }
         private void NavigationOption_MouseHover(object sender, EventArgs e)
         {
@@ -91,7 +91,8 @@ namespace NoteMakingApp.ViewComponents
         private void NavigationOption_Load(object sender, EventArgs e)
         {
 
-        }        
+        }
+        /*
         private void opTitle_Click(object sender, EventArgs e)
         {
             Form1.getInstance().setWindow(opTitle.Text);
@@ -115,6 +116,8 @@ namespace NoteMakingApp.ViewComponents
             this.Isclicked = true;
 
         }
-        public bool Isclicked=false;
+        */
+        
+        public bool Isclicked = false;
     }
 }
