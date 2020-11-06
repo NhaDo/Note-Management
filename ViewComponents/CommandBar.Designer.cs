@@ -28,121 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.customButton4 = new CustomButton.CustomButton();
-            this.customButton3 = new CustomButton.CustomButton();
-            this.customButton2 = new CustomButton.CustomButton();
-            this.customButton1 = new CustomButton.CustomButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.customButton1 = new NoteMakingApp.ViewComponents.CustomButton();
+            this.customButton2 = new NoteMakingApp.ViewComponents.CustomButton();
+            this.customButton3 = new NoteMakingApp.ViewComponents.CustomButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // textBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Date Created",
-            "Name",
-            "Type"});
-            this.comboBox1.Location = new System.Drawing.Point(120, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 1;
+            this.textBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            "Dog",
+            "Cat",
+            "Buffalo",
+            "Duck",
+            "Pig",
+            "Snake",
+            "Goat",
+            "Dragon",
+            "Nasus"});
+            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBox1.Location = new System.Drawing.Point(19, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(276, 22);
+            this.textBox1.TabIndex = 3;
             // 
-            // customButton4
+            // pictureBox1
             // 
-            this.customButton4.BorderColor = System.Drawing.Color.Transparent;
-            this.customButton4.ButtonColor = System.Drawing.SystemColors.Control;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.Font = new System.Drawing.Font("Georgia", 9F);
-            this.customButton4.Location = new System.Drawing.Point(723, 5);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.customButton4.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.customButton4.OnHoverTextColor = System.Drawing.Color.Snow;
-            this.customButton4.Size = new System.Drawing.Size(60, 60);
-            this.customButton4.TabIndex = 4;
-            this.customButton4.Text = "Edit";
-            this.customButton4.TextColor = System.Drawing.Color.Black;
-            this.customButton4.UseVisualStyleBackColor = true;
-            // 
-            // customButton3
-            // 
-            this.customButton3.BorderColor = System.Drawing.Color.Transparent;
-            this.customButton3.ButtonColor = System.Drawing.SystemColors.Control;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.Font = new System.Drawing.Font("Georgia", 9F);
-            this.customButton3.Location = new System.Drawing.Point(648, 5);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.customButton3.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.customButton3.OnHoverTextColor = System.Drawing.Color.Snow;
-            this.customButton3.Size = new System.Drawing.Size(60, 60);
-            this.customButton3.TabIndex = 3;
-            this.customButton3.Text = "Delete";
-            this.customButton3.TextColor = System.Drawing.Color.Black;
-            this.customButton3.UseVisualStyleBackColor = true;
-            // 
-            // customButton2
-            // 
-            this.customButton2.BorderColor = System.Drawing.Color.Transparent;
-            this.customButton2.ButtonColor = System.Drawing.SystemColors.Control;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.Font = new System.Drawing.Font("Georgia", 9F);
-            this.customButton2.Location = new System.Drawing.Point(573, 5);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.customButton2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.customButton2.OnHoverTextColor = System.Drawing.Color.Snow;
-            this.customButton2.Size = new System.Drawing.Size(60, 60);
-            this.customButton2.TabIndex = 2;
-            this.customButton2.Text = "Add";
-            this.customButton2.TextColor = System.Drawing.Color.Black;
-            this.customButton2.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.search3;
+            this.pictureBox1.Location = new System.Drawing.Point(270, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 22);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // customButton1
             // 
-            this.customButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.customButton1.ButtonColor = System.Drawing.Color.White;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Georgia", 9F);
-            this.customButton1.Location = new System.Drawing.Point(21, 19);
+            this.customButton1.Location = new System.Drawing.Point(356, 3);
             this.customButton1.Name = "customButton1";
-            this.customButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.customButton1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.customButton1.OnHoverTextColor = System.Drawing.Color.Snow;
-            this.customButton1.Size = new System.Drawing.Size(93, 32);
-            this.customButton1.TabIndex = 0;
-            this.customButton1.Text = "Sort by";
-            this.customButton1.TextColor = System.Drawing.Color.Black;
-            this.customButton1.UseVisualStyleBackColor = true;
+            this.customButton1.Size = new System.Drawing.Size(111, 100);
+            this.customButton1.TabIndex = 5;
+            // 
+            // customButton2
+            // 
+            this.customButton2.Location = new System.Drawing.Point(473, 3);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(111, 100);
+            this.customButton2.TabIndex = 6;
+            // 
+            // customButton3
+            // 
+            this.customButton3.Location = new System.Drawing.Point(590, 3);
+            this.customButton3.Name = "customButton3";
+            this.customButton3.Size = new System.Drawing.Size(111, 100);
+            this.customButton3.TabIndex = 7;
             // 
             // CommandBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.Controls.Add(this.customButton4);
             this.Controls.Add(this.customButton3);
             this.Controls.Add(this.customButton2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBox1);
             this.Name = "CommandBar";
-            this.Size = new System.Drawing.Size(802, 71);
+            this.Size = new System.Drawing.Size(704, 106);
+            this.Load += new System.EventHandler(this.CommandBar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private CustomButton.CustomButton customButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private CustomButton.CustomButton customButton2;
-        private CustomButton.CustomButton customButton3;
-        private CustomButton.CustomButton customButton4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private CustomButton customButton1;
+        private CustomButton customButton2;
+        private CustomButton customButton3;
     }
 }

@@ -36,20 +36,22 @@ namespace NoteMakingApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.commandBar1 = new NoteMakingApp.ViewComponents.CommandBar();
+            this.navigationBar = new NoteMakingApp.ViewComponents.NavigationBar();
             this.registerPanel = new NoteMakingApp.ViewComponents.AccountRegister();
             this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
-            this.navigationBar = new NoteMakingApp.ViewComponents.NavigationBar();
+            this.commandBar1 = new NoteMakingApp.ViewComponents.CommandBar();
+            this.note1 = new NoteMakingApp.ViewComponents.Note();
             this.SuspendLayout();
             // 
-            // commandBar1
+            // navigationBar
             // 
-            this.commandBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.commandBar1.Location = new System.Drawing.Point(413, 38);
-            this.commandBar1.Name = "commandBar1";
-            this.commandBar1.Size = new System.Drawing.Size(800, 69);
-            this.commandBar1.TabIndex = 3;
-            this.commandBar1.Visible = false;
+            this.navigationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.navigationBar.Location = new System.Drawing.Point(1, 2);
+            this.navigationBar.Margin = new System.Windows.Forms.Padding(4);
+            this.navigationBar.Name = "navigationBar";
+            this.navigationBar.Size = new System.Drawing.Size(228, 479);
+            this.navigationBar.TabIndex = 4;
+            this.navigationBar.Visible = false;
             // 
             // registerPanel
             // 
@@ -69,15 +71,19 @@ namespace NoteMakingApp
             this.loginPanel1.Size = new System.Drawing.Size(571, 236);
             this.loginPanel1.TabIndex = 0;
             // 
-            // navigationBar
+            // commandBar1
             // 
-            this.navigationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.navigationBar.Location = new System.Drawing.Point(1, 2);
-            this.navigationBar.Margin = new System.Windows.Forms.Padding(4);
-            this.navigationBar.Name = "navigationBar";
-            this.navigationBar.Size = new System.Drawing.Size(228, 479);
-            this.navigationBar.TabIndex = 4;
-            this.navigationBar.Visible = false;
+            this.commandBar1.Location = new System.Drawing.Point(481, 25);
+            this.commandBar1.Name = "commandBar1";
+            this.commandBar1.Size = new System.Drawing.Size(704, 131);
+            this.commandBar1.TabIndex = 5;
+            // 
+            // note1
+            // 
+            this.note1.Location = new System.Drawing.Point(89, 137);
+            this.note1.Name = "note1";
+            this.note1.Size = new System.Drawing.Size(269, 330);
+            this.note1.TabIndex = 6;
             // 
             // Form1
             // 
@@ -85,8 +91,9 @@ namespace NoteMakingApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1216, 534);
-            this.Controls.Add(this.navigationBar);
+            this.Controls.Add(this.note1);
             this.Controls.Add(this.commandBar1);
+            this.Controls.Add(this.navigationBar);
             this.Controls.Add(this.registerPanel);
             this.Controls.Add(this.loginPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -100,8 +107,9 @@ namespace NoteMakingApp
 
         private LoginPanel loginPanel1;
         private AccountRegister registerPanel;
-        private CommandBar commandBar1;
         private NavigationBar navigationBar;
+        private CommandBar commandBar1;
+        private Note note1;
     }
 }
 
