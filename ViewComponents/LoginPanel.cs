@@ -24,20 +24,22 @@ namespace NoteMakingApp.ViewComponents
 
             if (checkInputs() >= 0)
             {
-                Account acc = new Account()
+                NoteMakingApp.Models.Account acc = new NoteMakingApp.Models.Account()
                 {
                     username = iUsername.Text,
-                    password = iPassword.Text
+                    password = iPassword.Text                    
                 };
                 if (checkData(acc))
                 {
                     Console.WriteLine("login step");
+                    Form1.IDname = acc.username; // here
                     Form1.getInstance().setLoggedIn(true);
+                    
                 }
             }
 
         }
-        private bool checkData(Account acc)
+        private bool checkData(NoteMakingApp.Models.Account acc)
         {
             if (DataHandle.getInstance().doesAccountExit(acc))
             {

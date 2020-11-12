@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace NoteMakingApp.Models
 {
-    class Person
+    public class Person
     {
         public int id { get; set; }
         public int account { get; set; }
+        public DateTime created { get; set; }
+        public string name { get; set; }
+        public string introduction { get; set; }
 
     }
 }
