@@ -24,13 +24,7 @@ namespace NoteMakingApp
         private static void initData()
         {
             data = DataHandle.getInstance();
-            data.saveAccount(
-                new Account()
-                {
-                    username = "1",
-                    password = "2",
-                    creator = 0
-                });
+           
         }
     }
 }

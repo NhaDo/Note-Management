@@ -24,7 +24,7 @@ namespace NoteMakingApp.ViewComponents
 
             if (checkInputs() >= 0)
             {
-                Account acc = new Account()
+                NoteMakingApp.Models.Account acc = new NoteMakingApp.Models.Account()
                 {
                     username = iUsername.Text,
                     password = iPassword.Text                    
@@ -39,7 +39,7 @@ namespace NoteMakingApp.ViewComponents
             }
 
         }
-        private bool checkData(Account acc)
+        private bool checkData(NoteMakingApp.Models.Account acc)
         {
             if (DataHandle.getInstance().doesAccountExit(acc))
             {

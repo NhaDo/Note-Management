@@ -23,7 +23,7 @@ namespace NoteMakingApp.ViewComponents
             if (checkUsername() && checkPassword() && checkConfirmation())
             {
                 DataHandle.getInstance().saveAccount(
-                    new Account()
+                    new NoteMakingApp.Models.Account()
                     {
                         username = iUsername.Text,
                         password = iPassword.Text,

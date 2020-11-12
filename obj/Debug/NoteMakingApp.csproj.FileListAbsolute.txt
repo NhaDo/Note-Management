@@ -60,3 +60,29 @@ G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.exe
 G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.pdb
 G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.CommandBar.resources
 G:\programming projects\LTTQ\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.MainDomain.resources
+C:\Users\ngoho\Desktop\Note-Management\bin\Debug\Data\Database.mdf
+C:\Users\ngoho\Desktop\Note-Management\bin\Debug\Data\Database_log.ldf
+C:\Users\ngoho\Desktop\Note-Management\bin\Debug\NoteMakingApp.exe.config
+C:\Users\ngoho\Desktop\Note-Management\bin\Debug\NoteMakingApp.exe
+C:\Users\ngoho\Desktop\Note-Management\bin\Debug\NoteMakingApp.pdb
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.csprojAssemblyReference.cache
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.Form1.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.Properties.Resources.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountRegister.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountList.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.Account.AccountListItem.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountSubwindow.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountVC.CategorisedDetailPanel.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountVC.DetailItem.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountVC.PersonalDetailsPanel.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.CommandBar.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.LoginPanel.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.MainDomain.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.NavigationBar.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.NavigationOption.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.csproj.GenerateResource.cache
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.csproj.CoreCompileInputs.cache
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.exe
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.pdb
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountVC.EditionItem.resources
+C:\Users\ngoho\Desktop\Note-Management\obj\Debug\NoteMakingApp.ViewComponents.AccountVC.InformationEditor.resources
