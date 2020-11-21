@@ -45,7 +45,7 @@ namespace NoteMakingApp
             // 
             this.navigationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.navigationBar.Location = new System.Drawing.Point(1, 2);
-            this.navigationBar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.navigationBar.Margin = new System.Windows.Forms.Padding(5);
             this.navigationBar.Name = "navigationBar";
             this.navigationBar.Size = new System.Drawing.Size(228, 479);
             this.navigationBar.TabIndex = 4;
@@ -53,18 +53,21 @@ namespace NoteMakingApp
             // 
             // registerPanel
             // 
-            this.registerPanel.Location = new System.Drawing.Point(399, 137);
-            this.registerPanel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.registerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.registerPanel.ForeColor = System.Drawing.Color.Silver;
+            this.registerPanel.Location = new System.Drawing.Point(300, 106);
+            this.registerPanel.Margin = new System.Windows.Forms.Padding(5);
             this.registerPanel.Name = "registerPanel";
-            this.registerPanel.Size = new System.Drawing.Size(409, 288);
+            this.registerPanel.Size = new System.Drawing.Size(625, 395);
             this.registerPanel.TabIndex = 2;
             this.registerPanel.Visible = false;
             // 
             // loginPanel1
             // 
+            this.loginPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.loginPanel1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.loginPanel1.Location = new System.Drawing.Point(354, 106);
-            this.loginPanel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.loginPanel1.Location = new System.Drawing.Point(300, 106);
+            this.loginPanel1.Margin = new System.Windows.Forms.Padding(5);
             this.loginPanel1.Name = "loginPanel1";
             this.loginPanel1.Size = new System.Drawing.Size(625, 344);
             this.loginPanel1.TabIndex = 0;
@@ -78,7 +81,7 @@ namespace NoteMakingApp
             this.Controls.Add(this.navigationBar);
             this.Controls.Add(this.registerPanel);
             this.Controls.Add(this.loginPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
