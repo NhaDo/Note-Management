@@ -44,10 +44,11 @@ namespace NoteMakingApp
             // navigationBar
             // 
             this.navigationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.navigationBar.Location = new System.Drawing.Point(1, 2);
+            this.navigationBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.navigationBar.Location = new System.Drawing.Point(0, 0);
             this.navigationBar.Margin = new System.Windows.Forms.Padding(5);
             this.navigationBar.Name = "navigationBar";
-            this.navigationBar.Size = new System.Drawing.Size(228, 479);
+            this.navigationBar.Size = new System.Drawing.Size(255, 532);
             this.navigationBar.TabIndex = 4;
             this.navigationBar.Visible = false;
             // 

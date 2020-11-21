@@ -28,7 +28,7 @@ namespace NoteMakingApp
         {
             InitializeComponent();
             List<string> titles = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
-            List<string> images = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
+            List<string> images = new List<string> { "HOME.png", "ACCOUNT.png", "SETTINGS.png" };
             this.navigationBar.addNavOptions(titles, images);
             instance = this;
             setWindow();
