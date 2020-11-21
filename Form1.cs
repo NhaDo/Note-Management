@@ -44,7 +44,6 @@ namespace NoteMakingApp
                         this.loginPanel1.Hide();
                         this.navigationBar.username.Text = IDname;
                         this.navigationBar.Show();
-                        this.commandBar1.Show();
                         break;
 
                 }
