@@ -95,7 +95,7 @@ namespace NoteMakingApp.ViewComponents
             this.pnlList.TabIndex = 5;
             this.pnlList.AutoScroll = true;
             this.pnlList.AutoSize = true;
-            this.pnlList.MaximumSize = new System.Drawing.Size(AccountListItem.size.Width, AccountListItem.size.Height * 5);
+            //this.pnlList.MaximumSize = new System.Drawing.Size(AccountListItem.size.Width, AccountListItem.size.Height * 5);
             this.pnlList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             // 
             // AccountList

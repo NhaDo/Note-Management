@@ -36,19 +36,12 @@ namespace NoteMakingApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.accountSubwindow1 = NoteMakingApp.ViewComponents.AccountSubwindow.GetInstance();
             this.navigationBar = new NoteMakingApp.ViewComponents.NavigationBar();
             this.commandBar1 = new NoteMakingApp.ViewComponents.CommandBar();
             this.registerPanel = new NoteMakingApp.ViewComponents.AccountRegister();
             this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
             this.SuspendLayout();
-            // 
-            // accountSubwindow1
-            // 
-            this.accountSubwindow1.Location = new System.Drawing.Point(290, 92);
-            this.accountSubwindow1.Name = "accountSubwindow1";
-            this.accountSubwindow1.Size = new System.Drawing.Size(600, 257);
-            this.accountSubwindow1.TabIndex = 5;
+
             // 
             // navigationBar
             // 
@@ -93,7 +86,6 @@ namespace NoteMakingApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(912, 434);
-            this.Controls.Add(this.accountSubwindow1);
             this.Controls.Add(this.navigationBar);
             this.Controls.Add(this.commandBar1);
             this.Controls.Add(this.registerPanel);
@@ -102,6 +94,20 @@ namespace NoteMakingApp
             this.Text = "Form1";
             this.ResumeLayout(false);
 
+        }
+
+        private void InitAccountSubwindow()
+        {
+            this.accountSubwindow1 = NoteMakingApp.ViewComponents.AccountSubwindow.GetInstance();
+            // 
+            // accountSubwindow1
+            // 
+            this.accountSubwindow1.Location = new System.Drawing.Point(290, 92);
+            this.accountSubwindow1.Name = "accountSubwindow1";
+            this.accountSubwindow1.Size = new System.Drawing.Size(600, 257);
+            this.accountSubwindow1.TabIndex = 5;
+            // add controls
+            this.Controls.Add(this.accountSubwindow1);
         }
 
         #endregion
