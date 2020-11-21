@@ -12,6 +12,8 @@ namespace NoteMakingApp.ViewComponents
 {
     public partial class CustomButton : UserControl
     {
+        public int fun;
+        public bool clicked = false;
         public CustomButton()
         {
             InitializeComponent();
@@ -20,11 +22,14 @@ namespace NoteMakingApp.ViewComponents
             this.detail.BackColor = Color.Yellow;
             this.detail.Visible = false;
             this.detail.BorderStyle = BorderStyle.FixedSingle;
+            this.button.ImageList = buttonImage;
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             this.button.Cursor = Cursors.Hand;
+            this.button.ImageIndex += 1;
+
         }
 
         private void button1_MouseHover(object sender, EventArgs e)
@@ -36,6 +41,7 @@ namespace NoteMakingApp.ViewComponents
         {
             this.detail.Visible = false;
             this.button.Cursor = Cursors.Default;
+            this.button.ImageIndex -= 1;
         }
 
         public void getText(string tex)
@@ -43,9 +49,31 @@ namespace NoteMakingApp.ViewComponents
             this.detail.Text = tex;
         }
 
-        public void getImage(string path1)
+
+        public void setImage(int index)
         {
-            this.button.Image = Image.FromFile(path1);
+            this.button.ImageIndex = index;
+        }
+
+        public void setFunction(int index)
+        {
+            this.fun = index;
+        }
+
+        public void button_Click(object sender, EventArgs e)
+        {
+            switch (fun)
+            {
+                case 1:
+                    Form1.getInstance().NewNote();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }
+
+
         }
     }
 }

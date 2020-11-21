@@ -77,6 +77,7 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Data\DataHandle.cs" />
     <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
@@ -110,6 +111,12 @@
     <Compile Include="ViewComponents\LoginPanel.Designer.cs">
       <DependentUpon>LoginPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewComponents\MainDomain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\MainDomain.Designer.cs">
+      <DependentUpon>MainDomain.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewComponents\NavigationBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +128,12 @@
     </Compile>
     <Compile Include="ViewComponents\NavigationOption.Designer.cs">
       <DependentUpon>NavigationOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\NewNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\NewNote.Designer.cs">
+      <DependentUpon>NewNote.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\Note.cs">
       <SubType>UserControl</SubType>
@@ -148,11 +161,17 @@
     <EmbeddedResource Include="ViewComponents\LoginPanel.resx">
       <DependentUpon>LoginPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\MainDomain.resx">
+      <DependentUpon>MainDomain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\NavigationBar.resx">
       <DependentUpon>NavigationBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\NavigationOption.resx">
       <DependentUpon>NavigationOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\NewNote.resx">
+      <DependentUpon>NewNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\Note.resx">
       <DependentUpon>Note.cs</DependentUpon>

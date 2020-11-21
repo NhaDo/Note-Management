@@ -12,6 +12,8 @@ namespace NoteMakingApp.ViewComponents
 {
     public partial class CommandBar : UserControl
     {
+        public int fun;
+
         public CommandBar()
         {
             InitializeComponent();
@@ -19,17 +21,26 @@ namespace NoteMakingApp.ViewComponents
 
         private void CommandBar_Load(object sender, EventArgs e)
         {
-            customButton1.getImage("C:/Users/seled/Desktop/Note-Management/Resources/add.png");
+            customButton1.setImage(0);
             customButton1.getText("New");
-            customButton2.getImage("C:/Users/seled/Desktop/Note-Management/Resources/edit.png");
+            
+            customButton2.setImage(2);
             customButton2.getText("Edit");
-            customButton3.getImage("C:/Users/seled/Desktop/Note-Management/Resources/delete.png");
+            
+            customButton3.setImage(4);
             customButton3.getText("Delete");
+            
         }
 
-        private void customButton2_Load(object sender, EventArgs e)
+        private void customButton1_MouseClick(object sender, MouseEventArgs e)
         {
-
+            MainDomain mainDomain = new MainDomain();
+            
         }
+
+
+
+
+
     }
 }

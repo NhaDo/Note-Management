@@ -36,12 +36,19 @@ namespace NoteMakingApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.mainDomain1 = new NoteMakingApp.ViewComponents.MainDomain();
             this.navigationBar = new NoteMakingApp.ViewComponents.NavigationBar();
             this.registerPanel = new NoteMakingApp.ViewComponents.AccountRegister();
             this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
-            this.commandBar1 = new NoteMakingApp.ViewComponents.CommandBar();
-            this.note1 = new NoteMakingApp.ViewComponents.Note();
             this.SuspendLayout();
+            // 
+            // mainDomain1
+            // 
+            this.mainDomain1.Location = new System.Drawing.Point(236, 12);
+            this.mainDomain1.Name = "mainDomain1";
+            this.mainDomain1.Size = new System.Drawing.Size(968, 510);
+            this.mainDomain1.TabIndex = 5;
+            this.mainDomain1.Visible = false;
             // 
             // navigationBar
             // 
@@ -71,33 +78,19 @@ namespace NoteMakingApp
             this.loginPanel1.Size = new System.Drawing.Size(571, 236);
             this.loginPanel1.TabIndex = 0;
             // 
-            // commandBar1
-            // 
-            this.commandBar1.Location = new System.Drawing.Point(481, 25);
-            this.commandBar1.Name = "commandBar1";
-            this.commandBar1.Size = new System.Drawing.Size(704, 131);
-            this.commandBar1.TabIndex = 5;
-            // 
-            // note1
-            // 
-            this.note1.Location = new System.Drawing.Point(89, 137);
-            this.note1.Name = "note1";
-            this.note1.Size = new System.Drawing.Size(269, 330);
-            this.note1.TabIndex = 6;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1216, 534);
-            this.Controls.Add(this.note1);
-            this.Controls.Add(this.commandBar1);
+            this.Controls.Add(this.mainDomain1);
             this.Controls.Add(this.navigationBar);
             this.Controls.Add(this.registerPanel);
             this.Controls.Add(this.loginPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
 
@@ -108,8 +101,7 @@ namespace NoteMakingApp
         private LoginPanel loginPanel1;
         private AccountRegister registerPanel;
         private NavigationBar navigationBar;
-        private CommandBar commandBar1;
-        private Note note1;
+        private MainDomain mainDomain1;
     }
 }
 

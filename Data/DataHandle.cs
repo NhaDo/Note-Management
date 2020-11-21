@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NoteMakingApp.Models
 {
@@ -17,19 +18,21 @@ namespace NoteMakingApp.Models
         static List<Account> accounts { get; set; }
         static User recentUser { get; set; }
         static Account recentAccount { get; set; }
+        static List<Note> notes { get; set; } 
         public DataHandle()
         {
             users = new List<User>();
             accounts = new List<Account>();
             recentUser = null;
             recentAccount = null;
+            notes = new List<Note>();
 
             establishDbConnection();
             getData();
         }
         private void establishDbConnection()
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\seled\Desktop\Note-Management\Data\Database.mdf; Integrated Security = True";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = " + Application.StartupPath + @"\Data\Database.mdf; Integrated Security = True";
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
@@ -53,6 +56,17 @@ namespace NoteMakingApp.Models
                             creator = Convert.ToInt32(reader["creator"])
                         });
                         break;
+
+                    case "note":
+                        notes.Add(new Note()
+                        {
+                            id = Convert.ToInt32(reader["ID"]),
+                            Tittle = reader["Tittle"].ToString().Trim(),
+                            Content = reader["Content"].ToString().Trim()
+                        });
+                        break;
+
+                    
                 }
             }
             reader.Close();
@@ -119,7 +133,7 @@ namespace NoteMakingApp.Models
                 insert.Connection = DbConnection;
                 Console.WriteLine("==========================");
                 Console.WriteLine(accounts.Count());
-                insert.Parameters.Add("@Id", SqlDbType.Int).Value = accounts.Count() + 10;
+                insert.Parameters.Add("@Id", SqlDbType.Int).Value = accounts.Count() + 5;
                 insert.Parameters.Add("@username", SqlDbType.NChar).Value = acc.username;
                 insert.Parameters.Add("@password", SqlDbType.NChar).Value = passwordEncoder(acc.password).Substring(0, 10);
                 insert.Parameters.Add("@created", SqlDbType.DateTime).Value = DateTime.Now;/**/
@@ -145,5 +159,21 @@ namespace NoteMakingApp.Models
                 return builder.ToString();
             }
         }
+
+        /*public void CreateNewNote(Note note)
+        {
+            string query = "Insert into note(ID, Tittle, Content) values (@ID, @Tittle, @Content)";
+            using (SqlCommand newnote = new SqlCommand(query))
+            {
+                newnote.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                Console.WriteLine(notes.Count());
+                newnote.Parameters.Add("@Id", SqlDbType.Int).Value = notes.Count() + 1;
+                newnote.Parameters.Add("@Tittle", SqlDbType.NChar).Value = note.Tittle;
+                newnote.Parameters.Add("@Content", SqlDbType.NChar).Value = note.Content;
+                newnote.ExecuteNonQuery();
+            }
+            populateDataFromTable("note");
+        }*/
     }
 }

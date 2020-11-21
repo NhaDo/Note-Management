@@ -16,5 +16,15 @@ namespace NoteMakingApp.ViewComponents
         {
             InitializeComponent();
         }
+
+        public void setTittle(string text)
+        {
+            this.lbTittle.Text = text;
+        }
+
+        public void setContent(string text)
+        {
+            this.lbContent.Text = text;
+        }
     }
 }

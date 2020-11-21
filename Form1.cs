@@ -24,6 +24,8 @@ namespace NoteMakingApp
             return instance;
         }
 
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +34,7 @@ namespace NoteMakingApp
             this.navigationBar.addNavOptions(titles, images);
             instance = this;
             setWindow();
+
         }
         public void setWindow(string option = "")
         {
@@ -44,7 +47,7 @@ namespace NoteMakingApp
                         this.loginPanel1.Hide();
                         this.navigationBar.username.Text = IDname;
                         this.navigationBar.Show();
-                        this.commandBar1.Show();
+                        this.mainDomain1.Show();
                         break;
 
                 }
@@ -71,5 +74,16 @@ namespace NoteMakingApp
             setWindow("Login");
         }
         public static string IDname;
+
+
+        public void NewNote()
+        {
+            NewNote newNote = new NewNote();
+            newNote.Location = new System.Drawing.Point(400, 100);
+            this.Controls.Add(newNote);
+            newNote.BringToFront();
+        }
+
+
     } 
 }

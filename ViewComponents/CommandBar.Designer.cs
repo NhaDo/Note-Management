@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommandBar));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customButton1 = new NoteMakingApp.ViewComponents.CustomButton();
             this.customButton2 = new NoteMakingApp.ViewComponents.CustomButton();
             this.customButton3 = new NoteMakingApp.ViewComponents.CustomButton();
+            this.ButtonImage = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,24 +69,33 @@
             // 
             // customButton1
             // 
-            this.customButton1.Location = new System.Drawing.Point(356, 3);
+            this.customButton1.Location = new System.Drawing.Point(362, 3);
             this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(111, 100);
+            this.customButton1.Size = new System.Drawing.Size(109, 86);
             this.customButton1.TabIndex = 5;
+            this.customButton1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.customButton1_MouseClick);
             // 
             // customButton2
             // 
-            this.customButton2.Location = new System.Drawing.Point(473, 3);
+            this.customButton2.Location = new System.Drawing.Point(477, 3);
             this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(111, 100);
+            this.customButton2.Size = new System.Drawing.Size(109, 86);
             this.customButton2.TabIndex = 6;
             // 
             // customButton3
             // 
-            this.customButton3.Location = new System.Drawing.Point(590, 3);
+            this.customButton3.Location = new System.Drawing.Point(592, 3);
             this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(111, 100);
+            this.customButton3.Size = new System.Drawing.Size(109, 86);
             this.customButton3.TabIndex = 7;
+            // 
+            // ButtonImage
+            // 
+            this.ButtonImage.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ButtonImage.ImageStream")));
+            this.ButtonImage.TransparentColor = System.Drawing.Color.Transparent;
+            this.ButtonImage.Images.SetKeyName(0, "add.png");
+            this.ButtonImage.Images.SetKeyName(1, "edit.png");
+            this.ButtonImage.Images.SetKeyName(2, "delete.png");
             // 
             // CommandBar
             // 
@@ -95,7 +107,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Name = "CommandBar";
-            this.Size = new System.Drawing.Size(704, 106);
+            this.Size = new System.Drawing.Size(704, 100);
             this.Load += new System.EventHandler(this.CommandBar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -109,5 +121,6 @@
         private CustomButton customButton1;
         private CustomButton customButton2;
         private CustomButton customButton3;
+        private System.Windows.Forms.ImageList ButtonImage;
     }
 }
