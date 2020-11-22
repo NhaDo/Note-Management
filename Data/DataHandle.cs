@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using NoteMakingApp.ViewComponents;
 
 namespace NoteMakingApp.Models
 {
@@ -17,23 +18,28 @@ namespace NoteMakingApp.Models
         static List<Account> accounts { get; set; }
         static List<Person> persons { get; set; }
         static List<PersonalDetail> details { get; set; }
+        static List<Notes> notes { get; set; }
         static User recentUser { get; set; }
         static Account recentAccount { get; set; }
+        static Notes recentNote { get; set; }
+        public int _isSelected = 0;
         public DataHandle()
         {
             users = new List<User>();
             accounts = new List<Account>();
             persons = new List<Person>();
             details = new List<PersonalDetail>();
+            notes = new List<Notes>();
             recentUser = null;
             recentAccount = null;
+            recentNote = null;
 
             establishDbConnection();
             getData();
         }
         private void establishDbConnection()
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =G:\programming projects\phuc_NOTE\Note-Management\Data\Database.mdf; Integrated Security = True";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\seled\Documents\Note-Management\Data\Database.mdf; Integrated Security = True";
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
@@ -53,6 +59,9 @@ namespace NoteMakingApp.Models
                     break;
                 case "PersonalDetails":
                     details.Clear();
+                    break;
+                case "Note":
+                    notes.Clear();
                     break;
             }
             SqlDataReader reader = cmd.ExecuteReader();
@@ -91,6 +100,14 @@ namespace NoteMakingApp.Models
                                 subcategory = reader["subcategory"].ToString().Trim(),
                                 content = reader["content"].ToString().Trim(),
                             });
+                        break;
+                    case "Note":
+                        notes.Add(new Notes()
+                        {
+                            id = Convert.ToInt32(reader["ID"]),
+                            Tittle = reader["Tittle"].ToString().Trim(),
+                            Content = reader["Content"].ToString().Trim()
+                        });
                         break;
                 }
             }
@@ -260,6 +277,77 @@ namespace NoteMakingApp.Models
                 update.Parameters.Add("@password", SqlDbType.NChar, 10).Value = passwordEncoder(acc.password).Substring(0, 10); ;
                 update.ExecuteNonQuery();
             }
+        }
+
+
+        public void CreateNewNote(Notes nt)
+        {
+            string queryFrame = "INSERT into note (Tittle,Content) VALUES (@Tittle,@Content)";
+
+            using (SqlCommand newNote = new SqlCommand(queryFrame))
+            {
+                newNote.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                newNote.Parameters.Add("@Tittle", SqlDbType.VarChar).Value = nt.Tittle;
+                newNote.Parameters.Add("@Content", SqlDbType.VarChar).Value = nt.Content;
+                newNote.ExecuteNonQuery();
+                Console.WriteLine("Nhap du lieu thanh cong");
+                newNote.Dispose();
+            }
+        }
+
+        public void ShowNote()
+        {
+            if (notes.Count() != 0)
+            {
+                notes.Clear();
+                MainDomain.currentInstance.Clear();
+            }
+            populateDataFromTable("Note");
+            foreach (Notes n in notes)
+            {
+                MainDomain.currentInstance.AddNewNote(n.id, n.Tittle, n.Content);
+            }
+        }
+
+        public void DeleteNote()
+        {
+            int id = MainDomain.currentInstance.getFlags();
+            string queryFrame = "exec USP_DeleteNoteByID @ID = " + id.ToString();
+            using (SqlCommand deleteNote = new SqlCommand(queryFrame))
+            {
+                deleteNote.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                deleteNote.ExecuteNonQuery();
+                Console.WriteLine("Da xoa du lieu note co id " + id.ToString());
+                deleteNote.Dispose();
+            }
+        }
+
+        public void EditNote(string a,string b)
+        {
+            int id = MainDomain.currentInstance.getFlags();
+            string queryFrame = "exec USP_EditNoteByID @ID = '"+ id.ToString() +"', @Tittle = '" +a+ "', @Content = '" + b+ "'" ;
+            
+            using (SqlCommand deleteNote = new SqlCommand(queryFrame))
+            {
+                deleteNote.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                deleteNote.ExecuteNonQuery();
+                Console.WriteLine("Da sua du lieu tai note co id " + id.ToString());
+                deleteNote.Dispose();
+            }
+        }
+
+        public Notes GetDataFromNote()
+        {
+            int id = MainDomain.currentInstance.getFlags();
+            foreach (Notes n in notes)
+            {
+                if (n.id == id)
+                    return n;
+            }
+            return null;
         }
     }
 }

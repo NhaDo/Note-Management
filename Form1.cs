@@ -44,6 +44,7 @@ namespace NoteMakingApp
                         this.loginPanel1.Hide();
                         this.navigationBar.username.Text = IDname;
                         this.navigationBar.Show();
+                        this.mainDomain1.Show();
                         break;
 
                 }
@@ -70,5 +71,23 @@ namespace NoteMakingApp
             setWindow("Login");
         }
         public static string IDname;
+
+        public void NewNote(string a = "Tạo ghi chú mới", string b = null, string c = null)
+        {
+            NewNote newNote = new NewNote();
+            newNote.Location = new System.Drawing.Point(400, 100);
+            newNote.setValue(a,b,c);
+            this.Controls.Add(newNote);
+            newNote.BringToFront();
+        }
+
+        public void editNote(string a = "Sửa ghi chú", string b = null, string c = null)
+        {
+            EditNote editNote = new EditNote();
+            editNote.Location = new System.Drawing.Point(400, 100);
+            editNote.setValue(a, b, c);
+            this.Controls.Add(editNote);
+            editNote.BringToFront();
+        }
     } 
 }
