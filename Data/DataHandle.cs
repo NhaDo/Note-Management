@@ -16,6 +16,8 @@ namespace NoteMakingApp.Models
         private static SqlConnection DbConnection;
         static List<User> users { get; set; }
         static List<Account> accounts { get; set; }
+        static List<Person> persons { get; set; }
+        static List<PersonalDetail> details { get; set; }
         static User recentUser { get; set; }
         static Account recentAccount { get; set; }
         static List<Note> notes { get; set; } 
@@ -23,6 +25,8 @@ namespace NoteMakingApp.Models
         {
             users = new List<User>();
             accounts = new List<Account>();
+            persons = new List<Person>();
+            details = new List<PersonalDetail>();
             recentUser = null;
             recentAccount = null;
             notes = new List<Note>();
@@ -32,15 +36,30 @@ namespace NoteMakingApp.Models
         }
         private void establishDbConnection()
         {
+
             string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = " + Application.StartupPath + @"\Data\Database.mdf; Integrated Security = True";
+
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
 
         }
-        private void populateDataFromTable(string tableName)
+        private void populateDataFromTable(string tableName, int account = -1)
         {
+  
             SqlCommand cmd = new SqlCommand("Select * from " + tableName, DbConnection);
+            switch (tableName)
+            {
+                case "Accounts":
+                    accounts.Clear();
+                    break;
+                case "Persons":
+                    persons.Clear();
+                    break;
+                case "PersonalDetails":
+                    details.Clear();
+                    break;
+            }
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -57,6 +76,7 @@ namespace NoteMakingApp.Models
                         });
                         break;
 
+
                     case "note":
                         notes.Add(new Note()
                         {
@@ -67,6 +87,30 @@ namespace NoteMakingApp.Models
                         break;
 
                     
+
+                    case "Persons":
+                        if (Convert.ToInt32(reader["account"]) == account)
+                            persons.Add(new Person()
+                            {
+                                id = Convert.ToInt32(reader["Id"]),
+                                account = Convert.ToInt32(reader["account"]),
+                                name = reader["name"].ToString().Trim(),
+                                introduction = reader["introduction"].ToString().Trim(),
+                                created = Convert.ToDateTime(reader["created"].ToString()),
+                            });
+                        break;
+                    case "PersonalDetails":
+                        if(Convert.ToInt32(reader["person"]) == account && Convert.ToInt32(reader["usable"]) !=0)
+                            details.Add(new PersonalDetail()
+                            {
+                                id = Convert.ToInt32(reader["Id"]),
+                                account = Convert.ToInt32(reader["person"]),
+                                category = reader["category"].ToString().Trim(),
+                                subcategory = reader["subcategory"].ToString().Trim(),
+                                content = reader["content"].ToString().Trim(),
+                            });
+                        break;
+
                 }
             }
             reader.Close();
@@ -98,9 +142,10 @@ namespace NoteMakingApp.Models
         {
             foreach (Account a in accounts)
             {
-                if (passwordEncoder(acc.password).Contains(a.password) && a.username.Equals(acc.username))
+                if (/*passwordEncoder(acc.password).Contains(a.password) && */a.username.Equals(acc.username))
                 {
-                    Console.WriteLine(passwordEncoder(acc.password));
+                    if(a.username.Equals(acc.username))
+                        Console.WriteLine(passwordEncoder(acc.password));
 
                     getUserWithAccount(a);
                     recentAccount = a;
@@ -160,6 +205,7 @@ namespace NoteMakingApp.Models
             }
         }
 
+
         /*public void CreateNewNote(Note note)
         {
             string query = "Insert into note(ID, Tittle, Content) values (@ID, @Tittle, @Content)";
@@ -175,5 +221,83 @@ namespace NoteMakingApp.Models
             }
             populateDataFromTable("note");
         }*/
+
+        public List<Account> GetAccounts()
+        {
+            return accounts;
+        }
+        public Account getRecentAccount() {
+            if (recentAccount == null)
+            {
+                doesAccountExit(new Account()
+                {
+                    username="phuc",
+                    password= "phuc",
+                });
+            }
+            return recentAccount; }
+        public Person GetPerson(int account)
+        {
+            populateDataFromTable("Persons", account);
+            return persons.OrderByDescending(c => c.created).ToList().First();
+        }
+        public List<PersonalDetail> GetDetails(int account)
+        {
+            populateDataFromTable("PersonalDetails", account);
+            return details;
+        }
+        public void deleteDetail(PersonalDetail dt)
+        {
+            string delete = "UPDATE PersonalDetails SET usable=" + 0.ToString()+" WHERE Id=" +dt.id.ToString();
+            SqlCommand command = new SqlCommand(delete);
+            command.Connection = DbConnection;
+            command.ExecuteNonQuery();
+        }
+        public void createDetail(PersonalDetail dt)
+        {
+            string queryFrame = "INSERT INTO PersonalDetails (Id, person, category, subcategory, content, usable) " +
+                                    "VALUES (@Id, @person, @category, @subcategory, @content, @usable)";
+            using (SqlCommand insert = new SqlCommand(queryFrame))
+            {
+                insert.Connection = DbConnection;
+                insert.Parameters.Add("@Id", SqlDbType.Int).Value = details.Count()*recentAccount.id+1;
+                insert.Parameters.Add("@person", SqlDbType.Int).Value = dt.account;
+                insert.Parameters.Add("@category", SqlDbType.NChar, 20).Value = dt.category;
+                insert.Parameters.Add("@subcategory", SqlDbType.Char, 20).Value = dt.subcategory;
+                insert.Parameters.Add("@usable", SqlDbType.Int).Value = 1;/**/
+                insert.Parameters.Add("@content", SqlDbType.Text).Value = dt.content;
+                insert.ExecuteNonQuery();
+            }
+        }
+        public void updateDetail(PersonalDetail origin, PersonalDetail update)
+        {
+            deleteDetail(origin);
+            createDetail(update);
+        }
+        public void UpdatePerson(Person per)
+        {
+            string queryFrame = "UPDATE Persons SET name = @name, introduction=@introduction, created=@created WHERE Id=@Id" ;
+            using (SqlCommand update = new SqlCommand(queryFrame))
+            {
+                update.Connection = DbConnection;
+                update.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = per.id;
+                update.Parameters.AddWithValue("@name", SqlDbType.Text).Value = per.name;
+                update.Parameters.AddWithValue("@introduction", SqlDbType.Text).Value = per.introduction;
+                update.Parameters.AddWithValue("@created", SqlDbType.DateTime).Value = DateTime.Now;/**/
+                update.ExecuteNonQuery();
+            }
+        }
+        public void UpdateAccount(Account acc)
+        {
+            string queryFrame = "UPDATE PersonalDetails (password) " +
+                                    "VALUES (@password) WHERE Id=" + acc.id.ToString();
+            using (SqlCommand update = new SqlCommand(queryFrame))
+            {
+                update.Connection = DbConnection;
+                update.Parameters.Add("@password", SqlDbType.NChar, 10).Value = passwordEncoder(acc.password).Substring(0, 10); ;
+                update.ExecuteNonQuery();
+            }
+        }
+
     }
 }

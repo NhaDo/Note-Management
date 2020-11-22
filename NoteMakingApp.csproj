@@ -29,7 +29,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -79,6 +79,7 @@
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonalDetail.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +93,54 @@
     </Compile>
     <Compile Include="ViewComponents\AccountRegister.Designer.cs">
       <DependentUpon>AccountRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\AccountList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\AccountList.Designer.cs">
+      <DependentUpon>AccountList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\AccountListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\AccountListItem.Designer.cs">
+      <DependentUpon>AccountListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\AccountSubwindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\AccountSubwindow.Designer.cs">
+      <DependentUpon>AccountSubwindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\CategorisedDetailPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\CategorisedDetailPanel.Designer.cs">
+      <DependentUpon>CategorisedDetailPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\DetailItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\DetailItem.Designer.cs">
+      <DependentUpon>DetailItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\EditionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\EditionItem.Designer.cs">
+      <DependentUpon>EditionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\InformationEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\InformationEditor.Designer.cs">
+      <DependentUpon>InformationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\PersonalDetailsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\AccountVC\PersonalDetailsPanel.Designer.cs">
+      <DependentUpon>PersonalDetailsPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\CommandBar.cs">
       <SubType>UserControl</SubType>
@@ -151,6 +200,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\AccountRegister.resx">
       <DependentUpon>AccountRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\AccountVC\AccountList.resx">
+      <DependentUpon>AccountList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\AccountVC\AccountListitem.resx">
+      <DependentUpon>AccountListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\AccountVC\AccountSubwindow.resx">
+      <DependentUpon>AccountSubwindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\AccountVC\CategorisedDetailPanel.resx">
+      <DependentUpon>CategorisedDetailPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\AccountVC\DetailItem.resx">
+      <DependentUpon>DetailItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\AccountVC\EditionItem.resx">
+      <DependentUpon>EditionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\AccountVC\InformationEditor.resx">
+      <DependentUpon>InformationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\AccountVC\PersonalDetailsPanel.resx">
+      <DependentUpon>PersonalDetailsPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\CommandBar.resx">
       <DependentUpon>CommandBar.cs</DependentUpon>
