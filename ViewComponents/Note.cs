@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace NoteMakingApp.ViewComponents
 {
@@ -29,7 +30,13 @@ namespace NoteMakingApp.ViewComponents
 
         public void chanceImage()
         {
-            //this.pictureBox1.Image = new Bitmap(Application.StartupPath + "\\Resources\\Note3.png");
+            // get .exe path
+            string chanceImage = Application.StartupPath;
+            // get path from project folder (-bin, -debug)
+            chanceImage=chanceImage.Substring(0,chanceImage.LastIndexOf(@"\"));
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            // get path to image note3.png
+            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note3.png");
         }
 
         public void setTittle(string text)

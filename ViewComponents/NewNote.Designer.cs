@@ -39,26 +39,31 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Location = new System.Drawing.Point(153, 294);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 34);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOk
             // 
+            this.btnOk.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Location = new System.Drawing.Point(62, 294);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 34);
             this.btnOk.TabIndex = 10;
             this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // txtContent
             // 
+            this.txtContent.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContent.Location = new System.Drawing.Point(6, 127);
             this.txtContent.Name = "txtContent";
             this.txtContent.Size = new System.Drawing.Size(234, 161);
@@ -68,25 +73,27 @@
             // lbContent
             // 
             this.lbContent.AutoSize = true;
+            this.lbContent.Font = new System.Drawing.Font("Arial", 8F);
             this.lbContent.Location = new System.Drawing.Point(7, 107);
             this.lbContent.Name = "lbContent";
-            this.lbContent.Size = new System.Drawing.Size(101, 17);
+            this.lbContent.Size = new System.Drawing.Size(59, 17);
             this.lbContent.TabIndex = 8;
-            this.lbContent.Text = "Nhập nội dung";
+            this.lbContent.Text = "Content";
             // 
             // lbTittle
             // 
             this.lbTittle.AutoSize = true;
-            this.lbTittle.Location = new System.Drawing.Point(7, 50);
+            this.lbTittle.Font = new System.Drawing.Font("Arial", 8F);
+            this.lbTittle.Location = new System.Drawing.Point(7, 49);
             this.lbTittle.Name = "lbTittle";
-            this.lbTittle.Size = new System.Drawing.Size(89, 17);
+            this.lbTittle.Size = new System.Drawing.Size(47, 17);
             this.lbTittle.TabIndex = 7;
-            this.lbTittle.Text = "Nhập tiêu đề";
+            this.lbTittle.Text = "Name";
             // 
             // txtTittle
             // 
-            this.txtTittle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTittle.Location = new System.Drawing.Point(7, 70);
+            this.txtTittle.Font = new System.Drawing.Font("Times New Roman", 11.8209F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTittle.Location = new System.Drawing.Point(7, 69);
             this.txtTittle.Multiline = true;
             this.txtTittle.Name = "txtTittle";
             this.txtTittle.Size = new System.Drawing.Size(234, 34);
@@ -95,19 +102,20 @@
             // 
             // lbMain
             // 
-            this.lbMain.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbMain.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
             this.lbMain.Location = new System.Drawing.Point(10, 10);
             this.lbMain.Name = "lbMain";
             this.lbMain.Size = new System.Drawing.Size(230, 40);
             this.lbMain.TabIndex = 12;
-            this.lbMain.Text = "Tạo ghi chú mới";
+            this.lbMain.Text = "New Note";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NewNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.Orange;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lbMain);
             this.Controls.Add(this.btnCancel);
