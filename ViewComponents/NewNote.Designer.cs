@@ -63,7 +63,8 @@
             // 
             // txtContent
             // 
-            this.txtContent.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContent.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.txtContent.Location = new System.Drawing.Point(6, 127);
             this.txtContent.Name = "txtContent";
             this.txtContent.Size = new System.Drawing.Size(234, 161);
@@ -92,6 +93,8 @@
             // 
             // txtTittle
             // 
+            this.txtTittle.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtTittle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTittle.Font = new System.Drawing.Font("Times New Roman", 11.8209F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTittle.Location = new System.Drawing.Point(7, 69);
             this.txtTittle.Multiline = true;

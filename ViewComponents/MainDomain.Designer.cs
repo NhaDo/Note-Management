@@ -37,30 +37,30 @@
             // flPanel
             // 
             this.flPanel.AutoScroll = true;
-            this.flPanel.Location = new System.Drawing.Point(3, 113);
+            this.flPanel.Location = new System.Drawing.Point(3, 94);
             this.flPanel.Name = "flPanel";
-            this.flPanel.Size = new System.Drawing.Size(934, 394);
+            this.flPanel.Size = new System.Drawing.Size(934, 413);
             this.flPanel.TabIndex = 3;
             // 
             // customButton3
             // 
-            this.customButton3.Location = new System.Drawing.Point(801, 22);
+            this.customButton3.Location = new System.Drawing.Point(867, 3);
             this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(104, 85);
+            this.customButton3.Size = new System.Drawing.Size(70, 85);
             this.customButton3.TabIndex = 2;
             // 
             // customButton2
             // 
-            this.customButton2.Location = new System.Drawing.Point(691, 22);
+            this.customButton2.Location = new System.Drawing.Point(791, 3);
             this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(104, 85);
+            this.customButton2.Size = new System.Drawing.Size(70, 85);
             this.customButton2.TabIndex = 1;
             // 
             // customButton1
             // 
-            this.customButton1.Location = new System.Drawing.Point(581, 22);
+            this.customButton1.Location = new System.Drawing.Point(715, 3);
             this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(104, 85);
+            this.customButton1.Size = new System.Drawing.Size(70, 85);
             this.customButton1.TabIndex = 0;
             // 
             // MainDomain
@@ -73,6 +73,7 @@
             this.Controls.Add(this.customButton1);
             this.Name = "MainDomain";
             this.Size = new System.Drawing.Size(940, 510);
+            this.Load += new System.EventHandler(this.MainDomain_Load);
             this.ResumeLayout(false);
 
         }
