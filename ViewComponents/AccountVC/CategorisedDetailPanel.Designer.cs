@@ -52,14 +52,14 @@
             // 
             this.btnEdit.BackColor = System.Drawing.Color.DarkOrange;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Arial", 8F);
+            this.btnEdit.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEdit.Location = new System.Drawing.Point(143, 15);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(100, 28);
             this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Show ";
+            this.btnEdit.Text = "EDIT";
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -70,7 +70,7 @@
             this.pnlDetails.AutoSize = true;
             this.pnlDetails.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlDetails.Location = new System.Drawing.Point(4, 50);
-            this.pnlDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDetails.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(0, 0);
             this.pnlDetails.TabIndex = 2;
@@ -90,7 +90,7 @@
             this.Controls.Add(this.pnlDetails);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lbCategory);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CategorisedDetailPanel";
             this.Size = new System.Drawing.Size(247, 76);
             this.ResumeLayout(false);

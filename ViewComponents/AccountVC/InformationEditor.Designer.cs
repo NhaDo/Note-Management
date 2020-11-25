@@ -37,9 +37,12 @@
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Location = new System.Drawing.Point(89, 17);
+            this.lbTitle.Font = new System.Drawing.Font("Arial", 8F);
+            this.lbTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbTitle.Location = new System.Drawing.Point(119, 21);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(35, 13);
+            this.lbTitle.Size = new System.Drawing.Size(46, 17);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "label1";
             // 
@@ -47,7 +50,8 @@
             // 
             this.pnlEditors.AutoSize = true;
             this.pnlEditors.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlEditors.Location = new System.Drawing.Point(3, 33);
+            this.pnlEditors.Location = new System.Drawing.Point(4, 41);
+            this.pnlEditors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlEditors.Name = "pnlEditors";
             this.pnlEditors.Size = new System.Drawing.Size(0, 0);
             this.pnlEditors.TabIndex = 1;
@@ -55,35 +59,46 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(9, 12);
+            this.btnAdd.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 8F);
+            this.btnAdd.Location = new System.Drawing.Point(12, 15);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(100, 28);
             this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "button1";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(130, 7);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8F);
+            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSave.Location = new System.Drawing.Point(190, 15);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "button2";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Text = "Confirm";
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // InformationEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pnlEditors);
             this.Controls.Add(this.lbTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InformationEditor";
-            this.Size = new System.Drawing.Size(213, 113);
+            this.Size = new System.Drawing.Size(438, 128);
             this.ResumeLayout(false);
             this.PerformLayout();
 

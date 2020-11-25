@@ -38,59 +38,73 @@
             // lbConent
             // 
             this.lbConent.AutoSize = true;
-            this.lbConent.Location = new System.Drawing.Point(116, 11);
+            this.lbConent.Font = new System.Drawing.Font("Arial", 8F);
+            this.lbConent.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbConent.Location = new System.Drawing.Point(163, 14);
+            this.lbConent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbConent.Name = "lbConent";
-            this.lbConent.Size = new System.Drawing.Size(35, 13);
+            this.lbConent.Size = new System.Drawing.Size(46, 17);
             this.lbConent.TabIndex = 0;
             this.lbConent.Text = "label1";
             // 
             // cbSubcatgory
             // 
             this.cbSubcatgory.FormattingEnabled = true;
-            this.cbSubcatgory.Location = new System.Drawing.Point(8, 8);
+            this.cbSubcatgory.Location = new System.Drawing.Point(52, 10);
+            this.cbSubcatgory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSubcatgory.Name = "cbSubcatgory";
-            this.cbSubcatgory.Size = new System.Drawing.Size(65, 21);
+            this.cbSubcatgory.Size = new System.Drawing.Size(103, 24);
             this.cbSubcatgory.TabIndex = 1;
             this.cbSubcatgory.Visible = false;
             // 
             // lbSubcategory
             // 
             this.lbSubcategory.AutoSize = true;
-            this.lbSubcategory.Location = new System.Drawing.Point(5, 11);
+            this.lbSubcategory.Font = new System.Drawing.Font("Arial", 8F);
+            this.lbSubcategory.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbSubcategory.Location = new System.Drawing.Point(7, 14);
+            this.lbSubcategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSubcategory.Name = "lbSubcategory";
-            this.lbSubcategory.Size = new System.Drawing.Size(35, 13);
+            this.lbSubcategory.Size = new System.Drawing.Size(46, 17);
             this.lbSubcategory.TabIndex = 2;
             this.lbSubcategory.Text = "label2";
             // 
             // tbContent
             // 
-            this.tbContent.Location = new System.Drawing.Point(109, 8);
+            this.tbContent.Location = new System.Drawing.Point(214, 11);
+            this.tbContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbContent.Name = "tbContent";
-            this.tbContent.Size = new System.Drawing.Size(100, 20);
+            this.tbContent.Size = new System.Drawing.Size(132, 22);
             this.tbContent.TabIndex = 3;
             this.tbContent.Visible = false;
             // 
             // btnFunction
             // 
-            this.btnFunction.Location = new System.Drawing.Point(241, 10);
+            this.btnFunction.BackColor = System.Drawing.Color.Firebrick;
+            this.btnFunction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnFunction.Location = new System.Drawing.Point(354, 6);
+            this.btnFunction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFunction.Name = "btnFunction";
-            this.btnFunction.Size = new System.Drawing.Size(22, 19);
+            this.btnFunction.Size = new System.Drawing.Size(80, 30);
             this.btnFunction.TabIndex = 4;
             this.btnFunction.Text = "button1";
-            this.btnFunction.UseVisualStyleBackColor = true;
+            this.btnFunction.UseVisualStyleBackColor = false;
             this.btnFunction.Click += new System.EventHandler(this.btnFunction_Click);
             // 
             // EditionItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.Controls.Add(this.btnFunction);
             this.Controls.Add(this.tbContent);
             this.Controls.Add(this.lbSubcategory);
             this.Controls.Add(this.cbSubcatgory);
             this.Controls.Add(this.lbConent);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditionItem";
-            this.Size = new System.Drawing.Size(266, 38);
+            this.Size = new System.Drawing.Size(438, 47);
             this.ResumeLayout(false);
             this.PerformLayout();
 
