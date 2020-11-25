@@ -43,6 +43,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lbTittle
             // 
@@ -54,6 +55,7 @@
             this.lbTittle.Size = new System.Drawing.Size(47, 21);
             this.lbTittle.TabIndex = 1;
             this.lbTittle.Text = "Tittle";
+            this.lbTittle.Click += new System.EventHandler(this.lbTittle_Click);
             // 
             // lbContent
             // 
@@ -63,6 +65,7 @@
             this.lbContent.Size = new System.Drawing.Size(165, 163);
             this.lbContent.TabIndex = 2;
             this.lbContent.Text = "Content";
+            this.lbContent.Click += new System.EventHandler(this.lbContent_Click);
             // 
             // Note
             // 
@@ -73,6 +76,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Note";
             this.Size = new System.Drawing.Size(212, 256);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Note_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

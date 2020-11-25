@@ -36,6 +36,12 @@ namespace NoteMakingApp.ViewComponents
                     Form1.getInstance().setLoggedIn(true);
                     
                 }
+                else
+                {
+                    ePassword.Visible = true;
+                    ePassword.Text = "ID or password incorrect";
+                }
+
             }
 
         }

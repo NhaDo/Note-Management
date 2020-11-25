@@ -140,7 +140,7 @@ namespace NoteMakingApp.Models
         {
             foreach (Account a in accounts)
             {
-                if (/*passwordEncoder(acc.password).Contains(a.password) && */a.username.Equals(acc.username))
+                if (passwordEncoder(acc.password).Contains(a.password) && a.username.Equals(acc.username)) // anhPhuc comment passswordencoder !?!?!????
                 {
                     if(a.username.Equals(acc.username))
                         Console.WriteLine(passwordEncoder(acc.password));
@@ -206,7 +206,9 @@ namespace NoteMakingApp.Models
         {
             return accounts;
         }
+        
         public Account getRecentAccount() {
+            /*
             if (recentAccount == null)
             {
                 doesAccountExit(new Account()
@@ -215,6 +217,7 @@ namespace NoteMakingApp.Models
                     password= "phuc",
                 });
             }
+            */
             return recentAccount; }
         public Person GetPerson(int account)
         {
@@ -349,5 +352,6 @@ namespace NoteMakingApp.Models
             }
             return null;
         }
+
     }
 }

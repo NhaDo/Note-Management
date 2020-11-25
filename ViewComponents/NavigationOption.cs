@@ -21,7 +21,7 @@ namespace NoteMakingApp.ViewComponents
         {
             InitializeComponent();
             opTitle.Text = title;
-            opIcon.Image = Image.FromFile("../../images/" + imageFile);
+            //opIcon.Image = Image.FromFile("../../images/" + imageFile);
         }
 
         public void defautsettings()

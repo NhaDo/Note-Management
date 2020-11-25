@@ -40,6 +40,7 @@ namespace NoteMakingApp
             this.registerPanel = new NoteMakingApp.ViewComponents.AccountRegister();
             this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
             this.mainDomain1 = new NoteMakingApp.ViewComponents.MainDomain();
+            this.accountSubwindow2 = new NoteMakingApp.ViewComponents.AccountSubwindow();
             this.SuspendLayout();
             // 
             // navigationBar
@@ -82,12 +83,24 @@ namespace NoteMakingApp
             this.mainDomain1.TabIndex = 5;
             this.mainDomain1.Visible = false;
             // 
+            // accountSubwindow2
+            // 
+            this.accountSubwindow2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.accountSubwindow2.Location = new System.Drawing.Point(264, 12);
+            this.accountSubwindow2.Margin = new System.Windows.Forms.Padding(4);
+            this.accountSubwindow2.Name = "accountSubwindow2";
+            this.accountSubwindow2.Size = new System.Drawing.Size(950, 493);
+            this.accountSubwindow2.TabIndex = 6;
+            this.accountSubwindow2.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1216, 534);
+            this.Controls.Add(this.accountSubwindow2);
             this.Controls.Add(this.navigationBar);
             this.Controls.Add(this.registerPanel);
             this.Controls.Add(this.loginPanel1);
@@ -121,6 +134,7 @@ namespace NoteMakingApp
         private NavigationBar navigationBar;
         private AccountSubwindow accountSubwindow1;
         private MainDomain mainDomain1;
+        private AccountSubwindow accountSubwindow2;
     }
 }
 

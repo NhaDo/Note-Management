@@ -39,7 +39,7 @@ namespace NoteMakingApp.ViewComponents.AccountVC
                 categorisedDetails = details.FindAll(d => d.category == c);
                 if (categorisedDetails.Count != 0)
                 {
-                    categoryPanel = new CategorisedDetailPanel(c, categorisedDetails, acc == 57/*DataHandle.getInstance().getRecentAccount().id*/);
+                    categoryPanel = new CategorisedDetailPanel(c, categorisedDetails, acc == DataHandle.getInstance().getRecentAccount().id);
                     categoryPanel.Location = new System.Drawing.Point(0,
                         instance.pnlCategories.Controls.Count == 0 ? 0 :
                         instance.pnlCategories.Controls[instance.pnlCategories.Controls.Count - 1].Location.Y +

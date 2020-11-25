@@ -46,6 +46,9 @@ namespace NoteMakingApp
                         this.navigationBar.Show();
                         this.mainDomain1.Show();
                         break;
+                    case "ACCOUNT":
+                        this.accountSubwindow2.Visible = true;
+                        break;
 
                 }
             }
@@ -72,7 +75,7 @@ namespace NoteMakingApp
         }
         public static string IDname;
 
-        public void NewNote(string a = "Tạo ghi chú mới", string b = null, string c = null)
+        public void NewNote(string a = "New note", string b = null, string c = null)
         {
             NewNote newNote = new NewNote();
             newNote.Location = new System.Drawing.Point(400, 100);
@@ -81,7 +84,7 @@ namespace NoteMakingApp
             newNote.BringToFront();
         }
 
-        public void editNote(string a = "Sửa ghi chú", string b = null, string c = null)
+        public void editNote(string a = "Edit note", string b = null, string c = null)
         {
             EditNote editNote = new EditNote();
             editNote.Location = new System.Drawing.Point(400, 100);

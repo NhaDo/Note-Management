@@ -31,7 +31,7 @@ namespace NoteMakingApp.ViewComponents
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             // get path to image note4.png
-            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note4.png");
+            //this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note4.png");
         }
 
         public void chanceImage()
@@ -42,7 +42,7 @@ namespace NoteMakingApp.ViewComponents
             chanceImage=chanceImage.Substring(0,chanceImage.LastIndexOf(@"\"));
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             // get path to image note3.png
-            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note3.png");
+            //this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note3.png");
         }
 
         public void setTittle(string text)
@@ -71,7 +71,7 @@ namespace NoteMakingApp.ViewComponents
 
         public bool isClicked=false; // if this note is clicked from main domain, return 1
 
-        /*
+        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             MainDomain.currentInstance.setFlags(getId());
@@ -97,6 +97,7 @@ namespace NoteMakingApp.ViewComponents
             chanceImage();
         }
 
+
         private void Note_MouseClick(object sender, MouseEventArgs e)
         {
             MainDomain.currentInstance.setFlags(getId());
@@ -104,7 +105,7 @@ namespace NoteMakingApp.ViewComponents
             Console.WriteLine(_Flag);
             chanceImage();
         }
-        */
+        
         
     }
 }
