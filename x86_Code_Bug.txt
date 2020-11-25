@@ -1,0 +1,13 @@
+NavigationOption.cs
+        public NavigationOption(string title, string imageFile)
+        {
+            InitializeComponent();
+            opTitle.Text = title;
+            opIcon.Image = Image.FromFile("../../images/" + imageFile); // HERE
+        }
+
+Note.cs
+            // get path to image note4.png
+            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note4.png");
+            // get path to image note3.png
+            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note3.png");
