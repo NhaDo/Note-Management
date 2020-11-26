@@ -86,10 +86,10 @@ namespace NoteMakingApp
             // accountSubwindow2
             // 
             this.accountSubwindow2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.accountSubwindow2.Location = new System.Drawing.Point(264, 12);
+            this.accountSubwindow2.Location = new System.Drawing.Point(255, 0);
             this.accountSubwindow2.Margin = new System.Windows.Forms.Padding(4);
             this.accountSubwindow2.Name = "accountSubwindow2";
-            this.accountSubwindow2.Size = new System.Drawing.Size(950, 493);
+            this.accountSubwindow2.Size = new System.Drawing.Size(959, 532);
             this.accountSubwindow2.TabIndex = 6;
             this.accountSubwindow2.Visible = false;
             // 
