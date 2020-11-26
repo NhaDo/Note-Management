@@ -38,6 +38,7 @@
             this.personalDetailsPanel1.AutoScroll = true;
             this.personalDetailsPanel1.AutoSize = true;
             this.personalDetailsPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.personalDetailsPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.personalDetailsPanel1.Location = new System.Drawing.Point(618, 17);
             this.personalDetailsPanel1.Margin = new System.Windows.Forms.Padding(5);
             this.personalDetailsPanel1.MaximumSize = new System.Drawing.Size(276, 308);
@@ -49,19 +50,21 @@
             // 
             this.accountList1.AutoScroll = true;
             this.accountList1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.accountList1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.accountList1.Location = new System.Drawing.Point(0, 0);
             this.accountList1.Margin = new System.Windows.Forms.Padding(5);
             this.accountList1.Name = "accountList1";
-            this.accountList1.Size = new System.Drawing.Size(450, 510);
+            this.accountList1.Size = new System.Drawing.Size(450, 560);
             this.accountList1.TabIndex = 0;
             // 
             // informationEditor1
             // 
             this.informationEditor1.AutoScroll = true;
-            this.informationEditor1.Location = new System.Drawing.Point(569, 285);
+            this.informationEditor1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.informationEditor1.Location = new System.Drawing.Point(515, 281);
             this.informationEditor1.Margin = new System.Windows.Forms.Padding(5);
             this.informationEditor1.Name = "informationEditor1";
-            this.informationEditor1.Size = new System.Drawing.Size(284, 139);
+            this.informationEditor1.Size = new System.Drawing.Size(420, 139);
             this.informationEditor1.TabIndex = 2;
             this.informationEditor1.Visible = false;
             // 
@@ -75,7 +78,7 @@
             this.Controls.Add(this.accountList1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AccountSubwindow";
-            this.Size = new System.Drawing.Size(940, 510);
+            this.Size = new System.Drawing.Size(940, 560);
             this.ResumeLayout(false);
             this.PerformLayout();
 
