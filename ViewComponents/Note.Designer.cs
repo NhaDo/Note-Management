@@ -52,7 +52,7 @@
             this.lbTittle.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTittle.Location = new System.Drawing.Point(28, 21);
             this.lbTittle.Name = "lbTittle";
-            this.lbTittle.Size = new System.Drawing.Size(47, 21);
+            this.lbTittle.Size = new System.Drawing.Size(45, 19);
             this.lbTittle.TabIndex = 1;
             this.lbTittle.Text = "Tittle";
             this.lbTittle.Click += new System.EventHandler(this.lbTittle_Click);
@@ -62,7 +62,7 @@
             this.lbContent.BackColor = System.Drawing.Color.White;
             this.lbContent.Location = new System.Drawing.Point(20, 60);
             this.lbContent.Name = "lbContent";
-            this.lbContent.Size = new System.Drawing.Size(165, 163);
+            this.lbContent.Size = new System.Drawing.Size(157, 158);
             this.lbContent.TabIndex = 2;
             this.lbContent.Text = "Content";
             this.lbContent.Click += new System.EventHandler(this.lbContent_Click);

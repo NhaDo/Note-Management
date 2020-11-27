@@ -11,5 +11,6 @@ namespace NoteMakingApp.Models
         public int id { get; set; }
         public string Tittle { get; set; }
         public string Content { get; set; }
+        public int user_id { get; set; }
     }
 }

@@ -39,7 +39,7 @@ namespace NoteMakingApp.Models
         }
         private void establishDbConnection()
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = G:\programming projects\nghia_NOTE\Note-Management\Data\Database.mdf; Integrated Security = True";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Project\Note-Management\Data\Database.mdf; Integrated Security = True";
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
@@ -146,6 +146,7 @@ namespace NoteMakingApp.Models
                         Console.WriteLine(passwordEncoder(acc.password));
 
                     getUserWithAccount(a);
+                    acc.id = a.id;
                     recentAccount = a;
                     return true;
                 }
@@ -285,14 +286,15 @@ namespace NoteMakingApp.Models
 
         public void CreateNewNote(Notes nt)
         {
-            string queryFrame = "INSERT into note (Tittle,Content) VALUES (@Tittle,@Content)";
+            string queryFrame = "INSERT into note (Tittle,Content,Id_User) VALUES (@Tittle,@Content,@Id_User)";
 
             using (SqlCommand newNote = new SqlCommand(queryFrame))
             {
                 newNote.Connection = DbConnection;
                 Console.WriteLine("==========================");
-                newNote.Parameters.Add("@Tittle", SqlDbType.VarChar).Value = nt.Tittle;
-                newNote.Parameters.Add("@Content", SqlDbType.VarChar).Value = nt.Content;
+                newNote.Parameters.Add("@Tittle", SqlDbType.NVarChar).Value = nt.Tittle;
+                newNote.Parameters.Add("@Content", SqlDbType.NVarChar).Value = nt.Content;
+                newNote.Parameters.Add("@Id_User", SqlDbType.Int).Value = nt.user_id;
                 newNote.ExecuteNonQuery();
                 Console.WriteLine("Nhap du lieu thanh cong");
                 newNote.Dispose();
@@ -330,7 +332,7 @@ namespace NoteMakingApp.Models
         public void EditNote(string a,string b)
         {
             int id = MainDomain.currentInstance.getFlags();
-            string queryFrame = "exec USP_EditNoteByID @ID = '"+ id.ToString() +"', @Tittle = '" +a+ "', @Content = '" + b+ "'" ;
+            string queryFrame = "exec USP_EditNoteByID @ID = '"+ id.ToString() +"', @Tittle = N'" +a+ "', @Content = N'" + b+ "'" ;
             
             using (SqlCommand deleteNote = new SqlCommand(queryFrame))
             {

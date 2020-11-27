@@ -34,6 +34,7 @@ namespace NoteMakingApp.ViewComponents
                     Console.WriteLine("login step");
                     Form1.IDname = acc.username; // here
                     Form1.getInstance().setLoggedIn(true);
+                    NewNote.User_ID = acc.id;
                     
                 }
                 else

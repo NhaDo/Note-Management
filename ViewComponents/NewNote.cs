@@ -13,11 +13,13 @@ namespace NoteMakingApp.ViewComponents
 {
     public partial class NewNote : UserControl
     {
+        public static NewNote curentInstance { get; set; }
+        public static int User_ID;
         
-
         public NewNote()
         {
             InitializeComponent();
+            curentInstance = this;
             
         }
 
@@ -34,6 +36,7 @@ namespace NoteMakingApp.ViewComponents
                     {
                         Tittle = txtTittle.Text,
                         Content = txtContent.Text,
+                        user_id = User_ID
                     });
 
                 DataHandle.getInstance().ShowNote();
