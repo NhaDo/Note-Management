@@ -41,10 +41,11 @@
             this.lbTittle.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTittle.Location = new System.Drawing.Point(28, 21);
             this.lbTittle.Name = "lbTittle";
-            this.lbTittle.Size = new System.Drawing.Size(45, 19);
+            this.lbTittle.Size = new System.Drawing.Size(47, 21);
             this.lbTittle.TabIndex = 1;
             this.lbTittle.Text = "Tittle";
             this.lbTittle.Click += new System.EventHandler(this.lbTittle_Click);
+            this.lbTittle.MouseHover += new System.EventHandler(this.IbTitle_MouseHover);
             // 
             // lbContent
             // 
@@ -55,6 +56,7 @@
             this.lbContent.TabIndex = 2;
             this.lbContent.Text = "Content";
             this.lbContent.Click += new System.EventHandler(this.lbContent_Click);
+            this.lbContent.MouseHover += new System.EventHandler(this.IbContent_MouseHover);
             // 
             // pictureBox1
             // 
@@ -65,7 +67,7 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            
+            this.pictureBox1.MouseHover += new System.EventHandler(this.picture_MouseHover);
             // 
             // Note
             // 
@@ -75,8 +77,10 @@
             this.Controls.Add(this.lbTittle);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Note";
-            this.Size = new System.Drawing.Size(212, 256);
+            this.Size = new System.Drawing.Size(199, 239);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Note_MouseClick);
+            this.MouseLeave += new System.EventHandler(this.Note_MouseLeave);
+            this.MouseHover += new System.EventHandler(this.Note_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
