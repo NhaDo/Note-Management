@@ -47,11 +47,16 @@ namespace NoteMakingApp
                         this.navigationBar.username.Text = IDname;
                         this.navigationBar.Show();
                         this.mainDomain1.Show();
+                        this.accountSubwindow2.Visible = false;
                         break;
                     case "ACCOUNT":
                         this.accountSubwindow2.Visible = true;
+                        this.mainDomain1.Hide();
                         break;
-
+                    case "HOME":
+                        this.mainDomain1.Show();
+                        this.accountSubwindow2.Visible = false;
+                        break;
                 }
             }
             else

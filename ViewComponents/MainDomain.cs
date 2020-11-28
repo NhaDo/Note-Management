@@ -21,12 +21,15 @@ namespace NoteMakingApp.ViewComponents
             customButton1.setImage(0);
             customButton1.getText("New");
             customButton1.setFunction(1);
+            customButton1.CustomBtn.BackColor = Color.Orange;
             customButton2.setImage(2);
             customButton2.getText("Edit");
             customButton2.setFunction(2);
+            customButton2.CustomBtn.BackColor = Color.Beige;
             customButton3.setImage(4);
             customButton3.getText("Delete");
             customButton3.setFunction(3);
+            customButton3.CustomBtn.BackColor = Color.LightSeaGreen;
             currentInstance = this;
             DataHandle.getInstance().ShowNote();
             

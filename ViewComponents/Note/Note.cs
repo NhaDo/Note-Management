@@ -26,24 +26,30 @@ namespace NoteMakingApp.ViewComponents
 
         public void defaultImage()
         {
+            
             // get .exe path
             string chanceImage = Application.StartupPath;
             // get path from project folder (-bin, -debug)
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            //chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             // get path to image note4.png
             this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note4.png");
+            
         }
 
         public void chanceImage()
         {
+            
             // get .exe path
             string chanceImage = Application.StartupPath;
             // get path from project folder (-bin, -debug)
             chanceImage=chanceImage.Substring(0,chanceImage.LastIndexOf(@"\"));
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            //chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             // get path to image note3.png
             this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note3.png");
+            
         }
 
         public void setTittle(string text)

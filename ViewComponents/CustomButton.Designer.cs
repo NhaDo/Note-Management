@@ -86,8 +86,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button CustomBtn;
-        private System.Windows.Forms.Label lbDetail;
-        private System.Windows.Forms.ImageList imageList;
+        public System.Windows.Forms.Button CustomBtn;
+        public System.Windows.Forms.Label lbDetail;
+        public System.Windows.Forms.ImageList imageList;
     }
 }
