@@ -36,12 +36,22 @@ namespace NoteMakingApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.accountSubwindow2 = new NoteMakingApp.ViewComponents.AccountSubwindow();
             this.navigationBar = new NoteMakingApp.ViewComponents.NavigationBar();
             this.registerPanel = new NoteMakingApp.ViewComponents.AccountRegister();
             this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
             this.mainDomain1 = new NoteMakingApp.ViewComponents.MainDomain();
-            this.accountSubwindow2 = new NoteMakingApp.ViewComponents.AccountSubwindow();
             this.SuspendLayout();
+            // 
+            // accountSubwindow2
+            // 
+            this.accountSubwindow2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.accountSubwindow2.Location = new System.Drawing.Point(254, 0);
+            this.accountSubwindow2.Margin = new System.Windows.Forms.Padding(4);
+            this.accountSubwindow2.Name = "accountSubwindow2";
+            this.accountSubwindow2.Size = new System.Drawing.Size(959, 532);
+            this.accountSubwindow2.TabIndex = 6;
+            this.accountSubwindow2.Visible = false;
             // 
             // navigationBar
             // 
@@ -77,21 +87,11 @@ namespace NoteMakingApp
             // 
             // mainDomain1
             // 
-            this.mainDomain1.Location = new System.Drawing.Point(264, 12);
+            this.mainDomain1.Location = new System.Drawing.Point(273, 22);
             this.mainDomain1.Name = "mainDomain1";
             this.mainDomain1.Size = new System.Drawing.Size(940, 510);
-            this.mainDomain1.TabIndex = 5;
+            this.mainDomain1.TabIndex = 7;
             this.mainDomain1.Visible = false;
-            // 
-            // accountSubwindow2
-            // 
-            this.accountSubwindow2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.accountSubwindow2.Location = new System.Drawing.Point(255, 0);
-            this.accountSubwindow2.Margin = new System.Windows.Forms.Padding(4);
-            this.accountSubwindow2.Name = "accountSubwindow2";
-            this.accountSubwindow2.Size = new System.Drawing.Size(959, 532);
-            this.accountSubwindow2.TabIndex = 6;
-            this.accountSubwindow2.Visible = false;
             // 
             // Form1
             // 
@@ -100,11 +100,11 @@ namespace NoteMakingApp
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1216, 534);
+            this.Controls.Add(this.mainDomain1);
             this.Controls.Add(this.accountSubwindow2);
             this.Controls.Add(this.navigationBar);
             this.Controls.Add(this.registerPanel);
             this.Controls.Add(this.loginPanel1);
-            this.Controls.Add(this.mainDomain1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -133,8 +133,9 @@ namespace NoteMakingApp
         private AccountRegister registerPanel;
         private NavigationBar navigationBar;
         private AccountSubwindow accountSubwindow1;
-        private MainDomain mainDomain1;
         private AccountSubwindow accountSubwindow2;
+        
+        private MainDomain mainDomain1;
     }
 }
 

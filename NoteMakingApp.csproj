@@ -171,6 +171,12 @@
     <Compile Include="ViewComponents\EditNote.Designer.cs">
       <DependentUpon>EditNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewComponents\Note\ItemTDL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Note\ItemTDL.Designer.cs">
+      <DependentUpon>ItemTDL.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewComponents\LoginPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -201,17 +207,35 @@
     <Compile Include="ViewComponents\avt.Designer.cs">
       <DependentUpon>avt.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewComponents\NewNote.cs">
+    <Compile Include="ViewComponents\Note\NewNote.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewComponents\NewNote.Designer.cs">
+    <Compile Include="ViewComponents\Note\NewNote.Designer.cs">
       <DependentUpon>NewNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewComponents\Note.cs">
+    <Compile Include="ViewComponents\Note\NewToDoList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewComponents\Note.Designer.cs">
+    <Compile Include="ViewComponents\Note\NewToDoList.Designer.cs">
+      <DependentUpon>NewToDoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\Note\Note.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Note\Note.Designer.cs">
       <DependentUpon>Note.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\Note\ToDoList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Note\ToDoList.Designer.cs">
+      <DependentUpon>ToDoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\Note\TypeNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Note\TypeNote.Designer.cs">
+      <DependentUpon>TypeNote.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -274,11 +298,23 @@
     <EmbeddedResource Include="ViewComponents\avt.resx">
       <DependentUpon>avt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewComponents\NewNote.resx">
+    <EmbeddedResource Include="ViewComponents\Note\ItemTDL.resx">
+      <DependentUpon>ItemTDL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Note\NewNote.resx">
       <DependentUpon>NewNote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewComponents\Note.resx">
+    <EmbeddedResource Include="ViewComponents\Note\NewToDoList.resx">
+      <DependentUpon>NewToDoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Note\Note.resx">
       <DependentUpon>Note.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Note\ToDoList.resx">
+      <DependentUpon>ToDoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Note\TypeNote.resx">
+      <DependentUpon>TypeNote.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DatabaseDataSet.xsc">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
@@ -324,6 +360,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\Mini3.png" />
+    <None Include="Resources\Mini2.png" />
+    <None Include="Resources\Mini1.png" />
+    <None Include="Resources\ToDoList.png" />
     <None Include="Resources\plus2.png" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\search.png" />

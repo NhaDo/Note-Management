@@ -44,32 +44,36 @@
             // 
             // customButton3
             // 
+            this.customButton3.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.customButton3.Location = new System.Drawing.Point(867, 3);
             this.customButton3.Name = "customButton3";
             this.customButton3.Size = new System.Drawing.Size(70, 85);
-            this.customButton3.TabIndex = 2;
+            this.customButton3.TabIndex = 11;
+            
             // 
             // customButton2
             // 
+            this.customButton2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.customButton2.Location = new System.Drawing.Point(791, 3);
             this.customButton2.Name = "customButton2";
             this.customButton2.Size = new System.Drawing.Size(70, 85);
-            this.customButton2.TabIndex = 1;
+            this.customButton2.TabIndex = 10;
             // 
             // customButton1
             // 
+            this.customButton1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.customButton1.Location = new System.Drawing.Point(715, 3);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(70, 85);
-            this.customButton1.TabIndex = 0;
+            this.customButton1.TabIndex = 9;
             // 
             // MainDomain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flPanel);
-            this.Controls.Add(this.customButton3);
             this.Controls.Add(this.customButton2);
+            this.Controls.Add(this.customButton3);
+            this.Controls.Add(this.flPanel);
             this.Controls.Add(this.customButton1);
             this.Name = "MainDomain";
             this.Size = new System.Drawing.Size(940, 510);
@@ -79,10 +83,9 @@
         }
 
         #endregion
-
-        private CustomButton customButton1;
-        private CustomButton customButton2;
-        private CustomButton customButton3;
         private System.Windows.Forms.FlowLayoutPanel flPanel;
+        private CustomButton customButton3;
+        private CustomButton customButton2;
+        private CustomButton customButton1;
     }
 }

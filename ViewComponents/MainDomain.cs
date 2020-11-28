@@ -29,6 +29,7 @@ namespace NoteMakingApp.ViewComponents
             customButton3.setFunction(3);
             currentInstance = this;
             DataHandle.getInstance().ShowNote();
+            
 
         }
 
@@ -38,42 +39,29 @@ namespace NoteMakingApp.ViewComponents
             note.setName(id);
             note.setTittle(tittle);
             note.setContent(content);
+            note.GotFocus += (s, e) =>
+            {
+                note.chanceImage();
+            };
+            note.LostFocus += (s, e) =>
+            {
+                note.defaultImage();
+            };
             this.flPanel.Controls.Add(note);
-            notelist.Add(note);
-            note.Click += new System.EventHandler(this.Note_Click);
-            //note.lbContent.Click += new System.EventHandler(this.lbContent_Click);
-            //note.lbTittle.Click += new System.EventHandler(this.lbTittle_Click);
+            
 
         }
-        List<Note> notelist = new List<Note>();
+        
 
-        private void Note_Click(object sender, EventArgs e)
+        public void AddNewToDoList(string a,List<string> b)
         {
-            Note option = sender as Note;
-            foreach (var eachnote in this.notelist)
-                if (eachnote.isClicked == true && eachnote.getId()!= option.getId())
-                {
-                    eachnote.defaultImage();
-                    eachnote.isClicked = false;
-                }
-            if (option.isClicked == false)
-            {
-                option.isClicked = true;
-                option.chanceImage();
-            }
-            else
-            {
-                 option.isClicked = false;
-                 option.defaultImage();
-            }    
+            ToDoList tdl = new ToDoList();
+            tdl.setName(a);
+            tdl.addItem(b);
+            this.flPanel.Controls.Add(tdl);
+
         }
 
-        private void lbContent_Click(object sender, EventArgs e)
-        {
-            foreach (var eachnote in this.notelist)
-                eachnote.defaultImage();        
-                       
-        }
 
         public void Clear()
         {
@@ -96,7 +84,7 @@ namespace NoteMakingApp.ViewComponents
         }
 
 
-        
+
 
     }
 }

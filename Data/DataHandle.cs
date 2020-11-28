@@ -19,9 +19,14 @@ namespace NoteMakingApp.Models
         static List<Person> persons { get; set; }
         static List<PersonalDetail> details { get; set; }
         static List<Notes> notes { get; set; }
+        
         static User recentUser { get; set; }
         static Account recentAccount { get; set; }
         static Notes recentNote { get; set; }
+        
+        static List<string> _Tittle { get; set; }
+        static List<string> _Content { get; set; }
+
         public int _isSelected = 0;
         public DataHandle()
         {
@@ -30,10 +35,11 @@ namespace NoteMakingApp.Models
             persons = new List<Person>();
             details = new List<PersonalDetail>();
             notes = new List<Notes>();
+            _Content = new List<string>();
+            _Tittle = new List<string>();
             recentUser = null;
             recentAccount = null;
             recentNote = null;
-
             establishDbConnection();
             getData();
         }
@@ -63,6 +69,8 @@ namespace NoteMakingApp.Models
                 case "Note":
                     notes.Clear();
                     break;
+                
+                    
             }
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -109,6 +117,7 @@ namespace NoteMakingApp.Models
                             Content = reader["Content"].ToString().Trim()
                         });
                         break;
+                    
                 }
             }
             reader.Close();
@@ -286,7 +295,7 @@ namespace NoteMakingApp.Models
 
         public void CreateNewNote(Notes nt)
         {
-            string queryFrame = "INSERT into note (Tittle,Content,Id_User) VALUES (@Tittle,@Content,@Id_User)";
+            string queryFrame = "INSERT into Note (Tittle,Content,Id_User) VALUES (@Tittle,@Content,@Id_User)";
 
             using (SqlCommand newNote = new SqlCommand(queryFrame))
             {
@@ -308,6 +317,14 @@ namespace NoteMakingApp.Models
                 notes.Clear();
                 MainDomain.currentInstance.Clear();
             }
+            _Tittle.Clear();
+            _Content.Clear();
+            GetTittleFromToDoList();
+            foreach (string t in _Tittle)
+            {
+                GetContentByTittle(t);
+                MainDomain.currentInstance.AddNewToDoList(t, _Content);
+            }
             populateDataFromTable("Note");
             foreach (Notes n in notes)
             {
@@ -318,6 +335,9 @@ namespace NoteMakingApp.Models
         public void DeleteNote()
         {
             int id = MainDomain.currentInstance.getFlags();
+         
+
+          
             string queryFrame = "exec USP_DeleteNoteByID @ID = " + id.ToString();
             using (SqlCommand deleteNote = new SqlCommand(queryFrame))
             {
@@ -355,5 +375,55 @@ namespace NoteMakingApp.Models
             return null;
         }
 
+        public void CreateNewToDoList(string a, string b)
+        {
+            
+            string queryFrame = "INSERT into ToDoList (Tittle,Content) VALUES (@Tittle,@Content)";
+
+            using (SqlCommand newtdl = new SqlCommand(queryFrame))
+            {
+                newtdl.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                newtdl.Parameters.Add("@Tittle", SqlDbType.NVarChar).Value = a;
+                newtdl.Parameters.Add("@Content", SqlDbType.NVarChar).Value = b;
+                newtdl.ExecuteNonQuery();
+                Console.WriteLine("Nhap du lieu thanh cong");
+                newtdl.Dispose();
+            }
+            
+        }
+
+        public void GetTittleFromToDoList()
+        {
+            SqlCommand cmd = new SqlCommand("Select Distinct Tittle From ToDoList ", DbConnection);
+            _Tittle.Clear();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                _Tittle.Add(reader["Tittle"].ToString().Trim());
+            }
+            reader.Close();
+
+            
+        }
+
+        public void GetContentByTittle(string a)
+        {
+            SqlCommand cmd = new SqlCommand("exec USP_GetContentByTittle @_Tittle = N'"+a+"'", DbConnection);
+            _Content.Clear();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                _Content.Add(reader["Content"].ToString().Trim());
+            }
+            reader.Close();
+
+            
+        }
+
+        public void GetDataFromToDoList()
+        {
+            
+        }
     }
 }

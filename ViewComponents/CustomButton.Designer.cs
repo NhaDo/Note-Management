@@ -56,7 +56,7 @@
             this.lbDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDetail.Location = new System.Drawing.Point(20, 63);
             this.lbDetail.Name = "lbDetail";
-            this.lbDetail.Size = new System.Drawing.Size(46, 18);
+            this.lbDetail.Size = new System.Drawing.Size(46, 17);
             this.lbDetail.TabIndex = 1;
             this.lbDetail.Text = "label1";
             // 
@@ -78,7 +78,7 @@
             this.Controls.Add(this.lbDetail);
             this.Controls.Add(this.CustomBtn);
             this.Name = "CustomButton";
-            this.Size = new System.Drawing.Size(70, 85);
+            this.Size = new System.Drawing.Size(68, 83);
             this.ResumeLayout(false);
             this.PerformLayout();
 

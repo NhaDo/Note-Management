@@ -1,4 +1,5 @@
-﻿using NoteMakingApp.ViewComponents;
+﻿
+using NoteMakingApp.ViewComponents;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,7 @@ namespace NoteMakingApp
             List<string> titles = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
             List<string> images = new List<string> { "HOME.png", "ACCOUNT.png", "SETTINGS.png" };
             this.navigationBar.addNavOptions(titles, images);
+            
             instance = this;
             setWindow();
         }
@@ -58,7 +60,7 @@ namespace NoteMakingApp
                 {
                     case "Login":
                         this.registerPanel.Hide();
-                        this.loginPanel1.Show();                        
+                        this.loginPanel1.Show();
                         break;
                     case "Register":
                         this.loginPanel1.Hide();
@@ -79,7 +81,7 @@ namespace NoteMakingApp
         {
             NewNote newNote = new NewNote();
             newNote.Location = new System.Drawing.Point(400, 100);
-            newNote.setValue(a,b,c);
+            newNote.setValue(a, b, c);
             this.Controls.Add(newNote);
             newNote.BringToFront();
         }
@@ -92,5 +94,21 @@ namespace NoteMakingApp
             this.Controls.Add(editNote);
             editNote.BringToFront();
         }
-    } 
+
+        public void NewToDoList()
+        {
+            NewToDoList newtodo = new NewToDoList();
+            newtodo.Location = new System.Drawing.Point(390, 80);
+            this.Controls.Add(newtodo);
+            newtodo.BringToFront();
+        }
+
+        public void ShowTypeNote()
+        {
+            TypeNote typeNote = new TypeNote();
+            typeNote.Location = new System.Drawing.Point(300, 80);
+            this.Controls.Add(typeNote);
+            typeNote.BringToFront();
+        }
+    }
 }

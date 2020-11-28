@@ -66,7 +66,7 @@ namespace NoteMakingApp.ViewComponents
             this.CustomBtn.Name = index.ToString();
         }
 
-
+        
 
 
         public int getFun()
@@ -82,8 +82,8 @@ namespace NoteMakingApp.ViewComponents
             switch (fun)
             {
                 case 1:
-                    
-                    Form1.getInstance().NewNote();
+                    Form1.getInstance().ShowTypeNote();
+                    //Form1.getInstance().NewNote();
                     break;
                 case 2:
                     if (MainDomain.currentInstance.getFlags() == 0)
