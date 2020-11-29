@@ -64,6 +64,12 @@ namespace NoteMakingApp.ViewComponents.AccountVC
             function = (function + 1) % 3;
             if (isGeneralDetail && function == 1) function = 2;
             btnFunction.Text = function.ToString();
+            if (function == 0)
+                btnFunction.Text = "Delete";
+            if (function == 1)
+                btnFunction.Text = "Modify";
+            if (function == 2)
+                btnFunction.Text = "Show";
             switch (function)
             {
                 // Nonfunctional

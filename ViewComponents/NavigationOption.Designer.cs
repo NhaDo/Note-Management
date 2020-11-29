@@ -36,13 +36,14 @@
             // opIcon
             // 
             this.opIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.opIcon.Location = new System.Drawing.Point(0, 0);
+            this.opIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.opIcon.Location = new System.Drawing.Point(4, 4);
             this.opIcon.Margin = new System.Windows.Forms.Padding(4);
             this.opIcon.Name = "opIcon";
-            this.opIcon.Size = new System.Drawing.Size(50, 44);
+            this.opIcon.Size = new System.Drawing.Size(38, 38);
+            this.opIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.opIcon.TabIndex = 0;
             this.opIcon.TabStop = false;
-            //this.opIcon.Click += new System.EventHandler(this.opIcon_Click);
             // 
             // opTitle
             // 
@@ -55,7 +56,6 @@
             this.opTitle.Size = new System.Drawing.Size(88, 32);
             this.opTitle.TabIndex = 1;
             this.opTitle.Text = "opTitle";
-            //this.opTitle.Click += new System.EventHandler(this.opTitle_Click);
             // 
             // NavigationOption
             // 
@@ -66,7 +66,7 @@
             this.Controls.Add(this.opIcon);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NavigationOption";
-            this.Size = new System.Drawing.Size(221, 44);
+            this.Size = new System.Drawing.Size(255, 44);
             this.Load += new System.EventHandler(this.NavigationOption_Load);
             ((System.ComponentModel.ISupportInitialize)(this.opIcon)).EndInit();
             this.ResumeLayout(false);

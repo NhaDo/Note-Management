@@ -21,7 +21,7 @@ namespace NoteMakingApp.ViewComponents
         {
             InitializeComponent();
             opTitle.Text = title;
-            // opIcon.Image = Image.FromFile(imageFolderPath + imageFile);
+            //opIcon.Image = Image.FromFile("../../images/" + imageFile);
         }
 
         public void defautsettings()
@@ -29,6 +29,7 @@ namespace NoteMakingApp.ViewComponents
             this.opTitle.ForeColor = System.Drawing.Color.FromArgb(120, 120, 130);
             this.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
             this.opIcon.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
+
         }
 
         public void initOption()

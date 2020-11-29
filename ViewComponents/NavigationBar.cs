@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Policy;
+using System.Runtime.CompilerServices;
 
 namespace NoteMakingApp.ViewComponents
 {
@@ -27,6 +29,7 @@ namespace NoteMakingApp.ViewComponents
         {
             InitializeComponent();
         }
+
         public NavigationBar(List<String> titles, List<String> imageFiles)
         {
             addNavOptions(titles, imageFiles);
@@ -35,7 +38,12 @@ namespace NoteMakingApp.ViewComponents
             {
                 recentOption = titles.First();
             }
+
+
         }
+
+
+
         public void addNavOptions(List<String> titles, List<String> imageFiles)
         {
             foreach (var tt in titles)
@@ -46,7 +54,7 @@ namespace NoteMakingApp.ViewComponents
         private void addNavOption(string tt, string img)
         {
             NavigationOption option = new NavigationOption(tt, img);
-            option.Location = new System.Drawing.Point(0, (option.Size.Height+18) * navOptions.Count()+250);
+            option.Location = new System.Drawing.Point(0, (option.Size.Height+18) * navOptions.Count()+150);
             option.Click += new System.EventHandler(this.option_click);
             option.initOption();
             navOptions.Add(option);
@@ -66,9 +74,33 @@ namespace NoteMakingApp.ViewComponents
             recentOption = option.opTitle.Text;
             option.opTitle.ForeColor = System.Drawing.Color.FromArgb(206, 105, 35);
             option.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
+            option.opIcon.BackColor= System.Drawing.Color.FromArgb(110, 110, 110); 
             option.Isclicked = true;
             Form1.getInstance().setWindow(recentOption);
         }
 
+        private void avt_MouseHover(object sender, EventArgs e)
+        {
+            this.bEdit.Visible = true;
+        }
+
+        private void bEdit_MosueLeave(object sender, EventArgs e)
+        {
+            this.bEdit.Visible = false;
+        }
+
+        private void navBar_MouseHover(object sender, EventArgs e)
+        {
+            this.bEdit.Visible = false;
+        }
+
+        private void username_paint(object sender, PaintEventArgs e)
+        {
+            string measureString = this.username.Text;
+            SizeF stringSize = new SizeF();
+            stringSize = e.Graphics.MeasureString(measureString, this.username.Font);
+            this.username.Location = new System.Drawing.Point(this.Width / 2 - (int)stringSize.Width/2, 100);
+            this.accountpic.Location = new System.Drawing.Point(username.Location.X-20, username.Location.Y);
+        }
     }
 }

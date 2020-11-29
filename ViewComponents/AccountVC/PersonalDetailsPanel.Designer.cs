@@ -40,75 +40,92 @@
             // lbNameLabel
             // 
             this.lbNameLabel.AutoSize = true;
-            this.lbNameLabel.Location = new System.Drawing.Point(15, 43);
+            this.lbNameLabel.Font = new System.Drawing.Font("Arial", 8F);
+            this.lbNameLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbNameLabel.Location = new System.Drawing.Point(20, 53);
+            this.lbNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNameLabel.Name = "lbNameLabel";
-            this.lbNameLabel.Size = new System.Drawing.Size(35, 13);
+            this.lbNameLabel.Size = new System.Drawing.Size(51, 17);
             this.lbNameLabel.TabIndex = 0;
-            this.lbNameLabel.Text = "Name";
+            this.lbNameLabel.Text = "Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 10);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(20, 6);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(120, 26);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "ACCOUNT";
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(120, 5);
+            this.btnEdit.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Location = new System.Drawing.Point(160, 6);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.Size = new System.Drawing.Size(100, 28);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "button1";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // pnlCategories
             // 
-            this.pnlCategories.AutoScroll = true;
             this.pnlCategories.AutoSize = true;
-            this.pnlCategories.Location = new System.Drawing.Point(4, 103);
+            this.pnlCategories.Location = new System.Drawing.Point(5, 127);
+            this.pnlCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlCategories.Name = "pnlCategories";
-            this.pnlCategories.Size = new System.Drawing.Size(200, 11);
+            this.pnlCategories.Size = new System.Drawing.Size(267, 14);
             this.pnlCategories.TabIndex = 3;
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(139, 43);
+            this.lbName.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.lbName.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbName.Location = new System.Drawing.Point(185, 53);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(35, 13);
+            this.lbName.Size = new System.Drawing.Size(0, 18);
             this.lbName.TabIndex = 4;
-            this.lbName.Text = "label1";
             // 
             // lbIntroduction
             // 
             this.lbIntroduction.AutoSize = true;
-            this.lbIntroduction.Location = new System.Drawing.Point(139, 67);
+            this.lbIntroduction.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.lbIntroduction.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbIntroduction.Location = new System.Drawing.Point(185, 82);
+            this.lbIntroduction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbIntroduction.Name = "lbIntroduction";
-            this.lbIntroduction.Size = new System.Drawing.Size(35, 13);
+            this.lbIntroduction.Size = new System.Drawing.Size(0, 18);
             this.lbIntroduction.TabIndex = 5;
-            this.lbIntroduction.Text = "Name";
             this.lbIntroduction.Click += new System.EventHandler(this.label3_Click);
             // 
             // lbIntroductionLabel
             // 
             this.lbIntroductionLabel.AutoSize = true;
-            this.lbIntroductionLabel.Location = new System.Drawing.Point(15, 67);
+            this.lbIntroductionLabel.Font = new System.Drawing.Font("Arial", 8F);
+            this.lbIntroductionLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbIntroductionLabel.Location = new System.Drawing.Point(20, 82);
+            this.lbIntroductionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbIntroductionLabel.Name = "lbIntroductionLabel";
-            this.lbIntroductionLabel.Size = new System.Drawing.Size(63, 13);
+            this.lbIntroductionLabel.Size = new System.Drawing.Size(87, 17);
             this.lbIntroductionLabel.TabIndex = 6;
-            this.lbIntroductionLabel.Text = "Introduction";
+            this.lbIntroductionLabel.Text = "Introduction:";
             this.lbIntroductionLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // PersonalDetailsPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.Controls.Add(this.lbIntroductionLabel);
             this.Controls.Add(this.lbIntroduction);
             this.Controls.Add(this.lbName);
@@ -116,9 +133,10 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbNameLabel);
-            this.MaximumSize = new System.Drawing.Size(207, 250);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(276, 308);
             this.Name = "PersonalDetailsPanel";
-            this.Size = new System.Drawing.Size(207, 117);
+            this.Size = new System.Drawing.Size(276, 145);
             this.ResumeLayout(false);
             this.PerformLayout();
 

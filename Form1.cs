@@ -1,4 +1,5 @@
-﻿using NoteMakingApp.ViewComponents;
+﻿
+using NoteMakingApp.ViewComponents;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,8 +29,9 @@ namespace NoteMakingApp
         {
             InitializeComponent();
             List<string> titles = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
-            List<string> images = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
+            List<string> images = new List<string> { "HOME.png", "ACCOUNT.png", "SETTINGS.png" };
             this.navigationBar.addNavOptions(titles, images);
+            
             instance = this;
             setWindow();
         }
@@ -44,9 +46,17 @@ namespace NoteMakingApp
                         this.loginPanel1.Hide();
                         this.navigationBar.username.Text = IDname;
                         this.navigationBar.Show();
-                        this.commandBar1.Show();
+                        this.mainDomain1.Show();
+                        this.accountSubwindow2.Visible = false;
                         break;
-
+                    case "ACCOUNT":
+                        this.accountSubwindow2.Visible = true;
+                        this.mainDomain1.Hide();
+                        break;
+                    case "HOME":
+                        this.mainDomain1.Show();
+                        this.accountSubwindow2.Visible = false;
+                        break;
                 }
             }
             else
@@ -55,7 +65,7 @@ namespace NoteMakingApp
                 {
                     case "Login":
                         this.registerPanel.Hide();
-                        this.loginPanel1.Show();                        
+                        this.loginPanel1.Show();
                         break;
                     case "Register":
                         this.loginPanel1.Hide();
@@ -71,5 +81,39 @@ namespace NoteMakingApp
             setWindow("Login");
         }
         public static string IDname;
-    } 
+
+        public void NewNote(string a = "New note", string b = null, string c = null)
+        {
+            NewNote newNote = new NewNote();
+            newNote.Location = new System.Drawing.Point(400, 100);
+            newNote.setValue(a, b, c);
+            this.Controls.Add(newNote);
+            newNote.BringToFront();
+        }
+
+        public void editNote(string a = "Edit note", string b = null, string c = null)
+        {
+            EditNote editNote = new EditNote();
+            editNote.Location = new System.Drawing.Point(400, 100);
+            editNote.setValue(a, b, c);
+            this.Controls.Add(editNote);
+            editNote.BringToFront();
+        }
+
+        public void NewToDoList()
+        {
+            NewToDoList newtodo = new NewToDoList();
+            newtodo.Location = new System.Drawing.Point(390, 80);
+            this.Controls.Add(newtodo);
+            newtodo.BringToFront();
+        }
+
+        public void ShowTypeNote()
+        {
+            TypeNote typeNote = new TypeNote();
+            typeNote.Location = new System.Drawing.Point(300, 80);
+            this.Controls.Add(typeNote);
+            typeNote.BringToFront();
+        }
+    }
 }

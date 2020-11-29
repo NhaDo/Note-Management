@@ -20,6 +20,8 @@ namespace NoteMakingApp.ViewComponents
             InitializeComponent();
             populateAccounts();
         }
+
+
         private void populateAccounts()
         {
             List<NoteMakingApp.Models.Account> accounts = DataHandle.getInstance().GetAccounts();

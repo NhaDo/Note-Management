@@ -65,5 +65,7 @@ namespace NoteMakingApp.ViewComponents
         {
             Form1.getInstance().setWindow("Login");
         }
+
+
     }
 }

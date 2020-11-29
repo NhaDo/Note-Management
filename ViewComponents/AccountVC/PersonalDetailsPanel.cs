@@ -19,6 +19,8 @@ namespace NoteMakingApp.ViewComponents.AccountVC
         public PersonalDetailsPanel()
         {
             InitializeComponent();
+            this.Visible = false;
+            this.btnEdit.Visible = false;
             instance = this;
         }
         public static PersonalDetailsPanel getInstance(int acc)
@@ -28,7 +30,7 @@ namespace NoteMakingApp.ViewComponents.AccountVC
             instance.person = DataHandle.getInstance().GetPerson(acc);
             instance.lbName.Text= instance.person.name;
             instance.lbIntroduction.Text = instance.person.introduction;
-            instance.btnEdit.Visible = false;
+            instance.btnEdit.Visible = acc == DataHandle.getInstance().getRecentAccount().id;
 
             List<PersonalDetail> details = DataHandle.getInstance().GetDetails(acc);
             List<PersonalDetail> categorisedDetails;
@@ -39,7 +41,7 @@ namespace NoteMakingApp.ViewComponents.AccountVC
                 categorisedDetails = details.FindAll(d => d.category == c);
                 if (categorisedDetails.Count != 0)
                 {
-                    categoryPanel = new CategorisedDetailPanel(c, categorisedDetails, acc == 57/*DataHandle.getInstance().getRecentAccount().id*/);
+                    categoryPanel = new CategorisedDetailPanel(c, categorisedDetails, acc == DataHandle.getInstance().getRecentAccount().id);
                     categoryPanel.Location = new System.Drawing.Point(0,
                         instance.pnlCategories.Controls.Count == 0 ? 0 :
                         instance.pnlCategories.Controls[instance.pnlCategories.Controls.Count - 1].Location.Y +
