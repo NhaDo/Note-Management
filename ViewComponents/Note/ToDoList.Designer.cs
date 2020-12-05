@@ -42,6 +42,7 @@
             this.flPanel.Name = "flPanel";
             this.flPanel.Size = new System.Drawing.Size(178, 165);
             this.flPanel.TabIndex = 1;
+            this.flPanel.Click += new System.EventHandler(this.flPanel_Click);
             // 
             // lbName
             // 
@@ -53,6 +54,7 @@
             this.lbName.Size = new System.Drawing.Size(59, 23);
             this.lbName.TabIndex = 2;
             this.lbName.Text = "Name";
+            this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
             // pictureBox1
             // 
@@ -63,6 +65,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(206, 250);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ToDoList
             // 
@@ -72,7 +75,9 @@
             this.Controls.Add(this.flPanel);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ToDoList";
-            this.Size = new System.Drawing.Size(212, 256);
+            this.Size = new System.Drawing.Size(212, 257);
+            
+            this.Click += new System.EventHandler(this.ToDoList_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

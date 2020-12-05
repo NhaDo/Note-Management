@@ -43,7 +43,9 @@
             // 
             // checkbox
             // 
+            this.checkbox.AutoCheck = false;
             this.checkbox.AutoSize = true;
+            this.checkbox.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.checkbox.Location = new System.Drawing.Point(2, 6);
             this.checkbox.Name = "checkbox";
             this.checkbox.Size = new System.Drawing.Size(18, 17);
@@ -65,7 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkbox;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.CheckBox checkbox;
     }
 }

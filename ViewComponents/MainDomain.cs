@@ -14,6 +14,7 @@ namespace NoteMakingApp.ViewComponents
     public partial class MainDomain : UserControl
     {
         public int _flags = 0;
+        public string _way;
         public static MainDomain currentInstance { get; set; }
         public MainDomain()
         {
@@ -31,14 +32,14 @@ namespace NoteMakingApp.ViewComponents
             customButton3.setFunction(3);
             customButton3.CustomBtn.BackColor = Color.LightSeaGreen;
             currentInstance = this;
-            DataHandle.getInstance().ShowNote();
+            
             
 
         }
 
         public void AddNewNote(int id, string tittle, string content)
         {
-            Note note = new Note();
+            _Note note = new _Note();
             note.setName(id);
             note.setTittle(tittle);
             note.setContent(content);
@@ -50,19 +51,22 @@ namespace NoteMakingApp.ViewComponents
             {
                 note.defaultImage();
             };
+            
+
             this.flPanel.Controls.Add(note);
             
 
         }
         
 
-        public void AddNewToDoList(string a,List<string> b)
+        public void AddNewToDoList(string name, string a, List<ItemTDLs> b)
         {
             ToDoList tdl = new ToDoList();
             tdl.setName(a);
             tdl.addItem(b);
+            tdl.setId(name);
             this.flPanel.Controls.Add(tdl);
-
+            
         }
 
 
@@ -80,6 +84,8 @@ namespace NoteMakingApp.ViewComponents
         {
             return _flags;
         }
+
+
 
         private void MainDomain_Load(object sender, EventArgs e)
         {

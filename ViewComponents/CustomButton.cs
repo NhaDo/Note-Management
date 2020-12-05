@@ -86,15 +86,28 @@ namespace NoteMakingApp.ViewComponents
                     //Form1.getInstance().NewNote();
                     break;
                 case 2:
-                    if (MainDomain.currentInstance.getFlags() == 0)
+                    if (Form1.type == 0 )
                     {
                         MessageBox.Show("Vui lòng thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        Notes a = DataHandle.getInstance().GetDataFromNote();
-                        Form1.getInstance().editNote("Sửa ghi chú",a.Tittle, a.Content);
+                        switch (Form1.type)
+                        {
+                            case 1:
+                                Notes a = DataHandle.getInstance().GetDataFromNote();
+                                Form1.getInstance().editNote( a.Tittle, a.Content);
+                                break;
+                            case 2:
+                                ToDoLists b = DataHandle.getInstance().GetDataToDoList();
+                                Form1.getInstance().editToDoList(b.Tittle, b.item);
+                                break;
+
+                        }
+                        
+                        
                     }
+                    
 
                     break;
                 case 3:

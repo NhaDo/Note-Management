@@ -17,9 +17,29 @@ namespace NoteMakingApp.ViewComponents
             InitializeComponent();
         }
 
-        public void setValue(string a)
+        public void setValue(string text,int name, bool check)
         {
-            this.textBox1.Text = a;
+            this.textBox1.Text = text;
+            this.textBox1.Name = name.ToString();
+            this.checkbox.Checked = check;
+            this.checkbox.Name = name.ToString();
+        }
+
+        public void edit()
+        {
+            this.textBox1.ReadOnly = false;
+            this.checkbox.AutoCheck = true;
+        }
+
+        public void read()
+        {
+            this.textBox1.ReadOnly = true;
+            this.checkbox.AutoCheck = false;
+        }
+
+        public void ReSize()
+        {
+            this.textBox1.Size = new System.Drawing.Size(200, 22);
         }
     }
 }

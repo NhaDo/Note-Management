@@ -9,11 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NoteMakingApp.Models;
+using NoteMakingApp.ViewComponents.Note;
 
 namespace NoteMakingApp
 {
     public partial class Form1 : Form
     {
+        public static int type = 0;
         static private bool loggedIn = false;
         private static Form1 instance;
         static public Form1 getInstance()
@@ -48,6 +51,7 @@ namespace NoteMakingApp
                         this.navigationBar.Show();
                         this.mainDomain1.Show();
                         this.accountSubwindow2.Visible = false;
+                        DataHandle.getInstance().ShowNote();
                         break;
                     case "ACCOUNT":
                         this.accountSubwindow2.Visible = true;
@@ -91,11 +95,11 @@ namespace NoteMakingApp
             newNote.BringToFront();
         }
 
-        public void editNote(string a = "Edit note", string b = null, string c = null)
+        public void editNote(string b = null, string c = null)
         {
             EditNote editNote = new EditNote();
             editNote.Location = new System.Drawing.Point(400, 100);
-            editNote.setValue(a, b, c);
+            editNote.setValue(b, c);
             this.Controls.Add(editNote);
             editNote.BringToFront();
         }
@@ -106,6 +110,15 @@ namespace NoteMakingApp
             newtodo.Location = new System.Drawing.Point(390, 80);
             this.Controls.Add(newtodo);
             newtodo.BringToFront();
+        }
+
+        public void editToDoList(string name,List<ItemTDLs> item)
+        {
+            EditToDoList editTDL = new EditToDoList();
+            editTDL.Location = new System.Drawing.Point(400, 100);
+            editTDL.setValue(name, item);
+            this.Controls.Add(editTDL);
+            editTDL.BringToFront();
         }
 
         public void ShowTypeNote()

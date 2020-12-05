@@ -15,10 +15,12 @@ namespace NoteMakingApp.ViewComponents
     {
         
         static List<string> txtbox { get; set; }
-      
-
-        public int i = 1;
-        public int flag = 0;
+        public static int id_user = 0;
+        static int _e = -1;
+        int i = 0;
+        int _flag = 0;
+        int save;
+        
         public NewToDoList()
         {
             txtbox = new List<string>();
@@ -42,13 +44,16 @@ namespace NoteMakingApp.ViewComponents
 
             else
             {
+                int p = 1;
                 if (txtbox == null)
-                    DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, "");
+                    DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, "",p,0);
                 else
                 {
+                    DataHandle.getInstance().CreateMyNote(txtTittle.Text, id_user);
                     foreach (string t in txtbox)
                     {
-                        DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, t);
+                        DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, t,p,0);
+                        p++;
                     }
                     DataHandle.getInstance().ShowNote();
                     this.Dispose();
@@ -61,40 +66,71 @@ namespace NoteMakingApp.ViewComponents
         {
             TextBox a = new TextBox();
             a.Name = i.ToString();
-            
             a.Size = new System.Drawing.Size(150, 10);
-            a.Text = "Something " + i.ToString();
+            a.Text = "Something " + (i+1).ToString();
+            txtbox.Add(a.Text);
             this.flowLayoutPanel1.Controls.Add(a);
-            
             i++;
             
-            
+
             a.Leave += (s, e) =>
             {
-                if (flag+2 < i)
+                if (_flag == 1)
                 {
-                    txtbox.Insert(flag - 1, a.Text);
-                    Console.WriteLine("Sua du lieu");
+                    txtbox.RemoveAt(_e);
+                    txtbox.Insert(_e, a.Text);
                 }
-                else
-                {
-                    txtbox.Add(a.Text);
-                    Console.WriteLine("Them du lieu");
-                }
-                
+                _e = -1;
             };
 
             a.Enter += (s, e) =>
             {
-                
-                flag = Int32.Parse(a.Name);
-                Console.WriteLine("flag: " + flag);
-                Console.WriteLine("i: " + i);
-                
-
+                _flag = 1;
+                _e = Int32.Parse(a.Name);
+                Console.WriteLine(_e);
+                save = _e;
             };
 
          
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs y)
+        {
+            _flag = 0;
+            if (_e < 0)
+                MessageBox.Show("Vui lòng chọn dòng để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                txtbox.RemoveAt(_e);
+                this.flowLayoutPanel1.Controls.Clear();
+                i = 0;
+                foreach (string o in txtbox)
+                {
+                    TextBox a = new TextBox();
+                    a.Name = i.ToString();
+                    a.Size = new System.Drawing.Size(150, 10);
+                    a.Text = o;
+                    this.flowLayoutPanel1.Controls.Add(a);
+                    i++;
+                    
+                    a.Leave += (s, e) =>
+                    {
+                        if (_flag == 1)
+                        {
+                            txtbox.RemoveAt(_e);
+                            txtbox.Insert(_e, a.Text);
+                        }
+                        _e = -1;
+                    };
+
+                    a.Enter += (s, e) =>
+                    {
+                        _flag = 1;
+                        _e = Int32.Parse(a.Name);
+                        Console.WriteLine(_e);
+                    };
+                }
+            }
         }
     }
 }

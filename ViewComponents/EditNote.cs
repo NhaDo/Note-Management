@@ -37,10 +37,9 @@ namespace NoteMakingApp.ViewComponents
             this.Dispose();
         }
 
-        public void setValue(string a, string b, string c)
+        public void setValue(string b, string c)
         {
-            this.lbMain.Text = a;
-
+            
             this.txtTittle.Text = b;
             this.txtContent.Text = c;
         }

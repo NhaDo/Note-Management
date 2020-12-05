@@ -19,6 +19,8 @@ namespace NoteMakingApp.ViewComponents.AccountVC
         public PersonalDetailsPanel()
         {
             InitializeComponent();
+            this.Visible = true;
+            this.btnEdit.Visible = false;
             instance = this;
         }
         public static PersonalDetailsPanel getInstance(int acc)
@@ -28,7 +30,7 @@ namespace NoteMakingApp.ViewComponents.AccountVC
             instance.person = DataHandle.getInstance().GetPerson(acc);
             instance.lbName.Text= instance.person.name;
             instance.lbIntroduction.Text = instance.person.introduction;
-            instance.btnEdit.Visible = false;
+            instance.btnEdit.Visible = acc == DataHandle.getInstance().getRecentAccount().id;
 
             List<PersonalDetail> details = DataHandle.getInstance().GetDetails(acc);
             List<PersonalDetail> categorisedDetails;

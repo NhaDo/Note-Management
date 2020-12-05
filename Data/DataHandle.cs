@@ -19,15 +19,18 @@ namespace NoteMakingApp.Models
         static List<Person> persons { get; set; }
         static List<PersonalDetail> details { get; set; }
         static List<Notes> notes { get; set; }
+        static List<ToDoLists> tdls { get; set; }
+        static List<ItemTDLs> itdl { get; set; }
+        static List<string> _Tittle { get; set; }
+        static List<string> _Content { get; set; }
         
         static User recentUser { get; set; }
         static Account recentAccount { get; set; }
         static Notes recentNote { get; set; }
-        
-        static List<string> _Tittle { get; set; }
-        static List<string> _Content { get; set; }
-
+        public static int id { get; set; }
         public int _isSelected = 0;
+        public int _idtdl = 0;
+        public int _idUsertdl = 0;
         public DataHandle()
         {
             users = new List<User>();
@@ -35,8 +38,10 @@ namespace NoteMakingApp.Models
             persons = new List<Person>();
             details = new List<PersonalDetail>();
             notes = new List<Notes>();
-            _Content = new List<string>();
+            tdls = new List<ToDoLists>();
+            itdl = new List<ItemTDLs>();
             _Tittle = new List<string>();
+            _Content = new List<string>();
             recentUser = null;
             recentAccount = null;
             recentNote = null;
@@ -45,7 +50,7 @@ namespace NoteMakingApp.Models
         }
         private void establishDbConnection()
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = G:\programming projects\Do_An_LTTQ\Note-Management\Data\Database.mdf; Integrated Security = True";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Project\Note-Management1\Data\Database.mdf; Integrated Security = True";
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
@@ -114,7 +119,8 @@ namespace NoteMakingApp.Models
                         {
                             id = Convert.ToInt32(reader["ID"]),
                             Tittle = reader["Tittle"].ToString().Trim(),
-                            Content = reader["Content"].ToString().Trim()
+                            Content = reader["Content"].ToString().Trim(),
+                            user_id = Convert.ToInt32(reader["Id_User"]),
                         });
                         break;
                     
@@ -253,7 +259,7 @@ namespace NoteMakingApp.Models
             using (SqlCommand insert = new SqlCommand(queryFrame))
             {
                 insert.Connection = DbConnection;
-                insert.Parameters.Add("@Id", SqlDbType.Int).Value = details.Count()*recentAccount.id+1;
+                insert.Parameters.Add("@Id", SqlDbType.Int).Value = DateTime.Now.Ticks;
                 insert.Parameters.Add("@person", SqlDbType.Int).Value = dt.account;
                 insert.Parameters.Add("@category", SqlDbType.NChar, 20).Value = dt.category;
                 insert.Parameters.Add("@subcategory", SqlDbType.Char, 20).Value = dt.subcategory;
@@ -312,23 +318,25 @@ namespace NoteMakingApp.Models
 
         public void ShowNote()
         {
-            if (notes.Count() != 0)
+            notes.Clear();
+            tdls.Clear();
+            MainDomain.currentInstance.Clear();
+            GetDataFromTDL();
+            
+            foreach (ToDoLists tdl in tdls)
             {
-                notes.Clear();
-                MainDomain.currentInstance.Clear();
+                if (tdl.user_id == id)
+                    MainDomain.currentInstance.AddNewToDoList(tdl.id.ToString(), tdl.Tittle, tdl.item);
+                
             }
-            _Tittle.Clear();
-            _Content.Clear();
-            GetTittleFromToDoList();
-            foreach (string t in _Tittle)
-            {
-                GetContentByTittle(t);
-                MainDomain.currentInstance.AddNewToDoList(t, _Content);
-            }
+            
+
             populateDataFromTable("Note");
+            
             foreach (Notes n in notes)
             {
-                MainDomain.currentInstance.AddNewNote(n.id, n.Tittle, n.Content);
+                if (n.user_id == id)
+                    MainDomain.currentInstance.AddNewNote(n.id, n.Tittle, n.Content);
             }
         }
 
@@ -375,10 +383,10 @@ namespace NoteMakingApp.Models
             return null;
         }
 
-        public void CreateNewToDoList(string a, string b)
+        public void CreateNewToDoList(string a, string b, int c,int d)
         {
             
-            string queryFrame = "INSERT into ToDoList (Tittle,Content) VALUES (@Tittle,@Content)";
+            string queryFrame = "INSERT into ToDoList (Tittle,Content,STT,Complete) VALUES (@Tittle,@Content,@STT,@Complete)";
 
             using (SqlCommand newtdl = new SqlCommand(queryFrame))
             {
@@ -386,6 +394,8 @@ namespace NoteMakingApp.Models
                 Console.WriteLine("==========================");
                 newtdl.Parameters.Add("@Tittle", SqlDbType.NVarChar).Value = a;
                 newtdl.Parameters.Add("@Content", SqlDbType.NVarChar).Value = b;
+                newtdl.Parameters.Add("@STT", SqlDbType.Int).Value = c;
+                newtdl.Parameters.Add("@Complete", SqlDbType.Int).Value = d;
                 newtdl.ExecuteNonQuery();
                 Console.WriteLine("Nhap du lieu thanh cong");
                 newtdl.Dispose();
@@ -393,9 +403,29 @@ namespace NoteMakingApp.Models
             
         }
 
+        public void CreateMyNote(string a, int b)
+        {
+            string queryFrame = "INSERT into MyNote (Tittle,id_user) VALUES (@Tittle,@id_user)";
+
+            using (SqlCommand newt = new SqlCommand(queryFrame))
+            {
+                newt.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                newt.Parameters.Add("@Tittle", SqlDbType.NVarChar).Value = a;
+                newt.Parameters.Add("@id_user", SqlDbType.Int).Value = b;
+                newt.ExecuteNonQuery();
+                Console.WriteLine("Nhap du lieu thanh cong");
+                newt.Dispose();
+            }
+            ;
+
+
+        }
+
         public void GetTittleFromToDoList()
         {
             SqlCommand cmd = new SqlCommand("Select Distinct Tittle From ToDoList ", DbConnection);
+            tdls.Clear();
             _Tittle.Clear();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -403,27 +433,102 @@ namespace NoteMakingApp.Models
                 _Tittle.Add(reader["Tittle"].ToString().Trim());
             }
             reader.Close();
-
-            
         }
 
-        public void GetContentByTittle(string a)
+        public void GetItemByTittle(string a)
         {
-            SqlCommand cmd = new SqlCommand("exec USP_GetContentByTittle @_Tittle = N'"+a+"'", DbConnection);
-            _Content.Clear();
+            SqlCommand cmd = new SqlCommand("exec USP_GetItemByTittle @Tittle = N'"+a+"'", DbConnection);
+            itdl.Clear();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                _Content.Add(reader["Content"].ToString().Trim());
+                itdl.Add(new ItemTDLs()
+                {
+                    Content = reader["Content"].ToString().Trim(),
+                    STT = Convert.ToInt32(reader["STT"]),
+                    check = Convert.ToBoolean(reader["Complete"]),
+                });
             }
-            reader.Close();
-
             
+            reader.Close(); 
         }
 
-        public void GetDataFromToDoList()
+        public void GetUserIdByTittle(string a)
         {
+            SqlCommand cmd = new SqlCommand("exec USP_GetIdByTittle @Tittle = N'" + a + "'", DbConnection);
             
+            _idtdl = 0;
+            _idUsertdl = 0;
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                _idUsertdl = Convert.ToInt32(reader["id_user"]);
+                _idtdl = Convert.ToInt32(reader["id"]);
+            }
+            
+            reader.Close();
+        }
+
+        public void GetDataFromTDL()
+        {
+            _Tittle.Clear();
+            GetTittleFromToDoList();
+      
+            foreach (string t in _Tittle)
+            {
+                GetItemByTittle(t);
+                GetUserIdByTittle(t);
+                
+                tdls.Add(new ToDoLists()
+                {
+                    Tittle = t,
+                    item = new List<ItemTDLs>(itdl),
+                    user_id = _idUsertdl,
+                    id = _idtdl
+                });
+                
+               
+            }
+        }
+
+        public void EditToDoList(string a, List<ItemTDLs> b)
+        {
+            int id = MainDomain.currentInstance.getFlags();
+            string queryFrame = "exec USP_EditTittleTDL @Tittle = N'" + a + "',@Id = " + id + "";
+            using (SqlCommand editTittle = new SqlCommand(queryFrame))
+            {
+                editTittle.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                editTittle.ExecuteNonQuery();
+                Console.WriteLine("Da sua du lieu tai tdl co id " + id.ToString());
+                editTittle.Dispose();
+            }
+
+            foreach (ItemTDLs i in b)
+            {
+                string query = "exec USP_EditContentTDL @Tittle = N'" + a + "',@Content = N'" + i.Content + "',@Complete = " + Convert.ToInt32(i.check) + ",@ID = " + i.STT + "";
+                using (SqlCommand editContent = new SqlCommand(query))
+                {
+                    editContent.Connection = DbConnection;
+                    Console.WriteLine("==========================");
+                    editContent.ExecuteNonQuery();
+                    Console.WriteLine("Da sua du lieu tai tdl co STT " + i.STT.ToString());
+                    editContent.Dispose();
+                }
+            }
+
+        }
+
+        public ToDoLists GetDataToDoList()
+        {
+            int id = MainDomain.currentInstance.getFlags();
+            foreach (ToDoLists t in tdls)
+            {
+                if (t.id == id)
+                    return t;
+            }
+            return null;
         }
     }
 }
+

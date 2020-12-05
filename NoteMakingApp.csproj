@@ -98,10 +98,12 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Data\DataHandle.cs" />
+    <Compile Include="Models\ItemTDLs.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\Notes.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonalDetail.cs" />
+    <Compile Include="Models\ToDoList.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -171,6 +173,12 @@
     <Compile Include="ViewComponents\EditNote.Designer.cs">
       <DependentUpon>EditNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewComponents\Note\EditToDoList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Note\EditToDoList.Designer.cs">
+      <DependentUpon>EditToDoList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewComponents\Note\ItemTDL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,10 +227,10 @@
     <Compile Include="ViewComponents\Note\NewToDoList.Designer.cs">
       <DependentUpon>NewToDoList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewComponents\Note\Note.cs">
+    <Compile Include="ViewComponents\Note.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewComponents\Note\Note.Designer.cs">
+    <Compile Include="ViewComponents\Note.Designer.cs">
       <DependentUpon>Note.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\Note\ToDoList.cs">
@@ -298,6 +306,9 @@
     <EmbeddedResource Include="ViewComponents\avt.resx">
       <DependentUpon>avt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Note\EditToDoList.resx">
+      <DependentUpon>EditToDoList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\Note\ItemTDL.resx">
       <DependentUpon>ItemTDL.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,7 +318,7 @@
     <EmbeddedResource Include="ViewComponents\Note\NewToDoList.resx">
       <DependentUpon>NewToDoList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewComponents\Note\Note.resx">
+    <EmbeddedResource Include="ViewComponents\Note.resx">
       <DependentUpon>Note.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\Note\ToDoList.resx">

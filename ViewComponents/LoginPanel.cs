@@ -32,10 +32,11 @@ namespace NoteMakingApp.ViewComponents
                 if (checkData(acc))
                 {
                     Console.WriteLine("login step");
+                    DataHandle.id = acc.id;
                     Form1.IDname = acc.username; // here
                     Form1.getInstance().setLoggedIn(true);
                     NewNote.User_ID = acc.id;
-                    
+                    NewToDoList.id_user = acc.id; 
                 }
                 else
                 {
