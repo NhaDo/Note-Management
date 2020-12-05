@@ -67,7 +67,7 @@ namespace NoteMakingApp.ViewComponents
             
         }
 
-        public void AddReminder(string id,string Tittle,string Content,int Time,int Check)
+        public void AddReminder(string id,string Tittle,string Content,DateTime Time,int Check)
         {
             Reminder rmd = new Reminder();
             rmd.setValue(id,Tittle, Content, Time,Check);

@@ -133,7 +133,7 @@ namespace NoteMakingApp.Models
                             ID = Convert.ToInt32(reader["id"]),
                             Tittle = reader["Tittle"].ToString().Trim(),
                             Content = reader["Content"].ToString().Trim(),
-                            Time = Convert.ToInt32(reader["Id_User"]),
+                            Time = reader["Timer"].ToString().Trim(),
                             Check = Convert.ToInt32(reader["Checker"]),
                             User_id = Convert.ToInt32(reader["Id_User"]),
                         });
@@ -359,7 +359,7 @@ namespace NoteMakingApp.Models
             foreach (Reminders r in rmds)
             {
                 if (r.User_id == id)
-                    MainDomain.currentInstance.AddReminder(r.ID.ToString(),r.Tittle,r.Content,r.Time,r.Check);
+                    MainDomain.currentInstance.AddReminder(r.ID.ToString(),r.Tittle,r.Content,Convert.ToDateTime(r.Time),r.Check);
 
             }
 
@@ -576,7 +576,7 @@ namespace NoteMakingApp.Models
                 Console.WriteLine("==========================");
                 newrmd.Parameters.Add("@Tittle", SqlDbType.NVarChar).Value = rmd.Tittle;
                 newrmd.Parameters.Add("@Content", SqlDbType.NVarChar).Value = rmd.Content;
-                newrmd.Parameters.Add("@Timer", SqlDbType.Int).Value = rmd.Time;
+                newrmd.Parameters.Add("@Timer", SqlDbType.VarChar).Value = rmd.Time;
                 newrmd.Parameters.Add("@Checker", SqlDbType.Int).Value = rmd.Check;
                 newrmd.Parameters.Add("@Id_User", SqlDbType.Int).Value = rmd.User_id;
                 newrmd.ExecuteNonQuery();

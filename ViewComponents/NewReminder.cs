@@ -13,8 +13,7 @@ namespace NoteMakingApp.ViewComponents
 {
     public partial class NewReminder : UserControl
     {
-        
-        public int _minute = 0;
+        string time;
         public static int User_ID;
         public NewReminder()
         {
@@ -28,15 +27,13 @@ namespace NoteMakingApp.ViewComponents
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-             int _hour = Convert.ToInt32(dateTimePicker1.Value.Hour) - DateTime.Now.Hour;
-            _minute = Convert.ToInt32(dateTimePicker1.Value.Minute) - DateTime.Now.Minute;
-            _minute += _hour * 60;
-            Console.WriteLine(_minute);
+            time = dateTimePicker1.Value.ToString();
+            Console.WriteLine(time);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtTittle.Text == "" || _minute <  0)
+            if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
@@ -45,7 +42,7 @@ namespace NoteMakingApp.ViewComponents
                     {
                         Tittle = txtTittle.Text,
                         Content = txtContent.Text,
-                        Time = _minute,
+                        Time = time,
                         Check = Convert.ToInt32(checkBox.Checked),
                         User_id = User_ID
                     });

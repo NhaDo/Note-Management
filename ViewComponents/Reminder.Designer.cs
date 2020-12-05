@@ -34,6 +34,7 @@
             this.lbContent = new System.Windows.Forms.Label();
             this.lbTittle = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.lbTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,10 +81,21 @@
             this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbTime.Location = new System.Drawing.Point(137, 212);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(50, 17);
+            this.lbTime.TabIndex = 7;
+            this.lbTime.Text = "lbTime";
+            // 
             // Reminder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbTime);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.lbContent);
             this.Controls.Add(this.lbTittle);
@@ -102,5 +114,6 @@
         private System.Windows.Forms.Label lbContent;
         private System.Windows.Forms.Label lbTittle;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label lbTime;
     }
 }
