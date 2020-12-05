@@ -37,8 +37,10 @@ namespace NoteMakingApp.ViewComponents
         public int chanceTime(DateTime t)
         {
             int i = 0;
-            i = ((t.Hour - DateTime.Now.Hour) * 60 + (t.Minute - DateTime.Now.Minute)) * 60000;
-      
+            i = ((t.Hour - DateTime.Now.Hour) * 3600 + (t.Minute - DateTime.Now.Minute)*60)*1000;
+            if ((t.Day - DateTime.Now.Day) < 0)
+                i = 0;
+            
             if (i <= 0)
             {
                 this.checkBox1.Checked = false;
