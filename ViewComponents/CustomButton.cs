@@ -118,8 +118,17 @@ namespace NoteMakingApp.ViewComponents
                     }
                     else
                     {
-                        DataHandle.getInstance().DeleteNote();
-                        DataHandle.getInstance().ShowNote();
+                        switch (Form1.type)
+                        {
+                            case 1:
+                                DataHandle.getInstance().DeleteNote();
+                                DataHandle.getInstance().ShowNote();
+                                break;
+                            case 2:
+                                DataHandle.getInstance().DeleteToDoList();
+                                DataHandle.getInstance().ShowNote();
+                                break;
+                        }
                     }
                     break;
             }

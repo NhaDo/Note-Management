@@ -20,10 +20,10 @@ namespace NoteMakingApp.Models
         static List<PersonalDetail> details { get; set; }
         static List<Notes> notes { get; set; }
         static List<ToDoLists> tdls { get; set; }
+        static List<Reminders> rmds { get; set; }
         static List<ItemTDLs> itdl { get; set; }
         static List<string> _Tittle { get; set; }
         static List<string> _Content { get; set; }
-        
         static User recentUser { get; set; }
         static Account recentAccount { get; set; }
         static Notes recentNote { get; set; }
@@ -39,6 +39,7 @@ namespace NoteMakingApp.Models
             details = new List<PersonalDetail>();
             notes = new List<Notes>();
             tdls = new List<ToDoLists>();
+            rmds = new List<Reminders>();
             itdl = new List<ItemTDLs>();
             _Tittle = new List<string>();
             _Content = new List<string>();
@@ -73,6 +74,9 @@ namespace NoteMakingApp.Models
                     break;
                 case "Note":
                     notes.Clear();
+                    break;
+                case "Reminder":
+                    rmds.Clear();
                     break;
                 
                     
@@ -123,7 +127,17 @@ namespace NoteMakingApp.Models
                             user_id = Convert.ToInt32(reader["Id_User"]),
                         });
                         break;
-                    
+                    case "Reminder":
+                        rmds.Add(new Reminders()
+                        {
+                            ID = Convert.ToInt32(reader["id"]),
+                            Tittle = reader["Tittle"].ToString().Trim(),
+                            Content = reader["Content"].ToString().Trim(),
+                            Time = Convert.ToInt32(reader["Id_User"]),
+                            Check = Convert.ToInt32(reader["Checker"]),
+                            User_id = Convert.ToInt32(reader["Id_User"]),
+                        });
+                        break;
                 }
             }
             reader.Close();
@@ -320,16 +334,8 @@ namespace NoteMakingApp.Models
         {
             notes.Clear();
             tdls.Clear();
+            rmds.Clear();
             MainDomain.currentInstance.Clear();
-            GetDataFromTDL();
-            
-            foreach (ToDoLists tdl in tdls)
-            {
-                if (tdl.user_id == id)
-                    MainDomain.currentInstance.AddNewToDoList(tdl.id.ToString(), tdl.Tittle, tdl.item);
-                
-            }
-            
 
             populateDataFromTable("Note");
             
@@ -338,14 +344,30 @@ namespace NoteMakingApp.Models
                 if (n.user_id == id)
                     MainDomain.currentInstance.AddNewNote(n.id, n.Tittle, n.Content);
             }
+
+            GetDataFromTDL();
+
+            foreach (ToDoLists tdl in tdls)
+            {
+                if (tdl.user_id == id)
+                    MainDomain.currentInstance.AddNewToDoList(tdl.id.ToString(), tdl.Tittle, tdl.item);
+
+            }
+
+            populateDataFromTable("Reminder");
+
+            foreach (Reminders r in rmds)
+            {
+                if (r.User_id == id)
+                    MainDomain.currentInstance.AddReminder(r.ID.ToString(),r.Tittle,r.Content,r.Time,r.Check);
+
+            }
+
         }
 
         public void DeleteNote()
         {
             int id = MainDomain.currentInstance.getFlags();
-         
-
-          
             string queryFrame = "exec USP_DeleteNoteByID @ID = " + id.ToString();
             using (SqlCommand deleteNote = new SqlCommand(queryFrame))
             {
@@ -528,6 +550,40 @@ namespace NoteMakingApp.Models
                     return t;
             }
             return null;
+        }
+
+        public void DeleteToDoList()
+        {
+            int id = MainDomain.currentInstance.getFlags();
+            string queryFrame = "exec USP_DeleteTDLByID @ID =" + id.ToString();
+            using (SqlCommand deleteTDL = new SqlCommand(queryFrame))
+            {
+                deleteTDL.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                deleteTDL.ExecuteNonQuery();
+                Console.WriteLine("Da xoa du lieu TDL co id " + id.ToString());
+                deleteTDL.Dispose();
+            }
+        }
+
+        public void CreateNewReminder(Reminders rmd)
+        {
+            string queryFrame = "INSERT into Reminder (Tittle,Content,Timer,Checker,Id_User) VALUES (@Tittle,@Content,@Timer,@Checker,@Id_User)";
+            
+            using (SqlCommand newrmd = new SqlCommand(queryFrame))
+            {
+                newrmd.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                newrmd.Parameters.Add("@Tittle", SqlDbType.NVarChar).Value = rmd.Tittle;
+                newrmd.Parameters.Add("@Content", SqlDbType.NVarChar).Value = rmd.Content;
+                newrmd.Parameters.Add("@Timer", SqlDbType.Int).Value = rmd.Time;
+                newrmd.Parameters.Add("@Checker", SqlDbType.Int).Value = rmd.Check;
+                newrmd.Parameters.Add("@Id_User", SqlDbType.Int).Value = rmd.User_id;
+                newrmd.ExecuteNonQuery();
+                Console.WriteLine("Nhap du lieu thanh cong");
+                newrmd.Dispose();
+            }
+
         }
     }
 }

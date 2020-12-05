@@ -35,7 +35,8 @@ namespace NoteMakingApp.ViewComponents
                 Form1.getInstance().NewNote();
             if (rBtnTodoList.Checked == true)
                 Form1.getInstance().NewToDoList();
-                                
+            if (rBtnReminder.Checked == true)
+                Form1.getInstance().NewReminder();
         }
     }
 }

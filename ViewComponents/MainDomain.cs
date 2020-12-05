@@ -51,14 +51,12 @@ namespace NoteMakingApp.ViewComponents
             {
                 note.defaultImage();
             };
-            
 
             this.flPanel.Controls.Add(note);
             
 
         }
         
-
         public void AddNewToDoList(string name, string a, List<ItemTDLs> b)
         {
             ToDoList tdl = new ToDoList();
@@ -69,6 +67,12 @@ namespace NoteMakingApp.ViewComponents
             
         }
 
+        public void AddReminder(string id,string Tittle,string Content,int Time,int Check)
+        {
+            Reminder rmd = new Reminder();
+            rmd.setValue(id,Tittle, Content, Time,Check);
+            this.flPanel.Controls.Add(rmd);
+        }
 
         public void Clear()
         {

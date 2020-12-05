@@ -36,12 +36,20 @@ namespace NoteMakingApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.mainDomain1 = new NoteMakingApp.ViewComponents.MainDomain();
             this.accountSubwindow2 = new NoteMakingApp.ViewComponents.AccountSubwindow();
             this.navigationBar = new NoteMakingApp.ViewComponents.NavigationBar();
             this.registerPanel = new NoteMakingApp.ViewComponents.AccountRegister();
             this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
-            this.mainDomain1 = new NoteMakingApp.ViewComponents.MainDomain();
             this.SuspendLayout();
+            // 
+            // mainDomain1
+            // 
+            this.mainDomain1.Location = new System.Drawing.Point(273, 22);
+            this.mainDomain1.Name = "mainDomain1";
+            this.mainDomain1.Size = new System.Drawing.Size(940, 510);
+            this.mainDomain1.TabIndex = 7;
+            this.mainDomain1.Visible = false;
             // 
             // accountSubwindow2
             // 
@@ -84,14 +92,6 @@ namespace NoteMakingApp
             this.loginPanel1.Name = "loginPanel1";
             this.loginPanel1.Size = new System.Drawing.Size(625, 344);
             this.loginPanel1.TabIndex = 0;
-            // 
-            // mainDomain1
-            // 
-            this.mainDomain1.Location = new System.Drawing.Point(273, 22);
-            this.mainDomain1.Name = "mainDomain1";
-            this.mainDomain1.Size = new System.Drawing.Size(940, 510);
-            this.mainDomain1.TabIndex = 7;
-            this.mainDomain1.Visible = false;
             // 
             // Form1
             // 

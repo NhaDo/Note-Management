@@ -15,7 +15,7 @@ namespace NoteMakingApp.ViewComponents
     {
         
         static List<string> txtbox { get; set; }
-        public static int id_user = 0;
+        public static int User_ID;
         static int _e = -1;
         int i = 0;
         int _flag = 0;
@@ -49,7 +49,7 @@ namespace NoteMakingApp.ViewComponents
                     DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, "",p,0);
                 else
                 {
-                    DataHandle.getInstance().CreateMyNote(txtTittle.Text, id_user);
+                    DataHandle.getInstance().CreateMyNote(txtTittle.Text, User_ID);
                     foreach (string t in txtbox)
                     {
                         DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, t,p,0);

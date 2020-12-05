@@ -103,6 +103,7 @@
     <Compile Include="Models\Notes.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonalDetail.cs" />
+    <Compile Include="Models\Reminders.cs" />
     <Compile Include="Models\ToDoList.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
@@ -172,6 +173,12 @@
     </Compile>
     <Compile Include="ViewComponents\EditNote.Designer.cs">
       <DependentUpon>EditNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\NewReminder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\NewReminder.Designer.cs">
+      <DependentUpon>NewReminder.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\Note\EditToDoList.cs">
       <SubType>UserControl</SubType>
@@ -245,6 +252,12 @@
     <Compile Include="ViewComponents\Note\TypeNote.Designer.cs">
       <DependentUpon>TypeNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewComponents\Reminder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Reminder.Designer.cs">
+      <DependentUpon>Reminder.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +319,9 @@
     <EmbeddedResource Include="ViewComponents\avt.resx">
       <DependentUpon>avt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\NewReminder.resx">
+      <DependentUpon>NewReminder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\Note\EditToDoList.resx">
       <DependentUpon>EditToDoList.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\Note\TypeNote.resx">
       <DependentUpon>TypeNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Reminder.resx">
+      <DependentUpon>Reminder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DatabaseDataSet.xsc">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
@@ -371,6 +390,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Reminder.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\Mini3.png" />

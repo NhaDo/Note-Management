@@ -34,7 +34,7 @@ namespace NoteMakingApp
             List<string> titles = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
             List<string> images = new List<string> { "HOME.png", "ACCOUNT.png", "SETTINGS.png" };
             this.navigationBar.addNavOptions(titles, images);
-            
+           
             instance = this;
             setWindow();
         }
@@ -90,7 +90,6 @@ namespace NoteMakingApp
         {
             NewNote newNote = new NewNote();
             newNote.Location = new System.Drawing.Point(400, 100);
-            newNote.setValue(a, b, c);
             this.Controls.Add(newNote);
             newNote.BringToFront();
         }
@@ -119,6 +118,14 @@ namespace NoteMakingApp
             editTDL.setValue(name, item);
             this.Controls.Add(editTDL);
             editTDL.BringToFront();
+        }
+
+        public void NewReminder()
+        {
+            NewReminder newrmd = new NewReminder();
+            newrmd.Location = new System.Drawing.Point(370, 120);
+            this.Controls.Add(newrmd);
+            newrmd.BringToFront();
         }
 
         public void ShowTypeNote()

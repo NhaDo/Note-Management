@@ -36,7 +36,9 @@ namespace NoteMakingApp.ViewComponents
                     Form1.IDname = acc.username; // here
                     Form1.getInstance().setLoggedIn(true);
                     NewNote.User_ID = acc.id;
-                    NewToDoList.id_user = acc.id; 
+                    NewToDoList.User_ID = acc.id;
+                    NewReminder.User_ID = acc.id;
+                    
                 }
                 else
                 {
