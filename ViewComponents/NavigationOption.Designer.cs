@@ -35,38 +35,39 @@
             // 
             // opIcon
             // 
-            this.opIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.opIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.opIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.opIcon.Location = new System.Drawing.Point(4, 4);
-            this.opIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.opIcon.Location = new System.Drawing.Point(4, 5);
+            this.opIcon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.opIcon.Name = "opIcon";
-            this.opIcon.Size = new System.Drawing.Size(38, 38);
-            this.opIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.opIcon.Size = new System.Drawing.Size(90, 90);
+            this.opIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.opIcon.TabIndex = 0;
             this.opIcon.TabStop = false;
             // 
             // opTitle
             // 
             this.opTitle.AutoSize = true;
-            this.opTitle.Font = new System.Drawing.Font("Palatino Linotype", 12.89552F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opTitle.Font = new System.Drawing.Font("Arial", 10F);
             this.opTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
-            this.opTitle.Location = new System.Drawing.Point(58, 6);
+            this.opTitle.Location = new System.Drawing.Point(32, 72);
             this.opTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.opTitle.Name = "opTitle";
-            this.opTitle.Size = new System.Drawing.Size(88, 32);
+            this.opTitle.Size = new System.Drawing.Size(68, 23);
             this.opTitle.TabIndex = 1;
             this.opTitle.Text = "opTitle";
+            this.opTitle.Visible = false;
             // 
             // NavigationOption
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.Controls.Add(this.opTitle);
             this.Controls.Add(this.opIcon);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NavigationOption";
-            this.Size = new System.Drawing.Size(255, 44);
+            this.Size = new System.Drawing.Size(100, 100);
             this.Load += new System.EventHandler(this.NavigationOption_Load);
             ((System.ComponentModel.ISupportInitialize)(this.opIcon)).EndInit();
             this.ResumeLayout(false);

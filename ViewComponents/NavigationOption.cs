@@ -21,14 +21,21 @@ namespace NoteMakingApp.ViewComponents
         {
             InitializeComponent();
             opTitle.Text = title;
-            //opIcon.Image = Image.FromFile("../../images/" + imageFile);
+            // get .exe path
+            string chanceImage = Application.StartupPath;
+            // get path from project folder (-bin, -debug)
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            // get path to image note4.png
+            opIcon.Image = Image.FromFile(chanceImage+ "/images/" + imageFile);
         }
 
         public void defautsettings()
         {
             this.opTitle.ForeColor = System.Drawing.Color.FromArgb(120, 120, 130);
-            this.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
-            this.opIcon.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
+            this.BackColor = System.Drawing.Color.FromArgb(30,30,30);
+            this.opIcon.BackColor = System.Drawing.Color.FromArgb(30,30,30);
 
         }
 
@@ -47,20 +54,20 @@ namespace NoteMakingApp.ViewComponents
         private void NavigationOption_MouseHover(object sender, EventArgs e)
         {
             this.opTitle.ForeColor = System.Drawing.Color.FromArgb(206, 105, 35);
-            this.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
-            this.opIcon.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
+            this.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
+            this.opIcon.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
         }
         private void Optitle_MouseHover(object sender, EventArgs e)
         {
             this.opTitle.ForeColor = System.Drawing.Color.FromArgb(206, 105, 35);
-            this.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
-            this.opIcon.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
+            this.BackColor = System.Drawing.Color.FromArgb(51,51,51);
+            this.opIcon.BackColor = System.Drawing.Color.FromArgb(51,51,51);
         }
         private void OpIcon_MouseHover(object sender, EventArgs e)
         {
             this.opTitle.ForeColor = System.Drawing.Color.FromArgb(206, 105, 35);
-            this.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
-            this.opIcon.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
+            this.BackColor = System.Drawing.Color.FromArgb(51,51,51);
+            this.opIcon.BackColor = System.Drawing.Color.FromArgb(51,51,51);
         }
 
         private void NavigationOption_MouseLeave(object sender, EventArgs e)
@@ -68,8 +75,8 @@ namespace NoteMakingApp.ViewComponents
             if (!this.Isclicked)
             {
                 this.opTitle.ForeColor = System.Drawing.Color.FromArgb(120, 120, 130);
-                this.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
-                this.opIcon.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
+                this.BackColor = System.Drawing.Color.FromArgb(30,30,30);
+                this.opIcon.BackColor = System.Drawing.Color.FromArgb(30,30,30);
             }
         }
 
@@ -98,14 +105,14 @@ namespace NoteMakingApp.ViewComponents
         {
             Form1.getInstance().setWindow(opTitle.Text);
             this.opTitle.ForeColor = System.Drawing.Color.FromArgb(206, 105, 35);
-            this.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
+            this.BackColor = System.Drawing.Color.FromArgb(51,51,51);
             this.Isclicked = true;
         }
         private void NavigationOption_Click(object sender, EventArgs e)
         {
             Form1.getInstance().setWindow(opTitle.Text);
             this.opTitle.ForeColor = System.Drawing.Color.FromArgb(206, 105, 35);
-            this.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
+            this.BackColor = System.Drawing.Color.FromArgb(51,51,51);
             this.Isclicked = true;
         }
 
@@ -113,7 +120,7 @@ namespace NoteMakingApp.ViewComponents
         {
             Form1.getInstance().setWindow(opTitle.Text);
             this.opTitle.ForeColor = System.Drawing.Color.FromArgb(206, 105, 35);
-            this.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
+            this.BackColor = System.Drawing.Color.FromArgb(51,51,51);
             this.Isclicked = true;
 
         }

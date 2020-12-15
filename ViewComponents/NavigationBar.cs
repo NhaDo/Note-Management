@@ -16,6 +16,7 @@ namespace NoteMakingApp.ViewComponents
     {
         public static NavigationBar instance;
         public static string recentOption;
+        public static NavigationOption this_option;
         public static NavigationBar getInstance()
         {
             if (instance == null)
@@ -54,8 +55,9 @@ namespace NoteMakingApp.ViewComponents
         private void addNavOption(string tt, string img)
         {
             NavigationOption option = new NavigationOption(tt, img);
-            option.Location = new System.Drawing.Point(0, (option.Size.Height+18) * navOptions.Count()+150);
+            option.Location = new System.Drawing.Point(0, (option.Size.Height) * navOptions.Count()+150);
             option.Click += new System.EventHandler(this.option_click);
+            option.opIcon.Click += new System.EventHandler(this.option_opIcon_click);
             option.initOption();
             navOptions.Add(option);
             this.Controls.Add(navOptions[navOptions.Count - 1]);
@@ -66,19 +68,44 @@ namespace NoteMakingApp.ViewComponents
             foreach (NavigationOption item in navOptions)
             {
                 item.opTitle.ForeColor = System.Drawing.Color.FromArgb(120, 120, 130);
-                item.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
-                item.opIcon.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
+                item.BackColor = System.Drawing.Color.FromArgb(30,30,30);
+                item.opIcon.BackColor = System.Drawing.Color.FromArgb(30,30,30);
             }
             
             NavigationOption option = sender as NavigationOption;
             recentOption = option.opTitle.Text;
             option.opTitle.ForeColor = System.Drawing.Color.FromArgb(206, 105, 35);
-            option.BackColor = System.Drawing.Color.FromArgb(110, 110, 110);
-            option.opIcon.BackColor= System.Drawing.Color.FromArgb(110, 110, 110); 
+            option.BackColor = System.Drawing.Color.FromArgb(51,51,51);
+            option.opIcon.BackColor= System.Drawing.Color.FromArgb(51,51,51);
+            foreach (NavigationOption item in navOptions)
+                item.Isclicked = false;
             option.Isclicked = true;
             Form1.getInstance().setWindow(recentOption);
         }
 
+        private void option_opIcon_click(object sender, EventArgs e)
+        {
+            foreach (NavigationOption item in navOptions)
+            {
+                item.opTitle.ForeColor = System.Drawing.Color.FromArgb(120, 120, 130);
+                item.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+                item.opIcon.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+                if (item.opIcon == sender)
+                    item.Isclicked = true;
+                else
+                    item.Isclicked = false;
+            }
+
+            foreach (NavigationOption item in navOptions)
+                if (item.Isclicked==true)
+                {
+                    recentOption = item.opTitle.Text;
+                    item.opTitle.ForeColor = System.Drawing.Color.FromArgb(206, 105, 35);
+                    item.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
+                    item.opIcon.BackColor = System.Drawing.Color.FromArgb(51, 51, 51);
+                }
+                Form1.getInstance().setWindow(recentOption);
+        }
         private void avt_MouseHover(object sender, EventArgs e)
         {
             this.bEdit.Visible = true;
@@ -99,8 +126,8 @@ namespace NoteMakingApp.ViewComponents
             string measureString = this.username.Text;
             SizeF stringSize = new SizeF();
             stringSize = e.Graphics.MeasureString(measureString, this.username.Font);
-            this.username.Location = new System.Drawing.Point(this.Width / 2 - (int)stringSize.Width/2, 100);
-            this.accountpic.Location = new System.Drawing.Point(username.Location.X-20, username.Location.Y);
+            this.avatar.Location = new System.Drawing.Point(this.Width / 2 - this.avatar.Width / 2, 30);
+            this.username.Location = new System.Drawing.Point(this.Width / 2 - (int)stringSize.Width/2, this.avatar.Height + this.avatar.Location.Y+10);
         }
     }
 }

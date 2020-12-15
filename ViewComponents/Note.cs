@@ -32,7 +32,7 @@ namespace NoteMakingApp.ViewComponents
             // get path from project folder (-bin, -debug)
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            //chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             // get path to image note4.png
             this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note4.png");
             
@@ -46,7 +46,7 @@ namespace NoteMakingApp.ViewComponents
             // get path from project folder (-bin, -debug)
             chanceImage=chanceImage.Substring(0,chanceImage.LastIndexOf(@"\"));
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            //chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             // get path to image note3.png
             this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note3.png");
             

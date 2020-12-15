@@ -258,6 +258,12 @@
     <Compile Include="ViewComponents\Reminder.Designer.cs">
       <DependentUpon>Reminder.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewComponents\AvatarEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\AvatarEditor.Designer.cs">
+      <DependentUpon>AvatarEditor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,6 +352,9 @@
     <EmbeddedResource Include="ViewComponents\Reminder.resx">
       <DependentUpon>Reminder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\AvatarEditor.resx">
+      <DependentUpon>AvatarEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DatabaseDataSet.xsc">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </None>
@@ -390,6 +399,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="images\ACCOUNT.png" />
     <None Include="Resources\Reminder.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\add.png" />

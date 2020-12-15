@@ -54,10 +54,10 @@ namespace NoteMakingApp.ViewComponents
             this.iUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.iUsername.Font = new System.Drawing.Font("Arial Narrow", 10F);
             this.iUsername.ForeColor = System.Drawing.Color.Transparent;
-            this.iUsername.Location = new System.Drawing.Point(212, 150);
-            this.iUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.iUsername.Location = new System.Drawing.Point(238, 188);
+            this.iUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iUsername.Name = "iUsername";
-            this.iUsername.Size = new System.Drawing.Size(187, 22);
+            this.iUsername.Size = new System.Drawing.Size(210, 23);
             this.iUsername.TabIndex = 3;
             this.iUsername.Text = "username";
             // 
@@ -67,21 +67,21 @@ namespace NoteMakingApp.ViewComponents
             this.iPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.iPassword.Font = new System.Drawing.Font("Arial", 10F);
             this.iPassword.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.iPassword.Location = new System.Drawing.Point(212, 223);
-            this.iPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.iPassword.Location = new System.Drawing.Point(238, 279);
+            this.iPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iPassword.Name = "iPassword";
             this.iPassword.PasswordChar = '*';
-            this.iPassword.Size = new System.Drawing.Size(218, 22);
+            this.iPassword.Size = new System.Drawing.Size(245, 23);
             this.iPassword.TabIndex = 4;
             // 
             // eUsername
             // 
             this.eUsername.AutoSize = true;
             this.eUsername.ForeColor = System.Drawing.Color.Red;
-            this.eUsername.Location = new System.Drawing.Point(208, 178);
+            this.eUsername.Location = new System.Drawing.Point(234, 222);
             this.eUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.eUsername.Name = "eUsername";
-            this.eUsername.Size = new System.Drawing.Size(79, 16);
+            this.eUsername.Size = new System.Drawing.Size(92, 20);
             this.eUsername.TabIndex = 5;
             this.eUsername.Text = "eUsername";
             this.eUsername.Visible = false;
@@ -90,10 +90,10 @@ namespace NoteMakingApp.ViewComponents
             // 
             this.ePassword.AutoSize = true;
             this.ePassword.ForeColor = System.Drawing.Color.Red;
-            this.ePassword.Location = new System.Drawing.Point(208, 251);
+            this.ePassword.Location = new System.Drawing.Point(234, 314);
             this.ePassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ePassword.Name = "ePassword";
-            this.ePassword.Size = new System.Drawing.Size(76, 16);
+            this.ePassword.Size = new System.Drawing.Size(87, 20);
             this.ePassword.TabIndex = 6;
             this.ePassword.Text = "ePassword";
             this.ePassword.Visible = false;
@@ -103,10 +103,10 @@ namespace NoteMakingApp.ViewComponents
             this.bLogin.BackColor = System.Drawing.Color.Orange;
             this.bLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.bLogin.Location = new System.Drawing.Point(133, 285);
-            this.bLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.bLogin.Location = new System.Drawing.Point(150, 356);
+            this.bLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bLogin.Name = "bLogin";
-            this.bLogin.Size = new System.Drawing.Size(100, 28);
+            this.bLogin.Size = new System.Drawing.Size(112, 35);
             this.bLogin.TabIndex = 7;
             this.bLogin.Text = "Login";
             this.bLogin.UseVisualStyleBackColor = false;
@@ -116,10 +116,10 @@ namespace NoteMakingApp.ViewComponents
             // 
             this.bRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bRegister.ForeColor = System.Drawing.Color.Transparent;
-            this.bRegister.Location = new System.Drawing.Point(280, 285);
-            this.bRegister.Margin = new System.Windows.Forms.Padding(4);
+            this.bRegister.Location = new System.Drawing.Point(315, 356);
+            this.bRegister.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bRegister.Name = "bRegister";
-            this.bRegister.Size = new System.Drawing.Size(100, 28);
+            this.bRegister.Size = new System.Drawing.Size(112, 35);
             this.bRegister.TabIndex = 8;
             this.bRegister.Text = "Register";
             this.bRegister.UseVisualStyleBackColor = true;
@@ -128,9 +128,10 @@ namespace NoteMakingApp.ViewComponents
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(133, 126);
+            this.pictureBox1.Location = new System.Drawing.Point(150, 158);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox1.Size = new System.Drawing.Size(52, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -138,9 +139,10 @@ namespace NoteMakingApp.ViewComponents
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(133, 199);
+            this.pictureBox2.Location = new System.Drawing.Point(150, 249);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox2.Size = new System.Drawing.Size(52, 58);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -148,25 +150,28 @@ namespace NoteMakingApp.ViewComponents
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Location = new System.Drawing.Point(133, 175);
+            this.panel1.Location = new System.Drawing.Point(150, 219);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 1);
+            this.panel1.Size = new System.Drawing.Size(338, 1);
             this.panel1.TabIndex = 11;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Location = new System.Drawing.Point(133, 247);
+            this.panel2.Location = new System.Drawing.Point(150, 309);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 1);
+            this.panel2.Size = new System.Drawing.Size(338, 1);
             this.panel2.TabIndex = 12;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(399, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(449, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(226, 221);
+            this.pictureBox3.Size = new System.Drawing.Size(254, 276);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
@@ -175,17 +180,17 @@ namespace NoteMakingApp.ViewComponents
             // 
             this.LOGIN.AutoSize = true;
             this.LOGIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LOGIN.Font = new System.Drawing.Font("Aztek", 25F);
-            this.LOGIN.Location = new System.Drawing.Point(186, 0);
+            this.LOGIN.Font = new System.Drawing.Font("Elephant", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LOGIN.Location = new System.Drawing.Point(180, 0);
             this.LOGIN.Name = "LOGIN";
-            this.LOGIN.Size = new System.Drawing.Size(194, 74);
+            this.LOGIN.Size = new System.Drawing.Size(231, 64);
             this.LOGIN.TabIndex = 14;
             this.LOGIN.Text = "LOGIN";
             this.LOGIN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.Controls.Add(this.LOGIN);
@@ -201,9 +206,9 @@ namespace NoteMakingApp.ViewComponents
             this.Controls.Add(this.iUsername);
             this.Controls.Add(this.pictureBox3);
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginPanel";
-            this.Size = new System.Drawing.Size(625, 344);
+            this.Size = new System.Drawing.Size(703, 430);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
