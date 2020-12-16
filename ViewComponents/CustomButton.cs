@@ -100,7 +100,10 @@ namespace NoteMakingApp.ViewComponents
                                 break;
                             case 2:
                                 ToDoLists b = DataHandle.getInstance().GetDataToDoList();
-                                Form1.getInstance().editToDoList(b.Tittle, b.item);
+                                if (b==null)
+                                    MessageBox.Show("Choose note to edit", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                else
+                                    Form1.getInstance().editToDoList(b.Tittle, b.item);
                                 break;
 
                         }

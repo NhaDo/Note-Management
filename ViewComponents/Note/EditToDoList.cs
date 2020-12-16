@@ -86,5 +86,10 @@ namespace NoteMakingApp.ViewComponents.Note
                 this.Dispose();
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

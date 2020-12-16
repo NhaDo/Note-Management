@@ -19,6 +19,33 @@ namespace NoteMakingApp.ViewComponents
             InitializeComponent();
             
         }
+        public void defaultImage()
+        {
+
+            // get .exe path
+            string chanceImage = Application.StartupPath;
+            // get path from project folder (-bin, -debug)
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            // get path to image note4.png
+            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\ToDoList.png");
+
+        }
+
+        public void chanceImage()
+        {
+
+            // get .exe path
+            string chanceImage = Application.StartupPath;
+            // get path from project folder (-bin, -debug)
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
+            // get path to image note3.png
+            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\ToDoList_Hover.png");
+
+        }
 
         public void setName(string a)
         {
@@ -42,20 +69,25 @@ namespace NoteMakingApp.ViewComponents
             }
         }
 
+        public bool isClicked = false;
         private void lbName_Click(object sender, EventArgs e)
         {
             MainDomain.currentInstance.setFlags(Int32.Parse(this.Name));
             Form1.type = 2;
             Console.WriteLine(MainDomain.currentInstance.getFlags());
+            isClicked = !(isClicked);
+
         }
 
-       
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             MainDomain.currentInstance.setFlags(Int32.Parse(this.Name));
             Form1.type = 2;
             Console.WriteLine(MainDomain.currentInstance.getFlags());
+            isClicked = !(isClicked);
+
         }
 
         private void flPanel_Click(object sender, EventArgs e)
@@ -63,6 +95,8 @@ namespace NoteMakingApp.ViewComponents
             MainDomain.currentInstance.setFlags(Int32.Parse(this.Name));
             Form1.type = 2;
             Console.WriteLine(MainDomain.currentInstance.getFlags());
+            isClicked = !(isClicked);
+
         }
 
         private void ToDoList_Click(object sender, EventArgs e)
@@ -70,6 +104,37 @@ namespace NoteMakingApp.ViewComponents
             MainDomain.currentInstance.setFlags(Int32.Parse(this.Name));
             Form1.type = 2;
             Console.WriteLine(MainDomain.currentInstance.getFlags());
+            isClicked = !(isClicked);
+
+        }
+
+        private void ToDoList_MouseHover(object sender, EventArgs e)
+        {
+            this.chanceImage();
+        }
+
+        private void pictureBox_MouseHover(object sender, EventArgs e)
+        {
+            this.chanceImage();
+
+        }
+
+        private void pictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (isClicked == false)
+                this.defaultImage();
+        }
+
+        private void Title_MouseHover(object sender, EventArgs e)
+        {
+            this.chanceImage();
+
+        }
+
+        private void Content_MouseHover(object sender, EventArgs e)
+        {
+            this.chanceImage();
+
         }
     }
 }

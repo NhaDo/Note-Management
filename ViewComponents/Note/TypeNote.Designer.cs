@@ -50,20 +50,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(156, 9);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(149, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 35);
+            this.label1.Size = new System.Drawing.Size(260, 41);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Chọn loại note";
+            this.label1.Text = "Pick a note type";
             // 
             // btnOK
             // 
-            this.btnOK.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnOK.Location = new System.Drawing.Point(125, 284);
+            this.btnOK.BackColor = System.Drawing.Color.Orange;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.ForeColor = System.Drawing.Color.Black;
+            this.btnOK.Location = new System.Drawing.Point(141, 355);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 32);
+            this.btnOK.Size = new System.Drawing.Size(84, 40);
             this.btnOK.TabIndex = 10;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
@@ -72,9 +76,11 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancel.Location = new System.Drawing.Point(312, 284);
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Location = new System.Drawing.Point(344, 355);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 32);
+            this.btnCancel.Size = new System.Drawing.Size(94, 40);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -93,17 +99,19 @@
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(20, 60);
+            this.panel1.Location = new System.Drawing.Point(18, 75);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(471, 206);
+            this.panel1.Size = new System.Drawing.Size(530, 257);
             this.panel1.TabIndex = 12;
             // 
             // rBtnReminder
             // 
             this.rBtnReminder.AutoSize = true;
-            this.rBtnReminder.Location = new System.Drawing.Point(387, 181);
+            this.rBtnReminder.Location = new System.Drawing.Point(435, 226);
+            this.rBtnReminder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rBtnReminder.Name = "rBtnReminder";
-            this.rBtnReminder.Size = new System.Drawing.Size(29, 21);
+            this.rBtnReminder.Size = new System.Drawing.Size(34, 24);
             this.rBtnReminder.TabIndex = 18;
             this.rBtnReminder.Text = "\r\n";
             this.rBtnReminder.UseVisualStyleBackColor = true;
@@ -111,9 +119,10 @@
             // rBtnTodoList
             // 
             this.rBtnTodoList.AutoSize = true;
-            this.rBtnTodoList.Location = new System.Drawing.Point(228, 181);
+            this.rBtnTodoList.Location = new System.Drawing.Point(256, 226);
+            this.rBtnTodoList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rBtnTodoList.Name = "rBtnTodoList";
-            this.rBtnTodoList.Size = new System.Drawing.Size(29, 21);
+            this.rBtnTodoList.Size = new System.Drawing.Size(34, 24);
             this.rBtnTodoList.TabIndex = 17;
             this.rBtnTodoList.Text = "\r\n";
             this.rBtnTodoList.UseVisualStyleBackColor = true;
@@ -122,9 +131,10 @@
             // 
             this.rBtnClassic.AutoSize = true;
             this.rBtnClassic.Checked = true;
-            this.rBtnClassic.Location = new System.Drawing.Point(61, 181);
+            this.rBtnClassic.Location = new System.Drawing.Point(69, 226);
+            this.rBtnClassic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rBtnClassic.Name = "rBtnClassic";
-            this.rBtnClassic.Size = new System.Drawing.Size(29, 21);
+            this.rBtnClassic.Size = new System.Drawing.Size(34, 24);
             this.rBtnClassic.TabIndex = 16;
             this.rBtnClassic.TabStop = true;
             this.rBtnClassic.Text = "\r\n";
@@ -134,9 +144,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(355, 17);
+            this.label4.Location = new System.Drawing.Point(399, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 21);
+            this.label4.Size = new System.Drawing.Size(98, 25);
             this.label4.TabIndex = 15;
             this.label4.Text = "Reminder";
             // 
@@ -144,9 +154,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(194, 17);
+            this.label3.Location = new System.Drawing.Point(218, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 21);
+            this.label3.Size = new System.Drawing.Size(94, 25);
             this.label3.TabIndex = 14;
             this.label3.Text = "To do list";
             // 
@@ -154,51 +164,61 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 17);
+            this.label2.Location = new System.Drawing.Point(40, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 21);
+            this.label2.Size = new System.Drawing.Size(77, 25);
             this.label2.TabIndex = 13;
             this.label2.Text = "Classic";
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::NoteMakingApp.Properties.Resources.Mini3;
-            this.pictureBox3.Location = new System.Drawing.Point(345, 41);
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = global::NoteMakingApp.Properties.Resources.Icon__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(388, 51);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(106, 124);
+            this.pictureBox3.Size = new System.Drawing.Size(119, 155);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::NoteMakingApp.Properties.Resources.Mini1;
-            this.pictureBox2.Location = new System.Drawing.Point(185, 41);
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::NoteMakingApp.Properties.Resources.Icon__2_;
+            this.pictureBox2.Location = new System.Drawing.Point(208, 51);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(104, 124);
+            this.pictureBox2.Size = new System.Drawing.Size(117, 155);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.Mini2;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 41);
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.Icon__3_;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 51);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(102, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(115, 155);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // TypeNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TypeNote";
-            this.Size = new System.Drawing.Size(504, 347);
+            this.Size = new System.Drawing.Size(567, 434);
             this.Load += new System.EventHandler(this.TypeNote_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

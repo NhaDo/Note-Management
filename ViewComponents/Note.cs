@@ -34,7 +34,7 @@ namespace NoteMakingApp.ViewComponents
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             // get path to image note4.png
-            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note4.png");
+            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note.png");
             
         }
 
@@ -48,7 +48,7 @@ namespace NoteMakingApp.ViewComponents
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             // get path to image note3.png
-            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note3.png");
+            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Note_Hover.png");
             
         }
 
@@ -76,7 +76,7 @@ namespace NoteMakingApp.ViewComponents
             return _isClicked;
         }
 
-        public bool isClicked=false; // if this note is clicked from main domain, return 1
+        public bool isClicked=false; // if this note is clicked from main domain, return true
 
         
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace NoteMakingApp.ViewComponents
             int _Flag = MainDomain.currentInstance.getFlags();
             Form1.type = 1;
             Console.WriteLine(_Flag);
-            
+            isClicked = !(isClicked);
 
         }
 
@@ -95,7 +95,8 @@ namespace NoteMakingApp.ViewComponents
             int _Flag = MainDomain.currentInstance.getFlags();
             Form1.type = 1;
             Console.WriteLine(_Flag);
-            
+            isClicked = !(isClicked);
+
         }
 
         private void lbTittle_Click(object sender, EventArgs e)
@@ -104,7 +105,8 @@ namespace NoteMakingApp.ViewComponents
             int _Flag = MainDomain.currentInstance.getFlags();
             Form1.type = 1;
             Console.WriteLine(_Flag);
-            
+            isClicked = !(isClicked);
+
         }
 
 
@@ -114,7 +116,8 @@ namespace NoteMakingApp.ViewComponents
             int _Flag = MainDomain.currentInstance.getFlags();
             Form1.type = 1;
             Console.WriteLine(_Flag);
-            
+            isClicked = !(isClicked);
+
         }
 
         private void Note_MouseHover(object sender, EventArgs e)
@@ -124,7 +127,8 @@ namespace NoteMakingApp.ViewComponents
 
         private void Note_MouseLeave(object sender, EventArgs e)
         {
-            this.defaultImage();
+            if (isClicked == false)
+                this.defaultImage();
         }
 
         private void IbTitle_MouseHover(object sender, EventArgs e)
@@ -148,6 +152,13 @@ namespace NoteMakingApp.ViewComponents
 
         private void _Note_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void picture_MouseLeave(object sender, EventArgs e)
+        {
+            if (isClicked==false)
+                this.defaultImage();
 
         }
     }

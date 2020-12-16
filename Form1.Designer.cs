@@ -45,10 +45,10 @@ namespace NoteMakingApp
             // 
             // mainDomain1
             // 
-            this.mainDomain1.Location = new System.Drawing.Point(307, 28);
+            this.mainDomain1.Location = new System.Drawing.Point(100, 0);
             this.mainDomain1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.mainDomain1.Name = "mainDomain1";
-            this.mainDomain1.Size = new System.Drawing.Size(1058, 638);
+            this.mainDomain1.Size = new System.Drawing.Size(1265, 668);
             this.mainDomain1.TabIndex = 7;
             this.mainDomain1.Visible = false;
             // 
