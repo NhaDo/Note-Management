@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using NoteMakingApp.ViewComponents;
 using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace NoteMakingApp.Models
 {
@@ -25,6 +27,7 @@ namespace NoteMakingApp.Models
         static List<ItemTDLs> itdl { get; set; }
         static List<string> _Tittle { get; set; }
         static List<string> _Content { get; set; }
+
         static User recentUser { get; set; }
         static Account recentAccount { get; set; }
         static Notes recentNote { get; set; }
@@ -397,18 +400,66 @@ namespace NoteMakingApp.Models
         }
 
 
-        public void EditAvt(Image Avatar)
+        public void EditAvt(string AvtPath, int ID)
         {
-            int id = NavigationBar.getID();
-            string queryFrame = "exec USP_EditAvtByID @ID = '" + id.ToString()+ "', @avt = '"+Avatar+"'";
-            using (SqlCommand EditAvt = new SqlCommand(queryFrame))
+            //image to byte []
+            byte[] img = null;
+            FileStream fs = new FileStream(AvtPath, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
+            
+            // get ID
+            int id = ID;
+
+
+
+            try
             {
-                EditAvt.Connection = DbConnection;
-                Console.WriteLine("==========================");
+                /*
+                string queryFrame = "exec USP_EditAvtByID @ID = '" + id.ToString() + "', @avt = '" + img + "'";
+                using (SqlCommand EditAvt = new SqlCommand(queryFrame))
+                {
+                    EditAvt.Connection = DbConnection;
+                    Console.WriteLine("==========================");
+                    EditAvt.ExecuteNonQuery();
+                    Console.WriteLine("avatar updated at ID: " + id.ToString());
+                    EditAvt.Dispose();
+                }
+                */
+                string queryFrame = "UPDATE Accounts SET avt = @avt WHERE Id = @ID;";
+                SqlCommand EditAvt = new SqlCommand(queryFrame, DbConnection);
+                EditAvt.Parameters.Add(new SqlParameter("@avt", img));
+                EditAvt.Parameters.Add(new SqlParameter("@ID", id));
                 EditAvt.ExecuteNonQuery();
-                Console.WriteLine("avatar updated ID: " + id.ToString());
+                Console.WriteLine("avatar updated at ID: " + id.ToString());
                 EditAvt.Dispose();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("try again");
+            }
+        }
+
+
+        public Image GetAvt(int ID)
+        {
+            Image Avatar = null;
+            SqlCommand cmd = new SqlCommand("SELECT avt FROM Accounts WHERE Id = " + ID.ToString(), DbConnection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                byte[] img = (byte[])(reader[0]);
+                if (img == null)
+                    return Avatar;
+                else
+                {
+                    MemoryStream ms = new MemoryStream(img);
+                    Avatar = Image.FromStream(ms);
+                }
+            }
+            reader.Close();
+            return Avatar;
+
         }
 
 

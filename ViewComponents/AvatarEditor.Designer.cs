@@ -88,6 +88,7 @@ namespace NoteMakingApp.ViewComponents
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "PNG files|*.png";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // AvatarEditor
             // 

@@ -19,7 +19,10 @@ namespace NoteMakingApp.ViewComponents
         public static NavigationOption this_option;
         private static int _ID = -1;
 
-
+        public  void LoadAvt(Image Avt)
+        {
+            avatar.Image = Avt;
+        }
         public static NavigationBar getInstance()
         {
             if (instance == null)

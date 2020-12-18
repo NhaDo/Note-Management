@@ -26,6 +26,11 @@ namespace NoteMakingApp
         {
             ID = login_ID;
         }
+
+        public static int getID()
+        {
+            return ID;
+        }
         static public Form1 getInstance()
         {
             if (instance == null)
@@ -41,7 +46,7 @@ namespace NoteMakingApp
             List<string> titles = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
             List<string> images = new List<string> { "HOME.png", "ACCOUNT.png", "SETTINGS.png" };
             this.navigationBar.addNavOptions(titles, images);
-           
+            this.navigationBar.LoadAvt(DataHandle.getInstance().GetAvt(ID));
             instance = this;
             setWindow();
         }
