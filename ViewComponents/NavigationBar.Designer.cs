@@ -89,7 +89,7 @@ namespace NoteMakingApp.ViewComponents
             this.avatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.avatar.Name = "avatar";
             this.avatar.Size = new System.Drawing.Size(60, 60);
-            this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.avatar.TabIndex = 0;
             this.avatar.TabStop = false;
             this.avatar.MouseEnter += new System.EventHandler(this.avt_MouseHover);

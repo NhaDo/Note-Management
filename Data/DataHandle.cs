@@ -407,13 +407,14 @@ namespace NoteMakingApp.Models
             FileStream fs = new FileStream(AvtPath, FileMode.Open, FileAccess.Read);
             BinaryReader br = new BinaryReader(fs);
             img = br.ReadBytes((int)fs.Length);
+
+            fs.Close();
+            br.Close();
             
             // get ID
             int id = ID;
 
-
-
-            try
+            //try
             {
                 /*
                 string queryFrame = "exec USP_EditAvtByID @ID = '" + id.ToString() + "', @avt = '" + img + "'";
@@ -432,12 +433,16 @@ namespace NoteMakingApp.Models
                 EditAvt.Parameters.Add(new SqlParameter("@ID", id));
                 EditAvt.ExecuteNonQuery();
                 Console.WriteLine("avatar updated at ID: " + id.ToString());
+                MessageBox.Show("successfully saved new avatar");
+
                 EditAvt.Dispose();
             }
+            /*
             catch (Exception ex)
             {
-                MessageBox.Show("try again");
+                MessageBox.Show("unable to save avt at ID : " + id.ToString());
             }
+            */
         }
 
 
@@ -446,13 +451,18 @@ namespace NoteMakingApp.Models
             Image Avatar = null;
             SqlCommand cmd = new SqlCommand("SELECT avt FROM Accounts WHERE Id = " + ID.ToString(), DbConnection);
             SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
             if (reader.HasRows)
             {
-                byte[] img = (byte[])(reader[0]);
-                if (img == null)
+                
+                if ((reader[0]) == System.DBNull.Value)
+                {
+                    reader.Close();
                     return Avatar;
+                }
                 else
                 {
+                    byte[] img = (byte[])(reader[0]);
                     MemoryStream ms = new MemoryStream(img);
                     Avatar = Image.FromStream(ms);
                 }

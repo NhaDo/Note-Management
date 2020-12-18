@@ -46,12 +46,12 @@ namespace NoteMakingApp
             List<string> titles = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
             List<string> images = new List<string> { "HOME.png", "ACCOUNT.png", "SETTINGS.png" };
             this.navigationBar.addNavOptions(titles, images);
-            this.navigationBar.LoadAvt(DataHandle.getInstance().GetAvt(ID));
             instance = this;
             setWindow();
         }
         public static void ShowAvtEditor()
         {
+            instance.avatarEditor1.setID(ID);
             instance.avatarEditor1.Visible = true;
             instance.avatarEditor1.BringToFront();
             instance.avatarEditor1.Focus();
@@ -78,6 +78,7 @@ namespace NoteMakingApp
                         this.mainDomain1.Show();
                         this.accountSubwindow2.Visible = false;
                         DataHandle.getInstance().ShowNote();
+                        this.navigationBar.LoadAvt(DataHandle.getInstance().GetAvt(ID));
                         break;
                     case "ACCOUNT":
                         this.accountSubwindow2.Visible = true;
