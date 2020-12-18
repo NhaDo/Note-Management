@@ -45,9 +45,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 62);
+            this.label1.Location = new System.Drawing.Point(3, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 22);
+            this.label1.Size = new System.Drawing.Size(68, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -55,19 +55,20 @@
             // txtTittle
             // 
             this.txtTittle.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTittle.Location = new System.Drawing.Point(65, 56);
+            this.txtTittle.Location = new System.Drawing.Point(73, 70);
+            this.txtTittle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTittle.Multiline = true;
             this.txtTittle.Name = "txtTittle";
-            this.txtTittle.Size = new System.Drawing.Size(218, 36);
+            this.txtTittle.Size = new System.Drawing.Size(245, 44);
             this.txtTittle.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 95);
+            this.label2.Location = new System.Drawing.Point(3, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 22);
+            this.label2.Size = new System.Drawing.Size(103, 27);
             this.label2.TabIndex = 3;
             this.label2.Text = "List to do";
             // 
@@ -75,9 +76,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(51, 9);
+            this.label3.Location = new System.Drawing.Point(57, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 32);
+            this.label3.Size = new System.Drawing.Size(233, 37);
             this.label3.TabIndex = 4;
             this.label3.Text = "New To Do List";
             // 
@@ -85,17 +86,19 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 120);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 150);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(273, 176);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(307, 220);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // btnOK
             // 
             this.btnOK.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnOK.Location = new System.Drawing.Point(127, 302);
+            this.btnOK.Location = new System.Drawing.Point(143, 378);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 32);
+            this.btnOK.Size = new System.Drawing.Size(84, 40);
             this.btnOK.TabIndex = 6;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
@@ -104,9 +107,10 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancel.Location = new System.Drawing.Point(208, 302);
+            this.btnCancel.Location = new System.Drawing.Point(234, 378);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 32);
+            this.btnCancel.Size = new System.Drawing.Size(84, 40);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -117,9 +121,10 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = global::NoteMakingApp.Properties.Resources.delete;
-            this.pictureBox2.Location = new System.Drawing.Point(257, 96);
+            this.pictureBox2.Location = new System.Drawing.Point(289, 120);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox2.Size = new System.Drawing.Size(29, 30);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -129,18 +134,19 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.add1;
-            this.pictureBox1.Location = new System.Drawing.Point(227, 96);
+            this.pictureBox1.Location = new System.Drawing.Point(255, 120);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox1.Size = new System.Drawing.Size(29, 30);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // NewToDoList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Chartreuse;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(175)))), ((int)(((byte)(49)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -151,8 +157,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTittle);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NewToDoList";
-            this.Size = new System.Drawing.Size(295, 337);
+            this.Size = new System.Drawing.Size(332, 421);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

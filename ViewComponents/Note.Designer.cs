@@ -50,6 +50,7 @@
             // lbContent
             // 
             this.lbContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(216)))), ((int)(((byte)(208)))));
+            this.lbContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbContent.Location = new System.Drawing.Point(22, 75);
             this.lbContent.Name = "lbContent";
             this.lbContent.Size = new System.Drawing.Size(177, 160);

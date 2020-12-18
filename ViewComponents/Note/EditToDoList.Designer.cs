@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTittle = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -51,16 +50,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Edit To Do List";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 27);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Name";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -73,18 +62,22 @@
             // 
             // txtTittle
             // 
-            this.txtTittle.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTittle.Location = new System.Drawing.Point(73, 64);
+            this.txtTittle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(175)))), ((int)(((byte)(49)))));
+            this.txtTittle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTittle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTittle.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.txtTittle.Location = new System.Drawing.Point(0, 52);
             this.txtTittle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTittle.Multiline = true;
             this.txtTittle.Name = "txtTittle";
-            this.txtTittle.Size = new System.Drawing.Size(245, 44);
+            this.txtTittle.Size = new System.Drawing.Size(332, 56);
             this.txtTittle.TabIndex = 8;
+            this.txtTittle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(216)))), ((int)(((byte)(208)))));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 148);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -95,11 +88,12 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::NoteMakingApp.Properties.Resources.delete;
+            this.pictureBox2.Image = global::NoteMakingApp.Properties.Resources.add1;
             this.pictureBox2.Location = new System.Drawing.Point(253, 114);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(29, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -108,13 +102,15 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.add1;
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.delete;
             this.pictureBox1.Location = new System.Drawing.Point(289, 114);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnCancel
             // 
@@ -144,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Chartreuse;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(216)))), ((int)(((byte)(208)))));
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.pictureBox2);
@@ -152,7 +148,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtTittle);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EditToDoList";
@@ -167,7 +162,6 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTittle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
