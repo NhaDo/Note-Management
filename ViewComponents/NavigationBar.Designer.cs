@@ -79,6 +79,7 @@ namespace NoteMakingApp.ViewComponents
             this.bEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.bEdit.UseVisualStyleBackColor = false;
             this.bEdit.Visible = false;
+            this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
             this.bEdit.MouseLeave += new System.EventHandler(this.bEdit_MosueLeave);
             // 
             // avatar

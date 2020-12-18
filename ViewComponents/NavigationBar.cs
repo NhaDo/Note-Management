@@ -17,6 +17,9 @@ namespace NoteMakingApp.ViewComponents
         public static NavigationBar instance;
         public static string recentOption;
         public static NavigationOption this_option;
+        private static int _ID = -1;
+
+
         public static NavigationBar getInstance()
         {
             if (instance == null)
@@ -42,7 +45,6 @@ namespace NoteMakingApp.ViewComponents
 
 
         }
-
 
 
         public void addNavOptions(List<String> titles, List<String> imageFiles)
@@ -129,5 +131,21 @@ namespace NoteMakingApp.ViewComponents
             this.avatar.Location = new System.Drawing.Point(this.Width / 2 - this.avatar.Width / 2, 30);
             this.username.Location = new System.Drawing.Point(this.Width / 2 - (int)stringSize.Width/2, this.avatar.Height + this.avatar.Location.Y+10);
         }
+
+        private void bEdit_Click(object sender, EventArgs e)
+        {
+            Form1.ShowAvtEditor();
+        }
+        public void setID(int ID)
+        {
+            _ID = ID;
+        }
+
+        public static int getID()
+        {
+            return _ID;
+        }
+
+        public bool avt_isEdited = false;
     }
 }

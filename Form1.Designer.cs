@@ -36,12 +36,22 @@ namespace NoteMakingApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.avatarEditor1 = new NoteMakingApp.ViewComponents.AvatarEditor();
             this.mainDomain1 = new NoteMakingApp.ViewComponents.MainDomain();
             this.accountSubwindow2 = new NoteMakingApp.ViewComponents.AccountSubwindow();
             this.navigationBar = new NoteMakingApp.ViewComponents.NavigationBar();
             this.registerPanel = new NoteMakingApp.ViewComponents.AccountRegister();
             this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
             this.SuspendLayout();
+            // 
+            // avatarEditor1
+            // 
+            this.avatarEditor1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.avatarEditor1.Location = new System.Drawing.Point(495, 117);
+            this.avatarEditor1.Name = "avatarEditor1";
+            this.avatarEditor1.Size = new System.Drawing.Size(737, 539);
+            this.avatarEditor1.TabIndex = 8;
+            this.avatarEditor1.Visible = false;
             // 
             // mainDomain1
             // 
@@ -101,6 +111,7 @@ namespace NoteMakingApp
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1368, 668);
+            this.Controls.Add(this.avatarEditor1);
             this.Controls.Add(this.mainDomain1);
             this.Controls.Add(this.accountSubwindow2);
             this.Controls.Add(this.navigationBar);
@@ -137,6 +148,7 @@ namespace NoteMakingApp
         private AccountSubwindow accountSubwindow2;
         
         private MainDomain mainDomain1;
+        private AvatarEditor avatarEditor1;
     }
 }
 

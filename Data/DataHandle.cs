@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using NoteMakingApp.ViewComponents;
+using System.Drawing;
 
 namespace NoteMakingApp.Models
 {
@@ -379,20 +380,39 @@ namespace NoteMakingApp.Models
             }
         }
 
+
         public void EditNote(string a,string b)
         {
             int id = MainDomain.currentInstance.getFlags();
             string queryFrame = "exec USP_EditNoteByID @ID = '"+ id.ToString() +"', @Tittle = N'" +a+ "', @Content = N'" + b+ "'" ;
             
-            using (SqlCommand deleteNote = new SqlCommand(queryFrame))
+            using (SqlCommand editNote = new SqlCommand(queryFrame))
             {
-                deleteNote.Connection = DbConnection;
+                editNote.Connection = DbConnection; 
                 Console.WriteLine("==========================");
-                deleteNote.ExecuteNonQuery();
+                editNote.ExecuteNonQuery();
                 Console.WriteLine("Da sua du lieu tai note co id " + id.ToString());
-                deleteNote.Dispose();
+                editNote.Dispose();
             }
         }
+
+
+        public void EditAvt(Image Avatar)
+        {
+            int id = NavigationBar.getID();
+            string queryFrame = "exec USP_EditAvtByID @ID = '" + id.ToString()+ "', @avt = '"+Avatar+"'";
+            using (SqlCommand EditAvt = new SqlCommand(queryFrame))
+            {
+                EditAvt.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                EditAvt.ExecuteNonQuery();
+                Console.WriteLine("avatar updated ID: " + id.ToString());
+                EditAvt.Dispose();
+            }
+        }
+
+
+
 
         public Notes GetDataFromNote()
         {

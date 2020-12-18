@@ -19,6 +19,13 @@ namespace NoteMakingApp
         public static int type = 0;
         static private bool loggedIn = false;
         private static Form1 instance;
+        private  static int ID;
+
+
+        public static void setID(int login_ID)
+        {
+            ID = login_ID;
+        }
         static public Form1 getInstance()
         {
             if (instance == null)
@@ -38,6 +45,19 @@ namespace NoteMakingApp
             instance = this;
             setWindow();
         }
+        public static void ShowAvtEditor()
+        {
+            instance.avatarEditor1.Visible = true;
+            instance.avatarEditor1.BringToFront();
+            instance.avatarEditor1.Focus();
+        }
+
+
+        public static void UpdateAvt()
+        {
+            instance.navigationBar.avatar.Image = instance.avatarEditor1.avt;
+        }
+
         public void setWindow(string option = "")
         {
             if (loggedIn == true)
@@ -48,6 +68,7 @@ namespace NoteMakingApp
                     case "Login":
                         this.loginPanel1.Hide();
                         this.navigationBar.username.Text = IDname;
+                        this.navigationBar.setID(ID);
                         this.navigationBar.Show();
                         this.mainDomain1.Show();
                         this.accountSubwindow2.Visible = false;
