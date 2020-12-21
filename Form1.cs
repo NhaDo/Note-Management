@@ -155,6 +155,15 @@ namespace NoteMakingApp
             newrmd.BringToFront();
         }
 
+        public void EditReminder(string Tittle, string Content, string time, int check)
+        {
+            EditReminder editReminder = new EditReminder();
+            editReminder.Location = new System.Drawing.Point(400, 100);
+            editReminder.SetValue(Tittle, Content, time, check);
+            this.Controls.Add(editReminder);
+            editReminder.BringToFront();
+        }
+
         public void ShowTypeNote()
         {
             TypeNote typeNote = new TypeNote();

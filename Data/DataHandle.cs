@@ -55,7 +55,7 @@ namespace NoteMakingApp.Models
         }
         private void establishDbConnection()
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\NhaDo\Desktop\lttq\Note-Management\Data\Database.mdf; Integrated Security = True";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Project\Note-Management\Data\Database.mdf; Integrated Security = True";
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
@@ -665,6 +665,46 @@ namespace NoteMakingApp.Models
                 newrmd.Dispose();
             }
 
+        }
+
+        public void EditReminder(string a, string b,string c, int d)
+        {
+            int id = MainDomain.currentInstance.getFlags();
+            string queryFrame = "exec USP_EditReminderByID @ID = " + id.ToString() + ",@Tittle = N'" + a + "',@Content = N'" + b + "',@Time = '" + c + "',@Check = " + d + ";";
+
+            using (SqlCommand editReminder = new SqlCommand(queryFrame))
+            {
+                editReminder.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                editReminder.ExecuteNonQuery();
+                Console.WriteLine("Da sua du lieu tai reminder co id " + id.ToString());
+                editReminder.Dispose();
+            }
+        }
+
+        public void DeleteReminder()
+        {
+            int id = MainDomain.currentInstance.getFlags();
+            string queryFrame = "exec USP_DeleteReminder @ID = " + id.ToString();
+            using (SqlCommand deleteReminder = new SqlCommand(queryFrame))
+            {
+                deleteReminder.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                deleteReminder.ExecuteNonQuery();
+                Console.WriteLine("Da xoa du lieu reminder co id " + id.ToString());
+                deleteReminder.Dispose();
+            }
+        }
+
+        public Reminders GetDateReminder()
+        {
+            int id = MainDomain.currentInstance.getFlags();
+            foreach (Reminders r in rmds)
+            {
+                if (r.ID == id)
+                    return r;
+            }
+            return null;
         }
     }
 }

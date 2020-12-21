@@ -105,6 +105,10 @@ namespace NoteMakingApp.ViewComponents
                                 else
                                     Form1.getInstance().editToDoList(b.Tittle, b.item);
                                 break;
+                            case 3:
+                                Reminders c = DataHandle.getInstance().GetDateReminder();
+                                Form1.getInstance().EditReminder(c.Tittle, c.Content, c.Time, c.Check);
+                                break;
 
                         }
                         
@@ -129,6 +133,10 @@ namespace NoteMakingApp.ViewComponents
                                 break;
                             case 2:
                                 DataHandle.getInstance().DeleteToDoList();
+                                DataHandle.getInstance().ShowNote();
+                                break;
+                            case 3:
+                                DataHandle.getInstance().DeleteReminder();
                                 DataHandle.getInstance().ShowNote();
                                 break;
                         }
