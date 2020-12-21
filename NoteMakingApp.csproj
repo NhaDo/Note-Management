@@ -396,8 +396,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitattributes" />
-    <Content Include=".gitignore" />
     <Content Include="bin\x86\Debug\NoteMakingApp.exe" />
     <Content Include="bin\x86\Debug\NoteMakingApp.pdb" />
     <Content Include="Data\Database.mdf">
