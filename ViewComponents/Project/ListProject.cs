@@ -41,13 +41,44 @@ namespace NoteMakingApp.ViewComponents.Project
             {
                 prj.Click += (s, e) =>
                 {
+                    double x = 0;
+                    double y = 0;
+                    string z;
                     //Form1.type = 2;
                     MainDomain.currentInstance.setFlags(Int32.Parse(prj.Name));
                     Console.WriteLine(MainDomain.currentInstance.getFlags());
 
                     MainDomain.currentInstance.CloseProject();
                     ToDoLists tdl =  DataHandle.getInstance().GetDataToDoList();
-                    Form1.getInstance().ShowProject(tdl.Tittle,tdl.item);
+                    foreach (ItemTDLs i in tdl.item)
+                    {
+                        if (i.check == true)
+                            x++;
+                        y++;
+                    }
+                    x = ((x / y) * 100);
+                    if (x.ToString().Length > 5)
+                    {
+                        z = x.ToString().Substring(0, 5);
+                        Console.WriteLine("haha");
+                    }
+                    else
+                    {
+                        z = x.ToString();
+                        Console.WriteLine("hohoh");
+                    }
+
+                    Console.WriteLine(z.Length);
+                    Form1.getInstance().ShowProject(tdl.Tittle,tdl.item,z);
+
+
+                    /*double i = (Convert.ToDouble(2.54) / 10) * 100;
+                    Console.WriteLine(i);
+                    if (i.ToString().Length > 5)
+                        label1.Text = i.ToString().Substring(0, 5);
+                    else
+                        label1.Text = i.ToString();
+                    Console.WriteLine(label1.Text);*/
                 };
             }
             i++;

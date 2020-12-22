@@ -14,6 +14,7 @@ namespace NoteMakingApp.ViewComponents.Project
 {
     public partial class Project : UserControl
     {
+        //double a = 0, b = 0;
         public Project()
         {
             InitializeComponent();
@@ -37,12 +38,16 @@ namespace NoteMakingApp.ViewComponents.Project
 
         public void setValue(string nameProject, List<ItemTDLs> items)
         {
+            //a = 0;b = 0;
             this.lbProjectName.Text = nameProject;
             foreach (ItemTDLs t in items)
             {
                 ItemProject i = new ItemProject();
                 i.setValue(t.STT, t.Content, t.check);
                 this.flowLayoutPanel1.Controls.Add(i);
+                //if (t.check == true)
+                    //a++;
+                //b++;
             }
         }
 
@@ -57,6 +62,11 @@ namespace NoteMakingApp.ViewComponents.Project
             DataHandle.getInstance().DeleteToDoList();
             MainDomain.currentInstance.showListProject();
             this.Dispose();
+        }
+
+        public void setComplete(string a)
+        {
+            this.lbComplete.Text = "Complete: " + a + "%";
         }
     }
 }

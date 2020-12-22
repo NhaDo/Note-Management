@@ -173,13 +173,14 @@ namespace NoteMakingApp
             typeNote.BringToFront();
         }
 
-        public void ShowProject(string nameProject, List<ItemTDLs> item)
+        public void ShowProject(string nameProject, List<ItemTDLs> item,string complete)
         {
             Project prj = new Project();
             prj.Location = new System.Drawing.Point(360, 80);
             prj.setValue(nameProject,item);
             this.Controls.Add(prj);
             prj.BringToFront();
+            prj.setComplete(complete);
         }
     }
 }
