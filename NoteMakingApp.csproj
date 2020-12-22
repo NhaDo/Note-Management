@@ -74,6 +74,7 @@
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -168,22 +169,22 @@
     <Compile Include="ViewComponents\CustomButton.Designer.cs">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewComponents\EditNote.cs">
+    <Compile Include="ViewComponents\Note\EditNote.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewComponents\EditNote.Designer.cs">
+    <Compile Include="ViewComponents\Note\EditNote.Designer.cs">
       <DependentUpon>EditNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewComponents\EditReminder.cs">
+    <Compile Include="ViewComponents\Note\EditReminder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewComponents\EditReminder.Designer.cs">
+    <Compile Include="ViewComponents\Note\EditReminder.Designer.cs">
       <DependentUpon>EditReminder.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewComponents\NewReminder.cs">
+    <Compile Include="ViewComponents\Note\NewReminder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewComponents\NewReminder.Designer.cs">
+    <Compile Include="ViewComponents\Note\NewReminder.Designer.cs">
       <DependentUpon>NewReminder.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\Note\EditToDoList.cs">
@@ -240,10 +241,10 @@
     <Compile Include="ViewComponents\Note\NewToDoList.Designer.cs">
       <DependentUpon>NewToDoList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewComponents\Note.cs">
+    <Compile Include="ViewComponents\Note\Note.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewComponents\Note.Designer.cs">
+    <Compile Include="ViewComponents\Note\Note.Designer.cs">
       <DependentUpon>Note.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\Note\ToDoList.cs">
@@ -258,10 +259,28 @@
     <Compile Include="ViewComponents\Note\TypeNote.Designer.cs">
       <DependentUpon>TypeNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewComponents\Reminder.cs">
+    <Compile Include="ViewComponents\Project\ItemProject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewComponents\Reminder.Designer.cs">
+    <Compile Include="ViewComponents\Project\ItemProject.Designer.cs">
+      <DependentUpon>ItemProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\Project\ListProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Project\ListProject.Designer.cs">
+      <DependentUpon>ListProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\Project\Project.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Project\Project.Designer.cs">
+      <DependentUpon>Project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\Note\Reminder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Note\Reminder.Designer.cs">
       <DependentUpon>Reminder.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\AvatarEditor.cs">
@@ -313,10 +332,10 @@
     <EmbeddedResource Include="ViewComponents\CustomButton.resx">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewComponents\EditNote.resx">
+    <EmbeddedResource Include="ViewComponents\Note\EditNote.resx">
       <DependentUpon>EditNote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewComponents\EditReminder.resx">
+    <EmbeddedResource Include="ViewComponents\Note\EditReminder.resx">
       <DependentUpon>EditReminder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\LoginPanel.resx">
@@ -334,7 +353,7 @@
     <EmbeddedResource Include="ViewComponents\avt.resx">
       <DependentUpon>avt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewComponents\NewReminder.resx">
+    <EmbeddedResource Include="ViewComponents\Note\NewReminder.resx">
       <DependentUpon>NewReminder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\Note\EditToDoList.resx">
@@ -349,7 +368,7 @@
     <EmbeddedResource Include="ViewComponents\Note\NewToDoList.resx">
       <DependentUpon>NewToDoList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewComponents\Note.resx">
+    <EmbeddedResource Include="ViewComponents\Note\Note.resx">
       <DependentUpon>Note.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\Note\ToDoList.resx">
@@ -358,7 +377,16 @@
     <EmbeddedResource Include="ViewComponents\Note\TypeNote.resx">
       <DependentUpon>TypeNote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewComponents\Reminder.resx">
+    <EmbeddedResource Include="ViewComponents\Project\ItemProject.resx">
+      <DependentUpon>ItemProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Project\ListProject.resx">
+      <DependentUpon>ListProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Project\Project.resx">
+      <DependentUpon>Project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Note\Reminder.resx">
       <DependentUpon>Reminder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\AvatarEditor.resx">
@@ -426,6 +454,11 @@
     <Content Include="images\password.png" />
     <Content Include="images\SETTINGS.png" />
     <Content Include="Resources\5ade3d1a62fbe78d1be88e574d45c2c7-bell-icon-16-by-vexels.png" />
+    <None Include="Resources\close1.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\delete2.png" />
+    <None Include="Resources\ellipsis.png" />
+    <None Include="Resources\ellipsis1.png" />
     <Content Include="Resources\Note.png" />
     <Content Include="Resources\Note4_2.png" />
     <Content Include="Resources\Note_Hover.png" />

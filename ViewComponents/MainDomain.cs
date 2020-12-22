@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoteMakingApp.Models;
+using NoteMakingApp.ViewComponents.Project;
 
 namespace NoteMakingApp.ViewComponents
 {
@@ -32,9 +33,10 @@ namespace NoteMakingApp.ViewComponents
             customButton3.setFunction(3);
             customButton3.CustomBtn.BackColor = Color.LightSeaGreen;
             currentInstance = this;
-            
-            
 
+            showListProject();
+
+            
         }
 
         public void AddNewNote(int id, string tittle, string content)
@@ -64,7 +66,6 @@ namespace NoteMakingApp.ViewComponents
             tdl.addItem(b);
             tdl.setId(name);
             this.flPanel.Controls.Add(tdl);
-            
         }
 
         public void AddReminder(string id,string Tittle,string Content,DateTime Time,int Check)
@@ -96,8 +97,27 @@ namespace NoteMakingApp.ViewComponents
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.listProject1.Visible = true;
+        }
 
 
+        public void CloseProject()
+        {
+            this.listProject1.Visible = false;
+        }
 
+        public void showListProject()
+        {
+            //DataHandle.tdls.Clear();
+            ListProject.currentInstance.ClearProject();
+            DataHandle.getInstance().GetDataFromTDL();
+            this.listProject1.AddProject(0, "New Project");
+            foreach (ToDoLists t in DataHandle.tdls)
+                if (t.project == 1)
+                    this.listProject1.AddProject(t.id, t.Tittle);
+        }
+        
     }
 }

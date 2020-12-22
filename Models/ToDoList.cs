@@ -12,5 +12,6 @@ namespace NoteMakingApp.Models
         public List<ItemTDLs> item {get;set;}
         public int id { get; set; }
         public int user_id { get; set; }
+        public int project { get; set; }
     }
 }

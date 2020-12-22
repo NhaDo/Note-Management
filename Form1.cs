@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoteMakingApp.Models;
 using NoteMakingApp.ViewComponents.Note;
+using NoteMakingApp.ViewComponents.Project;
 
 namespace NoteMakingApp
 {
@@ -170,6 +171,15 @@ namespace NoteMakingApp
             typeNote.Location = new System.Drawing.Point(300, 80);
             this.Controls.Add(typeNote);
             typeNote.BringToFront();
+        }
+
+        public void ShowProject(string nameProject, List<ItemTDLs> item)
+        {
+            Project prj = new Project();
+            prj.Location = new System.Drawing.Point(360, 80);
+            prj.setValue(nameProject,item);
+            this.Controls.Add(prj);
+            prj.BringToFront();
         }
     }
 }

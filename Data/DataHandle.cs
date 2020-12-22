@@ -22,11 +22,13 @@ namespace NoteMakingApp.Models
         static List<Person> persons { get; set; }
         static List<PersonalDetail> details { get; set; }
         static List<Notes> notes { get; set; }
-        static List<ToDoLists> tdls { get; set; }
+        public static List<ToDoLists> tdls { get; set; }
+        
         static List<Reminders> rmds { get; set; }
         static List<ItemTDLs> itdl { get; set; }
         static List<string> _Tittle { get; set; }
-        static List<string> _Content { get; set; }
+        
+        
 
         static User recentUser { get; set; }
         static Account recentAccount { get; set; }
@@ -35,6 +37,7 @@ namespace NoteMakingApp.Models
         public int _isSelected = 0;
         public int _idtdl = 0;
         public int _idUsertdl = 0;
+        public int _project = 0;
         public DataHandle()
         {
             users = new List<User>();
@@ -43,10 +46,11 @@ namespace NoteMakingApp.Models
             details = new List<PersonalDetail>();
             notes = new List<Notes>();
             tdls = new List<ToDoLists>();
+            
             rmds = new List<Reminders>();
             itdl = new List<ItemTDLs>();
             _Tittle = new List<string>();
-            _Content = new List<string>();
+            
             recentUser = null;
             recentAccount = null;
             recentNote = null;
@@ -353,7 +357,7 @@ namespace NoteMakingApp.Models
 
             foreach (ToDoLists tdl in tdls)
             {
-                if (tdl.user_id == id)
+                if (tdl.user_id == id && tdl.project == 0)
                     MainDomain.currentInstance.AddNewToDoList(tdl.id.ToString(), tdl.Tittle, tdl.item);
 
             }
@@ -506,9 +510,9 @@ namespace NoteMakingApp.Models
             
         }
 
-        public void CreateMyNote(string a, int b)
+        public void CreateMyNote(string a, int b,int c)
         {
-            string queryFrame = "INSERT into MyNote (Tittle,id_user) VALUES (@Tittle,@id_user)";
+            string queryFrame = "INSERT into MyNote (Tittle,id_user,Project) VALUES (@Tittle,@id_user,@Project)";
 
             using (SqlCommand newt = new SqlCommand(queryFrame))
             {
@@ -516,6 +520,7 @@ namespace NoteMakingApp.Models
                 Console.WriteLine("==========================");
                 newt.Parameters.Add("@Tittle", SqlDbType.NVarChar).Value = a;
                 newt.Parameters.Add("@id_user", SqlDbType.Int).Value = b;
+                newt.Parameters.Add("@Project", SqlDbType.Int).Value = c;
                 newt.ExecuteNonQuery();
                 Console.WriteLine("Nhap du lieu thanh cong");
                 newt.Dispose();
@@ -572,6 +577,21 @@ namespace NoteMakingApp.Models
             reader.Close();
         }
 
+        public void GetProjectByTittle(string a)
+        {
+            //SqlCommand cmd = new SqlCommand("exec USP_GetIdByTittle @Tittle = N'" + a + "'", DbConnection);
+            SqlCommand cmd = new SqlCommand("Select Project From MyNote Where Tittle = N'"+a+"'",DbConnection);
+
+            _project = 0;
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                _project = Convert.ToInt32(reader["Project"]);
+            }
+
+            reader.Close();
+        }
+
         public void GetDataFromTDL()
         {
             _Tittle.Clear();
@@ -581,13 +601,15 @@ namespace NoteMakingApp.Models
             {
                 GetItemByTittle(t);
                 GetUserIdByTittle(t);
+                GetProjectByTittle(t);
                 
                 tdls.Add(new ToDoLists()
                 {
                     Tittle = t,
                     item = new List<ItemTDLs>(itdl),
                     user_id = _idUsertdl,
-                    id = _idtdl
+                    id = _idtdl,
+                    project = _project
                 });
                 
                
@@ -706,6 +728,18 @@ namespace NoteMakingApp.Models
             }
             return null;
         }
+
+        /*public void GetNameProject()
+        {
+            SqlCommand cmd = new SqlCommand("Select Tittle From MyNote Where Project = 1", DbConnection);
+            _NameProject.Clear();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                _NameProject.Add(reader["Tittle"].ToString().Trim());
+            }
+            reader.Close();
+        }*/
     }
 }
 

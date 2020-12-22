@@ -119,7 +119,7 @@ namespace NoteMakingApp.ViewComponents
                     break;
                 case 3:
                     
-                    if (MainDomain.currentInstance.getFlags() == 0)
+                    if (Form1.type == 0)
                     {
                         MessageBox.Show("Vui lòng thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
