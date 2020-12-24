@@ -24,7 +24,7 @@ namespace NoteMakingApp.ViewComponents
             _flag = 1;
             this.Timer.Enabled = false;
             this.checkBox1.Checked = false;
-            MessageBox.Show("haha");
+            MessageBox.Show("Đã đến giờ hẹn của Reminder " + this.lbTittle.Text,"Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace NoteMakingApp.ViewComponents
         public int chanceTime(DateTime t)
         {
             int i = 0;
-            i = ((t.Hour - DateTime.Now.Hour) * 3600 + (t.Minute - DateTime.Now.Minute)*60)*1000;
+            i = ((t.Hour - DateTime.Now.Hour) * 3600 + (t.Minute - DateTime.Now.Minute)*60 -DateTime.Now.Second)*1000;
             if ((t.Day - DateTime.Now.Day) < 0)
                 i = 0;
             
@@ -59,7 +59,10 @@ namespace NoteMakingApp.ViewComponents
             this.lbTittle.Text = Tittle;
             this.lbContent.Text =   Content;
             this.checkBox1.Checked = Convert.ToBoolean(Check);
-            this.lbTime.Text = Time.Hour + ":" + Time.Minute;
+            if (Time.Minute < 10)
+                this.lbTime.Text = Time.Hour + ":0" + Time.Minute;
+            else
+                this.lbTime.Text = Time.Hour + ":" + Time.Minute;
             this.Timer.Interval = chanceTime(Time);
            
         }

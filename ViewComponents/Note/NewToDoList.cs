@@ -71,7 +71,7 @@ namespace NoteMakingApp.ViewComponents
             TextBox a = new TextBox();
             a.Name = i.ToString();
             a.Size = new System.Drawing.Size(150, 10);
-            a.Text = "Something " + (i+1).ToString();
+            a.Text = "Write Something";
             txtbox.Add(a.Text);
             this.flowLayoutPanel1.Controls.Add(a);
             i++;

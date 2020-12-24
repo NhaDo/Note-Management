@@ -41,5 +41,6 @@ namespace NoteMakingApp.ViewComponents
         {
             this.textBox1.Size = new System.Drawing.Size(200, 22);
         }
+
     }
 }

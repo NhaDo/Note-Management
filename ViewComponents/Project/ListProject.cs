@@ -44,7 +44,7 @@ namespace NoteMakingApp.ViewComponents.Project
                     double x = 0;
                     double y = 0;
                     string z;
-                    //Form1.type = 2;
+                    Form1.type = 4;
                     MainDomain.currentInstance.setFlags(Int32.Parse(prj.Name));
                     Console.WriteLine(MainDomain.currentInstance.getFlags());
 
@@ -60,12 +60,12 @@ namespace NoteMakingApp.ViewComponents.Project
                     if (x.ToString().Length > 5)
                     {
                         z = x.ToString().Substring(0, 5);
-                        Console.WriteLine("haha");
+                        
                     }
                     else
                     {
                         z = x.ToString();
-                        Console.WriteLine("hohoh");
+                        
                     }
 
                     Console.WriteLine(z.Length);

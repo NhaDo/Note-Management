@@ -669,6 +669,21 @@ namespace NoteMakingApp.Models
             }
         }
 
+        public void DeleteItemInToDoList(string text,int stt)
+        {
+            string queryFrame = "exec USP_DeleteItemByTittleAndSTT @Tittle = N'" + text + "',@STT =" + stt.ToString();
+                               //exec USP_DeleteItemByTittleAndSTT @Tittle = N'to do list',@STT = 1;
+            using (SqlCommand deleteiTDL = new SqlCommand(queryFrame))
+            {
+                deleteiTDL.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                deleteiTDL.ExecuteNonQuery();
+                Console.WriteLine("Da xoa du lieu iTDL " + text + " co stt " + stt.ToString());
+                deleteiTDL.Dispose();
+            }
+        }
+
+
         public void CreateNewReminder(Reminders rmd)
         {
             string queryFrame = "INSERT into Reminder (Tittle,Content,Timer,Checker,Id_User) VALUES (@Tittle,@Content,@Timer,@Checker,@Id_User)";
