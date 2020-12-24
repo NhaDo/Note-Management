@@ -19,6 +19,16 @@ namespace NoteMakingApp.ViewComponents.Project
         {
             InitializeComponent();
             currentInstance = this;
+
+            //DataHandle.tdls.Clear();
+            ListProject.currentInstance.ClearProject();
+            DataHandle.getInstance().GetDataFromTDL();
+            AddProject(0, "New Project");
+            foreach (ToDoLists t in DataHandle.tdls)
+                if (t.project == 1)
+                    AddProject(t.id, t.Tittle);
+
+
         }
 
         public void AddProject(int a, string b)
@@ -29,12 +39,12 @@ namespace NoteMakingApp.ViewComponents.Project
             prj.Size = new System.Drawing.Size(100, 25);
             if (i == 1)
             {
+                prj.BackColor = Color.Aqua;
                 prj.Click += (s, e) =>
                 {
                     Form1.type = 4;
-                    MainDomain.currentInstance.CloseProject();
-                    Form1.getInstance().NewToDoList();
-
+                    this.Dispose();
+                    Form1.getInstance().NewProject();
                 };
             }
             else
@@ -48,7 +58,8 @@ namespace NoteMakingApp.ViewComponents.Project
                     MainDomain.currentInstance.setFlags(Int32.Parse(prj.Name));
                     Console.WriteLine(MainDomain.currentInstance.getFlags());
 
-                    MainDomain.currentInstance.CloseProject();
+                    this.Dispose();
+
                     ToDoLists tdl =  DataHandle.getInstance().GetDataToDoList();
                     foreach (ItemTDLs i in tdl.item)
                     {
@@ -72,13 +83,7 @@ namespace NoteMakingApp.ViewComponents.Project
                     Form1.getInstance().ShowProject(tdl.Tittle,tdl.item,z);
 
 
-                    /*double i = (Convert.ToDouble(2.54) / 10) * 100;
-                    Console.WriteLine(i);
-                    if (i.ToString().Length > 5)
-                        label1.Text = i.ToString().Substring(0, 5);
-                    else
-                        label1.Text = i.ToString();
-                    Console.WriteLine(label1.Text);*/
+                    
                 };
             }
             i++;
@@ -87,7 +92,7 @@ namespace NoteMakingApp.ViewComponents.Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainDomain.currentInstance.CloseProject();
+            this.Dispose();
         }
 
         public void ClearProject()

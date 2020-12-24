@@ -60,7 +60,8 @@ namespace NoteMakingApp.ViewComponents.Project
         {
 
             DataHandle.getInstance().DeleteToDoList();
-            MainDomain.currentInstance.showListProject();
+            
+            
             this.Dispose();
         }
 

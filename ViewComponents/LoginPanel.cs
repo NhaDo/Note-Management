@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoteMakingApp.Models;
+using NoteMakingApp.ViewComponents.Project;
 
 namespace NoteMakingApp.ViewComponents
 {
@@ -39,6 +40,7 @@ namespace NoteMakingApp.ViewComponents
                     NewNote.User_ID = acc.id;
                     NewToDoList.User_ID = acc.id;
                     NewReminder.User_ID = acc.id;
+                    NewProject.User_ID = acc.id;
                     
                 }
                 else

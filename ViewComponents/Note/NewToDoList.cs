@@ -45,21 +45,18 @@ namespace NoteMakingApp.ViewComponents
             else
             {
                 int p = 1;
-                if (txtbox == null)
-                    DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, "",p,0);
+                if (txtbox.Count() == 0)
+                    DataHandle.getInstance().CreateNewToDoList(txtTittle.Text,"",p,0);
                 else
-                {
-                    if (Form1.type == 4)
-                        DataHandle.getInstance().CreateMyNote(txtTittle.Text, User_ID, 1);
-                    else
-                        DataHandle.getInstance().CreateMyNote(txtTittle.Text, User_ID,0);
+                { 
+                    DataHandle.getInstance().CreateMyNote(txtTittle.Text, User_ID,0);
                     foreach (string t in txtbox)
                     {
                         DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, t,p,0);
                         p++;
                     }
                     DataHandle.getInstance().ShowNote();
-                    MainDomain.currentInstance.showListProject();
+                    
                     this.Dispose();
                 }
             }

@@ -271,6 +271,12 @@
     <Compile Include="ViewComponents\Project\ListProject.Designer.cs">
       <DependentUpon>ListProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewComponents\Project\NewProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Project\NewProject.Designer.cs">
+      <DependentUpon>NewProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewComponents\Project\Project.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -382,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\Project\ListProject.resx">
       <DependentUpon>ListProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Project\NewProject.resx">
+      <DependentUpon>NewProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\Project\Project.resx">
       <DependentUpon>Project.cs</DependentUpon>

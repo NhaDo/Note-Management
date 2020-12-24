@@ -173,6 +173,23 @@ namespace NoteMakingApp
             typeNote.BringToFront();
         }
 
+        public void NewProject()
+        {
+            NewProject newProject = new NewProject();
+            newProject.Location = new System.Drawing.Point(370, 80);
+            this.Controls.Add(newProject);
+            newProject.BringToFront();
+        }
+
+        public void ShowListProject()
+        {
+            ListProject lp = new ListProject();
+            lp.Location = new System.Drawing.Point(530, 35);
+            lp.Size = new System.Drawing.Size(110, 165);
+            this.Controls.Add(lp);
+            lp.BringToFront();
+        }
+
         public void ShowProject(string nameProject, List<ItemTDLs> item,string complete)
         {
             Project prj = new Project();
