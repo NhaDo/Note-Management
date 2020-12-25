@@ -49,8 +49,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 23);
             this.label1.TabIndex = 2;
-            this.label1.Text = "nadnjsadnjsandajsnjxzcxzc";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ItemProject
             // 

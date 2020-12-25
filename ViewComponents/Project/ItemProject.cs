@@ -26,6 +26,8 @@ namespace NoteMakingApp.ViewComponents.Project
         {
             label1.Name = Name.ToString();
             label1.Text = Text;
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            
             checkBox1.Checked = check;
             checkBox1.AutoCheck = false;
         }

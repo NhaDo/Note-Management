@@ -38,6 +38,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTimer = new System.Windows.Forms.Button();
             this.Time = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new NoteMakingApp.ViewComponents.Project.Timer();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,6 +127,15 @@
             this.btnTimer.TabIndex = 0;
             this.btnTimer.Text = "Timer";
             this.btnTimer.UseVisualStyleBackColor = true;
+            this.btnTimer.Click += new System.EventHandler(this.btnTimer_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Location = new System.Drawing.Point(59, 111);
+            this.timer1.Name = "timer1";
+            this.timer1.Size = new System.Drawing.Size(145, 116);
+            this.timer1.TabIndex = 0;
+            this.timer1.Visible = false;
             // 
             // NewProject
             // 
@@ -133,6 +143,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.timer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSetting);
@@ -159,5 +170,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnTimer;
         private System.Windows.Forms.Timer Time;
+        private Timer timer1;
     }
 }

@@ -70,11 +70,14 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,6 +87,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseDataSet.Designer.cs">
@@ -259,6 +263,12 @@
     <Compile Include="ViewComponents\Note\TypeNote.Designer.cs">
       <DependentUpon>TypeNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewComponents\Project\EditItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Project\EditItem.Designer.cs">
+      <DependentUpon>EditItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewComponents\Project\ItemProject.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -294,6 +304,12 @@
     </Compile>
     <Compile Include="ViewComponents\AvatarEditor.Designer.cs">
       <DependentUpon>AvatarEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\Project\Timer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\Project\Timer.Designer.cs">
+      <DependentUpon>Timer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -383,6 +399,9 @@
     <EmbeddedResource Include="ViewComponents\Note\TypeNote.resx">
       <DependentUpon>TypeNote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Project\EditItem.resx">
+      <DependentUpon>EditItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\Project\ItemProject.resx">
       <DependentUpon>ItemProject.cs</DependentUpon>
     </EmbeddedResource>
@@ -400,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComponents\AvatarEditor.resx">
       <DependentUpon>AvatarEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\Project\Timer.resx">
+      <DependentUpon>Timer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\NoteMakingApp\v16\TestStore\0\000.testlog" />
     <None Include=".vs\NoteMakingApp\v16\TestStore\0\testlog.manifest" />

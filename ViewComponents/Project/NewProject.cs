@@ -24,12 +24,12 @@ namespace NoteMakingApp.ViewComponents.Project
         public NewProject()
         {
             txtbox = new List<string>();
-            
+
             InitializeComponent();
             ButtonAdd();
         }
 
-        
+
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace NoteMakingApp.ViewComponents.Project
 
         private void btnAdd_Click(object sender, EventArgs g)
         {
-            
+
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace NoteMakingApp.ViewComponents.Project
                         p++;
                     }
                     DataHandle.getInstance().ShowNote();
-                    
+
                     this.Dispose();
                 }
             }
@@ -116,43 +116,58 @@ namespace NoteMakingApp.ViewComponents.Project
                 {
                     if (e.KeyCode == Keys.Delete)
                     {
-                        _flag = 0;
-                        
-                            txtbox.RemoveAt(_e);
-                            this.flowLayoutPanel1.Controls.Clear();
-                            ButtonAdd();
-                            i = 0;
-                            foreach (string o in txtbox)
-                            {
-                                TextBox at = new TextBox();
-                                at.Name = i.ToString();
-                                at.Size = new System.Drawing.Size(170, 10);
-                                at.Text = o;
-                                at.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-                                this.flowLayoutPanel1.Controls.Add(a);
-                                i++;
-
-                                a.Leave += (d, r) =>
-                                {
-                                    if (_flag == 1)
-                                    {
-                                        txtbox.RemoveAt(_e);
-                                        txtbox.Insert(_e, a.Text);
-                                    }
-                                    _e = -1;
-                                };
-
-                                a.Enter += (d, r) =>
-                                {
-                                    _flag = 1;
-                                    _e = Int32.Parse(a.Name);
-                                    Console.WriteLine(_e);
-                                };
-                            }
+                        addNewItem();
                     }
-                    
+
                 };
             };
+        }
+
+        public void addNewItem()
+        {
+            _flag = 0;
+            txtbox.RemoveAt(_e);
+            this.flowLayoutPanel1.Controls.Clear();
+            ButtonAdd();
+            i = 0;
+            foreach (string text in txtbox)
+            {
+                TextBox a = new TextBox();
+                a.Name = i.ToString();
+                a.Size = new System.Drawing.Size(170, 10);
+                a.Text = text;
+                a.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                this.flowLayoutPanel1.Controls.Add(a);
+                i++;
+
+                a.Leave += (d, r) =>
+                {
+                    if (_flag == 1)
+                    {
+                        txtbox.RemoveAt(_e);
+                        txtbox.Insert(_e, a.Text);
+                    }
+                    _e = -1;
+                };
+
+                a.Enter += (d, r) =>
+                {
+                    _flag = 1;
+                    _e = Int32.Parse(a.Name);
+                    Console.WriteLine(_e);
+                };
+
+                a.KeyDown += (s, e) =>
+                {
+                    addNewItem();
+                };
+            }
+        }
+
+        private void btnTimer_Click(object sender, EventArgs e)
+        {
+            timer1._Show();
+            this.panel1.Visible = false;
         }
     }
 }

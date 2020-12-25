@@ -15,6 +15,7 @@ namespace NoteMakingApp.ViewComponents.Project
     public partial class Project : UserControl
     {
         //double a = 0, b = 0;
+        List<ItemTDLs> save;
         public Project()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace NoteMakingApp.ViewComponents.Project
 
         public void setValue(string nameProject, List<ItemTDLs> items)
         {
-            //a = 0;b = 0;
+            save = new List<ItemTDLs>(items);
             this.lbProjectName.Text = nameProject;
             foreach (ItemTDLs t in items)
             {
@@ -61,13 +62,40 @@ namespace NoteMakingApp.ViewComponents.Project
 
             DataHandle.getInstance().DeleteToDoList();
             
-            
             this.Dispose();
         }
 
         public void setComplete(string a)
         {
             this.lbComplete.Text = "Complete: " + a + "%";
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            btnOK.Visible = true;
+            btnCancel.Visible = true;
+            this.panel1.Visible = false;
+            this.flowLayoutPanel1.Controls.Clear();
+            foreach (ItemTDLs t in save)
+            {
+                EditItem et = new EditItem();
+                et.setValue(t.STT, t.Content, t.check);
+                this.flowLayoutPanel1.Controls.Add(et);
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            btnOK.Visible = false;
+            btnCancel.Visible = false;
+            this.flowLayoutPanel1.Controls.Clear();
+            foreach (ItemTDLs t in save)
+            {
+                ItemProject i = new ItemProject();
+                i.setValue(t.STT, t.Content, t.check);
+                this.flowLayoutPanel1.Controls.Add(i);
+            }
         }
     }
 }
