@@ -49,11 +49,14 @@ namespace NoteMakingApp.ViewComponents
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-            {
-                DataHandle.getInstance().EditReminder(txtTittle.Text, txtContent.Text,dateTimePicker1.Value.ToString(),Convert.ToInt16(checkBox.Checked));
-                DataHandle.getInstance().ShowNote();
-                this.Dispose();
-            }
+                if (DataHandle.getInstance().checkTittleReminder(txtTittle.Text) == false)
+                    MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    DataHandle.getInstance().EditReminder(txtTittle.Text, txtContent.Text,dateTimePicker1.Value.ToString(),Convert.ToInt16(checkBox.Checked));
+                    DataHandle.getInstance().ShowNote();
+                    this.Dispose();
+                }
         }
     }
 }

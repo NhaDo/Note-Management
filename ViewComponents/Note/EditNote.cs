@@ -23,13 +23,14 @@ namespace NoteMakingApp.ViewComponents
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-            {
-                DataHandle.getInstance().EditNote(txtTittle.Text, txtContent.Text);
-                DataHandle.getInstance().ShowNote();
-                this.Dispose();
-            }
-
-
+                if (DataHandle.getInstance().checkTittleNote(txtTittle.Text) == false)
+                MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    DataHandle.getInstance().EditNote(txtTittle.Text, txtContent.Text);
+                    DataHandle.getInstance().ShowNote();
+                    this.Dispose();
+                }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

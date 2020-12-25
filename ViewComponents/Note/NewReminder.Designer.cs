@@ -114,7 +114,7 @@
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(140, 30);
             this.dateTimePicker1.TabIndex = 8;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            
             // 
             // label4
             // 

@@ -351,6 +351,7 @@ namespace NoteMakingApp.Models
             {
                 if (n.user_id == id)
                     MainDomain.currentInstance.AddNewNote(n.id, n.Tittle, n.Content);
+                
             }
 
             GetDataFromTDL();
@@ -367,8 +368,8 @@ namespace NoteMakingApp.Models
             foreach (Reminders r in rmds)
             {
                 if (r.User_id == id)
-                    MainDomain.currentInstance.AddReminder(r.ID.ToString(),r.Tittle,r.Content,Convert.ToDateTime(r.Time),r.Check);
-
+                    MainDomain.currentInstance.AddReminder(r.ID.ToString(), r.Tittle, r.Content, Convert.ToDateTime(r.Time), r.Check);
+                
             }
 
         }
@@ -564,7 +565,7 @@ namespace NoteMakingApp.Models
         public void GetUserIdByTittle(string a)
         {
             SqlCommand cmd = new SqlCommand("exec USP_GetIdByTittle @Tittle = N'" + a + "'", DbConnection);
-            
+
             _idtdl = 0;
             _idUsertdl = 0;
             SqlDataReader reader = cmd.ExecuteReader();
@@ -573,7 +574,7 @@ namespace NoteMakingApp.Models
                 _idUsertdl = Convert.ToInt32(reader["id_user"]);
                 _idtdl = Convert.ToInt32(reader["id"]);
             }
-            
+
             reader.Close();
         }
 
@@ -596,13 +597,14 @@ namespace NoteMakingApp.Models
         {
             _Tittle.Clear();
             GetTittleFromToDoList();
-      
             foreach (string t in _Tittle)
             {
                 GetItemByTittle(t);
                 GetUserIdByTittle(t);
                 GetProjectByTittle(t);
-                
+                Console.WriteLine(_project);
+                Console.WriteLine("id user" + _idUsertdl);
+                Console.WriteLine("id" + _idtdl);
                 tdls.Add(new ToDoLists()
                 {
                     Tittle = t,
@@ -744,17 +746,29 @@ namespace NoteMakingApp.Models
             return null;
         }
 
-        /*public void GetNameProject()
+        public bool checkTittleNote(string tittle)
         {
-            SqlCommand cmd = new SqlCommand("Select Tittle From MyNote Where Project = 1", DbConnection);
-            _NameProject.Clear();
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                _NameProject.Add(reader["Tittle"].ToString().Trim());
-            }
-            reader.Close();
-        }*/
+            foreach (Notes n in notes)
+                if (n.user_id == id && n.Tittle == tittle)
+                        return false;
+            return true;
+        }
+
+        public bool checkTittleToDoList(string tittle)
+        {
+            foreach (ToDoLists t in tdls)
+                if (t.Tittle == tittle && t.project == 0)
+                    return false;
+            return true;
+        }
+
+        public bool checkTittleReminder(string tittle)
+        {
+            foreach (Reminders r in rmds)
+                if (r.Tittle == tittle && r.User_id == id)
+                    return false;
+            return true;
+        }
     }
 }
 

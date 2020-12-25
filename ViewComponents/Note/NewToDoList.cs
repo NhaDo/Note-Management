@@ -41,25 +41,28 @@ namespace NoteMakingApp.ViewComponents
         {
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             else
-            {
-                int p = 1;
-                if (txtbox.Count() == 0)
-                    DataHandle.getInstance().CreateNewToDoList(txtTittle.Text,"",p,0);
+                if (DataHandle.getInstance().checkTittleToDoList(txtTittle.Text) == false)
+                    MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                { 
-                    DataHandle.getInstance().CreateMyNote(txtTittle.Text, User_ID,0);
-                    foreach (string t in txtbox)
+                {
+                    int p = 1;
+                    if (txtbox.Count() == 0)
                     {
-                        DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, t,p,0);
-                        p++;
+                    MessageBox.Show("Thêm list to do", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    DataHandle.getInstance().ShowNote();
-                    
-                    this.Dispose();
+                    else
+                    {
+                        DataHandle.getInstance().CreateMyNote(txtTittle.Text, User_ID, 0);
+                        foreach (string t in txtbox)
+                        {
+                            DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, t, p, 0);
+                            p++;
+                        }
+                        DataHandle.getInstance().ShowNote();
+                        this.Dispose();
+                    }
                 }
-            }
             
         }
 
@@ -110,6 +113,7 @@ namespace NoteMakingApp.ViewComponents
                 {
                     TextBox a = new TextBox();
                     a.Name = i.ToString();
+                    a.Margin = new Padding(30, 5, 5, 5);
                     a.Size = new System.Drawing.Size(150, 10);
                     a.Text = o;
                     this.flowLayoutPanel1.Controls.Add(a);

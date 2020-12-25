@@ -14,14 +14,14 @@ namespace NoteMakingApp.ViewComponents.Project
     public partial class ListProject : UserControl
     {
         int i = 1;
-        public static ListProject currentInstance { get; set; }
+        
         public ListProject()
         {
             InitializeComponent();
-            currentInstance = this;
+            
 
             //DataHandle.tdls.Clear();
-            ListProject.currentInstance.ClearProject();
+            this.flowLayoutPanel1.Controls.Clear();
             DataHandle.getInstance().GetDataFromTDL();
             AddProject(0, "New Project");
             foreach (ToDoLists t in DataHandle.tdls)
@@ -95,9 +95,6 @@ namespace NoteMakingApp.ViewComponents.Project
             this.Dispose();
         }
 
-        public void ClearProject()
-        {
-            this.flowLayoutPanel1.Controls.Clear();
-        }
+        
     }
 }

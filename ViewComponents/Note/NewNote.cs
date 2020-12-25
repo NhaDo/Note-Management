@@ -26,22 +26,26 @@ namespace NoteMakingApp.ViewComponents
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-            {
-                DataHandle.getInstance().CreateNewNote(
-                    new Notes()
-                    {
-                        Tittle = txtTittle.Text,
-                        Content = txtContent.Text,
-                        user_id = User_ID
-                    });
+                if (DataHandle.getInstance().checkTittleNote(txtTittle.Text) == false)
+                    MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    DataHandle.getInstance().CreateNewNote(
+                        new Notes()
+                        {
+                            Tittle = txtTittle.Text,
+                            Content = txtContent.Text,
+                            user_id = User_ID
+                        });
 
-                DataHandle.getInstance().ShowNote();
-                this.Dispose();
+                    DataHandle.getInstance().ShowNote();
+                    this.Dispose();
+                }
 
-            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

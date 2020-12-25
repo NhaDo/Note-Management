@@ -13,7 +13,6 @@ namespace NoteMakingApp.ViewComponents
 {
     public partial class NewReminder : UserControl
     {
-        string time;
         public static int User_ID;
         public NewReminder()
         {
@@ -25,30 +24,27 @@ namespace NoteMakingApp.ViewComponents
             this.Dispose();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            time = dateTimePicker1.Value.ToString();
-            Console.WriteLine(time);
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-            {
-                DataHandle.getInstance().CreateNewReminder(
-                    new Reminders()
-                    {
-                        Tittle = txtTittle.Text,
-                        Content = txtContent.Text,
-                        Time = time,
-                        Check = Convert.ToInt32(checkBox.Checked),
-                        User_id = User_ID
-                    });
-                DataHandle.getInstance().ShowNote();
-                this.Dispose();
-            }
+                if (DataHandle.getInstance().checkTittleReminder(txtTittle.Text) == false)
+                MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    DataHandle.getInstance().CreateNewReminder(
+                        new Reminders()
+                        {
+                            Tittle = txtTittle.Text,
+                            Content = txtContent.Text,
+                            Time = dateTimePicker1.Value.ToString(),
+                            Check = Convert.ToInt32(checkBox.Checked),
+                            User_id = User_ID
+                        });
+                    DataHandle.getInstance().ShowNote();
+                    this.Dispose();
+                }
         }
     }
 }

@@ -104,13 +104,16 @@ namespace NoteMakingApp.ViewComponents.Note
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-            {
-                DataHandle.getInstance().EditToDoList(txtTittle.Text, eitem);
-                foreach (ItemTDLs i in newitem)
-                    DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
-                DataHandle.getInstance().ShowNote();
-                this.Dispose();
-            }
+                if (DataHandle.getInstance().checkTittleToDoList(txtTittle.Text) == false)
+                    MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    DataHandle.getInstance().EditToDoList(txtTittle.Text, eitem);
+                    foreach (ItemTDLs i in newitem)
+                        DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
+                    DataHandle.getInstance().ShowNote();
+                    this.Dispose();
+                }
         }
 
         private void pictureBox2_Click(object sender, EventArgs g)
