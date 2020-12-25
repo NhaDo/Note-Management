@@ -138,6 +138,16 @@ namespace NoteMakingApp.ViewComponents
                 }
             }
         }
+
+        private void txtTittle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTittle_Enter(object sender, EventArgs e)
+        {
+            this.txtTittle.Text = "";
+        }
     }
 }
     

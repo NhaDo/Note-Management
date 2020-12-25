@@ -52,6 +52,8 @@
             this.txtTittle.TabIndex = 1;
             this.txtTittle.Text = "Name\r\n";
             this.txtTittle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTittle.TextChanged += new System.EventHandler(this.txtTittle_TextChanged);
+            this.txtTittle.Enter += new System.EventHandler(this.txtTittle_Enter);
             // 
             // label2
             // 
