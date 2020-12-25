@@ -28,7 +28,9 @@ namespace NoteMakingApp.ViewComponents
         public void edit()
         {
             this.textBox1.ReadOnly = false;
+            ReSize();
             this.checkbox.AutoCheck = true;
+            this.Size = new System.Drawing.Size(190, 28);
         }
 
         public void read()
@@ -39,7 +41,7 @@ namespace NoteMakingApp.ViewComponents
 
         public void ReSize()
         {
-            this.textBox1.Size = new System.Drawing.Size(200, 22);
+            this.textBox1.Size = new System.Drawing.Size(165, 22);
         }
 
     }

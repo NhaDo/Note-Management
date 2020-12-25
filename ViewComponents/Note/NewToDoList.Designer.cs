@@ -78,9 +78,9 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(216)))), ((int)(((byte)(208)))));
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Black;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 120);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 126);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(273, 176);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(319, 170);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // btnOK

@@ -79,7 +79,7 @@ namespace NoteMakingApp.ViewComponents.Project
                         
                     }
 
-                    Console.WriteLine(z.Length);
+                    
                     Form1.getInstance().ShowProject(tdl.Tittle,tdl.item,z);
 
 

@@ -70,7 +70,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 82);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(262, 193);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(294, 193);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btnSetting
@@ -131,6 +131,8 @@
             // 
             // timer1
             // 
+            this.timer1.BackColor = System.Drawing.Color.White;
+            this.timer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timer1.Location = new System.Drawing.Point(59, 111);
             this.timer1.Name = "timer1";
             this.timer1.Size = new System.Drawing.Size(145, 116);

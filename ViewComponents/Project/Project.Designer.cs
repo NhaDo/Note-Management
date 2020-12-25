@@ -38,6 +38,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
+            this.txtTittle = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,10 +68,11 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 57);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(212, 212);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(241, 212);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // panel1
@@ -124,28 +126,27 @@
             // 
             // btnOK
             // 
-            this.btnOK.FlatAppearance.BorderSize = 0;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Location = new System.Drawing.Point(157, 30);
+            this.btnOK.Location = new System.Drawing.Point(45, 273);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(25, 23);
+            this.btnOK.Size = new System.Drawing.Size(53, 28);
             this.btnOK.TabIndex = 6;
-            this.btnOK.Text = "a";
+            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Visible = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Image = global::NoteMakingApp.Properties.Resources.delete;
-            this.btnCancel.Location = new System.Drawing.Point(184, 30);
+            this.btnCancel.Location = new System.Drawing.Point(131, 273);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(25, 23);
+            this.btnCancel.Size = new System.Drawing.Size(63, 28);
             this.btnCancel.TabIndex = 0;
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSetting
             // 
@@ -160,12 +161,22 @@
             this.btnSetting.UseVisualStyleBackColor = true;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
+            // txtTittle
+            // 
+            this.txtTittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTittle.Location = new System.Drawing.Point(17, 8);
+            this.txtTittle.Name = "txtTittle";
+            this.txtTittle.Size = new System.Drawing.Size(177, 34);
+            this.txtTittle.TabIndex = 7;
+            this.txtTittle.Visible = false;
+            // 
             // Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtTittle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.panel1);
@@ -176,7 +187,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Project";
-            this.Size = new System.Drawing.Size(230, 299);
+            this.Size = new System.Drawing.Size(230, 305);
             this.Load += new System.EventHandler(this.Project_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -196,5 +207,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.TextBox txtTittle;
     }
 }

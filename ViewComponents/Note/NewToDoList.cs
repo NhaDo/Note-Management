@@ -69,6 +69,7 @@ namespace NoteMakingApp.ViewComponents
             a.Name = i.ToString();
             a.Size = new System.Drawing.Size(150, 10);
             a.Text = "Write Something";
+            a.Margin = new Padding(30, 5, 5, 5);
             txtbox.Add(a.Text);
             this.flowLayoutPanel1.Controls.Add(a);
             i++;

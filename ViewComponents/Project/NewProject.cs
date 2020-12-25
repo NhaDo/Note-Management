@@ -85,7 +85,7 @@ namespace NoteMakingApp.ViewComponents.Project
             {
                 TextBox a = new TextBox();
                 a.Name = i.ToString();
-                a.Size = new System.Drawing.Size(170, 10);
+                a.Size = new System.Drawing.Size(180, 10);
                 a.Margin = new Padding(5, 8, 3, 3);
                 a.Text = "Write Something";
                 a.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

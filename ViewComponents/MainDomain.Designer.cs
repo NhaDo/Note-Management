@@ -41,7 +41,7 @@
             this.flPanel.AutoScroll = true;
             this.flPanel.Location = new System.Drawing.Point(3, 86);
             this.flPanel.Name = "flPanel";
-            this.flPanel.Size = new System.Drawing.Size(1124, 441);
+            this.flPanel.Size = new System.Drawing.Size(1142, 441);
             this.flPanel.TabIndex = 3;
             // 
             // button1

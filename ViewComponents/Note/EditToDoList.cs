@@ -55,7 +55,7 @@ namespace NoteMakingApp.ViewComponents.Note
                     //Console.WriteLine(_e);
                     save = eitem.ElementAt(_e);
                     Console.WriteLine("_e " + _e);
-                    Console.WriteLine("STT " + i.textBox1.Name);
+                    
                 };
 
                 i.checkbox.Leave += (s, e) =>
@@ -78,7 +78,7 @@ namespace NoteMakingApp.ViewComponents.Note
                     //Console.WriteLine(_e);
                     save = eitem.ElementAt(_e);
                     Console.WriteLine("_e " + _e);
-                    Console.WriteLine("STT " + i.textBox1.Name);
+                    
 
                 };
 
