@@ -52,11 +52,11 @@ namespace NoteMakingApp.ViewComponents
             // 
             this.bOpen.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.bOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bOpen.Location = new System.Drawing.Point(135, 3);
+            this.bOpen.Location = new System.Drawing.Point(89, 3);
             this.bOpen.Name = "bOpen";
-            this.bOpen.Size = new System.Drawing.Size(102, 40);
+            this.bOpen.Size = new System.Drawing.Size(148, 40);
             this.bOpen.TabIndex = 2;
-            this.bOpen.Text = "Open...";
+            this.bOpen.Text = "Choose Image...";
             this.bOpen.UseVisualStyleBackColor = false;
             this.bOpen.Click += new System.EventHandler(this.bOpen_Click);
             // 
