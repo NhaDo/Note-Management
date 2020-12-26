@@ -43,7 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbSServerIP = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSClients = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btnCConnect
@@ -54,6 +54,7 @@
             this.btnCConnect.TabIndex = 0;
             this.btnCConnect.Text = "Connect";
             this.btnCConnect.UseVisualStyleBackColor = true;
+            this.btnCConnect.Click += new System.EventHandler(this.btnCConnect_Click);
             // 
             // button2
             // 
@@ -185,18 +186,18 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Server IP";
             // 
-            // panel1
+            // pnlSClients
             // 
-            this.panel1.Location = new System.Drawing.Point(261, 142);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 15;
+            this.pnlSClients.Location = new System.Drawing.Point(261, 142);
+            this.pnlSClients.Name = "pnlSClients";
+            this.pnlSClients.Size = new System.Drawing.Size(200, 100);
+            this.pnlSClients.TabIndex = 15;
             // 
             // NetworkSubWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSClients);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbSServerName);
             this.Controls.Add(this.label4);
@@ -236,6 +237,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbSServerIP;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlSClients;
     }
 }

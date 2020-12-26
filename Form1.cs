@@ -91,7 +91,7 @@ namespace NoteMakingApp
                         this.accountSubwindow2.Visible = false;
                         break;
                     case "SETTINGS":
-                        this.networkSubWindow1.Visible = true;
+                        networkSubWindow1.Visible = true;
                         this.mainDomain1.Hide();
                         break;
                 }

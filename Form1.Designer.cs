@@ -159,7 +159,7 @@ namespace NoteMakingApp
         
         private MainDomain mainDomain1;
         private AvatarEditor avatarEditor1;
-        private ViewComponents.Network.NetworkSubWindow networkSubWindow1;
+        public ViewComponents.Network.NetworkSubWindow networkSubWindow1;
     }
 }
 

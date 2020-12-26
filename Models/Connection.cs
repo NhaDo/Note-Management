@@ -30,6 +30,7 @@ namespace NoteMakingApp.Models
         public static Socket peer;
         public static List<Socket> others;
         static List<Peer> peers;
+        static List<string> p;
         public static IPAddress serverIP;
         public static Socket getPeer()
         {
@@ -37,16 +38,16 @@ namespace NoteMakingApp.Models
         }
         public int startServer()
         {
-            /*if (!System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            if (!System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
             {
                 return 0;
             }
             IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
 
-            IPAddress localIP =  host
+            IPAddress localIP = host
                                 .AddressList
-                                .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);*/ 
-            endpoint = new IPEndPoint(IPAddress.Any, port);
+                                .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
+            endpoint = new IPEndPoint(localIP, port);
             serverIP = endpoint.Address;
             peer = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
             peer.Bind(endpoint);
@@ -92,7 +93,7 @@ namespace NoteMakingApp.Models
             try
             {
                 peer.Connect(endpoint);
-                SendStatus("Created connection to" + DataHandle.getInstance().getRecentAccount().username);
+                SendStatus("CREATE CONNECTION_" + DataHandle.getInstance().getRecentAccount().username);
             }
             catch
             {
@@ -180,6 +181,13 @@ namespace NoteMakingApp.Models
                     other.Receive(data);
 
                     string msg = (string)DeserializeMsg(data);
+                    string[] tokens = msg.Split('_');
+                    if (tokens[0] == "STATUS")
+                    {
+                        p.Add(tokens[2]);
+                    }
+
+                    Form1.getInstance().networkSubWindow1.UpdateClientList(p, others);
                 }
             }
             catch
@@ -188,6 +196,23 @@ namespace NoteMakingApp.Models
                 other.Close();
             }
 
+        }
+        public void ExcludeClient(int id)
+        {
+            if (others.Count != 0)
+            {
+                try
+                {
+                    others.RemoveAt(id);
+                    p.RemoveAt(id);
+                    Form1.getInstance().networkSubWindow1.UpdateClientList(p, others);
+
+                }
+                catch
+                {
+
+                }
+            }
         }
         private byte[] SerializeMsg(Object msg)
         {
@@ -206,12 +231,12 @@ namespace NoteMakingApp.Models
         }
         private void Close()
         {
-            SendStatus("Discarded connection to " + DataHandle.getInstance().getRecentAccount().username);
+            SendStatus("DISCARD CONNECTION_" + DataHandle.getInstance().getRecentAccount().username);
             if (others.Count != 0)
             {
                 foreach (Socket other in others)
                 {
-                    SendStatus("Discarded connection to " + DataHandle.getInstance().getRecentAccount().username);
+                    SendStatus("DISCARD CONNECTION_" + DataHandle.getInstance().getRecentAccount().username);
                 }
             }
             others.Clear();

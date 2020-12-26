@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoteMakingApp.Models;
+using System.Net;
+using System.Net.Sockets;
 
 namespace NoteMakingApp.ViewComponents.Network
 {
@@ -60,6 +62,31 @@ namespace NoteMakingApp.ViewComponents.Network
                 lbSServerName.Text = DataHandle.getInstance().getRecentAccount().username;
             }
             
+        }
+
+        private void btnCConnect_Click(object sender, EventArgs e)
+        {
+            if (tbCServerIP.Text != null)
+            {
+                try
+                {
+                    Form1.connection.startClient(IPAddress.Parse(tbCServerIP.Text.Trim()));
+                }
+                catch
+                {
+
+                }
+            }
+        }
+        public void UpdateClientList(List<string> n, List<Socket> o)
+        {
+            ClientItem item;
+            foreach (Socket s in o)
+            {
+                item = new ClientItem(o.IndexOf(s), n[o.IndexOf(s)]);
+                item.Location = new System.Drawing.Point(0, this.pnlSClients.Controls.Count * item.Height);
+                this.pnlSClients.Controls.Add(item);
+            }
         }
     }
 }
