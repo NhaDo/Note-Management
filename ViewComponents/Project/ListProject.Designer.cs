@@ -35,9 +35,10 @@
             // button1
             // 
             this.button1.Image = global::NoteMakingApp.Properties.Resources.close1;
-            this.button1.Location = new System.Drawing.Point(120, 3);
+            this.button1.Location = new System.Drawing.Point(135, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 23);
+            this.button1.Size = new System.Drawing.Size(28, 29);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -45,20 +46,24 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 32);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 40);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(174, 167);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(196, 209);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // ListProject
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ListProject";
-            this.Size = new System.Drawing.Size(180, 202);
+            this.Size = new System.Drawing.Size(202, 253);
             this.ResumeLayout(false);
 
         }

@@ -59,7 +59,15 @@ namespace NoteMakingApp.Models
         }
         private void establishDbConnection()
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Project\Note-Management\Data\Database.mdf; Integrated Security = True";
+            string startupPath = System.IO.Directory.GetCurrentDirectory();
+            //subtract string
+            startupPath = startupPath.Substring(0, startupPath.LastIndexOf(@"\"));
+            startupPath = startupPath.Substring(0, startupPath.LastIndexOf(@"\"));
+            startupPath = startupPath.Substring(0, startupPath.LastIndexOf(@"\"));
+
+
+            //set conn string
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = " + startupPath + @"\Data\Database.mdf; Integrated Security = True";
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");

@@ -107,7 +107,10 @@ namespace NoteMakingApp.ViewComponents
                                 break;
                             case 3:
                                 Reminders c = DataHandle.getInstance().GetDateReminder();
-                                Form1.getInstance().EditReminder(c.Tittle, c.Content, c.Time, c.Check);
+                                if (c == null)
+                                    MessageBox.Show("Choose note to edit", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                else
+                                    Form1.getInstance().EditReminder(c.Tittle, c.Content, c.Time, c.Check);
                                 break;
 
                         }

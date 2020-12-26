@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtTittle = new System.Windows.Forms.TextBox();
             this.txtContent = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,69 +36,69 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBox = new System.Windows.Forms.CheckBox();
+            this.lbMain = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Content";
             // 
             // txtTittle
             // 
-            this.txtTittle.Location = new System.Drawing.Point(17, 23);
+            this.txtTittle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.txtTittle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTittle.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTittle.Location = new System.Drawing.Point(0, 61);
+            this.txtTittle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTittle.Multiline = true;
             this.txtTittle.Name = "txtTittle";
-            this.txtTittle.Size = new System.Drawing.Size(225, 35);
+            this.txtTittle.Size = new System.Drawing.Size(280, 48);
             this.txtTittle.TabIndex = 2;
+            this.txtTittle.Text = "Name";
+            this.txtTittle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTittle.Enter += new System.EventHandler(this.txtTittle_Enter);
             // 
             // txtContent
             // 
-            this.txtContent.Location = new System.Drawing.Point(17, 81);
+            this.txtContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(216)))), ((int)(((byte)(208)))));
+            this.txtContent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContent.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.txtContent.Location = new System.Drawing.Point(3, 112);
+            this.txtContent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContent.Multiline = true;
             this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(225, 68);
+            this.txtContent.Size = new System.Drawing.Size(277, 164);
             this.txtContent.TabIndex = 3;
+            this.txtContent.Text = "Content";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(86, 241);
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(85, 357);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 31);
+            this.button1.Size = new System.Drawing.Size(84, 39);
             this.button1.TabIndex = 4;
             this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(167, 241);
+            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(188, 357);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 31);
+            this.button2.Size = new System.Drawing.Size(84, 39);
             this.button2.TabIndex = 5;
             this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 167);
+            this.label3.Location = new System.Drawing.Point(16, 292);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Select Time";
             // 
@@ -110,35 +108,49 @@
             this.dateTimePicker1.CustomFormat = "h:mm tt";
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(102, 161);
+            this.dateTimePicker1.Location = new System.Drawing.Point(115, 284);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(140, 30);
+            this.dateTimePicker1.Size = new System.Drawing.Size(157, 35);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 210);
+            this.label4.Location = new System.Drawing.Point(18, 327);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 17);
+            this.label4.Size = new System.Drawing.Size(48, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Timer";
             // 
             // checkBox
             // 
             this.checkBox.AutoSize = true;
-            this.checkBox.Location = new System.Drawing.Point(102, 210);
+            this.checkBox.Location = new System.Drawing.Point(115, 327);
+            this.checkBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(18, 17);
+            this.checkBox.Size = new System.Drawing.Size(22, 21);
             this.checkBox.TabIndex = 10;
             this.checkBox.UseVisualStyleBackColor = true;
             // 
+            // lbMain
+            // 
+            this.lbMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbMain.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
+            this.lbMain.Location = new System.Drawing.Point(13, 7);
+            this.lbMain.Name = "lbMain";
+            this.lbMain.Size = new System.Drawing.Size(259, 50);
+            this.lbMain.TabIndex = 13;
+            this.lbMain.Text = "New Reminder";
+            this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // NewReminder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(216)))), ((int)(((byte)(208)))));
+            this.Controls.Add(this.lbMain);
             this.Controls.Add(this.checkBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
@@ -147,19 +159,15 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.txtTittle);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NewReminder";
-            this.Size = new System.Drawing.Size(261, 275);
+            this.Size = new System.Drawing.Size(280, 400);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTittle;
         private System.Windows.Forms.TextBox txtContent;
         private System.Windows.Forms.Button button1;
@@ -168,5 +176,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBox;
+        private System.Windows.Forms.Label lbMain;
     }
 }
