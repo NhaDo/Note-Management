@@ -602,9 +602,6 @@ namespace NoteMakingApp.Models
                 GetItemByTittle(t);
                 GetUserIdByTittle(t);
                 GetProjectByTittle(t);
-                Console.WriteLine(_project);
-                Console.WriteLine("id user" + _idUsertdl);
-                Console.WriteLine("id" + _idtdl);
                 tdls.Add(new ToDoLists()
                 {
                     Tittle = t,
@@ -767,6 +764,38 @@ namespace NoteMakingApp.Models
             foreach (Reminders r in rmds)
                 if (r.Tittle == tittle && r.User_id == id)
                     return false;
+            return true;
+        }
+
+        public bool checkEditTittleNote(string tittle)
+        {
+            int check = MainDomain.currentInstance.getFlags();
+
+            foreach (Notes n in notes)
+            {
+                if (n.user_id == id && n.Tittle == tittle)
+                {
+                    if (n.id == check)
+                        return true;
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool checkEditReminderNote(string tittle)
+        {
+            int check = MainDomain.currentInstance.getFlags();
+
+            foreach (Reminders r in rmds)
+            {
+                if (r.User_id == id && r.Tittle == tittle)
+                {
+                    if (r.ID == check)
+                        return true;
+                    return false;
+                }
+            }
             return true;
         }
     }

@@ -25,9 +25,11 @@ namespace NoteMakingApp.ViewComponents.Note
         static List<ItemTDLs> eitem { get; set; }
         static ItemTDLs save { get; set; }
         static List<ItemTDLs> newitem { get; set; }
+        static List<ItemTDLs> deletedItem { get; set; }
         public EditToDoList()
         {
             newitem = new List<ItemTDLs>();
+            deletedItem = new List<ItemTDLs>();
             InitializeComponent();
         }
 
@@ -103,14 +105,13 @@ namespace NoteMakingApp.ViewComponents.Note
         {
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-                if (DataHandle.getInstance().checkTittleToDoList(txtTittle.Text) == false)
-                    MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     DataHandle.getInstance().EditToDoList(txtTittle.Text, eitem);
                     foreach (ItemTDLs i in newitem)
                         DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
+                    foreach (ItemTDLs i in deletedItem)
+                        DataHandle.getInstance().DeleteItemInToDoList(txtTittle.Text, i.STT);
                     DataHandle.getInstance().ShowNote();
                     this.Dispose();
                 }
@@ -143,8 +144,8 @@ namespace NoteMakingApp.ViewComponents.Note
                 _e = Int32.Parse(i.Name);
                 //Console.WriteLine(_e);
                 save = newitem.ElementAt(_e);
-                Console.WriteLine("_e " + _e);
-                Console.WriteLine("STT " + i.textBox1.Name);
+                //Console.WriteLine("_e " + _e);
+                //Console.WriteLine("STT " + i.textBox1.Name);
 
             };
 
@@ -166,8 +167,8 @@ namespace NoteMakingApp.ViewComponents.Note
                 _e = Int32.Parse(i.Name);
                 //Console.WriteLine(_e);
                 save = newitem.ElementAt(_e);
-                Console.WriteLine("_e " + _e);
-                Console.WriteLine("STT " + i.textBox1.Name);
+                //Console.WriteLine("_e " + _e);
+                //Console.WriteLine("STT " + i.textBox1.Name);
 
             };
 
@@ -186,14 +187,15 @@ namespace NoteMakingApp.ViewComponents.Note
         private void pictureBox1_Click(object sender, EventArgs g)
         {
             _isDelete = 1;
-            this.flowLayoutPanel1.Controls.Clear();
-
             if (_e < 0)
                 MessageBox.Show("Vui lòng chọn dòng để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (type == 1)
+                {
+                    deletedItem.Add(eitem.ElementAt(_e));
                     eitem.RemoveAt(_e);
+                }
                 else
                     newitem.RemoveAt(_e);
                 this.flowLayoutPanel1.Controls.Clear();

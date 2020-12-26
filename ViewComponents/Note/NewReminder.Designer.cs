@@ -65,6 +65,7 @@
             this.txtTittle.Name = "txtTittle";
             this.txtTittle.Size = new System.Drawing.Size(225, 35);
             this.txtTittle.TabIndex = 2;
+            this.txtTittle.Enter += new System.EventHandler(this.txtTittle_Enter);
             // 
             // txtContent
             // 
@@ -114,7 +115,6 @@
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(140, 30);
             this.dateTimePicker1.TabIndex = 8;
-            
             // 
             // label4
             // 

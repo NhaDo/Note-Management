@@ -53,6 +53,9 @@ namespace NoteMakingApp.ViewComponents
             this.Dispose();
         }
 
-        
+        private void txtTittle_Enter(object sender, EventArgs e)
+        {
+            this.txtTittle.Text = "";
+        }
     }
 }

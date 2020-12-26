@@ -39,10 +39,9 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(172, 368);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(153, 294);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(84, 42);
+            this.btnCancel.Size = new System.Drawing.Size(75, 34);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -52,10 +51,9 @@
             // 
             this.btnOk.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOk.Location = new System.Drawing.Point(70, 368);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOk.Location = new System.Drawing.Point(62, 294);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(84, 42);
+            this.btnOk.Size = new System.Drawing.Size(75, 34);
             this.btnOk.TabIndex = 10;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = false;
@@ -66,10 +64,9 @@
             this.txtContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(216)))), ((int)(((byte)(208)))));
             this.txtContent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContent.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.txtContent.Location = new System.Drawing.Point(7, 138);
-            this.txtContent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtContent.Location = new System.Drawing.Point(6, 110);
             this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(270, 223);
+            this.txtContent.Size = new System.Drawing.Size(240, 178);
             this.txtContent.TabIndex = 9;
             this.txtContent.Text = "Content";
             // 
@@ -78,29 +75,29 @@
             this.txtTittle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(39)))));
             this.txtTittle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTittle.Font = new System.Drawing.Font("Times New Roman", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.txtTittle.Location = new System.Drawing.Point(-1, 66);
-            this.txtTittle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTittle.Location = new System.Drawing.Point(-1, 53);
             this.txtTittle.Multiline = true;
             this.txtTittle.Name = "txtTittle";
-            this.txtTittle.Size = new System.Drawing.Size(281, 64);
+            this.txtTittle.Size = new System.Drawing.Size(250, 51);
             this.txtTittle.TabIndex = 6;
             this.txtTittle.Text = "Name";
             this.txtTittle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTittle.Enter += new System.EventHandler(this.txtTittle_Enter);
             // 
             // lbMain
             // 
             this.lbMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbMain.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
-            this.lbMain.Location = new System.Drawing.Point(11, 12);
+            this.lbMain.Location = new System.Drawing.Point(10, 10);
             this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(259, 50);
+            this.lbMain.Size = new System.Drawing.Size(230, 40);
             this.lbMain.TabIndex = 12;
             this.lbMain.Text = "New Note";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NewNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(216)))), ((int)(((byte)(208)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -109,9 +106,8 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.txtTittle);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NewNote";
-            this.Size = new System.Drawing.Size(280, 424);
+            this.Size = new System.Drawing.Size(249, 339);
             this.ResumeLayout(false);
             this.PerformLayout();
 

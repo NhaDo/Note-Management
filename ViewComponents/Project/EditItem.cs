@@ -19,7 +19,7 @@ namespace NoteMakingApp.ViewComponents.Project
 
         public void setValue(int name,string text,bool check)
         {
-            this.Name = name.ToString();
+            this.textBox.Name = name.ToString();
             this.textBox.Text = text;
             this.checkBox.Checked = check;
         }

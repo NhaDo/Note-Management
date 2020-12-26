@@ -159,7 +159,8 @@ namespace NoteMakingApp.ViewComponents.Project
 
                 a.KeyDown += (s, e) =>
                 {
-                    addNewItem();
+                    if (e.KeyCode == Keys.Delete)
+                        addNewItem();
                 };
             }
         }

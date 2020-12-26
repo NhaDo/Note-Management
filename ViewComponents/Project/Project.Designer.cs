@@ -39,6 +39,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.txtTittle = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,12 +171,25 @@
             this.txtTittle.TabIndex = 7;
             this.txtTittle.Visible = false;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = global::NoteMakingApp.Properties.Resources.add;
+            this.btnAdd.Location = new System.Drawing.Point(204, 35);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(21, 21);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Visible = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtTittle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
@@ -208,5 +222,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.TextBox txtTittle;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
