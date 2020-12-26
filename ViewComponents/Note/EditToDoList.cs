@@ -129,7 +129,6 @@ namespace NoteMakingApp.ViewComponents.Note
 
         private void pictureBox2_Click(object sender, EventArgs g)
         {
-
             newitem.Add(new ItemTDLs()
             {
                 STT = _STT + 1,
@@ -210,6 +209,7 @@ namespace NoteMakingApp.ViewComponents.Note
                     newitem.RemoveAt(_e);
                 this.flowLayoutPanel1.Controls.Clear();
                 _flag = 0;
+                _flag2 = 0;
 
                 foreach (ItemTDLs t in eitem)
                 {
@@ -270,9 +270,9 @@ namespace NoteMakingApp.ViewComponents.Note
                 foreach (ItemTDLs t in newitem)
                 {
                     ItemTDL i = new ItemTDL();
-                    i.Name = _flag.ToString();
+                    i.Name = _flag2.ToString();
                     i.setValue(t.Content, t.STT, t.check);
-                    _flag++;
+                    _flag2++;
                     i.edit();
                     this.flowLayoutPanel1.Controls.Add(i);
 

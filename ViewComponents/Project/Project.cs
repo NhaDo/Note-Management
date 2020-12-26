@@ -299,6 +299,7 @@ namespace NoteMakingApp.ViewComponents.Project
                 newitem.RemoveAt(_e);
             this.flowLayoutPanel1.Controls.Clear();
             _flag = 0;
+            _flag2 = 0;
 
             foreach (ItemProjects t in item)
             {
@@ -358,9 +359,9 @@ namespace NoteMakingApp.ViewComponents.Project
             foreach (ItemProjects t in newitem)
             {
                 EditItem i = new EditItem();
-                i.Name = _flag.ToString();
+                i.Name = _flag2.ToString();
                 i.setValue(t.STT, t.Content, t.check);
-                _flag++;
+                _flag2++;
 
                 this.flowLayoutPanel1.Controls.Add(i);
 
@@ -414,6 +415,7 @@ namespace NoteMakingApp.ViewComponents.Project
         private void button1_Click(object sender, EventArgs e)
         {
             _isDelete = 1;
+
             if (_e < 0)
                 MessageBox.Show("Vui lòng chọn dòng để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
