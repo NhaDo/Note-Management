@@ -493,6 +493,7 @@
     <Content Include="Resources\Note.png" />
     <Content Include="Resources\Note4_2.png" />
     <Content Include="Resources\Note_Hover.png" />
+    <Content Include="Resources\Reminder_Hover.png" />
     <Content Include="Resources\Reminder_old.png" />
     <Content Include="Resources\ToDoList_Hover.png" />
     <Content Include="Resources\ToDoList_old.png" />

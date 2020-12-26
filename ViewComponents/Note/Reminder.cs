@@ -13,6 +13,7 @@ namespace NoteMakingApp.ViewComponents
     public partial class Reminder : UserControl
     {
         int _flag = 0;
+        bool isClicked = false;
         public void defaultImage()
         {
 
@@ -100,6 +101,8 @@ namespace NoteMakingApp.ViewComponents
             Form1.type = 3;
             MainDomain.currentInstance.setFlags(Int32.Parse(this.Name));
             Console.WriteLine(MainDomain.currentInstance.getFlags());
+            this.chanceImage();
+            isClicked = !isClicked;
         }
 
         private void lbContent_Click(object sender, EventArgs e)
@@ -107,6 +110,9 @@ namespace NoteMakingApp.ViewComponents
             Form1.type = 3;
             MainDomain.currentInstance.setFlags(Int32.Parse(this.Name));
             Console.WriteLine(MainDomain.currentInstance.getFlags());
+            this.chanceImage();
+            isClicked = !isClicked;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -114,6 +120,10 @@ namespace NoteMakingApp.ViewComponents
             Form1.type = 3;
             MainDomain.currentInstance.setFlags(Int32.Parse(this.Name));
             Console.WriteLine(MainDomain.currentInstance.getFlags());
+            this.chanceImage();
+            isClicked = !isClicked;
+
+
         }
 
         private void Reminder_MouseClick(object sender, MouseEventArgs e)
@@ -121,6 +131,34 @@ namespace NoteMakingApp.ViewComponents
             Form1.type = 3;
             MainDomain.currentInstance.setFlags(Int32.Parse(this.Name));
             Console.WriteLine(MainDomain.currentInstance.getFlags());
+            this.chanceImage(); 
+            isClicked = !isClicked;
+        }
+
+        private void Reminder_MouseHover(object sender, EventArgs e)
+        {
+            this.chanceImage();
+        }
+
+        private void Reminder_MouseLeave(object sender, EventArgs e)
+        {
+            if (isClicked == false)
+                this.defaultImage();
+        }
+
+        private void Content_MouseHover(object sender, EventArgs e)
+        {
+              this.chanceImage();
+        }
+
+        private void Title_MouseHover(object sender, EventArgs e)
+        {
+            this.chanceImage();
+        }
+
+        private void PictureBox_MouseHover(object sender, EventArgs e)
+        {
+            this.chanceImage();
         }
     }
 }
