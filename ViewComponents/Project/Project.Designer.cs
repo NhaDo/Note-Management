@@ -40,6 +40,7 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.txtTittle = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,10 +71,10 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 57);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 71);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(241, 212);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(241, 195);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // panel1
@@ -175,7 +176,7 @@
             // 
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Image = global::NoteMakingApp.Properties.Resources.add;
-            this.btnAdd.Location = new System.Drawing.Point(204, 35);
+            this.btnAdd.Location = new System.Drawing.Point(169, 43);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(21, 21);
             this.btnAdd.TabIndex = 0;
@@ -183,12 +184,25 @@
             this.btnAdd.Visible = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnDel
+            // 
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Image = global::NoteMakingApp.Properties.Resources.delete;
+            this.btnDel.Location = new System.Drawing.Point(200, 43);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(21, 21);
+            this.btnDel.TabIndex = 8;
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Visible = false;
+            this.btnDel.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtTittle);
             this.Controls.Add(this.btnCancel);
@@ -223,5 +237,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.TextBox txtTittle;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDel;
     }
 }

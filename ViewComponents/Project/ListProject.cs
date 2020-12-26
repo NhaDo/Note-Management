@@ -18,16 +18,12 @@ namespace NoteMakingApp.ViewComponents.Project
         public ListProject()
         {
             InitializeComponent();
-            
-
-            //DataHandle.tdls.Clear();
             this.flowLayoutPanel1.Controls.Clear();
-            DataHandle.getInstance().GetDataFromTDL();
+            DataHandle.getInstance().GetDataFromProject();
             AddProject(0, "New Project");
-            foreach (ToDoLists t in DataHandle.tdls)
-                if (t.project == 1)
+            foreach (Projects t in DataHandle.prjs)
                     AddProject(t.id, t.Tittle);
-
+             
 
         }
 
@@ -60,8 +56,8 @@ namespace NoteMakingApp.ViewComponents.Project
 
                     this.Dispose();
 
-                    ToDoLists tdl =  DataHandle.getInstance().GetDataToDoList();
-                    foreach (ItemTDLs i in tdl.item)
+                    Projects p =  DataHandle.getInstance().GetDataProject();
+                    foreach (ItemProjects i in p.item)
                     {
                         if (i.check == true)
                             x++;
@@ -80,7 +76,7 @@ namespace NoteMakingApp.ViewComponents.Project
                     }
 
                     
-                    Form1.getInstance().ShowProject(tdl.Tittle,tdl.item,z);
+                    Form1.getInstance().ShowProject(p.Tittle,p.item,z);
 
 
                     

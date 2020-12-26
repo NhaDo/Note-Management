@@ -105,15 +105,25 @@ namespace NoteMakingApp.ViewComponents.Note
         {
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                if (DataHandle.getInstance().checkEditTittleToDoList(txtTittle.Text) == false)
+                    MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    DataHandle.getInstance().EditToDoList(txtTittle.Text, eitem);
-                    foreach (ItemTDLs i in newitem)
-                        DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
-                    foreach (ItemTDLs i in deletedItem)
-                        DataHandle.getInstance().DeleteItemInToDoList(txtTittle.Text, i.STT);
-                    DataHandle.getInstance().ShowNote();
-                    this.Dispose();
+                    if (eitem.Count() == 0 && newitem.Count() == 0)
+                    {
+                        MessageBox.Show("Thêm list to do", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        DataHandle.getInstance().EditToDoList(txtTittle.Text, eitem);
+                        foreach (ItemTDLs i in newitem)
+                            DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
+                        foreach (ItemTDLs i in deletedItem)
+                            DataHandle.getInstance().DeleteItemInToDoList(txtTittle.Text, i.STT);
+                        DataHandle.getInstance().ShowNote();
+                        this.Dispose();
+                    }
                 }
         }
 

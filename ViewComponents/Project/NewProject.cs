@@ -54,20 +54,15 @@ namespace NoteMakingApp.ViewComponents.Project
             else
             {
                 int p = 1;
-                if (txtbox == null)
-                    DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, "", p, 0);
-                else
+                DataHandle.getInstance().CreateMyProject(txtTittle.Text, User_ID,"0");
+                foreach (string t in txtbox)
                 {
-                    DataHandle.getInstance().CreateMyNote(txtTittle.Text, User_ID, 1);
-                    foreach (string t in txtbox)
-                    {
-                        DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, t, p, 0);
-                        p++;
-                    }
-                    DataHandle.getInstance().ShowNote();
-
-                    this.Dispose();
+                    DataHandle.getInstance().CreateNewProject(txtTittle.Text, t, p, 0);
+                    p++;
                 }
+
+                this.Dispose();
+
             }
         }
 
@@ -134,8 +129,9 @@ namespace NoteMakingApp.ViewComponents.Project
             {
                 TextBox a = new TextBox();
                 a.Name = i.ToString();
-                a.Size = new System.Drawing.Size(170, 10);
+                a.Size = new System.Drawing.Size(180, 10);
                 a.Text = text;
+                a.Margin = new Padding(5, 8, 3, 3);
                 a.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
                 this.flowLayoutPanel1.Controls.Add(a);
                 i++;

@@ -15,10 +15,10 @@ namespace NoteMakingApp.ViewComponents.Project
     public partial class Project : UserControl
     {
 
-        List<ItemTDLs> item;
-        ItemTDLs save;
-        List<ItemTDLs> newitem;
-        List<ItemTDLs> deletedItem;
+        List<ItemProjects> item;
+        ItemProjects save;
+        List<ItemProjects> newitem;
+        List<ItemProjects> deletedItem;
         int _flag = 0;
         int _flag2 = 0;
         static int _e = -1;
@@ -28,8 +28,8 @@ namespace NoteMakingApp.ViewComponents.Project
 
         public Project()
         {
-            save = new ItemTDLs();
-            deletedItem = new List<ItemTDLs>();
+            save = new ItemProjects();
+            deletedItem = new List<ItemProjects>();
             InitializeComponent();
         }
 
@@ -49,13 +49,13 @@ namespace NoteMakingApp.ViewComponents.Project
 
         }
 
-        public void setValue(string nameProject, List<ItemTDLs> items)
+        public void setValue(string nameProject, List<ItemProjects> items)
         {
-            item = new List<ItemTDLs>(items);
+            item = new List<ItemProjects>(items);
 
             this.lbProjectName.Text = nameProject;
             this.txtTittle.Text = nameProject;
-            foreach (ItemTDLs t in items)
+            foreach (ItemProjects t in items)
             {
                 ItemProject i = new ItemProject();
                 i.setValue(t.STT, t.Content, t.check);
@@ -71,7 +71,7 @@ namespace NoteMakingApp.ViewComponents.Project
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            DataHandle.getInstance().DeleteToDoList();
+            DataHandle.getInstance().DeleteProject();
 
             this.Dispose();
         }
@@ -84,7 +84,7 @@ namespace NoteMakingApp.ViewComponents.Project
         private void btnEdit_Click(object sender, EventArgs g)
         {
             _STT = item[item.Count - 1].STT;
-            newitem = new List<ItemTDLs>();
+            newitem = new List<ItemProjects>();
             _flag = 0;
             _flag2 = 0;
 
@@ -93,13 +93,14 @@ namespace NoteMakingApp.ViewComponents.Project
             this.txtTittle.Visible = true;
             this.lbComplete.Visible = false;
             btnOK.Visible = true;
+            btnDel.Visible = true;
             btnCancel.Visible = true;
             btnAdd.Visible = true;
             this.panel1.Visible = false;
 
             this.flowLayoutPanel1.Controls.Clear();
 
-            foreach (ItemTDLs t in item)
+            foreach (ItemProjects t in item)
             {
                 EditItem i = new EditItem();
                 i.Name = _flag.ToString();
@@ -154,23 +155,7 @@ namespace NoteMakingApp.ViewComponents.Project
                     }
                 };
 
-                i.textBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
-
-                i.checkBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
+                
             }
 
         }
@@ -183,9 +168,10 @@ namespace NoteMakingApp.ViewComponents.Project
             this.lbComplete.Visible = true;
             this.btnAdd.Visible = false;
             btnOK.Visible = false;
+            btnDel.Visible = false;
             btnCancel.Visible = false;
             this.flowLayoutPanel1.Controls.Clear();
-            foreach (ItemTDLs t in item)
+            foreach (ItemProjects t in item)
             {
                 ItemProject i = new ItemProject();
                 i.setValue(t.STT, t.Content, t.check);
@@ -199,12 +185,11 @@ namespace NoteMakingApp.ViewComponents.Project
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                DataHandle.getInstance().EditToDoList(txtTittle.Text, item);
-                foreach (ItemTDLs i in newitem)
-                    DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
-                foreach (ItemTDLs i in deletedItem)
-                    DataHandle.getInstance().DeleteItemInToDoList(txtTittle.Text, i.STT);
-                DataHandle.getInstance().ShowNote();
+                DataHandle.getInstance().EditProject(txtTittle.Text, item);
+                foreach (ItemProjects i in newitem)
+                    DataHandle.getInstance().CreateNewProject(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
+                foreach (ItemProjects i in deletedItem)
+                    DataHandle.getInstance().DeleteItemInProject(txtTittle.Text, i.STT);
 
                 double x = 0;
                 double y = 0;
@@ -213,8 +198,9 @@ namespace NoteMakingApp.ViewComponents.Project
 
                 this.Dispose();
 
-                ToDoLists tdl = DataHandle.getInstance().GetDataToDoList();
-                foreach (ItemTDLs i in tdl.item)
+                Projects p = DataHandle.getInstance().GetDataProject();
+
+                foreach (ItemProjects i in p.item)
                 {
                     if (i.check == true)
                         x++;
@@ -233,7 +219,7 @@ namespace NoteMakingApp.ViewComponents.Project
                 }
 
 
-                Form1.getInstance().ShowProject(tdl.Tittle, tdl.item, z);
+                Form1.getInstance().ShowProject(p.Tittle, p.item, z);
 
 
             }
@@ -241,7 +227,7 @@ namespace NoteMakingApp.ViewComponents.Project
 
         private void btnAdd_Click(object sender, EventArgs g)
         {
-            newitem.Add(new ItemTDLs()
+            newitem.Add(new ItemProjects()
             {
                 STT = _STT + 1,
                 check = false,
@@ -300,24 +286,6 @@ namespace NoteMakingApp.ViewComponents.Project
                     newitem.Insert(_e, save);
                 }
             };
-
-            i.textBox.KeyDown += (s, e) =>
-            {
-                if (e.KeyCode == Keys.Delete)
-                {
-                    _isDelete = 1;
-                    addNewEditItem();
-                }
-            };
-
-            i.checkBox.KeyDown += (s, e) =>
-            {
-                if (e.KeyCode == Keys.Delete)
-                {
-                    _isDelete = 1;
-                    addNewEditItem();
-                }
-            };
         }
 
         private void addNewEditItem()
@@ -332,7 +300,7 @@ namespace NoteMakingApp.ViewComponents.Project
             this.flowLayoutPanel1.Controls.Clear();
             _flag = 0;
 
-            foreach (ItemTDLs t in item)
+            foreach (ItemProjects t in item)
             {
                 EditItem i = new EditItem();
                 i.Name = _flag.ToString();
@@ -384,26 +352,10 @@ namespace NoteMakingApp.ViewComponents.Project
                     }
                 };
 
-                i.textBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
-
-                i.checkBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
+                
             }
 
-            foreach (ItemTDLs t in newitem)
+            foreach (ItemProjects t in newitem)
             {
                 EditItem i = new EditItem();
                 i.Name = _flag.ToString();
@@ -455,24 +407,17 @@ namespace NoteMakingApp.ViewComponents.Project
                     }
                 };
 
-                i.textBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
-
-                i.checkBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
+                
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _isDelete = 1;
+            if (_e < 0)
+                MessageBox.Show("Vui lòng chọn dòng để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+                addNewEditItem();
         }
     }
 }

@@ -28,7 +28,7 @@ namespace NoteMakingApp.ViewComponents
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
             // get path to image note4.png
-            opIcon.Image = Image.FromFile(chanceImage+ @"\images\" + imageFile);
+            opIcon.Image = Image.FromFile(chanceImage+ @"\Note-Management\images\" + imageFile);
         }
 
         public void defautsettings()

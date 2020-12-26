@@ -190,7 +190,7 @@ namespace NoteMakingApp
             lp.BringToFront();
         }
 
-        public void ShowProject(string nameProject, List<ItemTDLs> item,string complete)
+        public void ShowProject(string nameProject, List<ItemProjects> item,string complete)
         {
             Project prj = new Project();
             prj.Location = new System.Drawing.Point(360, 80);

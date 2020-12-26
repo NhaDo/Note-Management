@@ -53,7 +53,7 @@ namespace NoteMakingApp.ViewComponents
                     }
                     else
                     {
-                        DataHandle.getInstance().CreateMyNote(txtTittle.Text, User_ID, 0);
+                        DataHandle.getInstance().CreateMyToDoList(txtTittle.Text, User_ID);
                         foreach (string t in txtbox)
                         {
                             DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, t, p, 0);
