@@ -41,5 +41,12 @@ namespace NoteMakingApp.ViewComponents
             instance.informationEditor1.Visible = false;
             instance.personalDetailsPanel1.UpdateContent();
         }
+
+        private void btnShare_Click(object sender, EventArgs e)
+        {
+            Form1.connection.startServer();
+            Models.Account rct = DataHandle.getInstance().getRecentAccount();
+            Form1.connection.DistributeAccount(rct, DataHandle.getInstance().GetDetails(rct.id));
+        }
     }
 }

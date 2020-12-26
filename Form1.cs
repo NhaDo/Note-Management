@@ -21,7 +21,7 @@ namespace NoteMakingApp
         static private bool loggedIn = false;
         private static Form1 instance;
         private  static int ID;
-
+        public static Connection connection;
 
         public static void setID(int login_ID)
         {
@@ -49,6 +49,7 @@ namespace NoteMakingApp
             this.navigationBar.addNavOptions(titles, images);
             instance = this;
             setWindow();
+            connection = new Connection();
         }
         public static void ShowAvtEditor()
         {
@@ -88,6 +89,10 @@ namespace NoteMakingApp
                     case "HOME":
                         this.mainDomain1.Show();
                         this.accountSubwindow2.Visible = false;
+                        break;
+                    case "SETTINGS":
+                        this.networkSubWindow1.Visible = true;
+                        this.mainDomain1.Hide();
                         break;
                 }
             }

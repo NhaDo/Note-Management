@@ -59,7 +59,7 @@ namespace NoteMakingApp.Models
         }
         private void establishDbConnection()
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Project\Note-Management\Data\Database.mdf; Integrated Security = True";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\ngoho\Desktop\New folder\Note-Management\Data\Database.mdf; Integrated Security = True";
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
@@ -281,7 +281,7 @@ namespace NoteMakingApp.Models
             using (SqlCommand insert = new SqlCommand(queryFrame))
             {
                 insert.Connection = DbConnection;
-                insert.Parameters.Add("@Id", SqlDbType.Int).Value = DateTime.Now.Ticks;
+                insert.Parameters.Add("@Id", SqlDbType.Int).Value = Convert.ToInt32((DateTime.Now.Ticks << 32) >> 32);
                 insert.Parameters.Add("@person", SqlDbType.Int).Value = dt.account;
                 insert.Parameters.Add("@category", SqlDbType.NChar, 20).Value = dt.category;
                 insert.Parameters.Add("@subcategory", SqlDbType.Char, 20).Value = dt.subcategory;
@@ -310,8 +310,8 @@ namespace NoteMakingApp.Models
         }
         public void UpdateAccount(Account acc)
         {
-            string queryFrame = "UPDATE PersonalDetails (password) " +
-                                    "VALUES (@password) WHERE Id=" + acc.id.ToString();
+            string queryFrame = "UPDATE Accounts SET password=@password WHERE Id=" + acc.id.ToString();
+
             using (SqlCommand update = new SqlCommand(queryFrame))
             {
                 update.Connection = DbConnection;

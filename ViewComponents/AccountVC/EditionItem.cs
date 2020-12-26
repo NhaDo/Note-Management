@@ -20,13 +20,14 @@ namespace NoteMakingApp.ViewComponents.AccountVC
         {
             InitializeComponent();
         }
-        public EditionItem(PersonalDetail dt, bool general, bool addition=false)
+        public EditionItem(PersonalDetail dt, bool general, bool addition = false)
         {
             InitializeComponent();
             this.lbSubcategory.Text = dt.subcategory;
             this.lbConent.Text = dt.content;
             this.originDetail = dt;
             isGeneralDetail = general;
+            if (isGeneralDetail) btnDelete.Hide();
             if (!isGeneralDetail)
             {
                 switch (originDetail.category)
@@ -43,33 +44,56 @@ namespace NoteMakingApp.ViewComponents.AccountVC
                         cbSubcatgory.Items.Add("Address");
                         break;
                 }
-                if(addition) function++;
+                if (addition) function++;
                 setFunctionView();
             }
             else
             {
                 lbSubcategory.Text = dt.subcategory;
             }
-            
+
         }
 
         private void btnFunction_Click(object sender, EventArgs e)
         {
+            function = 0;
             setFunctionView();
 
-            
+
         }
         private void setFunctionView()
         {
-            function = (function + 1) % 3;
-            if (isGeneralDetail && function == 1) function = 2;
-            btnFunction.Text = function.ToString();
+            /*function = (function + 1) % 3;
+            if (isGeneralDetail && function == 1) function = 2;*/
+            /*            btnNone.Text = function.ToString();
+            */            /*if (function == 0)
+                            btnNone.Text = "Delete";
+                        if (function == 1)
+                            btnNone.Text = "Modify";
+                        if (function == 2)
+                            btnNone.Text = "Show";*/
             if (function == 0)
-                btnFunction.Text = "Delete";
+            {
+                btnNone.BackColor = Color.Red;
+                btnDelete.BackColor = Color.White;
+                btnModify.BackColor = Color.White;
+
+            }
             if (function == 1)
-                btnFunction.Text = "Modify";
+            {
+                btnDelete.BackColor = Color.Red;
+                btnNone.BackColor = Color.White;
+                btnModify.BackColor = Color.White;
+
+            }
             if (function == 2)
-                btnFunction.Text = "Show";
+            {
+                btnModify.BackColor = Color.Red;
+                btnDelete.BackColor = Color.White;
+                btnNone.BackColor = Color.White;
+
+            }
+
             switch (function)
             {
                 // Nonfunctional
@@ -95,7 +119,8 @@ namespace NoteMakingApp.ViewComponents.AccountVC
         }
         public PersonalDetail generateDetail()
         {
-            return new PersonalDetail() {
+            return new PersonalDetail()
+            {
                 account = originDetail.account,
                 category = originDetail.category,
                 subcategory = cbSubcatgory.SelectedItem.ToString(),
@@ -114,6 +139,18 @@ namespace NoteMakingApp.ViewComponents.AccountVC
         public PersonalDetail getOriginalDetail()
         {
             return originDetail;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            function = 1;
+            setFunctionView();
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            function = 2;
+            setFunctionView();
         }
     }
 }
