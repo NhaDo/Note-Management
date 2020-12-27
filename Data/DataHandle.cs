@@ -76,11 +76,13 @@ namespace NoteMakingApp.Models
             startupPath = startupPath.Substring(0, startupPath.LastIndexOf(@"\"));
             startupPath = startupPath.Substring(0, startupPath.LastIndexOf(@"\"));
             startupPath = startupPath.Substring(0, startupPath.LastIndexOf(@"\"));
+            startupPath = startupPath.Substring(0, startupPath.LastIndexOf(@"\"));
+
 
 
             //set conn string
-            //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = " + startupPath + @"\Note-Management\Data\Database.mdf; Integrated Security = True";
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Project\Note-Management\Data\Database.mdf; Integrated Security = True; Connect Timeout = 30";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = " + startupPath + @"\Note-Management\Data\Database.mdf; Integrated Security = True";
+            //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Project\Note-Management\Data\Database.mdf; Integrated Security = True; Connect Timeout = 30";
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
