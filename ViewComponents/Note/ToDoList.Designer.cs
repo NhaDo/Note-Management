@@ -82,7 +82,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "ToDoList";
-            this.Size = new System.Drawing.Size(199, 236);
+            this.Size = new System.Drawing.Size(189, 236);
             this.Click += new System.EventHandler(this.ToDoList_Click);
             this.MouseHover += new System.EventHandler(this.ToDoList_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

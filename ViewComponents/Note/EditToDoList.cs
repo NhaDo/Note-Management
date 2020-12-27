@@ -105,21 +105,30 @@ namespace NoteMakingApp.ViewComponents.Note
         {
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                if (DataHandle.getInstance().checkEditTittleToDoList(txtTittle.Text) == false)
+                    MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    DataHandle.getInstance().EditToDoList(txtTittle.Text, eitem);
-                    foreach (ItemTDLs i in newitem)
-                        DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
-                    foreach (ItemTDLs i in deletedItem)
-                        DataHandle.getInstance().DeleteItemInToDoList(txtTittle.Text, i.STT);
-                    DataHandle.getInstance().ShowNote();
-                    this.Dispose();
+                    if (eitem.Count() == 0 && newitem.Count() == 0)
+                    {
+                        MessageBox.Show("Thêm list to do", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        DataHandle.getInstance().EditToDoList(txtTittle.Text, eitem);
+                        foreach (ItemTDLs i in newitem)
+                            DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
+                        foreach (ItemTDLs i in deletedItem)
+                            DataHandle.getInstance().DeleteItemInToDoList(txtTittle.Text, i.STT);
+                        DataHandle.getInstance().ShowNote();
+                        this.Dispose();
+                    }
                 }
         }
 
         private void pictureBox2_Click(object sender, EventArgs g)
         {
-
             newitem.Add(new ItemTDLs()
             {
                 STT = _STT + 1,
@@ -200,6 +209,7 @@ namespace NoteMakingApp.ViewComponents.Note
                     newitem.RemoveAt(_e);
                 this.flowLayoutPanel1.Controls.Clear();
                 _flag = 0;
+                _flag2 = 0;
 
                 foreach (ItemTDLs t in eitem)
                 {
@@ -260,9 +270,9 @@ namespace NoteMakingApp.ViewComponents.Note
                 foreach (ItemTDLs t in newitem)
                 {
                     ItemTDL i = new ItemTDL();
-                    i.Name = _flag.ToString();
+                    i.Name = _flag2.ToString();
                     i.setValue(t.Content, t.STT, t.check);
-                    _flag++;
+                    _flag2++;
                     i.edit();
                     this.flowLayoutPanel1.Controls.Add(i);
 

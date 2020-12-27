@@ -49,11 +49,11 @@ namespace NoteMakingApp.ViewComponents
                     int p = 1;
                     if (txtbox.Count() == 0)
                     {
-                    MessageBox.Show("Thêm list to do", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Thêm list to do", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        DataHandle.getInstance().CreateMyNote(txtTittle.Text, User_ID, 0);
+                        DataHandle.getInstance().CreateMyToDoList(txtTittle.Text, User_ID);
                         foreach (string t in txtbox)
                         {
                             DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, t, p, 0);

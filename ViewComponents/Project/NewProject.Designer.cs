@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lb1 = new System.Windows.Forms.Label();
             this.txtTittle = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -37,7 +36,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTimer = new System.Windows.Forms.Button();
-            this.Time = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new NoteMakingApp.ViewComponents.Project.Timer();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +44,7 @@
             // 
             this.lb1.AutoSize = true;
             this.lb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb1.Location = new System.Drawing.Point(32, 0);
+            this.lb1.Location = new System.Drawing.Point(26, 1);
             this.lb1.Name = "lb1";
             this.lb1.Size = new System.Drawing.Size(205, 38);
             this.lb1.TabIndex = 0;
@@ -62,6 +60,7 @@
             this.txtTittle.TabIndex = 1;
             this.txtTittle.Text = "Name";
             this.txtTittle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTittle.Enter += new System.EventHandler(this.txtTittle_Enter);
             // 
             // flowLayoutPanel1
             // 
@@ -133,9 +132,9 @@
             // 
             this.timer1.BackColor = System.Drawing.Color.White;
             this.timer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timer1.Location = new System.Drawing.Point(59, 111);
+            this.timer1.Location = new System.Drawing.Point(57, 90);
             this.timer1.Name = "timer1";
-            this.timer1.Size = new System.Drawing.Size(145, 116);
+            this.timer1.Size = new System.Drawing.Size(161, 151);
             this.timer1.TabIndex = 0;
             this.timer1.Visible = false;
             // 
@@ -171,7 +170,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnTimer;
-        private System.Windows.Forms.Timer Time;
         private Timer timer1;
     }
 }

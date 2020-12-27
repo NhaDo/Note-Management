@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbComplete = new System.Windows.Forms.Label();
             this.lbProjectName = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -40,6 +41,11 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.txtTittle = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.lbTime = new System.Windows.Forms.Label();
+            this.btnTimer = new System.Windows.Forms.Button();
+            this.timer1 = new NoteMakingApp.ViewComponents.Project.Timer();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +53,7 @@
             // 
             this.lbComplete.AutoSize = true;
             this.lbComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbComplete.Location = new System.Drawing.Point(4, 273);
+            this.lbComplete.Location = new System.Drawing.Point(4, 277);
             this.lbComplete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 12);
             this.lbComplete.Name = "lbComplete";
             this.lbComplete.Size = new System.Drawing.Size(105, 20);
@@ -70,15 +76,17 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 57);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 71);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(241, 212);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(241, 195);
             this.flowLayoutPanel1.TabIndex = 4;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnTimer);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnEdit);
@@ -175,7 +183,7 @@
             // 
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Image = global::NoteMakingApp.Properties.Resources.add;
-            this.btnAdd.Location = new System.Drawing.Point(204, 35);
+            this.btnAdd.Location = new System.Drawing.Point(169, 43);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(21, 21);
             this.btnAdd.TabIndex = 0;
@@ -183,12 +191,69 @@
             this.btnAdd.Visible = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnDel
+            // 
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Image = global::NoteMakingApp.Properties.Resources.delete;
+            this.btnDel.Location = new System.Drawing.Point(200, 43);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(21, 21);
+            this.btnDel.TabIndex = 8;
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Visible = false;
+            this.btnDel.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Timer
+            // 
+            this.Timer.Interval = 1000;
+            // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.Red;
+            this.lbTime.Location = new System.Drawing.Point(8, 47);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbTime.Size = new System.Drawing.Size(64, 20);
+            this.lbTime.TabIndex = 9;
+            this.lbTime.Text = "1:02:23";
+            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbTime.Visible = false;
+            this.lbTime.Click += new System.EventHandler(this.lbTime_Click);
+            // 
+            // btnTimer
+            // 
+            this.btnTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimer.Location = new System.Drawing.Point(4, 4);
+            this.btnTimer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTimer.Name = "btnTimer";
+            this.btnTimer.Size = new System.Drawing.Size(76, 24);
+            this.btnTimer.TabIndex = 3;
+            this.btnTimer.Text = "Timer";
+            this.btnTimer.UseVisualStyleBackColor = true;
+            this.btnTimer.Visible = false;
+            this.btnTimer.Click += new System.EventHandler(this.btnTimer_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.BackColor = System.Drawing.Color.White;
+            this.timer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timer1.Location = new System.Drawing.Point(57, 73);
+            this.timer1.Name = "timer1";
+            this.timer1.Size = new System.Drawing.Size(118, 129);
+            this.timer1.TabIndex = 10;
+            this.timer1.Visible = false;
+            // 
             // Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.timer1);
+            this.Controls.Add(this.lbTime);
+            this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtTittle);
             this.Controls.Add(this.btnCancel);
@@ -223,5 +288,10 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.TextBox txtTittle;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Label lbTime;
+        public System.Windows.Forms.Timer Timer;
+        private Timer timer1;
+        private System.Windows.Forms.Button btnTimer;
     }
 }

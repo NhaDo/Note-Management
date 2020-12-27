@@ -103,11 +103,15 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Data\DataHandle.cs" />
+    <Compile Include="Models\ItemProjects.cs" />
     <Compile Include="Models\ItemTDLs.cs" />
     <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\MyProject.cs" />
+    <Compile Include="Models\MyToDoList.cs" />
     <Compile Include="Models\Notes.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonalDetail.cs" />
+    <Compile Include="Models\Projects.cs" />
     <Compile Include="Models\Reminders.cs" />
     <Compile Include="Models\ToDoList.cs" />
     <Compile Include="Models\User.cs" />

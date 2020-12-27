@@ -14,11 +14,13 @@ namespace NoteMakingApp.ViewComponents.Project
 {
     public partial class Project : UserControl
     {
-
-        List<ItemTDLs> item;
-        ItemTDLs save;
-        List<ItemTDLs> newitem;
-        List<ItemTDLs> deletedItem;
+        int _year = 0, _day = 0, _hour = 0, _minute = 0, _second = 0;
+        string hour, minute, second;
+        public static int _timer = 0;
+        List<ItemProjects> item;
+        ItemProjects save;
+        List<ItemProjects> newitem;
+        List<ItemProjects> deletedItem;
         int _flag = 0;
         int _flag2 = 0;
         static int _e = -1;
@@ -28,9 +30,10 @@ namespace NoteMakingApp.ViewComponents.Project
 
         public Project()
         {
-            save = new ItemTDLs();
-            deletedItem = new List<ItemTDLs>();
+            save = new ItemProjects();
+            deletedItem = new List<ItemProjects>();
             InitializeComponent();
+            this.lbTime.Visible = false;
         }
 
 
@@ -49,13 +52,13 @@ namespace NoteMakingApp.ViewComponents.Project
 
         }
 
-        public void setValue(string nameProject, List<ItemTDLs> items)
+        public void setValue(string nameProject, List<ItemProjects> items)
         {
-            item = new List<ItemTDLs>(items);
+            item = new List<ItemProjects>(items);
 
             this.lbProjectName.Text = nameProject;
             this.txtTittle.Text = nameProject;
-            foreach (ItemTDLs t in items)
+            foreach (ItemProjects t in items)
             {
                 ItemProject i = new ItemProject();
                 i.setValue(t.STT, t.Content, t.check);
@@ -71,7 +74,7 @@ namespace NoteMakingApp.ViewComponents.Project
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            DataHandle.getInstance().DeleteToDoList();
+            DataHandle.getInstance().DeleteProject();
 
             this.Dispose();
         }
@@ -84,22 +87,25 @@ namespace NoteMakingApp.ViewComponents.Project
         private void btnEdit_Click(object sender, EventArgs g)
         {
             _STT = item[item.Count - 1].STT;
-            newitem = new List<ItemTDLs>();
+            newitem = new List<ItemProjects>();
             _flag = 0;
             _flag2 = 0;
 
-            this.btnEdit.Enabled = false;
+            this.btnEdit.Visible = false;
+            this.btnTimer.Visible = true;
             this.lbProjectName.Visible = false;
             this.txtTittle.Visible = true;
             this.lbComplete.Visible = false;
+            this.lbTime.Visible = false;
             btnOK.Visible = true;
+            btnDel.Visible = true;
             btnCancel.Visible = true;
             btnAdd.Visible = true;
             this.panel1.Visible = false;
 
             this.flowLayoutPanel1.Controls.Clear();
 
-            foreach (ItemTDLs t in item)
+            foreach (ItemProjects t in item)
             {
                 EditItem i = new EditItem();
                 i.Name = _flag.ToString();
@@ -154,38 +160,26 @@ namespace NoteMakingApp.ViewComponents.Project
                     }
                 };
 
-                i.textBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
-
-                i.checkBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
+                
             }
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.btnEdit.Enabled = true;
+            this.btnEdit.Visible = true;
+            this.btnTimer.Visible = false;
+            this.panel1.Visible = false;
             this.lbProjectName.Visible = true;
             this.txtTittle.Visible = false;
             this.lbComplete.Visible = true;
             this.btnAdd.Visible = false;
+            this.lbTime.Visible = true;
             btnOK.Visible = false;
+            btnDel.Visible = false;
             btnCancel.Visible = false;
             this.flowLayoutPanel1.Controls.Clear();
-            foreach (ItemTDLs t in item)
+            foreach (ItemProjects t in item)
             {
                 ItemProject i = new ItemProject();
                 i.setValue(t.STT, t.Content, t.check);
@@ -198,50 +192,58 @@ namespace NoteMakingApp.ViewComponents.Project
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-            {
-                DataHandle.getInstance().EditToDoList(txtTittle.Text, item);
-                foreach (ItemTDLs i in newitem)
-                    DataHandle.getInstance().CreateNewToDoList(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
-                foreach (ItemTDLs i in deletedItem)
-                    DataHandle.getInstance().DeleteItemInToDoList(txtTittle.Text, i.STT);
-                DataHandle.getInstance().ShowNote();
-
-                double x = 0;
-                double y = 0;
-                string z;
-                Form1.type = 4;
-
-                this.Dispose();
-
-                ToDoLists tdl = DataHandle.getInstance().GetDataToDoList();
-                foreach (ItemTDLs i in tdl.item)
-                {
-                    if (i.check == true)
-                        x++;
-                    y++;
-                }
-                x = ((x / y) * 100);
-                if (x.ToString().Length > 5)
-                {
-                    z = x.ToString().Substring(0, 5);
-
-                }
+                if (DataHandle.getInstance().checkEditTittleProject(txtTittle.Text) == false)
+                    MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    z = x.ToString();
+                    if (item.Count() == 0 && newitem.Count() == 0)
+                    {
+                        MessageBox.Show("Thêm list to do", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        if (_timer == 1)
+                            DataHandle.getInstance().EditTimerProject(NoteMakingApp.ViewComponents.Project.Timer.time);
+                        DataHandle.getInstance().EditProject(txtTittle.Text, item);
+                        foreach (ItemProjects i in newitem)
+                            DataHandle.getInstance().CreateNewProject(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
+                        foreach (ItemProjects i in deletedItem)
+                            DataHandle.getInstance().DeleteItemInProject(txtTittle.Text, i.STT);
 
+                        double x = 0;
+                        double y = 0;
+                        string z;
+                        Form1.type = 4;
+
+                        this.Dispose();
+
+                        Projects p = DataHandle.getInstance().GetDataProject();
+
+                        foreach (ItemProjects i in p.item)
+                        {
+                            if (i.check == true)
+                                x++;
+                            y++;
+                        }
+                        x = ((x / y) * 100);
+                        if (x.ToString().Length > 5)
+                        {
+                            z = x.ToString().Substring(0, 5);
+
+                        }
+                        else
+                        {
+                            z = x.ToString();
+
+                        }
+                        Form1.getInstance().ShowProject(p.Tittle, p.item, z,p.deadline);
+                    }
                 }
-
-
-                Form1.getInstance().ShowProject(tdl.Tittle, tdl.item, z);
-
-
-            }
         }
 
         private void btnAdd_Click(object sender, EventArgs g)
         {
-            newitem.Add(new ItemTDLs()
+            newitem.Add(new ItemProjects()
             {
                 STT = _STT + 1,
                 check = false,
@@ -300,24 +302,22 @@ namespace NoteMakingApp.ViewComponents.Project
                     newitem.Insert(_e, save);
                 }
             };
+        }
 
-            i.textBox.KeyDown += (s, e) =>
-            {
-                if (e.KeyCode == Keys.Delete)
-                {
-                    _isDelete = 1;
-                    addNewEditItem();
-                }
-            };
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
-            i.checkBox.KeyDown += (s, e) =>
-            {
-                if (e.KeyCode == Keys.Delete)
-                {
-                    _isDelete = 1;
-                    addNewEditItem();
-                }
-            };
+        }
+
+        private void btnTimer_Click(object sender, EventArgs e)
+        {
+            this.timer1.Visible = true;
+            this.panel1.Visible = false;
+        }
+
+        public void setValueTimer(string time)
+        {
+            this.timer1.setValue(time);
         }
 
         private void addNewEditItem()
@@ -331,8 +331,9 @@ namespace NoteMakingApp.ViewComponents.Project
                 newitem.RemoveAt(_e);
             this.flowLayoutPanel1.Controls.Clear();
             _flag = 0;
+            _flag2 = 0;
 
-            foreach (ItemTDLs t in item)
+            foreach (ItemProjects t in item)
             {
                 EditItem i = new EditItem();
                 i.Name = _flag.ToString();
@@ -384,31 +385,15 @@ namespace NoteMakingApp.ViewComponents.Project
                     }
                 };
 
-                i.textBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
-
-                i.checkBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
+                
             }
 
-            foreach (ItemTDLs t in newitem)
+            foreach (ItemProjects t in newitem)
             {
                 EditItem i = new EditItem();
-                i.Name = _flag.ToString();
+                i.Name = _flag2.ToString();
                 i.setValue(t.STT, t.Content, t.check);
-                _flag++;
+                _flag2++;
 
                 this.flowLayoutPanel1.Controls.Add(i);
 
@@ -455,24 +440,101 @@ namespace NoteMakingApp.ViewComponents.Project
                     }
                 };
 
-                i.textBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
-
-                i.checkBox.KeyDown += (s, e) =>
-                {
-                    if (e.KeyCode == Keys.Delete)
-                    {
-                        _isDelete = 1;
-                        addNewEditItem();
-                    }
-                };
+                
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _isDelete = 1;
+
+            if (_e < 0)
+                MessageBox.Show("Vui lòng chọn dòng để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+                addNewEditItem();
+        }
+
+        private void lbTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void setDeadline(string time)
+        {
+            DateTime _time = Convert.ToDateTime(time);
+
+            _second = _time.Second - DateTime.Now.Second;
+            _minute = _time.Minute - DateTime.Now.Minute;
+            _hour = _time.Hour - DateTime.Now.Hour;
+            _year = _time.Year - DateTime.Now.Year;
+
+            if (_year == 0)
+                _day = _time.DayOfYear - DateTime.Now.DayOfYear;
+            else
+                _day = _time.DayOfYear - DateTime.Now.DayOfYear + 366;
+
+            checkdatetime();
+            converttostring();
+            //lbTime.Visible = true;
+            if (_day < 0)
+            {
+                Timer.Enabled = false;
+                lbTime.Text = "Time-expired!";  
+            }
+            else
+            {
+                lbTime.Text = _day + ":" + hour + ":" + minute + ":" + second;  
+            }
+            lbTime.Location = new System.Drawing.Point(this.Width - this.lbTime.Width - 5, 277);
+            Console.WriteLine(lbTime.Text);
+        }
+
+        public void checkdatetime()
+        {
+            if (_second < 0)
+            {
+                _minute--;
+                _second += 60;
+            }
+
+            if (_minute < 0)
+            {
+                _hour--;
+                _minute += 60;
+            }
+
+            if (_hour < 0)
+            {
+                _day--;
+                _hour += 24;
+            }
+        }
+
+        public void converttostring()
+        {
+            if (_hour < 10)
+                hour = "0" + _hour.ToString();
+            else
+                hour = _hour.ToString();
+
+            if (_minute < 10)
+                minute = "0" + _minute.ToString();
+            else
+                minute = _minute.ToString();
+
+            if (_second < 10)
+                second = "0" + _second.ToString();
+            else
+                second = _second.ToString();
+        }
+
+
+        public void showTime()
+        {
+            this.lbTime.Visible = true;
+        }
+        
+            
+        
     }
 }

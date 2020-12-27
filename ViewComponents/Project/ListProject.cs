@@ -14,20 +14,18 @@ namespace NoteMakingApp.ViewComponents.Project
     public partial class ListProject : UserControl
     {
         int i = 1;
+        public static int user_id;
         
         public ListProject()
         {
             InitializeComponent();
-            
-
-            //DataHandle.tdls.Clear();
             this.flowLayoutPanel1.Controls.Clear();
-            DataHandle.getInstance().GetDataFromTDL();
+            DataHandle.getInstance().GetDataFromProject();
             AddProject(0, "New Project");
-            foreach (ToDoLists t in DataHandle.tdls)
-                if (t.project == 1)
+            foreach (Projects t in DataHandle.prjs)
+                if (t.user_id == user_id)
                     AddProject(t.id, t.Tittle);
-
+             
 
         }
 
@@ -57,11 +55,11 @@ namespace NoteMakingApp.ViewComponents.Project
                     Form1.type = 4;
                     MainDomain.currentInstance.setFlags(Int32.Parse(prj.Name));
                     Console.WriteLine(MainDomain.currentInstance.getFlags());
-
+              
                     this.Dispose();
 
-                    ToDoLists tdl =  DataHandle.getInstance().GetDataToDoList();
-                    foreach (ItemTDLs i in tdl.item)
+                    Projects p =  DataHandle.getInstance().GetDataProject();
+                    foreach (ItemProjects i in p.item)
                     {
                         if (i.check == true)
                             x++;
@@ -80,7 +78,7 @@ namespace NoteMakingApp.ViewComponents.Project
                     }
 
                     
-                    Form1.getInstance().ShowProject(tdl.Tittle,tdl.item,z);
+                    Form1.getInstance().ShowProject(p.Tittle,p.item,z,p.deadline);
 
 
                     

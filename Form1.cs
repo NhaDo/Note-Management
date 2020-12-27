@@ -20,7 +20,7 @@ namespace NoteMakingApp
         public static int type = 0;
         static private bool loggedIn = false;
         private static Form1 instance;
-        private  static int ID;
+        private static int ID;
 
 
         public static void setID(int login_ID)
@@ -139,7 +139,7 @@ namespace NoteMakingApp
             newtodo.BringToFront();
         }
 
-        public void editToDoList(string name,List<ItemTDLs> item)
+        public void editToDoList(string name, List<ItemTDLs> item)
         {
             EditToDoList editTDL = new EditToDoList();
             editTDL.Location = new System.Drawing.Point(400, 100);
@@ -190,14 +190,32 @@ namespace NoteMakingApp
             lp.BringToFront();
         }
 
-        public void ShowProject(string nameProject, List<ItemTDLs> item,string complete)
+        public void ShowProject(string nameProject, List<ItemProjects> item, string complete, string time)
         {
             Project prj = new Project();
             prj.Location = new System.Drawing.Point(360, 80);
-            prj.setValue(nameProject,item);
+            prj.setValue(nameProject, item);
+            
+            if (time != "no timer")
+            {
+                prj.setValueTimer(time);
+                prj.setDeadline(time);
+                prj.Timer.Enabled = true;
+                prj.showTime();
+                prj.Timer.Tick += (s, e) =>
+                {
+                    prj.setDeadline(time);
+                };
+                
+            }
             this.Controls.Add(prj);
             prj.BringToFront();
             prj.setComplete(complete);
+
+
+
         }
+
+        
     }
 }
