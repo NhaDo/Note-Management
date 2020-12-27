@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-12-27T00:52:47.353Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36 OPR/72.0.3815.459" etag="yDXO-Md9yIdiYIhAQJiY" version="14.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-27T02:17:39.601Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36 OPR/72.0.3815.459" etag="UbwCvWPM1VtVxcppKM0Q" version="14.1.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="511" dy="323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="386" dy="313" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -81,11 +81,29 @@
             <mxPoint x="370.0000000000001" y="590" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="SheAax2NOL5VRQ8bs_5f-11" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="SheAax2NOL5VRQ8bs_5f-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="219.9999999999999" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="SheAax2NOL5VRQ8bs_5f-8" value="Setting Connection" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="170" y="550" width="100" height="80" as="geometry" />
         </mxCell>
         <mxCell id="SheAax2NOL5VRQ8bs_5f-10" value="NetworkSubwindow" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="370" y="570" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SheAax2NOL5VRQ8bs_5f-13" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="SheAax2NOL5VRQ8bs_5f-12" target="WIyWlLk6GJQsqaUBKTNV-6">
+          <mxGeometry x="-0.9277" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="710" />
+              <mxPoint x="70" y="150" />
+              <mxPoint x="220" y="150" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SheAax2NOL5VRQ8bs_5f-12" value="Logout" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="170" y="670" width="100" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
