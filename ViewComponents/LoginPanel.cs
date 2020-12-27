@@ -41,7 +41,7 @@ namespace NoteMakingApp.ViewComponents
                     NewToDoList.User_ID = acc.id;
                     NewReminder.User_ID = acc.id;
                     NewProject.User_ID = acc.id;
-                    
+                    ListProject.user_id = acc.id;
                 }
                 else
                 {

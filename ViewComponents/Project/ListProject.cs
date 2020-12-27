@@ -14,6 +14,7 @@ namespace NoteMakingApp.ViewComponents.Project
     public partial class ListProject : UserControl
     {
         int i = 1;
+        public static int user_id;
         
         public ListProject()
         {
@@ -22,6 +23,7 @@ namespace NoteMakingApp.ViewComponents.Project
             DataHandle.getInstance().GetDataFromProject();
             AddProject(0, "New Project");
             foreach (Projects t in DataHandle.prjs)
+                if (t.user_id == user_id)
                     AddProject(t.id, t.Tittle);
              
 
@@ -53,7 +55,7 @@ namespace NoteMakingApp.ViewComponents.Project
                     Form1.type = 4;
                     MainDomain.currentInstance.setFlags(Int32.Parse(prj.Name));
                     Console.WriteLine(MainDomain.currentInstance.getFlags());
-
+              
                     this.Dispose();
 
                     Projects p =  DataHandle.getInstance().GetDataProject();
@@ -76,7 +78,7 @@ namespace NoteMakingApp.ViewComponents.Project
                     }
 
                     
-                    Form1.getInstance().ShowProject(p.Tittle,p.item,z);
+                    Form1.getInstance().ShowProject(p.Tittle,p.item,z,p.deadline);
 
 
                     

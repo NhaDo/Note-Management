@@ -13,18 +13,19 @@ namespace NoteMakingApp.ViewComponents.Project
 {
     public partial class NewProject : UserControl
     {
-
+        
         static List<string> txtbox { get; set; }
         public static int User_ID;
         static int _e = -1;
         int i = 0;
         int _flag = 0;
+        public static int _timer = 0;
         int save;
 
         public NewProject()
         {
             txtbox = new List<string>();
-
+            _timer = 0;
             InitializeComponent();
             ButtonAdd();
         }
@@ -50,20 +51,33 @@ namespace NoteMakingApp.ViewComponents.Project
         {
             if (txtTittle.Text == "")
                 MessageBox.Show("Không thể để trống!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             else
-            {
-                int p = 1;
-                DataHandle.getInstance().CreateMyProject(txtTittle.Text, User_ID,"0");
-                foreach (string t in txtbox)
+                if (DataHandle.getInstance().checkTittleProject(txtTittle.Text) == false)
+                MessageBox.Show("Tittle đã tồn tại!", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
                 {
-                    DataHandle.getInstance().CreateNewProject(txtTittle.Text, t, p, 0);
-                    p++;
+                    int p = 1;
+                    if (txtbox.Count() == 0)
+                    {
+                        MessageBox.Show("Thêm list to do", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        if (_timer == 0)
+                            DataHandle.getInstance().CreateMyProject(txtTittle.Text, User_ID, "no timer");
+                        else
+                        {
+                            DataHandle.getInstance().CreateMyProject(txtTittle.Text, User_ID, Timer.time);
+                        }
+                        foreach (string t in txtbox)
+                        {
+                            DataHandle.getInstance().CreateNewProject(txtTittle.Text, t, p, 0);
+                            p++;
+                        }
+                        this.Dispose();
+                    }
+
                 }
-
-                this.Dispose();
-
-            }
         }
 
         public void ButtonAdd()
@@ -166,5 +180,11 @@ namespace NoteMakingApp.ViewComponents.Project
             timer1._Show();
             this.panel1.Visible = false;
         }
+
+        private void txtTittle_Enter(object sender, EventArgs e)
+        {
+            this.txtTittle.Text = "";
+        }
+
     }
 }

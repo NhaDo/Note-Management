@@ -907,7 +907,8 @@ namespace NoteMakingApp.Models
                     Tittle = m.Tittle,
                     item = new List<ItemProjects>(iprj),
                     user_id = m.id_user,
-                    id = m.id
+                    id = m.id,
+                    deadline = m.Deadline
                 });
 
 
@@ -980,6 +981,30 @@ namespace NoteMakingApp.Models
             }
             return null;
         }
+
+        public bool checkTittleProject(string tittle)
+        {
+            foreach (Projects t in prjs)
+                if (t.Tittle == tittle && t.user_id == id)
+                    return false;
+            return true;
+        }
+
+        public bool checkEditTittleProject(string tittle)
+        {
+            int check = MainDomain.currentInstance.getFlags();
+            foreach (Projects t in prjs)
+            {
+                if (t.Tittle == tittle && t.user_id == id)
+                {
+                    if (t.id == check)
+                        return true;
+                    return false;
+                }
+            }
+            return true;
+        }
     }
+
 }
 

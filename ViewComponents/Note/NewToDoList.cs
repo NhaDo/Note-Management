@@ -49,7 +49,7 @@ namespace NoteMakingApp.ViewComponents
                     int p = 1;
                     if (txtbox.Count() == 0)
                     {
-                    MessageBox.Show("Thêm list to do", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Thêm list to do", "Nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {

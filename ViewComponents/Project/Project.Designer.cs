@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbComplete = new System.Windows.Forms.Label();
             this.lbProjectName = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -41,6 +42,8 @@
             this.txtTittle = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.lbTime = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +51,7 @@
             // 
             this.lbComplete.AutoSize = true;
             this.lbComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbComplete.Location = new System.Drawing.Point(4, 273);
+            this.lbComplete.Location = new System.Drawing.Point(4, 277);
             this.lbComplete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 12);
             this.lbComplete.Name = "lbComplete";
             this.lbComplete.Size = new System.Drawing.Size(105, 20);
@@ -196,12 +199,32 @@
             this.btnDel.Visible = false;
             this.btnDel.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Timer
+            // 
+            this.Timer.Interval = 1000;
+            // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.Red;
+            this.lbTime.Location = new System.Drawing.Point(8, 47);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbTime.Size = new System.Drawing.Size(64, 20);
+            this.lbTime.TabIndex = 9;
+            this.lbTime.Text = "1:02:23";
+            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbTime.Visible = false;
+            this.lbTime.Click += new System.EventHandler(this.lbTime_Click);
+            // 
             // Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lbTime);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtTittle);
@@ -238,5 +261,7 @@
         private System.Windows.Forms.TextBox txtTittle;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Label lbTime;
+        public System.Windows.Forms.Timer Timer;
     }
 }
