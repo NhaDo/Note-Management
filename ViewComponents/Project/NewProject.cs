@@ -177,7 +177,7 @@ namespace NoteMakingApp.ViewComponents.Project
 
         private void btnTimer_Click(object sender, EventArgs e)
         {
-            timer1._Show();
+            timer1.Visible = true;
             this.panel1.Visible = false;
         }
 

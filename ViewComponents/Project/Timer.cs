@@ -29,6 +29,7 @@ namespace NoteMakingApp.ViewComponents.Project
             if (checkTime(time))
             {
                 NewProject._timer = 1;
+                Project._timer = 1;
                 this.Visible = false;
             }
             else
@@ -44,10 +45,6 @@ namespace NoteMakingApp.ViewComponents.Project
             this.Visible = false;
         }
 
-        public void _Show()
-        {
-            this.Visible = true;
-        }
 
         private void TimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -96,6 +93,13 @@ namespace NoteMakingApp.ViewComponents.Project
             if (_year > 1)
                 return false;
             return true;
+        }
+
+        public void setValue(string time)
+        {
+            DateTime t = Convert.ToDateTime(time);
+            DatePicker.Value = t;
+            TimePicker.Value = t;
         }
     }
 }

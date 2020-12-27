@@ -79,7 +79,8 @@ namespace NoteMakingApp.Models
 
 
             //set conn string
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = " + startupPath + @"\Note-Management\Data\Database.mdf; Integrated Security = True";
+            //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = " + startupPath + @"\Note-Management\Data\Database.mdf; Integrated Security = True";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Project\Note-Management\Data\Database.mdf; Integrated Security = True; Connect Timeout = 30";
             DbConnection = new SqlConnection(connectionString);
             DbConnection.Open();
             Console.WriteLine("Opened data connection");
@@ -939,6 +940,21 @@ namespace NoteMakingApp.Models
                     Console.WriteLine("Da sua du lieu tai prj co STT " + i.STT.ToString());
                     editContent.Dispose();
                 }
+            }
+
+        }
+
+        public void EditTimerProject(string time)
+        {
+            int id = MainDomain.currentInstance.getFlags();
+            string queryFrame = "exec USP_EditTimerProject @ID = " + id.ToString() + ",@Deadline = '" + time + "'";
+            using (SqlCommand edit = new SqlCommand(queryFrame))
+            {
+                edit.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                edit.ExecuteNonQuery();
+                Console.WriteLine("Da sua du lieu tai prj co id " + id.ToString());
+                edit.Dispose();
             }
 
         }

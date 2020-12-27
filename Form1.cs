@@ -195,10 +195,13 @@ namespace NoteMakingApp
             Project prj = new Project();
             prj.Location = new System.Drawing.Point(360, 80);
             prj.setValue(nameProject, item);
+            
             if (time != "no timer")
             {
+                prj.setValueTimer(time);
                 prj.setDeadline(time);
                 prj.Timer.Enabled = true;
+                prj.showTime();
                 prj.Timer.Tick += (s, e) =>
                 {
                     prj.setDeadline(time);
@@ -212,5 +215,7 @@ namespace NoteMakingApp
 
 
         }
+
+        
     }
 }

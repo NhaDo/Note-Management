@@ -16,6 +16,7 @@ namespace NoteMakingApp.ViewComponents.Project
     {
         int _year = 0, _day = 0, _hour = 0, _minute = 0, _second = 0;
         string hour, minute, second;
+        public static int _timer = 0;
         List<ItemProjects> item;
         ItemProjects save;
         List<ItemProjects> newitem;
@@ -90,7 +91,8 @@ namespace NoteMakingApp.ViewComponents.Project
             _flag = 0;
             _flag2 = 0;
 
-            this.btnEdit.Enabled = false;
+            this.btnEdit.Visible = false;
+            this.btnTimer.Visible = true;
             this.lbProjectName.Visible = false;
             this.txtTittle.Visible = true;
             this.lbComplete.Visible = false;
@@ -165,12 +167,14 @@ namespace NoteMakingApp.ViewComponents.Project
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.btnEdit.Enabled = true;
+            this.btnEdit.Visible = true;
+            this.btnTimer.Visible = false;
+            this.panel1.Visible = false;
             this.lbProjectName.Visible = true;
             this.txtTittle.Visible = false;
             this.lbComplete.Visible = true;
             this.btnAdd.Visible = false;
-            this.lbTime.Visible = false;
+            this.lbTime.Visible = true;
             btnOK.Visible = false;
             btnDel.Visible = false;
             btnCancel.Visible = false;
@@ -198,6 +202,8 @@ namespace NoteMakingApp.ViewComponents.Project
                     }
                     else
                     {
+                        if (_timer == 1)
+                            DataHandle.getInstance().EditTimerProject(NoteMakingApp.ViewComponents.Project.Timer.time);
                         DataHandle.getInstance().EditProject(txtTittle.Text, item);
                         foreach (ItemProjects i in newitem)
                             DataHandle.getInstance().CreateNewProject(txtTittle.Text, i.Content, i.STT, Convert.ToInt32(i.check));
@@ -298,7 +304,21 @@ namespace NoteMakingApp.ViewComponents.Project
             };
         }
 
-        
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnTimer_Click(object sender, EventArgs e)
+        {
+            this.timer1.Visible = true;
+            this.panel1.Visible = false;
+        }
+
+        public void setValueTimer(string time)
+        {
+            this.timer1.setValue(time);
+        }
 
         private void addNewEditItem()
         {
@@ -455,7 +475,7 @@ namespace NoteMakingApp.ViewComponents.Project
 
             checkdatetime();
             converttostring();
-            lbTime.Visible = true;
+            //lbTime.Visible = true;
             if (_day < 0)
             {
                 Timer.Enabled = false;
@@ -508,6 +528,11 @@ namespace NoteMakingApp.ViewComponents.Project
                 second = _second.ToString();
         }
 
+
+        public void showTime()
+        {
+            this.lbTime.Visible = true;
+        }
         
             
         
