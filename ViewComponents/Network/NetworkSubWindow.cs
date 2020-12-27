@@ -78,7 +78,7 @@ namespace NoteMakingApp.ViewComponents.Network
                 }
             }
         }
-        public void UpdateClientList(List<string> n, List<Socket> o)
+        /*public void UpdateClientList(List<string> n, List<Socket> o)
         {
             ClientItem item;
             foreach (Socket s in o)
@@ -87,6 +87,30 @@ namespace NoteMakingApp.ViewComponents.Network
                 item.Location = new System.Drawing.Point(0, this.pnlSClients.Controls.Count * item.Height);
                 this.pnlSClients.Controls.Add(item);
             }
+        }*/
+        delegate void SetClientList(List<string> n, List<Socket> o);
+
+        public void UpdateClientList(List<string> n, List<Socket> o)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.pnlSClients.InvokeRequired)
+            {
+                SetClientList d = new SetClientList(UpdateClientList);
+                this.Invoke(d, new object[] { n, o });
+            }
+            else
+            {
+                ClientItem item;
+                foreach (Socket s in o)
+                {
+                    item = new ClientItem(o.IndexOf(s), n[o.IndexOf(s)]);
+                    item.Location = new System.Drawing.Point(0, this.pnlSClients.Controls.Count * item.Height);
+                    this.pnlSClients.Controls.Add(item);
+                }
+            }
         }
+
     }
 }

@@ -40,6 +40,7 @@ namespace NoteMakingApp.ViewComponents
             if (!increasingOrder) accounts.Reverse();
 
             this.pnlList.Controls.Clear();
+            this.pnlList.Controls.Clear();
             AccountListItem item;
             foreach (NoteMakingApp.Models.Account a in accounts)
             {
