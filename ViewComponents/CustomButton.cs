@@ -85,7 +85,7 @@ namespace NoteMakingApp.ViewComponents
                     Form1.getInstance().ShowTypeNote();
                     //Form1.getInstance().NewNote();
                     break;
-                case 2:
+                case 2: //edit
                     if (Form1.type == 0 )
                     {
                         MessageBox.Show("Vui lòng thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -120,7 +120,7 @@ namespace NoteMakingApp.ViewComponents
                     
 
                     break;
-                case 3:
+                case 3: //delete
                     
                     if (Form1.type == 0)
                     {
@@ -141,6 +141,28 @@ namespace NoteMakingApp.ViewComponents
                             case 3:
                                 DataHandle.getInstance().DeleteReminder();
                                 DataHandle.getInstance().ShowNote();
+                                break;
+                        }
+                    }
+                    break;
+                case 4:
+                    if (Form1.type == 0)
+                    {
+                        MessageBox.Show("Vui lòng thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        switch (Form1.type)
+                        {
+                            case 1: //note
+                                Notes a = DataHandle.getInstance().GetDataFromNote();
+                                Connection.DistributeNote(a);
+                                break;
+                            case 2://tdl
+                                break;
+                            case 3://rmd
+                                Reminders rmd = DataHandle.getInstance().GetDateReminder();
+                                Connection.DistributeReminder(rmd);
                                 break;
                         }
                     }

@@ -32,6 +32,10 @@ namespace NoteMakingApp.ViewComponents
             customButton3.getText("Delete");
             customButton3.setFunction(3);
             customButton3.CustomBtn.BackColor = Color.LightSeaGreen;
+            customButton1.setImage(0);
+            customButton1.getText("Send");
+            customButton1.setFunction(4);
+            customButton1.CustomBtn.BackColor = Color.Aqua;
             currentInstance = this;
 
             
@@ -103,8 +107,9 @@ namespace NoteMakingApp.ViewComponents
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
 
-        
-        
+        }
     }
 }

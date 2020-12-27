@@ -70,7 +70,7 @@ namespace NoteMakingApp.ViewComponents.Network
             {
                 try
                 {
-                    Form1.connection.startClient(IPAddress.Parse(tbCServerIP.Text.Trim()));
+                    Form1.connection.startClient(IPAddress.Parse(textBox1.Text.Trim()));
                 }
                 catch
                 {

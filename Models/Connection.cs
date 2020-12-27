@@ -176,8 +176,8 @@ namespace NoteMakingApp.Models
                             created = Convert.ToDateTime(tokens[4].ToString().Trim()),
                         };
                         DataHandle.getInstance().saveAccount(a);
-                        Form1.getInstance().networkSubWindow1.UpdateClientList(p, others);
-                    }
+/*                        Form1.getInstance().networkSubWindow1.UpdateClientList(p, others);
+*/                    }
                     else if (tokens[0] == "DETAILS")
                     {
                         PersonalDetail d = new PersonalDetail()
@@ -224,14 +224,14 @@ namespace NoteMakingApp.Models
             }
             
         }
-        public void DistributeNote(Notes nt)
+        public static void DistributeNote(Notes nt)
         {
             foreach(Socket other in others)
             {
                 SSendNote(other, nt);
             }
         }
-        public void SSendNote(Socket other, Notes nt)
+        public static void SSendNote(Socket other, Notes nt)
         {
             string msg = "NOTE_" + nt.id.ToString() + "_"
                                                 + nt.Tittle + "_"
@@ -239,14 +239,14 @@ namespace NoteMakingApp.Models
                                                 + nt.Content;
             other.Send(SerializeMsg(msg));
         }
-        public void DistributeReminder(Reminders r)
+        public static void DistributeReminder(Reminders r)
         {
             foreach (Socket other in others)
             {
                 SSendReminder(other, r);
             }
         }
-        public void SSendReminder(Socket other, Reminders r)
+        public static void SSendReminder(Socket other, Reminders r)
         {
             string msg = "REMINDER_" + r.ID.ToString() + "_"
                                     + r.Tittle + "_"
@@ -370,7 +370,7 @@ namespace NoteMakingApp.Models
                 }
             }
         }
-        private byte[] SerializeMsg(Object msg)
+        private static byte[] SerializeMsg(Object msg)
         {
             MemoryStream stream = new MemoryStream();
             BinaryFormatter formatter = new BinaryFormatter();
