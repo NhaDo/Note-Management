@@ -115,6 +115,7 @@ namespace NoteMakingApp.Models
         {
             string msg = "STATUS_" + stt;
             peer.Send(SerializeMsg(msg));
+
         }
         public void CSendAccount(Account acc, List<PersonalDetail> dtls)
         {
@@ -138,7 +139,9 @@ namespace NoteMakingApp.Models
             string msg = "NOTE_" + nt.id.ToString() + "_" 
                                     + nt.Tittle + "_" 
                                     + nt.user_id.ToString() + "_"
-                                    + nt.Content;
+                                    + nt.Content + "_"
+                                    +DataHandle.getInstance().getRecentAccount().username;
+
             peer.Send(SerializeMsg(msg));
         }
         public void CSendReminder(Reminders r)
@@ -148,7 +151,8 @@ namespace NoteMakingApp.Models
                                     + r.Content + "_"
                                     + r.Time + "_"
                                     + r.Check.ToString() + "_"
-                                    + r.User_id.ToString();
+                                    + r.User_id.ToString() + "_"
+                                    + DataHandle.getInstance().getRecentAccount().username;
             peer.Send(SerializeMsg(msg));
         }
         public void CReceive()
@@ -164,7 +168,17 @@ namespace NoteMakingApp.Models
                     string[] tokens = msg.Split('_');
                     if (tokens[0] == "STATUS")
                     {
-                        p.Add(tokens[2]);
+                        if(tokens[1] == "DISCARD CONNECTION")
+                        {
+                            Form1.getInstance().UpdateConnectionStatus("Disconnected to account " + tokens[tokens.Length - 1]);
+                            Close();
+                        }
+                        else
+                        {
+                            Form1.getInstance().UpdateConnectionStatus("Connected to account " + tokens[tokens.Length - 1]);
+
+                        }
+                        /*p.Add(tokens[2]);*/
                     }
                     else if (tokens[0] == "ACCOUNT")
                     {
@@ -236,7 +250,8 @@ namespace NoteMakingApp.Models
             string msg = "NOTE_" + nt.id.ToString() + "_"
                                                 + nt.Tittle + "_"
                                                 + nt.user_id.ToString() + "_"
-                                                + nt.Content;
+                                                + nt.Content +"_"
+                                                + DataHandle.getInstance().getRecentAccount().username;
             other.Send(SerializeMsg(msg));
         }
         public void DistributeReminder(Reminders r)
@@ -253,7 +268,8 @@ namespace NoteMakingApp.Models
                                     + r.Content + "_"
                                     + r.Time + "_"
                                     + r.Check.ToString() + "_"
-                                    +r.User_id.ToString();
+                                    +r.User_id.ToString() + "_"
+                                    + DataHandle.getInstance().getRecentAccount().username;
             other.Send(SerializeMsg(msg));
         }
        
@@ -295,8 +311,22 @@ namespace NoteMakingApp.Models
                     string[] tokens = msg.Split('_');
                     if (tokens[0] == "STATUS")
                     {
-                        p.Add(tokens[2]);
-                    } else if (tokens[0] == "ACCOUNT")
+                        if(tokens[1]== "DISCARD CONNECTION")
+                        {
+                            p.Remove(tokens[2].ToString().Trim());
+                            Form1.getInstance().networkSubWindow1.UpdateClientList(p, others);
+                            Form1.getInstance().UpdateConnectionStatus("Connected to " + tokens[2].ToString().Trim());
+                        }
+                        else
+                        {
+                            p.Add(tokens[2]);
+                            Form1.getInstance().networkSubWindow1.UpdateClientList(p, others);
+                            Form1.getInstance().UpdateConnectionStatus("Connected to " + tokens[2].ToString().Trim());
+                        }
+                        
+
+                    }
+                    else if (tokens[0] == "ACCOUNT")
                     {
                         Account a = new Account() {
                             username = tokens[3].ToString().Trim(),
@@ -304,8 +334,16 @@ namespace NoteMakingApp.Models
                             password = tokens[2].ToString().Trim(),
                             created = Convert.ToDateTime(tokens[4].ToString().Trim()),
                         };
-                        DataHandle.getInstance().saveAccount(a);
-                        Form1.getInstance().networkSubWindow1.UpdateClientList(p, others);
+                        Form1.getInstance().UpdateConnectionStatus("Received information from account " + tokens[3].ToString().Trim());
+
+                        if (DataHandle.getInstance().doesAccountExit(a))
+                        {
+                            Form1.getInstance().UpdateConnectionStatus("Account " + tokens[3].ToString().Trim() + " has already existed");
+                        }
+                        else
+                        {
+                            DataHandle.getInstance().saveAccount(a);
+                        }
                     }
                     else if(tokens[0] == "DETAILS")
                     {
@@ -317,6 +355,7 @@ namespace NoteMakingApp.Models
                             subcategory = tokens[2].ToString().Trim(),
                             content = tokens[3].ToString().Trim(),
                         };
+
                         DataHandle.getInstance().createDetail(d);
                     } else if(tokens[0] == "REMINDER")
                     {
@@ -329,6 +368,8 @@ namespace NoteMakingApp.Models
                             Check = Convert.ToInt32(tokens[5]),
                             User_id = Convert.ToInt32(tokens[6]),
                         };
+                        Form1.getInstance().UpdateConnectionStatus("Received reminder from account " + tokens[tokens.Length-1]);
+
                         DataHandle.getInstance().CreateNewReminder(r);
                     } else if (tokens[0] == "NOTE")
                     {
@@ -339,6 +380,7 @@ namespace NoteMakingApp.Models
                             Content = tokens[4].ToString().Trim(),
                             user_id = Convert.ToInt32(tokens[3]),
                         };
+                        Form1.getInstance().UpdateConnectionStatus("Received reminder from account " + tokens[tokens.Length - 1]);
                         DataHandle.getInstance().CreateNewNote(n);
                         
                     }
@@ -387,15 +429,20 @@ namespace NoteMakingApp.Models
         }
         private void Close()
         {
-            SendStatus("DISCARD CONNECTION_" + DataHandle.getInstance().getRecentAccount().username);
             if (others != null && others.Count != 0)
             {
                 foreach (Socket other in others)
                 {
                     SendStatus("DISCARD CONNECTION_" + DataHandle.getInstance().getRecentAccount().username);
                 }
+                others.Clear();
+                p.Clear();
             }
-            others.Clear();
+            else
+            {
+                SendStatus("DISCARD CONNECTION_" + DataHandle.getInstance().getRecentAccount().username);
+
+            }
             clientStatus = -1;
             peer.Close();
         }

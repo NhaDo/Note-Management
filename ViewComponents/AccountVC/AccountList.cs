@@ -22,7 +22,7 @@ namespace NoteMakingApp.ViewComponents
         }
 
 
-        private void populateAccounts()
+        public void populateAccounts()
         {
             List<NoteMakingApp.Models.Account> accounts = DataHandle.getInstance().GetAccounts();
             switch (cbOrder.SelectedItem)
@@ -39,7 +39,6 @@ namespace NoteMakingApp.ViewComponents
             accounts = accounts.FindAll(a => a.username.Contains(tbSearch.Text));
             if (!increasingOrder) accounts.Reverse();
 
-            this.pnlList.Controls.Clear();
             this.pnlList.Controls.Clear();
             AccountListItem item;
             foreach (NoteMakingApp.Models.Account a in accounts)

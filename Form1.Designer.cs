@@ -1,6 +1,8 @@
 ﻿
 using NoteMakingApp.Models;
 using NoteMakingApp.ViewComponents;
+using System.Windows.Controls;
+using System.Windows.Forms;
 
 namespace NoteMakingApp
 {
@@ -43,6 +45,7 @@ namespace NoteMakingApp
             this.registerPanel = new NoteMakingApp.ViewComponents.AccountRegister();
             this.loginPanel1 = new NoteMakingApp.ViewComponents.LoginPanel();
             this.networkSubWindow1 = new NoteMakingApp.ViewComponents.Network.NetworkSubWindow();
+            this.connectionStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // avatarEditor1
@@ -113,6 +116,12 @@ namespace NoteMakingApp
             this.networkSubWindow1.Size = new System.Drawing.Size(477, 316);
             this.networkSubWindow1.TabIndex = 9;
             this.networkSubWindow1.Visible = false;
+
+            
+            this.connectionStatus.Location = new System.Drawing.Point(350, 200);
+            this.connectionStatus.Name = "connectionStatus";
+            this.connectionStatus.TabIndex = 10;
+            this.connectionStatus.Visible = false;
             // 
             // Form1
             // 
@@ -160,6 +169,7 @@ namespace NoteMakingApp
         
         private MainDomain mainDomain1;
         private AvatarEditor avatarEditor1;
+        private System.Windows.Forms.Label connectionStatus;
         public ViewComponents.Network.NetworkSubWindow networkSubWindow1;
     }
 }
