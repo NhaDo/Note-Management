@@ -112,6 +112,11 @@ namespace NoteMakingApp.ViewComponents
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
             Form1.getInstance().setWindow("Logout");
             DataHandle.getInstance().nullifyRecentInfo();
             Form1.getInstance().loginPanel1.resetField();

@@ -89,7 +89,7 @@
             this.Controls.Add(this.personalDetailsPanel1);
             this.Controls.Add(this.accountList1);
             this.Name = "AccountSubwindow";
-            this.Size = new System.Drawing.Size(709, 432);
+            this.Size = new System.Drawing.Size(1000, 500);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -533,6 +533,7 @@
     <None Include="Resources\delete2.png" />
     <None Include="Resources\ellipsis.png" />
     <None Include="Resources\ellipsis1.png" />
+    <None Include="Resources\free-exit-logout-icon-2857-thumb.png" />
     <Content Include="Resources\Note.png" />
     <Content Include="Resources\Note4_2.png" />
     <Content Include="Resources\Note_Hover.png" />
