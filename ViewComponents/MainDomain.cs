@@ -32,7 +32,7 @@ namespace NoteMakingApp.ViewComponents
             customButton3.getText("Delete");
             customButton3.setFunction(3);
             customButton3.CustomBtn.BackColor = Color.LightSeaGreen;
-            customButton4.setImage(0);
+            customButton4.setImage(8);
             customButton4.getText("Send");
             customButton4.setFunction(4);
             customButton4.CustomBtn.BackColor = Color.Aqua;
@@ -102,7 +102,13 @@ namespace NoteMakingApp.ViewComponents
         private void button1_Click(object sender, EventArgs e)
         {
             Form1.getInstance().ShowListProject();
+            this.button1.Enabled = false;
 
+        }
+
+        public void enableButton()
+        {
+            this.button1.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)

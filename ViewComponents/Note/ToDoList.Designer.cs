@@ -48,14 +48,14 @@
             // 
             // lbName
             // 
-            this.lbName.AutoSize = true;
             this.lbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(175)))), ((int)(((byte)(49)))));
             this.lbName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(20, 19);
+            this.lbName.Location = new System.Drawing.Point(12, 13);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(59, 23);
+            this.lbName.Size = new System.Drawing.Size(146, 29);
             this.lbName.TabIndex = 2;
             this.lbName.Text = "Name";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbName.Click += new System.EventHandler(this.lbName_Click);
             this.lbName.MouseHover += new System.EventHandler(this.Title_MouseHover);
             // 
@@ -87,7 +87,6 @@
             this.MouseHover += new System.EventHandler(this.ToDoList_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

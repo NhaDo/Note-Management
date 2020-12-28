@@ -44,31 +44,30 @@
             this.txtTittle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
             this.txtTittle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTittle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTittle.Location = new System.Drawing.Point(0, 60);
-            this.txtTittle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTittle.Location = new System.Drawing.Point(0, 48);
             this.txtTittle.Multiline = true;
             this.txtTittle.Name = "txtTittle";
-            this.txtTittle.Size = new System.Drawing.Size(280, 52);
+            this.txtTittle.Size = new System.Drawing.Size(249, 42);
             this.txtTittle.TabIndex = 1;
+            this.txtTittle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtContent
             // 
             this.txtContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(216)))), ((int)(((byte)(208)))));
             this.txtContent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContent.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContent.Location = new System.Drawing.Point(3, 120);
-            this.txtContent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtContent.Location = new System.Drawing.Point(12, 96);
             this.txtContent.Multiline = true;
             this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(277, 154);
+            this.txtContent.Size = new System.Drawing.Size(225, 123);
             this.txtContent.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 290);
+            this.label1.Location = new System.Drawing.Point(6, 232);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 20);
+            this.label1.Size = new System.Drawing.Size(82, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Select Time";
             // 
@@ -78,29 +77,27 @@
             this.dateTimePicker1.CustomFormat = "h:mm tt";
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(109, 282);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(97, 226);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(157, 35);
+            this.dateTimePicker1.Size = new System.Drawing.Size(140, 30);
             this.dateTimePicker1.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 324);
+            this.label4.Location = new System.Drawing.Point(9, 259);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 20);
+            this.label4.Size = new System.Drawing.Size(44, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "Timer";
             // 
             // checkBox
             // 
             this.checkBox.AutoSize = true;
-            this.checkBox.Location = new System.Drawing.Point(109, 325);
-            this.checkBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBox.Location = new System.Drawing.Point(97, 260);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(22, 21);
+            this.checkBox.Size = new System.Drawing.Size(18, 17);
             this.checkBox.TabIndex = 11;
             this.checkBox.UseVisualStyleBackColor = true;
             // 
@@ -108,10 +105,9 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(193, 357);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(172, 286);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(84, 39);
+            this.btnCancel.Size = new System.Drawing.Size(75, 31);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -121,10 +117,9 @@
             // 
             this.btnOK.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Location = new System.Drawing.Point(89, 357);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOK.Location = new System.Drawing.Point(79, 286);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(84, 39);
+            this.btnOK.Size = new System.Drawing.Size(75, 31);
             this.btnOK.TabIndex = 12;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
@@ -134,16 +129,16 @@
             // 
             this.lbMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbMain.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
-            this.lbMain.Location = new System.Drawing.Point(7, 6);
+            this.lbMain.Location = new System.Drawing.Point(10, 5);
             this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(259, 50);
+            this.lbMain.Size = new System.Drawing.Size(230, 40);
             this.lbMain.TabIndex = 14;
             this.lbMain.Text = "Edit Reminder";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EditReminder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(216)))), ((int)(((byte)(208)))));
             this.Controls.Add(this.lbMain);
@@ -155,9 +150,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.txtTittle);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EditReminder";
-            this.Size = new System.Drawing.Size(280, 400);
+            this.Size = new System.Drawing.Size(249, 320);
             this.ResumeLayout(false);
             this.PerformLayout();
 

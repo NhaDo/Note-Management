@@ -70,6 +70,10 @@
             this.imageList.Images.SetKeyName(3, "edit (1).png");
             this.imageList.Images.SetKeyName(4, "delete.png");
             this.imageList.Images.SetKeyName(5, "delete (2).png");
+            this.imageList.Images.SetKeyName(6, "paper-plane.png");
+            this.imageList.Images.SetKeyName(7, "send.png");
+            this.imageList.Images.SetKeyName(8, "send.png");
+            this.imageList.Images.SetKeyName(9, "send (1).png");
             // 
             // CustomButton
             // 

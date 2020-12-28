@@ -40,6 +40,7 @@ namespace NoteMakingApp.ViewComponents.Project
                 prj.BackColor = Color.Aqua;
                 prj.Click += (s, e) =>
                 {
+                    MainDomain.currentInstance.enableButton();
                     Form1.type = 4;
                     this.Dispose();
                     Form1.getInstance().NewProject();
@@ -55,7 +56,7 @@ namespace NoteMakingApp.ViewComponents.Project
                     Form1.type = 4;
                     MainDomain.currentInstance.setFlags(Int32.Parse(prj.Name));
                     Console.WriteLine(MainDomain.currentInstance.getFlags());
-              
+                    MainDomain.currentInstance.enableButton();
                     this.Dispose();
 
                     Projects p =  DataHandle.getInstance().GetDataProject();
@@ -91,6 +92,7 @@ namespace NoteMakingApp.ViewComponents.Project
         private void button1_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            MainDomain.currentInstance.enableButton();
         }
 
         
