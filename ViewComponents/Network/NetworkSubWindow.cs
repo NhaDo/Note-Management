@@ -103,6 +103,7 @@ namespace NoteMakingApp.ViewComponents.Network
             else
             {
                 ClientItem item;
+                this.pnlSClients.Controls.Clear();
                 foreach (Socket s in o)
                 {
                     item = new ClientItem(o.IndexOf(s), n[o.IndexOf(s)]);

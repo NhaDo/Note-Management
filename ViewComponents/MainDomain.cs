@@ -36,9 +36,7 @@ namespace NoteMakingApp.ViewComponents
             customButton1.getText("Send");
             customButton1.setFunction(4);
             customButton1.CustomBtn.BackColor = Color.Aqua;
-            currentInstance = this;
-
-            
+            currentInstance = this;      
 
             
         }

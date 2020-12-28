@@ -58,5 +58,22 @@ namespace NoteMakingApp.ViewComponents
             }
             
         }
+        delegate void SetAccountList();
+
+        public void UpdateAccountList()
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.accountList1.InvokeRequired)
+            {
+                SetAccountList d = new SetAccountList(UpdateAccountList);
+                this.Invoke(d, new object[] {});
+            }
+            else
+            {
+                this.accountList1.populateAccounts();
+            }
+        }
     }
 }

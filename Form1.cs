@@ -24,6 +24,7 @@ namespace NoteMakingApp
         private  static int ID;
         public static Connection connection;
 
+        private System.Windows.Forms.Timer status;
         public static void setID(int login_ID)
         {
             ID = login_ID;
@@ -45,6 +46,11 @@ namespace NoteMakingApp
         public Form1()
         {
             InitializeComponent();
+            status =new System.Windows.Forms.Timer();
+            status.Tick += status_Tick;
+            status.Interval = 1000;
+            
+
             List<string> titles = new List<string> { "HOME", "ACCOUNT", "SETTINGS" };
             List<string> images = new List<string> { "HOME.png", "ACCOUNT.png", "SETTINGS.png" };
             this.navigationBar.addNavOptions(titles, images);
@@ -91,6 +97,7 @@ namespace NoteMakingApp
                         break;
                     case "HOME":
                         this.mainDomain1.Show();
+                        networkSubWindow1.Visible = false;
                         this.accountSubwindow2.Visible = false;
                         networkSubWindow1.Visible = false;
 
@@ -223,11 +230,31 @@ namespace NoteMakingApp
             this.Controls.Add(prj);
             prj.BringToFront();
             prj.setComplete(complete);
-
-
-
         }
 
-        
+        private void status_Tick(object sender, EventArgs e)
+        {
+            status.Stop();
+            this.connectionStatus.Visible = false;
+        }
+        delegate void SetConnectionstatus(string stt);
+
+        public void UpdateConnectionStatus(string stt)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.connectionStatus.InvokeRequired)
+            {
+                SetConnectionstatus d = new SetConnectionstatus(UpdateConnectionStatus);
+                this.Invoke(d, new object[] {stt});
+            }
+            else
+            {
+                this.connectionStatus.Text = stt;
+                this.connectionStatus.Visible = true;
+                status.Start();
+            }
+        }
     }
 }
