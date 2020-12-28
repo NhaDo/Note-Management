@@ -156,13 +156,35 @@ namespace NoteMakingApp.ViewComponents
                         {
                             case 1: //note
                                 Notes a = DataHandle.getInstance().GetDataFromNote();
-                                Connection.DistributeNote(a);
+                                if (Connection.clientStatus == -1)
+                                {
+                                    MessageBox.Show("No connection is found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else if (Connection.clientStatus == 0)
+                                {
+                                    Connection.DistributeNote(a);
+                                }
+                                else
+                                {
+                                    Form1.connection.CSendNote(a);
+                                }
                                 break;
                             case 2://tdl
                                 break;
                             case 3://rmd
                                 Reminders rmd = DataHandle.getInstance().GetDateReminder();
-                                Connection.DistributeReminder(rmd);
+                                if (Connection.clientStatus == -1)
+                                {
+                                    MessageBox.Show("No connection is found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else if (Connection.clientStatus == 0)
+                                {
+                                    Connection.DistributeReminder(rmd);
+                                }
+                                else
+                                {
+                                    Form1.connection.CSendReminder(rmd);
+                                }
                                 break;
                         }
                     }
