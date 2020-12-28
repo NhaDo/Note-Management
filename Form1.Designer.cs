@@ -161,7 +161,7 @@ namespace NoteMakingApp
 
         #endregion
 
-        private LoginPanel loginPanel1;
+        public LoginPanel loginPanel1;
         private AccountRegister registerPanel;
         private NavigationBar navigationBar;
         private AccountSubwindow accountSubwindow1;

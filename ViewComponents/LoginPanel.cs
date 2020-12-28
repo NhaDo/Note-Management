@@ -85,5 +85,10 @@ namespace NoteMakingApp.ViewComponents
         {
             Form1.getInstance().setWindow("Register");
         }
+        public void resetField()
+        {
+            this.iUsername.Text = "";
+            this.iPassword.Text = "";
+        }
     }
 }

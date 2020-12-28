@@ -89,6 +89,15 @@ namespace NoteMakingApp
                         DataHandle.getInstance().ShowNote();
                         this.navigationBar.LoadAvt(DataHandle.getInstance().GetAvt(ID));
                         break;
+                    case "Logout":
+                        this.loginPanel1.Show();
+                        this.navigationBar.Hide();
+                        this.mainDomain1.Hide();
+                        this.accountSubwindow2.Visible = false;
+                        this.networkSubWindow1.Visible = false;
+                        DataHandle.getInstance().ShowNote();
+                        this.navigationBar.LoadAvt(DataHandle.getInstance().GetAvt(ID));
+                        break;
                     case "ACCOUNT":
                         this.accountSubwindow2.Visible = true;
                         networkSubWindow1.Visible = false;

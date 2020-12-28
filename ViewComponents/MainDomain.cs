@@ -32,10 +32,10 @@ namespace NoteMakingApp.ViewComponents
             customButton3.getText("Delete");
             customButton3.setFunction(3);
             customButton3.CustomBtn.BackColor = Color.LightSeaGreen;
-            customButton1.setImage(0);
-            customButton1.getText("Send");
-            customButton1.setFunction(4);
-            customButton1.CustomBtn.BackColor = Color.Aqua;
+            customButton4.setImage(0);
+            customButton4.getText("Send");
+            customButton4.setFunction(4);
+            customButton4.CustomBtn.BackColor = Color.Aqua;
             currentInstance = this;      
 
             
@@ -108,6 +108,13 @@ namespace NoteMakingApp.ViewComponents
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Form1.getInstance().setWindow("Logout");
+            DataHandle.getInstance().nullifyRecentInfo();
+            Form1.getInstance().loginPanel1.resetField();
         }
     }
 }

@@ -229,6 +229,8 @@ namespace NoteMakingApp.Models
         {
             recentUser = null;
             recentAccount = null;
+
+            
         }
         public void saveAccount(Account acc)
         {
