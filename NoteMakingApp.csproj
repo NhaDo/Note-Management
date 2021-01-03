@@ -560,6 +560,9 @@
     <None Include="Resources\ellipsis1.png" />
     <None Include="Resources\free-exit-logout-icon-2857-thumb.png" />
     <None Include="Resources\HOME2.png" />
+    <None Include="Resources\Icon%281%29.png" />
+    <None Include="Resources\Icon%282%29.png" />
+    <None Include="Resources\Icon%283%29.png" />
     <Content Include="Resources\Note.png" />
     <Content Include="Resources\Note4_2.png" />
     <Content Include="Resources\Note_Hover.png" />

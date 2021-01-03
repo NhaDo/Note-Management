@@ -26,28 +26,14 @@ namespace NoteMakingApp.ViewComponents
         public void defaultImage()
         {
 
-            // get .exe path
-            string chanceImage = Application.StartupPath;
-            // get path from project folder (-bin, -debug)
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            // get path to image note4.png
-            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\ToDoList.png");
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.ToDoList1;
 
         }
 
         public void chanceImage()
         {
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.ToDoList_Hover;
 
-            // get .exe path
-            string chanceImage = Application.StartupPath;
-            // get path from project folder (-bin, -debug)
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            // get path to image note3.png
-            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\ToDoList_Hover.png");
 
         }
 

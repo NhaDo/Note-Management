@@ -173,7 +173,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = global::NoteMakingApp.Properties.Resources.Icon__1_;
+            this.pictureBox3.Image = global::NoteMakingApp.Properties.Resources.Icon_1_;
             this.pictureBox3.Location = new System.Drawing.Point(388, 51);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
@@ -185,7 +185,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::NoteMakingApp.Properties.Resources.Icon__2_;
+            this.pictureBox2.Image = global::NoteMakingApp.Properties.Resources.Icon_2_;
             this.pictureBox2.Location = new System.Drawing.Point(208, 51);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
@@ -197,7 +197,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.Icon__3_;
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.Icon_3_;
             this.pictureBox1.Location = new System.Drawing.Point(21, 51);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";

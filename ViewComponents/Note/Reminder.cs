@@ -16,29 +16,15 @@ namespace NoteMakingApp.ViewComponents
         bool isClicked = false;
         public void defaultImage()
         {
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.Reminder1;
 
-            // get .exe path
-            string chanceImage = Application.StartupPath;
-            // get path from project folder (-bin, -debug)
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            // get path to image note4.png
-            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Reminder.png");
 
         }
 
         public void chanceImage()
         {
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.Reminder_Hover;
 
-            // get .exe path
-            string chanceImage = Application.StartupPath;
-            // get path from project folder (-bin, -debug)
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            // get path to image note3.png
-            this.pictureBox1.Image = Image.FromFile(chanceImage + @"\Resources\Reminder_Hover.png");
 
         }
 

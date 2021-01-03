@@ -213,9 +213,9 @@ namespace NoteMakingApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icon__1_ {
+        internal static System.Drawing.Bitmap Icon_1_ {
             get {
-                object obj = ResourceManager.GetObject("Icon (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("Icon_1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace NoteMakingApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icon__2_ {
+        internal static System.Drawing.Bitmap Icon_2_ {
             get {
-                object obj = ResourceManager.GetObject("Icon (2)", resourceCulture);
+                object obj = ResourceManager.GetObject("Icon_2_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace NoteMakingApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icon__3_ {
+        internal static System.Drawing.Bitmap Icon_3_ {
             get {
-                object obj = ResourceManager.GetObject("Icon (3)", resourceCulture);
+                object obj = ResourceManager.GetObject("Icon_3_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +293,29 @@ namespace NoteMakingApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Note_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Note_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap note_image {
             get {
                 object obj = ResourceManager.GetObject("note_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Note1 {
+            get {
+                object obj = ResourceManager.GetObject("Note1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,6 +393,26 @@ namespace NoteMakingApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Reminder_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Reminder_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Reminder1 {
+            get {
+                object obj = ResourceManager.GetObject("Reminder1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);
@@ -406,6 +446,26 @@ namespace NoteMakingApp.Properties {
         internal static System.Drawing.Bitmap ToDoList {
             get {
                 object obj = ResourceManager.GetObject("ToDoList", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ToDoList_Hover {
+            get {
+                object obj = ResourceManager.GetObject("ToDoList_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ToDoList1 {
+            get {
+                object obj = ResourceManager.GetObject("ToDoList1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

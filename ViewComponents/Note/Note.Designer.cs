@@ -63,6 +63,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.Note1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
@@ -83,7 +84,7 @@
             this.Controls.Add(this.lbTittle);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "_Note";
             this.Size = new System.Drawing.Size(224, 295);
             this.Load += new System.EventHandler(this._Note_Load);
