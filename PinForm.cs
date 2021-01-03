@@ -68,6 +68,7 @@ namespace NoteMakingApp
         private void PinForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             DataHandle.getInstance().ShowNote();
+            isClosed = true;
             this.Dispose();
         }
 
@@ -75,5 +76,6 @@ namespace NoteMakingApp
         {
             Form1.getInstance().Show();
         }
+        public static bool isClosed = false;
     }
 }

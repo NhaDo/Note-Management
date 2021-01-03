@@ -183,7 +183,9 @@ namespace NoteMakingApp.ViewComponents
                 // show form
                 PinnedForm.Show();
                 PinnedForm.Size = new System.Drawing.Size(250, 180);
-                isPinned = true;
+
+
+                //isPinned = true;
             }
         }
 
