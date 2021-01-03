@@ -29,7 +29,6 @@ namespace NoteMakingApp.ViewComponents
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AvatarEditor));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bOpen = new System.Windows.Forms.Button();
             this.bSave = new System.Windows.Forms.Button();
@@ -40,7 +39,7 @@ namespace NoteMakingApp.ViewComponents
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources._802043_man_512x512;
             this.pictureBox1.Location = new System.Drawing.Point(243, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(494, 540);

@@ -21,14 +21,8 @@ namespace NoteMakingApp.ViewComponents
         {
             InitializeComponent();
             opTitle.Text = title;
-            // get .exe path
-            string chanceImage = Application.StartupPath;
-            // get path from project folder (-bin, -debug)
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            chanceImage = chanceImage.Substring(0, chanceImage.LastIndexOf(@"\"));
-            // get path to image note4.png
-            opIcon.Image = Image.FromFile(chanceImage+ @"\images\" + imageFile);
+            opIcon.Image = (Image)(global::NoteMakingApp.Properties.Resources.ResourceManager.GetObject(imageFile));
+
         }
 
         public void defautsettings()

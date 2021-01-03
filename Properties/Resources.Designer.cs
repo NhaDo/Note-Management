@@ -63,6 +63,26 @@ namespace NoteMakingApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _252324 {
+            get {
+                object obj = ResourceManager.GetObject("_252324", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _802043_man_512x512 {
+            get {
+                object obj = ResourceManager.GetObject("802043_man_512x512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ACCOUNT {
             get {
                 object obj = ResourceManager.GetObject("ACCOUNT", resourceCulture);
@@ -196,6 +216,16 @@ namespace NoteMakingApp.Properties {
         internal static System.Drawing.Bitmap free_exit_logout_icon_2857_thumb {
             get {
                 object obj = ResourceManager.GetObject("free-exit-logout-icon-2857-thumb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HOME {
+            get {
+                object obj = ResourceManager.GetObject("HOME", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,6 +373,16 @@ namespace NoteMakingApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap password {
+            get {
+                object obj = ResourceManager.GetObject("password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pencil1 {
             get {
                 object obj = ResourceManager.GetObject("pencil1", resourceCulture);
@@ -436,6 +476,16 @@ namespace NoteMakingApp.Properties {
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SETTINGS1 {
+            get {
+                object obj = ResourceManager.GetObject("SETTINGS1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

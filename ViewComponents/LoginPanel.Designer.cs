@@ -167,7 +167,7 @@ namespace NoteMakingApp.ViewComponents
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = global::NoteMakingApp.Properties.Resources._252324;
             this.pictureBox3.Location = new System.Drawing.Point(449, 0);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
