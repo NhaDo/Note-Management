@@ -32,6 +32,7 @@ namespace NoteMakingApp
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.addbtn = new System.Windows.Forms.PictureBox();
             this.deletebtn = new System.Windows.Forms.PictureBox();
+            this.openHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.addbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deletebtn)).BeginInit();
             this.SuspendLayout();
@@ -71,16 +72,32 @@ namespace NoteMakingApp
             this.deletebtn.TabStop = false;
             this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
+            // openHome
+            // 
+            this.openHome.BackColor = System.Drawing.Color.Transparent;
+            this.openHome.BackgroundImage = global::NoteMakingApp.Properties.Resources.HOME2;
+            this.openHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.openHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openHome.Location = new System.Drawing.Point(84, 3);
+            this.openHome.Name = "openHome";
+            this.openHome.Size = new System.Drawing.Size(30, 30);
+            this.openHome.TabIndex = 14;
+            this.openHome.UseVisualStyleBackColor = false;
+            this.openHome.Click += new System.EventHandler(this.openHome_Click);
+            // 
             // PinTDL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 244);
+            this.Controls.Add(this.openHome);
             this.Controls.Add(this.addbtn);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.deletebtn);
             this.Name = "PinTDL";
             this.Text = "PinTDL";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PinTDL_FormClosed);
             this.Load += new System.EventHandler(this.PinTDL_Load);
             ((System.ComponentModel.ISupportInitialize)(this.addbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deletebtn)).EndInit();
@@ -93,5 +110,6 @@ namespace NoteMakingApp
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox addbtn;
         private System.Windows.Forms.PictureBox deletebtn;
+        private System.Windows.Forms.Button openHome;
     }
 }

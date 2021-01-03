@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using NoteMakingApp.Models;
+using NoteMakingApp.ViewComponents;
 
 namespace NoteMakingApp
 {
@@ -19,7 +20,7 @@ namespace NoteMakingApp
         public PinForm()
         {
             InitializeComponent();
-            this.Size = new System.Drawing.Size(366, 222);
+            this.Size = new System.Drawing.Size(250, 180);
             currentInstance = this;
         }
         int _flags = 0;
@@ -68,6 +69,11 @@ namespace NoteMakingApp
         {
             DataHandle.getInstance().ShowNote();
             this.Dispose();
+        }
+
+        private void openHome_Click(object sender, EventArgs e)
+        {
+            Form1.getInstance().Show();
         }
     }
 }

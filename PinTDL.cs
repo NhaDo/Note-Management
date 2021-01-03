@@ -20,7 +20,6 @@ namespace NoteMakingApp
         int _STT = 0;
         int _isDelete = -1;
         int type = 0;
-        static List<ItemTDLs> itemlist;
         static List<ItemTDLs> eitem { get; set; }
         static ItemTDLs save { get; set; }
         static List<ItemTDLs> newitem { get; set; }
@@ -38,7 +37,7 @@ namespace NoteMakingApp
         public void setValue(List<ItemTDLs> item)
         {
             _flag = 0;
-            eitem = item;
+            eitem = new List<ItemTDLs>(item);
             _STT = eitem[eitem.Count - 1].STT;
             foreach (ItemTDLs t in eitem)
             {
@@ -49,6 +48,14 @@ namespace NoteMakingApp
                 i.edit();
                 this.flowLayoutPanel1.Controls.Add(i);
 
+                i.checkbox.CheckedChanged += (s, e) =>
+                {
+                    save.check = i.checkbox.Checked;
+                    eitem.RemoveAt(_e);
+                    eitem.Insert(_e, save);
+                    UpdateData();
+                };
+
                 i.checkbox.Enter += (s, e) =>
                 {
                     type = 1;
@@ -58,7 +65,7 @@ namespace NoteMakingApp
                     //Console.WriteLine(_e);
                     save = eitem.ElementAt(_e);
                     Console.WriteLine("_e " + _e);
-
+                    UpdateData();
                 };
 
                 i.checkbox.Leave += (s, e) =>
@@ -69,7 +76,7 @@ namespace NoteMakingApp
                         eitem.RemoveAt(_e);
                         eitem.Insert(_e, save);
                     }
-
+                    UpdateData();
                 };
 
                 i.textBox1.Enter += (s, e) =>
@@ -81,8 +88,7 @@ namespace NoteMakingApp
                     //Console.WriteLine(_e);
                     save = eitem.ElementAt(_e);
                     Console.WriteLine("_e " + _e);
-
-
+                    UpdateData();
                 };
 
                 i.textBox1.Leave += (s, e) =>
@@ -93,10 +99,11 @@ namespace NoteMakingApp
                         eitem.RemoveAt(_e);
                         eitem.Insert(_e, save);
                     }
+                    UpdateData();
+
                 };
             }
         }
-
         public void setName(string a)
         {
             this.Text = a;
@@ -122,7 +129,6 @@ namespace NoteMakingApp
                 foreach (ItemTDLs i in deletedItem)
                     DataHandle.getInstance().DeleteItemInToDoList(this.Text, i.STT);
                 DataHandle.getInstance().ShowNote();
-                this.Dispose();
             }
         }
 
@@ -328,6 +334,16 @@ namespace NoteMakingApp
             }
             UpdateData();
 
+        }
+
+        private void openHome_Click(object sender, EventArgs e)
+        {
+            Form1.getInstance().Show();
+        }
+
+        private void PinTDL_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
