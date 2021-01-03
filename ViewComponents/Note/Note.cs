@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using NoteMakingApp.Models;
 
 namespace NoteMakingApp.ViewComponents
 {
@@ -66,8 +67,6 @@ namespace NoteMakingApp.ViewComponents
         {
             this.Name = id.ToString();
         }
-
-
 
 
         public int getId()
@@ -160,6 +159,21 @@ namespace NoteMakingApp.ViewComponents
             if (isClicked==false)
                 this.defaultImage();
 
+        }
+
+        private void DoubleClick_PinNote(object sender, EventArgs e)
+        {
+            // new form
+            PinForm PinnedForm = new PinForm();     
+            
+            // set form content
+            PinnedForm.setContent(this.lbContent.Text);
+            PinnedForm.setName(Int32.Parse(this.Name));
+            PinnedForm.setTittle(this.lbTittle.Text);
+
+            // show form
+            PinnedForm.Show();
+            PinnedForm.Size = new System.Drawing.Size(250, 180);
         }
     }
 }
