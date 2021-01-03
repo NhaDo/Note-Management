@@ -149,6 +149,12 @@
     <Compile Include="PinForm.Designer.cs">
       <DependentUpon>PinForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PinTDL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PinTDL.Designer.cs">
+      <DependentUpon>PinTDL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PinForm.resx">
       <DependentUpon>PinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PinTDL.resx">
+      <DependentUpon>PinTDL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

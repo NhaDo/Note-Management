@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.IO;
 using NoteMakingApp.Models;
@@ -16,7 +17,12 @@ namespace NoteMakingApp.ViewComponents
     {
         int _isClicked = 0;
         //string _Tittle, _Content;
-        
+
+
+
+        // for Pin
+        PinForm PinnedForm;
+        bool isPinned = false;
 
         public _Note()
         {
@@ -163,17 +169,24 @@ namespace NoteMakingApp.ViewComponents
 
         private void DoubleClick_PinNote(object sender, EventArgs e)
         {
-            // new form
-            PinForm PinnedForm = new PinForm();     
-            
-            // set form content
-            PinnedForm.setContent(this.lbContent.Text);
-            PinnedForm.setName(Int32.Parse(this.Name));
-            PinnedForm.setTittle(this.lbTittle.Text);
+            if (isPinned == false)
+            {
+                // new form
+                PinnedForm = new PinForm();
+                PinnedForm.MdiParent = null;
 
-            // show form
-            PinnedForm.Show();
-            PinnedForm.Size = new System.Drawing.Size(250, 180);
+                // set form content
+                PinnedForm.setContent(this.lbContent.Text);
+                PinnedForm.setName(Int32.Parse(this.Name));
+                PinnedForm.setTittle(this.lbTittle.Text);
+
+                // show form
+                PinnedForm.Show();
+                PinnedForm.Size = new System.Drawing.Size(250, 180);
+                isPinned = true;
+            }
         }
+
+
     }
 }

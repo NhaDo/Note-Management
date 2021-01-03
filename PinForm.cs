@@ -61,6 +61,7 @@ namespace NoteMakingApp
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             DataHandle.getInstance().EditNote(this.Text, this.TextBox.Text);
+            DataHandle.getInstance().ShowNote();
         }
 
         private void PinForm_FormClosed(object sender, FormClosedEventArgs e)

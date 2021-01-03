@@ -23,8 +23,18 @@ namespace NoteMakingApp
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
-            CloseSessions();
+
+            if (Application.OpenForms.Count == 0)
+            {
+                Application.ExitThread();
+
+
+                base.Dispose(disposing);
+                CloseSessions();
+            }
+            else
+                instance.Hide();           
+
         }
         private void CloseSessions()
         {

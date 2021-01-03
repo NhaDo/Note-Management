@@ -13,10 +13,12 @@ using NoteMakingApp.Models;
 using NoteMakingApp.ViewComponents.Note;
 using NoteMakingApp.ViewComponents.Project;
 
+
 namespace NoteMakingApp
 {
     public partial class Form1 : Form
     {
+        List<PinForm> Pin_List= new List<PinForm>();
         public static int type = 0;
         static private bool loggedIn = false;
         private static Form1 instance;
@@ -57,7 +59,21 @@ namespace NoteMakingApp
             instance = this;
             setWindow();
             connection = new Connection();
+
+            //xu ly closing form
+            instance.FormClosed += new FormClosedEventHandler(FormClosed2);
+
         }
+
+        static void FormClosed2(object sender, FormClosedEventArgs e)
+        {
+            ((Form)sender).FormClosed -= FormClosed2;
+            if (Application.OpenForms.Count == 0)
+
+                Application.ExitThread();
+            else Application.OpenForms[0].FormClosed += FormClosed2;
+        }
+
         public static void ShowAvtEditor()
         {
             instance.avatarEditor1.setID(ID);

@@ -13,7 +13,11 @@ namespace NoteMakingApp.ViewComponents
 {
     public partial class ToDoList : UserControl
     {
-        
+        // for Pin
+        PinTDL PinnedForm;
+        bool isPinned = false;
+        List<ItemTDLs> Items;
+
         public ToDoList()
         {
             InitializeComponent();
@@ -59,6 +63,7 @@ namespace NoteMakingApp.ViewComponents
 
         public void addItem(List<ItemTDLs> a)
         {
+            this.Items = a;
             foreach(ItemTDLs t in a)
             {
                 ItemTDL i = new ItemTDL();
@@ -135,6 +140,27 @@ namespace NoteMakingApp.ViewComponents
         {
             this.chanceImage();
 
+        }
+
+
+        private void DoubeClick_PinTDL(object sender, EventArgs e)
+        {
+            if (isPinned == false)
+            {
+                // new form
+                PinnedForm = new PinTDL();
+
+                // set form content
+                PinnedForm.setId(this.Name);
+                PinnedForm.setName(this.lbName.Text);
+                //PinnedForm.addItem(this.Items);
+                PinnedForm.setValue(this.Items);
+
+                // show form
+                PinnedForm.Show();
+                PinnedForm.Size = new System.Drawing.Size(230, 250);
+                isPinned = true;
+            }
         }
     }
 }
