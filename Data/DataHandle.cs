@@ -395,6 +395,21 @@ namespace NoteMakingApp.Models
             }
         }
 
+        public void EditNoteFromPin(string a, string b)
+        {
+            int id = PinForm.currentInstance.getFlags();
+            string queryFrame = "exec USP_EditNoteByID @ID = '" + id.ToString() + "', @Tittle = N'" + a + "', @Content = N'" + b + "'";
+
+            using (SqlCommand editNote = new SqlCommand(queryFrame))
+            {
+                editNote.Connection = DbConnection;
+                Console.WriteLine("==========================");
+                editNote.ExecuteNonQuery();
+                Console.WriteLine("Da sua du lieu tai note co id " + id.ToString());
+                editNote.Dispose();
+            }
+        }
+
         public Notes GetDataFromNote()
         {
             int id = MainDomain.currentInstance.getFlags();
@@ -405,6 +420,10 @@ namespace NoteMakingApp.Models
             }
             return null;
         }
+
+
+
+
 
         public void ShowNote()
         {
