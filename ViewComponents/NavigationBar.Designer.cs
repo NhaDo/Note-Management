@@ -30,7 +30,6 @@ namespace NoteMakingApp.ViewComponents
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NavigationBar));
             this.username = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bEdit = new System.Windows.Forms.Button();
@@ -84,7 +83,7 @@ namespace NoteMakingApp.ViewComponents
             // 
             // avatar
             // 
-            this.avatar.Image = ((System.Drawing.Image)(resources.GetObject("avatar.Image")));
+            this.avatar.Image = global::NoteMakingApp.Properties.Resources._802043_man_512x512;
             this.avatar.Location = new System.Drawing.Point(19, 49);
             this.avatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.avatar.Name = "avatar";

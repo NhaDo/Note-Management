@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(avt));
             this.bEdit = new System.Windows.Forms.Button();
             this.avatar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
@@ -41,9 +40,10 @@
             this.bEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bEdit.ForeColor = System.Drawing.Color.Orange;
-            this.bEdit.Location = new System.Drawing.Point(93, 0);
+            this.bEdit.Location = new System.Drawing.Point(105, 0);
+            this.bEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bEdit.Name = "bEdit";
-            this.bEdit.Size = new System.Drawing.Size(25, 25);
+            this.bEdit.Size = new System.Drawing.Size(28, 31);
             this.bEdit.TabIndex = 4;
             this.bEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.bEdit.UseVisualStyleBackColor = false;
@@ -51,22 +51,24 @@
             // 
             // avatar
             // 
-            this.avatar.Image = ((System.Drawing.Image)(resources.GetObject("avatar.Image")));
+            this.avatar.Image = global::NoteMakingApp.Properties.Resources._802043_man_512x512;
             this.avatar.Location = new System.Drawing.Point(0, 0);
+            this.avatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.avatar.Name = "avatar";
-            this.avatar.Size = new System.Drawing.Size(101, 99);
+            this.avatar.Size = new System.Drawing.Size(114, 124);
             this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.avatar.TabIndex = 3;
             this.avatar.TabStop = false;
             // 
             // avt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.bEdit);
             this.Controls.Add(this.avatar);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "avt";
-            this.Size = new System.Drawing.Size(119, 99);
+            this.Size = new System.Drawing.Size(134, 124);
             this.MouseEnter += new System.EventHandler(this.avt_MouseHover);
             this.MouseLeave += new System.EventHandler(this.avt_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();

@@ -30,7 +30,6 @@ namespace NoteMakingApp.ViewComponents
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPanel));
             this.iUsername = new System.Windows.Forms.TextBox();
             this.iPassword = new System.Windows.Forms.TextBox();
             this.eUsername = new System.Windows.Forms.Label();
@@ -127,7 +126,7 @@ namespace NoteMakingApp.ViewComponents
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::NoteMakingApp.Properties.Resources.ACCOUNT;
             this.pictureBox1.Location = new System.Drawing.Point(150, 158);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
@@ -138,7 +137,7 @@ namespace NoteMakingApp.ViewComponents
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::NoteMakingApp.Properties.Resources.password;
             this.pictureBox2.Location = new System.Drawing.Point(150, 249);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
