@@ -39,12 +39,12 @@
             // lbCategory
             // 
             this.lbCategory.AutoSize = true;
-            this.lbCategory.Font = new System.Drawing.Font("Arial", 8F);
+            this.lbCategory.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCategory.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbCategory.Location = new System.Drawing.Point(4, 21);
+            this.lbCategory.Location = new System.Drawing.Point(49, 35);
             this.lbCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(46, 17);
+            this.lbCategory.Size = new System.Drawing.Size(54, 19);
             this.lbCategory.TabIndex = 0;
             this.lbCategory.Text = "label1";
             // 
@@ -54,10 +54,10 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEdit.Location = new System.Drawing.Point(143, 15);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdit.Location = new System.Drawing.Point(183, 27);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 28);
+            this.btnEdit.Size = new System.Drawing.Size(112, 35);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -69,8 +69,8 @@
             this.pnlDetails.AutoScroll = true;
             this.pnlDetails.AutoSize = true;
             this.pnlDetails.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlDetails.Location = new System.Drawing.Point(4, 50);
-            this.pnlDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlDetails.Location = new System.Drawing.Point(4, 62);
+            this.pnlDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(0, 0);
             this.pnlDetails.TabIndex = 2;
@@ -83,16 +83,16 @@
             // 
             // CategorisedDetailPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Controls.Add(this.pnlDetails);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lbCategory);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CategorisedDetailPanel";
-            this.Size = new System.Drawing.Size(247, 76);
+            this.Size = new System.Drawing.Size(421, 95);
             this.ResumeLayout(false);
             this.PerformLayout();
 

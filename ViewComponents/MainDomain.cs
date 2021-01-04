@@ -127,5 +127,10 @@ namespace NoteMakingApp.ViewComponents
             DataHandle.getInstance().nullifyRecentInfo();
             Form1.getInstance().loginPanel1.resetField();
         }
+
+        private void customButton2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

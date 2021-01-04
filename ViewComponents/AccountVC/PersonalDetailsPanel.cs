@@ -28,27 +28,42 @@ namespace NoteMakingApp.ViewComponents.AccountVC
             if (instance == null) instance = new PersonalDetailsPanel();
             instance.account = acc;
             instance.person = DataHandle.getInstance().GetPerson(acc);
-            instance.lbName.Text= instance.person.name;
-            instance.lbIntroduction.Text = instance.person.introduction;
+            if (instance.person != null)
+            {
+                instance.lbName.Text = instance.person.name;
+                instance.lbIntroduction.Text = instance.person.introduction;
+            }
+            else
+            {
+                instance.lbName.Text = "";
+                instance.lbIntroduction.Text = "";
+            }
             instance.btnEdit.Visible = acc == DataHandle.getInstance().getRecentAccount().id;
 
             List<PersonalDetail> details = DataHandle.getInstance().GetDetails(acc);
             List<PersonalDetail> categorisedDetails;
             CategorisedDetailPanel categoryPanel;
             instance.pnlCategories.Controls.Clear();
+            bool nodetails = true;
             foreach (string c in PersonalDetail.categories)
             {
                 categorisedDetails = details.FindAll(d => d.category == c);
-                if (categorisedDetails.Count != 0)
-                {
+                
                     categoryPanel = new CategorisedDetailPanel(c, categorisedDetails, acc == DataHandle.getInstance().getRecentAccount().id);
                     categoryPanel.Location = new System.Drawing.Point(0,
                         instance.pnlCategories.Controls.Count == 0 ? 0 :
                         instance.pnlCategories.Controls[instance.pnlCategories.Controls.Count - 1].Location.Y +
                         instance.pnlCategories.Controls[instance.pnlCategories.Controls.Count - 1].Size.Height);
                     instance.pnlCategories.Controls.Add(categoryPanel);
-                }
-                
+                if (categorisedDetails.Count != 0) nodetails = false;
+            }
+            if(instance.person==null && nodetails)
+            {
+                instance.label1.Visible = true;
+            }else
+            {
+                instance.label1.Visible = false;
+
             }
             instance.PerformLayout();
             instance.Refresh();

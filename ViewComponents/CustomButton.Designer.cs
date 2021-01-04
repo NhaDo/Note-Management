@@ -40,8 +40,9 @@
             this.CustomBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CustomBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CustomBtn.Location = new System.Drawing.Point(0, 0);
+            this.CustomBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CustomBtn.Name = "CustomBtn";
-            this.CustomBtn.Size = new System.Drawing.Size(66, 60);
+            this.CustomBtn.Size = new System.Drawing.Size(60, 60);
             this.CustomBtn.TabIndex = 0;
             this.CustomBtn.Text = "button1";
             this.CustomBtn.UseVisualStyleBackColor = true;
@@ -54,9 +55,9 @@
             // 
             this.lbDetail.AutoSize = true;
             this.lbDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDetail.Location = new System.Drawing.Point(20, 63);
+            this.lbDetail.Location = new System.Drawing.Point(22, 79);
             this.lbDetail.Name = "lbDetail";
-            this.lbDetail.Size = new System.Drawing.Size(46, 17);
+            this.lbDetail.Size = new System.Drawing.Size(51, 20);
             this.lbDetail.TabIndex = 1;
             this.lbDetail.Text = "label1";
             // 
@@ -77,12 +78,13 @@
             // 
             // CustomButton
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbDetail);
             this.Controls.Add(this.CustomBtn);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CustomButton";
-            this.Size = new System.Drawing.Size(68, 83);
+            this.Size = new System.Drawing.Size(61, 59);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -48,13 +48,14 @@
             // 
             // btnCConnect
             // 
-            this.btnCConnect.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCConnect.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCConnect.FlatAppearance.BorderSize = 0;
             this.btnCConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCConnect.ForeColor = System.Drawing.Color.Black;
-            this.btnCConnect.Location = new System.Drawing.Point(36, 382);
+            this.btnCConnect.Location = new System.Drawing.Point(72, 397);
             this.btnCConnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCConnect.Name = "btnCConnect";
-            this.btnCConnect.Size = new System.Drawing.Size(112, 35);
+            this.btnCConnect.Size = new System.Drawing.Size(112, 45);
             this.btnCConnect.TabIndex = 0;
             this.btnCConnect.Text = "Connect";
             this.btnCConnect.UseVisualStyleBackColor = false;
@@ -62,13 +63,14 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.BackColor = System.Drawing.Color.DarkOrange;
+            this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(484, 382);
+            this.button2.Location = new System.Drawing.Point(531, 397);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 35);
+            this.button2.Size = new System.Drawing.Size(162, 45);
             this.button2.TabIndex = 1;
             this.button2.Text = "Generate Server";
             this.button2.UseVisualStyleBackColor = false;
@@ -78,7 +80,7 @@
             // 
             this.LCServerIP.AutoSize = true;
             this.LCServerIP.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCServerIP.Location = new System.Drawing.Point(58, 111);
+            this.LCServerIP.Location = new System.Drawing.Point(65, 150);
             this.LCServerIP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LCServerIP.Name = "LCServerIP";
             this.LCServerIP.Size = new System.Drawing.Size(74, 20);
@@ -90,7 +92,7 @@
             // 
             this.LCIServerIP.AutoSize = true;
             this.LCIServerIP.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCIServerIP.Location = new System.Drawing.Point(158, 111);
+            this.LCIServerIP.Location = new System.Drawing.Point(194, 150);
             this.LCIServerIP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LCIServerIP.Name = "LCIServerIP";
             this.LCIServerIP.Size = new System.Drawing.Size(54, 20);
@@ -102,7 +104,7 @@
             // 
             this.LCIServerName.AutoSize = true;
             this.LCIServerName.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCIServerName.Location = new System.Drawing.Point(158, 157);
+            this.LCIServerName.Location = new System.Drawing.Point(194, 196);
             this.LCIServerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LCIServerName.Name = "LCIServerName";
             this.LCIServerName.Size = new System.Drawing.Size(45, 20);
@@ -114,7 +116,7 @@
             // 
             this.LCServerName.AutoSize = true;
             this.LCServerName.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCServerName.Location = new System.Drawing.Point(45, 157);
+            this.LCServerName.Location = new System.Drawing.Point(65, 196);
             this.LCServerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LCServerName.Name = "LCServerName";
             this.LCServerName.Size = new System.Drawing.Size(101, 20);
@@ -125,23 +127,25 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(114, 37);
+            this.label5.Location = new System.Drawing.Point(131, 37);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 20);
+            this.label5.Size = new System.Drawing.Size(154, 37);
             this.label5.TabIndex = 6;
             this.label5.Text = "As Client";
             // 
             // btnCDisconnect
             // 
             this.btnCDisconnect.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCDisconnect.FlatAppearance.BorderSize = 0;
             this.btnCDisconnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCDisconnect.ForeColor = System.Drawing.Color.Black;
-            this.btnCDisconnect.Location = new System.Drawing.Point(162, 382);
+            this.btnCDisconnect.Location = new System.Drawing.Point(198, 397);
             this.btnCDisconnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCDisconnect.Name = "btnCDisconnect";
-            this.btnCDisconnect.Size = new System.Drawing.Size(112, 35);
+            this.btnCDisconnect.Size = new System.Drawing.Size(112, 45);
             this.btnCDisconnect.TabIndex = 7;
             this.btnCDisconnect.Text = "Disconnect";
             this.btnCDisconnect.UseVisualStyleBackColor = false;
@@ -149,7 +153,7 @@
             // textBox1
             // 
             this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(162, 220);
+            this.textBox1.Location = new System.Drawing.Point(198, 262);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 26);
@@ -159,7 +163,7 @@
             // 
             this.tbCServerIP.AutoSize = true;
             this.tbCServerIP.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tbCServerIP.Location = new System.Drawing.Point(45, 225);
+            this.tbCServerIP.Location = new System.Drawing.Point(65, 268);
             this.tbCServerIP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tbCServerIP.Name = "tbCServerIP";
             this.tbCServerIP.Size = new System.Drawing.Size(87, 20);
@@ -170,19 +174,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(498, 37);
+            this.label2.Location = new System.Drawing.Point(543, 37);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
+            this.label2.Size = new System.Drawing.Size(165, 37);
             this.label2.TabIndex = 14;
-            this.label2.Text = "As Client";
+            this.label2.Text = "As Server";
             // 
             // lbSServerName
             // 
             this.lbSServerName.AutoSize = true;
             this.lbSServerName.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbSServerName.Location = new System.Drawing.Point(542, 157);
+            this.lbSServerName.Location = new System.Drawing.Point(638, 172);
             this.lbSServerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSServerName.Name = "lbSServerName";
             this.lbSServerName.Size = new System.Drawing.Size(45, 20);
@@ -193,7 +198,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(429, 157);
+            this.label4.Location = new System.Drawing.Point(525, 172);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 20);
@@ -204,7 +209,7 @@
             // 
             this.lbSServerIP.AutoSize = true;
             this.lbSServerIP.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbSServerIP.Location = new System.Drawing.Point(542, 111);
+            this.lbSServerIP.Location = new System.Drawing.Point(638, 126);
             this.lbSServerIP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSServerIP.Name = "lbSServerIP";
             this.lbSServerIP.Size = new System.Drawing.Size(54, 20);
@@ -215,7 +220,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(442, 111);
+            this.label7.Location = new System.Drawing.Point(527, 126);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 20);
@@ -225,10 +230,10 @@
             // pnlSClients
             // 
             this.pnlSClients.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlSClients.Location = new System.Drawing.Point(392, 218);
+            this.pnlSClients.Location = new System.Drawing.Point(453, 230);
             this.pnlSClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlSClients.Name = "pnlSClients";
-            this.pnlSClients.Size = new System.Drawing.Size(300, 154);
+            this.pnlSClients.Size = new System.Drawing.Size(323, 142);
             this.pnlSClients.TabIndex = 15;
             // 
             // NetworkSubWindow
@@ -254,7 +259,7 @@
             this.Controls.Add(this.btnCConnect);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NetworkSubWindow";
-            this.Size = new System.Drawing.Size(716, 486);
+            this.Size = new System.Drawing.Size(844, 486);
             this.ResumeLayout(false);
             this.PerformLayout();
 

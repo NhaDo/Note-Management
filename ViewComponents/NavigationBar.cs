@@ -150,5 +150,10 @@ namespace NoteMakingApp.ViewComponents
         }
 
         public bool avt_isEdited = false;
+
+        private void username_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

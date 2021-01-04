@@ -287,7 +287,11 @@ namespace NoteMakingApp.Models
         public Person GetPerson(int account)
         {
             populateDataFromTable("Persons", account);
-            return persons.OrderByDescending(c => c.created).ToList().First();
+            try
+            {
+                return persons.OrderByDescending(c => c.created).ToList().First();
+            }
+            catch { return null; }
         }
         public List<PersonalDetail> GetDetails(int account)
         {

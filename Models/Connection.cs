@@ -26,7 +26,7 @@ namespace NoteMakingApp.Models
     }
     public class Connection
     {
-        private static int port = 9999;
+        private static int port = 9998;
         public static IPEndPoint endpoint;
         public static Socket peer;
         public static List<Socket> others;
@@ -418,6 +418,7 @@ namespace NoteMakingApp.Models
             BinaryFormatter formatter = new BinaryFormatter();
 
             formatter.Serialize(stream, msg);
+            byte[] m = stream.ToArray();
             return stream.ToArray();
         }
         private object DeserializeMsg(byte[] msg)
