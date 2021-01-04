@@ -28,6 +28,8 @@ namespace NoteMakingApp.ViewComponents.Project
             time = DatePicker.Value.ToShortDateString() + " " + TimePicker.Value.ToShortTimeString();
             if (checkTime(time))
             {
+                Project.email = this.textBox1.Text;
+                Console.WriteLine(Project.email);
                 NewProject._timer = 1;
                 Project._timer = 1;
                 this.Visible = false;
@@ -100,6 +102,21 @@ namespace NoteMakingApp.ViewComponents.Project
             DateTime t = Convert.ToDateTime(time);
             DatePicker.Value = t;
             TimePicker.Value = t;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Contains("@gmail.com") == false && textBox1.Text.Contains("@gm.uit.edu.vn") == false)
+                this.btnOK.Enabled = false;
+            else
+                this.btnOK.Enabled = true;
+
+
+        }
+
+        public void setEmail(string email)
+        {
+            this.textBox1.Text = email;
         }
     }
 }

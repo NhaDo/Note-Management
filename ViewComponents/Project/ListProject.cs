@@ -15,10 +15,13 @@ namespace NoteMakingApp.ViewComponents.Project
     {
         int i = 1;
         public static int user_id;
-        
+        public static int save;
+        public static ListProject instance { get; set; }
+        string z;
         public ListProject()
         {
             InitializeComponent();
+            instance = this;
             this.flowLayoutPanel1.Controls.Clear();
             DataHandle.getInstance().GetDataFromProject();
             AddProject(0, "New Project");
@@ -50,36 +53,18 @@ namespace NoteMakingApp.ViewComponents.Project
             {
                 prj.Click += (s, e) =>
                 {
-                    double x = 0;
-                    double y = 0;
-                    string z;
+                    
                     Form1.type = 4;
                     MainDomain.currentInstance.setFlags(Int32.Parse(prj.Name));
                     Console.WriteLine(MainDomain.currentInstance.getFlags());
                     MainDomain.currentInstance.enableButton();
                     this.Dispose();
 
-                    Projects p =  DataHandle.getInstance().GetDataProject();
-                    foreach (ItemProjects i in p.item)
-                    {
-                        if (i.check == true)
-                            x++;
-                        y++;
-                    }
-                    x = ((x / y) * 100);
-                    if (x.ToString().Length > 5)
-                    {
-                        z = x.ToString().Substring(0, 5);
-                        
-                    }
-                    else
-                    {
-                        z = x.ToString();
-                        
-                    }
+
+                    setComplete();
 
                     
-                    Form1.getInstance().ShowProject(p.Tittle,p.item,z,p.deadline);
+                    
 
 
                     
@@ -95,6 +80,35 @@ namespace NoteMakingApp.ViewComponents.Project
             MainDomain.currentInstance.enableButton();
         }
 
+        public void setComplete()
+        {
+            double x = 0;
+            double y = 0;
+            
+            Projects p = DataHandle.getInstance().GetDataProject();
+            foreach (ItemProjects i in p.item)
+            {
+
+                if (i.check == true)
+                    x++;
+                y++;
+            }
+            double a = y - x;
+            x = ((x / y) * 100);
+            if (x.ToString().Length > 5)
+            {
+                z = x.ToString().Substring(0, 5);
+
+            }
+            else
+            {
+                save = Convert.ToInt32(y - x);
+                z = x.ToString();
+
+            }
+
+            Form1.getInstance().ShowProject(p.Tittle, p.item, z, p.deadline,Convert.ToInt32(a));
+        }
         
     }
 }

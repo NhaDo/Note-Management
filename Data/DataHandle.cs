@@ -10,6 +10,7 @@ using NoteMakingApp.ViewComponents;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace NoteMakingApp.Models
 {
@@ -1025,6 +1026,36 @@ namespace NoteMakingApp.Models
                 }
             }
             return true;
+        }
+
+        public void SendEmail(string Subject, string Body,string address)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("seledy219@gmail.com");
+                mail.To.Add(address);
+                mail.Subject = Subject ;
+                mail.Body = Body;
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("seledy219@gmail.com", "izlmbztnpbklycee");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                MessageBox.Show("Đã gửi mail", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void sendMailTimer()
+        {
+
         }
     }
 
