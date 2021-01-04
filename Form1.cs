@@ -228,7 +228,7 @@ namespace NoteMakingApp
         public void ShowListProject()
         {
             ListProject lp = new ListProject();
-            lp.Location = new System.Drawing.Point(310, 35);
+            lp.Location = new System.Drawing.Point(500, 50);
             lp.Size = new System.Drawing.Size(110, 165);
             this.Controls.Add(lp);
             lp.BringToFront();
