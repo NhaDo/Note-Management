@@ -235,24 +235,34 @@ namespace NoteMakingApp
             lp.BringToFront();
         }
 
-        public void ShowProject(string nameProject, List<ItemProjects> item, string complete, string time)
+        public void ShowProject(string nameProject, List<ItemProjects> item, string complete, string time,int a)
         {
             Project prj = new Project();
             prj.Location = new System.Drawing.Point(360, 80);
             prj.setValue(nameProject, item);
-            
+            prj.setTienDoDuAn(a);
             if (time != "no timer")
             {
                 prj.setValueTimer(time);
-                prj.setDeadline(time);
-                prj.Timer.Enabled = true;
                 prj.showTime();
-                prj.Timer.Tick += (s, e) =>
+                if (CheckDateTime(time) == true)
                 {
                     prj.setDeadline(time);
-                };
+                    prj.Timer.Enabled = true;
+                    prj.Timer.Tick += (s, e) =>
+                    {
+                        prj.setDeadline(time);
+                    };
+                }
+                else
+                {
+                    prj.lbTimeExpired();
+                }
+                        
+
                 
             }
+
             this.Controls.Add(prj);
             prj.BringToFront();
             prj.setComplete(complete);
@@ -281,6 +291,47 @@ namespace NoteMakingApp
                 this.connectionStatus.Visible = true;
                 status.Start();
             }
+        }
+
+        bool CheckDateTime(string time)
+        {
+            int _year = 0, _day = 0, _hour = 0, _minute = 0, _second = 0;
+            DateTime _time = Convert.ToDateTime(time);
+
+            _second = _time.Second - DateTime.Now.Second;
+            _minute = _time.Minute - DateTime.Now.Minute;
+            _hour = _time.Hour - DateTime.Now.Hour;
+            _year = _time.Year - DateTime.Now.Year;
+
+            if (_year == 0)
+                _day = _time.DayOfYear - DateTime.Now.DayOfYear;
+            else
+                _day = _time.DayOfYear - DateTime.Now.DayOfYear + 366;
+
+            if (_second < 0)
+            {
+                _minute--;
+                _second += 60;
+            }
+
+            if (_minute < 0)
+            {
+                _hour--;
+                _minute += 60;
+            }
+
+            if (_hour < 0)
+            {
+                _day--;
+                _hour += 24;
+            }
+
+            if (_day < 0)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

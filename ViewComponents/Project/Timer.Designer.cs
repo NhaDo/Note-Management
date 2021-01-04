@@ -34,6 +34,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
             this.TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -100,12 +102,32 @@
             this.TimePicker.TabIndex = 6;
             this.TimePicker.ValueChanged += new System.EventHandler(this.TimePicker_ValueChanged);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(10, 166);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
+            this.textBox1.TabIndex = 7;
+            this.textBox1.Text = "18521140@gm.uit.edu.vn";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Email";
+            // 
             // Timer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.TimePicker);
             this.Controls.Add(this.DatePicker);
             this.Controls.Add(this.button2);
@@ -113,7 +135,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Timer";
-            this.Size = new System.Drawing.Size(155, 143);
+            this.Size = new System.Drawing.Size(155, 206);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +148,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker DatePicker;
         private System.Windows.Forms.DateTimePicker TimePicker;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

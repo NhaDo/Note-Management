@@ -9,14 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoteMakingApp.ViewComponents.Project;
 using NoteMakingApp.Models;
+using System.Net.Mail;
 
 namespace NoteMakingApp.ViewComponents.Project
 {
     public partial class Project : UserControl
     {
-        int _year = 0, _day = 0, _hour = 0, _minute = 0, _second = 0;
+        int _year = 0,  _hour = 0, _minute = 0, _second = 0;
+        public static int _day = 0;
         string hour, minute, second;
         public static int _timer = 0;
+        int _viecchualam = 0;
+        public static string email = "18521140@gm.uit.edu.vn";
         List<ItemProjects> item;
         ItemProjects save;
         List<ItemProjects> newitem;
@@ -210,33 +214,11 @@ namespace NoteMakingApp.ViewComponents.Project
                         foreach (ItemProjects i in deletedItem)
                             DataHandle.getInstance().DeleteItemInProject(txtTittle.Text, i.STT);
 
-                        double x = 0;
-                        double y = 0;
-                        string z;
                         Form1.type = 4;
 
                         this.Dispose();
 
-                        Projects p = DataHandle.getInstance().GetDataProject();
-
-                        foreach (ItemProjects i in p.item)
-                        {
-                            if (i.check == true)
-                                x++;
-                            y++;
-                        }
-                        x = ((x / y) * 100);
-                        if (x.ToString().Length > 5)
-                        {
-                            z = x.ToString().Substring(0, 5);
-
-                        }
-                        else
-                        {
-                            z = x.ToString();
-
-                        }
-                        Form1.getInstance().ShowProject(p.Tittle, p.item, z,p.deadline);
+                        ListProject.instance.setComplete();
                     }
                 }
         }
@@ -312,6 +294,7 @@ namespace NoteMakingApp.ViewComponents.Project
         private void btnTimer_Click(object sender, EventArgs e)
         {
             this.timer1.Visible = true;
+            this.timer1.setEmail(email);
             this.panel1.Visible = false;
         }
 
@@ -479,7 +462,8 @@ namespace NoteMakingApp.ViewComponents.Project
             if (_day < 0)
             {
                 Timer.Enabled = false;
-                lbTime.Text = "Time-expired!";  
+                lbTime.Text = "Time-expired!";
+                DataHandle.getInstance().SendEmail("Project "+this.lbProjectName.Text+" đã quá thời gian!", "Bạn chưa hoàn thành "+_viecchualam+" công việc.\nTiến độ công việc "+lbComplete.Text.Substring(10)+".", email);
             }
             else
             {
@@ -533,8 +517,19 @@ namespace NoteMakingApp.ViewComponents.Project
         {
             this.lbTime.Visible = true;
         }
+
         
-            
+
+        public void lbTimeExpired()
+        {
+            lbTime.Text = "Time-expired!";
+            lbTime.Location = new System.Drawing.Point(this.Width - this.lbTime.Width - 5, 277);
+        }
+        
+        public void setTienDoDuAn(int a)
+        {
+            _viecchualam = a;
+        }
         
     }
 }
