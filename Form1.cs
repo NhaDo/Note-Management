@@ -48,6 +48,7 @@ namespace NoteMakingApp
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Note Management";
             status =new System.Windows.Forms.Timer();
             status.Tick += status_Tick;
             status.Interval = 1000;
