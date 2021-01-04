@@ -42,18 +42,20 @@
             this.lbConent.AutoSize = true;
             this.lbConent.Font = new System.Drawing.Font("Arial", 8F);
             this.lbConent.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbConent.Location = new System.Drawing.Point(122, 11);
+            this.lbConent.Location = new System.Drawing.Point(186, 29);
+            this.lbConent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbConent.Name = "lbConent";
-            this.lbConent.Size = new System.Drawing.Size(35, 14);
+            this.lbConent.Size = new System.Drawing.Size(50, 18);
             this.lbConent.TabIndex = 0;
             this.lbConent.Text = "label1";
             // 
             // cbSubcatgory
             // 
             this.cbSubcatgory.FormattingEnabled = true;
-            this.cbSubcatgory.Location = new System.Drawing.Point(39, 8);
+            this.cbSubcatgory.Location = new System.Drawing.Point(61, 24);
+            this.cbSubcatgory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbSubcatgory.Name = "cbSubcatgory";
-            this.cbSubcatgory.Size = new System.Drawing.Size(78, 21);
+            this.cbSubcatgory.Size = new System.Drawing.Size(115, 28);
             this.cbSubcatgory.TabIndex = 1;
             this.cbSubcatgory.Visible = false;
             // 
@@ -62,17 +64,19 @@
             this.lbSubcategory.AutoSize = true;
             this.lbSubcategory.Font = new System.Drawing.Font("Arial", 8F);
             this.lbSubcategory.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbSubcategory.Location = new System.Drawing.Point(5, 11);
+            this.lbSubcategory.Location = new System.Drawing.Point(11, 29);
+            this.lbSubcategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSubcategory.Name = "lbSubcategory";
-            this.lbSubcategory.Size = new System.Drawing.Size(35, 14);
+            this.lbSubcategory.Size = new System.Drawing.Size(50, 18);
             this.lbSubcategory.TabIndex = 2;
             this.lbSubcategory.Text = "label2";
             // 
             // tbContent
             // 
-            this.tbContent.Location = new System.Drawing.Point(160, 9);
+            this.tbContent.Location = new System.Drawing.Point(243, 26);
+            this.tbContent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbContent.Name = "tbContent";
-            this.tbContent.Size = new System.Drawing.Size(100, 20);
+            this.tbContent.Size = new System.Drawing.Size(148, 26);
             this.tbContent.TabIndex = 3;
             this.tbContent.Visible = false;
             // 
@@ -81,9 +85,10 @@
             this.btnNone.BackColor = System.Drawing.Color.Firebrick;
             this.btnNone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnNone.Location = new System.Drawing.Point(266, 5);
+            this.btnNone.Location = new System.Drawing.Point(464, 21);
+            this.btnNone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNone.Name = "btnNone";
-            this.btnNone.Size = new System.Drawing.Size(40, 24);
+            this.btnNone.Size = new System.Drawing.Size(60, 37);
             this.btnNone.TabIndex = 4;
             this.btnNone.Text = "None";
             this.btnNone.UseVisualStyleBackColor = false;
@@ -94,9 +99,10 @@
             this.btnDelete.BackColor = System.Drawing.Color.Firebrick;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelete.Location = new System.Drawing.Point(312, 6);
+            this.btnDelete.Location = new System.Drawing.Point(521, 21);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(40, 24);
+            this.btnDelete.Size = new System.Drawing.Size(71, 37);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -107,9 +113,10 @@
             this.btnModify.BackColor = System.Drawing.Color.Firebrick;
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnModify.Location = new System.Drawing.Point(358, 6);
+            this.btnModify.Location = new System.Drawing.Point(587, 21);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(40, 24);
+            this.btnModify.Size = new System.Drawing.Size(74, 37);
             this.btnModify.TabIndex = 6;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = false;
@@ -117,7 +124,7 @@
             // 
             // EditionItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.Controls.Add(this.btnModify);
@@ -127,8 +134,9 @@
             this.Controls.Add(this.lbSubcategory);
             this.Controls.Add(this.cbSubcatgory);
             this.Controls.Add(this.lbConent);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EditionItem";
-            this.Size = new System.Drawing.Size(419, 38);
+            this.Size = new System.Drawing.Size(678, 79);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -37,10 +37,10 @@
             // 
             this.opIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.opIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.opIcon.Location = new System.Drawing.Point(4, 5);
+            this.opIcon.Location = new System.Drawing.Point(16, 16);
             this.opIcon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.opIcon.Name = "opIcon";
-            this.opIcon.Size = new System.Drawing.Size(90, 90);
+            this.opIcon.Size = new System.Drawing.Size(69, 69);
             this.opIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.opIcon.TabIndex = 0;
             this.opIcon.TabStop = false;
@@ -67,7 +67,7 @@
             this.Controls.Add(this.opIcon);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NavigationOption";
-            this.Size = new System.Drawing.Size(100, 100);
+            this.Size = new System.Drawing.Size(102, 102);
             this.Load += new System.EventHandler(this.NavigationOption_Load);
             ((System.ComponentModel.ISupportInitialize)(this.opIcon)).EndInit();
             this.ResumeLayout(false);

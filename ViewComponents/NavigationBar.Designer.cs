@@ -46,12 +46,13 @@ namespace NoteMakingApp.ViewComponents
             this.username.AutoSize = true;
             this.username.Font = new System.Drawing.Font("Arial", 12F);
             this.username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(202)))));
-            this.username.Location = new System.Drawing.Point(30, 145);
+            this.username.Location = new System.Drawing.Point(12, 87);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(119, 27);
             this.username.TabIndex = 1;
             this.username.Text = "username";
             this.username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.username.Click += new System.EventHandler(this.username_Click);
             this.username.Paint += new System.Windows.Forms.PaintEventHandler(this.username_paint);
             // 
             // panel1
@@ -74,7 +75,7 @@ namespace NoteMakingApp.ViewComponents
             this.bEdit.Location = new System.Drawing.Point(69, 35);
             this.bEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bEdit.Name = "bEdit";
-            this.bEdit.Size = new System.Drawing.Size(28, 31);
+            this.bEdit.Size = new System.Drawing.Size(21, 21);
             this.bEdit.TabIndex = 2;
             this.bEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.bEdit.UseVisualStyleBackColor = false;
@@ -85,10 +86,10 @@ namespace NoteMakingApp.ViewComponents
             // avatar
             // 
             this.avatar.Image = ((System.Drawing.Image)(resources.GetObject("avatar.Image")));
-            this.avatar.Location = new System.Drawing.Point(19, 49);
+            this.avatar.Location = new System.Drawing.Point(30, 30);
             this.avatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.avatar.Name = "avatar";
-            this.avatar.Size = new System.Drawing.Size(60, 60);
+            this.avatar.Size = new System.Drawing.Size(42, 42);
             this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.avatar.TabIndex = 0;
             this.avatar.TabStop = false;
@@ -98,7 +99,7 @@ namespace NoteMakingApp.ViewComponents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(61)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bEdit);
@@ -107,7 +108,7 @@ namespace NoteMakingApp.ViewComponents
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NavigationBar";
-            this.Size = new System.Drawing.Size(100, 688);
+            this.Size = new System.Drawing.Size(102, 688);
             this.MouseHover += new System.EventHandler(this.navBar_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.ResumeLayout(false);

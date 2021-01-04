@@ -71,9 +71,9 @@ namespace NoteMakingApp
             // accountSubwindow2
             // 
             this.accountSubwindow2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.accountSubwindow2.Location = new System.Drawing.Point(190, 0);
+            this.accountSubwindow2.Location = new System.Drawing.Point(100, 0);
             this.accountSubwindow2.Name = "accountSubwindow2";
-            this.accountSubwindow2.Size = new System.Drawing.Size(719, 432);
+            this.accountSubwindow2.Size = new System.Drawing.Size(765, 432);
             this.accountSubwindow2.TabIndex = 6;
             this.accountSubwindow2.Visible = false;
             // 
@@ -84,7 +84,7 @@ namespace NoteMakingApp
             this.navigationBar.Location = new System.Drawing.Point(0, 0);
             this.navigationBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navigationBar.Name = "navigationBar";
-            this.navigationBar.Size = new System.Drawing.Size(67, 434);
+            /*this.navigationBar.Size = new System.Drawing.Size(90, 434);*/
             this.navigationBar.TabIndex = 4;
             this.navigationBar.Visible = false;
             // 
@@ -111,7 +111,7 @@ namespace NoteMakingApp
             // 
             // networkSubWindow1
             // 
-            this.networkSubWindow1.Location = new System.Drawing.Point(290, 91);
+            this.networkSubWindow1.Location = new System.Drawing.Point(250, 60);
             this.networkSubWindow1.Name = "networkSubWindow1";
             this.networkSubWindow1.Size = new System.Drawing.Size(477, 316);
             this.networkSubWindow1.TabIndex = 9;

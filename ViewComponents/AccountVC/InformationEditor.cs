@@ -141,5 +141,15 @@ namespace NoteMakingApp.ViewComponents.AccountVC
             SaveChanges();
             AccountSubwindow.EraseInformationEditor();
         }
+
+        private void lbTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InformationEditor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,10 +38,10 @@
             // 
             this.informationEditor1.AutoScroll = true;
             this.informationEditor1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.informationEditor1.Location = new System.Drawing.Point(345, 208);
+            this.informationEditor1.Location = new System.Drawing.Point(100, 100);
             this.informationEditor1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.informationEditor1.Name = "informationEditor1";
-            this.informationEditor1.Size = new System.Drawing.Size(364, 113);
+            this.informationEditor1.Size = new System.Drawing.Size(460, 250);
             this.informationEditor1.TabIndex = 2;
             this.informationEditor1.Visible = false;
             // 
@@ -53,9 +53,9 @@
             this.personalDetailsPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.personalDetailsPanel1.Location = new System.Drawing.Point(464, 14);
             this.personalDetailsPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.personalDetailsPanel1.MaximumSize = new System.Drawing.Size(207, 250);
+            this.personalDetailsPanel1.MaximumSize = new System.Drawing.Size(430, 450);
             this.personalDetailsPanel1.Name = "personalDetailsPanel1";
-            this.personalDetailsPanel1.Size = new System.Drawing.Size(207, 117);
+            this.personalDetailsPanel1.Size = new System.Drawing.Size(430, 450);
             this.personalDetailsPanel1.TabIndex = 1;
             // 
             // accountList1
@@ -66,18 +66,23 @@
             this.accountList1.Location = new System.Drawing.Point(0, 0);
             this.accountList1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.accountList1.Name = "accountList1";
-            this.accountList1.Size = new System.Drawing.Size(338, 432);
+            this.accountList1.Size = new System.Drawing.Size(450, 450);
             this.accountList1.TabIndex = 0;
             // 
             // btnShare
             // 
-            this.btnShare.Location = new System.Drawing.Point(93, 285);
+            this.btnShare.Location = new System.Drawing.Point(150, 400);
             this.btnShare.Name = "btnShare";
-            this.btnShare.Size = new System.Drawing.Size(141, 23);
+            this.btnShare.Size = new System.Drawing.Size(180, 30);
             this.btnShare.TabIndex = 3;
             this.btnShare.Text = "Share your information";
             this.btnShare.UseVisualStyleBackColor = true;
             this.btnShare.Click += new System.EventHandler(this.btnShare_Click);
+            this.btnShare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShare.FlatAppearance.BorderSize = 0;
+            this.btnShare.BackColor = System.Drawing.Color.Orange;
+            this.btnShare.ForeColor = System.Drawing.Color.White;
+            this.btnShare.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AccountSubwindow
             // 

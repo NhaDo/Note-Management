@@ -18,7 +18,7 @@ namespace NoteMakingApp.ViewComponents
         public AccountSubwindow()
         {
             InitializeComponent();
-            instance = this;
+            instance=this;
         }
         public static AccountSubwindow GetInstance()
         {
@@ -29,7 +29,7 @@ namespace NoteMakingApp.ViewComponents
 
         public static void GetPersonalDetails(int accId)
         {
-            instance.personalDetailsPanel1 = PersonalDetailsPanel.getInstance(accId);
+            GetInstance().personalDetailsPanel1 = PersonalDetailsPanel.getInstance(accId);
         }
         public static void GenerateInformationEditor(string cat, List<PersonalDetail> dts, Person per)
         {
