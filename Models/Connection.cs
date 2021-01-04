@@ -26,7 +26,7 @@ namespace NoteMakingApp.Models
     }
     public class Connection
     {
-        private static int port = 9998;
+        private static int port = 9900;
         public static IPEndPoint endpoint;
         public static Socket peer;
         public static List<Socket> others;

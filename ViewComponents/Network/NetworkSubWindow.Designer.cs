@@ -95,9 +95,9 @@
             this.LCIServerIP.Location = new System.Drawing.Point(194, 150);
             this.LCIServerIP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LCIServerIP.Name = "LCIServerIP";
-            this.LCIServerIP.Size = new System.Drawing.Size(54, 20);
+            this.LCIServerIP.Size = new System.Drawing.Size(126, 20);
             this.LCIServerIP.TabIndex = 3;
-            this.LCIServerIP.Text = "_____";
+            this.LCIServerIP.Text = "_____________";
             this.LCIServerIP.Click += new System.EventHandler(this.label2_Click);
             // 
             // LCIServerName
@@ -107,9 +107,9 @@
             this.LCIServerName.Location = new System.Drawing.Point(194, 196);
             this.LCIServerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LCIServerName.Name = "LCIServerName";
-            this.LCIServerName.Size = new System.Drawing.Size(45, 20);
+            this.LCIServerName.Size = new System.Drawing.Size(126, 20);
             this.LCIServerName.TabIndex = 5;
-            this.LCIServerName.Text = "____";
+            this.LCIServerName.Text = "_____________";
             this.LCIServerName.Click += new System.EventHandler(this.label3_Click);
             // 
             // LCServerName
@@ -185,14 +185,13 @@
             // 
             // lbSServerName
             // 
-            this.lbSServerName.AutoSize = true;
             this.lbSServerName.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lbSServerName.Location = new System.Drawing.Point(638, 172);
             this.lbSServerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSServerName.Name = "lbSServerName";
-            this.lbSServerName.Size = new System.Drawing.Size(45, 20);
-            this.lbSServerName.TabIndex = 13;
-            this.lbSServerName.Text = "____";
+            this.lbSServerName.Size = new System.Drawing.Size(180, 20);
+            this.lbSServerName.TabIndex = 5;
+            this.lbSServerName.Text = "_____________";
             // 
             // label4
             // 
@@ -212,9 +211,9 @@
             this.lbSServerIP.Location = new System.Drawing.Point(638, 126);
             this.lbSServerIP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSServerIP.Name = "lbSServerIP";
-            this.lbSServerIP.Size = new System.Drawing.Size(54, 20);
-            this.lbSServerIP.TabIndex = 11;
-            this.lbSServerIP.Text = "_____";
+            this.lbSServerIP.Size = new System.Drawing.Size(126, 20);
+            this.lbSServerIP.TabIndex = 5;
+            this.lbSServerIP.Text = "_____________";
             // 
             // label7
             // 

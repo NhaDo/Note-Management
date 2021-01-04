@@ -59,6 +59,7 @@ namespace NoteMakingApp.ViewComponents.Network
                 Form1.connection.startServer();
                 button2.Text = "Terminate Server";
                 lbSServerIP.Text = Connection.endpoint.Address.ToString();
+
                 lbSServerName.Text = DataHandle.getInstance().getRecentAccount().username;
             }
             
